@@ -26,4 +26,9 @@ public class Collection {
     public void addItem(Item item){
         this.items.put(item.getID(), item);
     }
+
+    public void removeItem(String IDItem) {
+        items.remove(IDItem);
+    }
+
 }
