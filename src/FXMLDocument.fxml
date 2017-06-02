@@ -8,89 +8,94 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="489.0" prefWidth="637.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ds.FXMLDocumentController">
     <children>
-      <ScrollPane id="ScrollPaneColecoes" layoutX="7.0" layoutY="97.0" prefHeight="323.0" prefWidth="200.0">
+      <ScrollPane id="ScrollPaneCollections" layoutX="7.0" layoutY="97.0" prefHeight="323.0" prefWidth="200.0">
          <content>
-            <ListView id="ListViewColecoes" prefHeight="325.0" prefWidth="179.0" />
+            <ListView id="ListViewCollections" prefHeight="325.0" prefWidth="179.0" />
          </content>
       </ScrollPane>
-      <Pane id="PaneSuperior" layoutX="1.0" prefHeight="60.0" prefWidth="637.0">
+      <Pane id="SuperiorPane" layoutX="1.0" prefHeight="60.0" prefWidth="637.0">
          <children>
-            <Button id="BotaoHome" layoutX="40.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Home" />
-            <TextField id="Pesquisa" layoutX="247.0" layoutY="18.0" prefHeight="25.0" prefWidth="317.0" promptText="Pesquisar" />
-            <Button id="BotaoPesquisa" layoutX="564.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" stylesheets="@lupa.CSS" textAlignment="CENTER" />
+            <Button id="HomeButton" layoutX="40.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Home" />
+            <TextField id="SearchArea" layoutX="247.0" layoutY="18.0" prefHeight="25.0" prefWidth="317.0" promptText="Pesquisar" />
+            <Button id="SearchButton" layoutX="564.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" stylesheets="@lupa.CSS" textAlignment="CENTER" />
          </children>
       </Pane>
-      <Label id="LabelColecoes" layoutX="57.0" layoutY="48.0" prefHeight="49.0" prefWidth="100.0" text="Coleções" textAlignment="CENTER">
+      <Label id="CollectionsLabel" layoutX="57.0" layoutY="48.0" prefHeight="49.0" prefWidth="100.0" text="Coleções" textAlignment="CENTER">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Pane id="LabelInferior" layoutX="1.0" layoutY="425.0" prefHeight="60.0" prefWidth="637.0">
+      <Pane id="InferiorLabel" layoutX="1.0" layoutY="425.0" prefHeight="60.0" prefWidth="637.0">
          <children>
-            <ButtonBar id="ButtonBarInferior" layoutY="18.0">
+            <ButtonBar id="InferiorButtonBar" layoutY="18.0">
                <buttons>
-                  <Button id="BotaoEditarCadastro" mnemonicParsing="false" prefWidth="111.87109375" text="Editar Cadastro" />
-                  <Button id="BotaoAdicionarColecao" mnemonicParsing="false" prefWidth="111.87109375" text="Adcionar Coleção" />
-                  <Button id="BotaoAdicionarObra" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Obra" />
-                  <Button id="BotaoAdicionarUsuario" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Usuário" />
-                  <Button id="BotaoLogout" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="25.0" prefWidth="111.87109375" text="Logout" />
+                  <Button id="EditAccountButton" mnemonicParsing="false" prefWidth="111.87109375" text="Editar Cadastro" />
+                  <Button id="AddCollectionButton" mnemonicParsing="false" prefWidth="111.87109375" text="Adcionar Coleção" />
+                  <Button id="AddItemButton" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Obra" />
+                  <Button id="AddUserButton" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Usuário" />
+                  <Button id="LogoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="25.0" prefWidth="111.87109375" text="Logout" />
                </buttons>
             </ButtonBar>
-            <Separator id="SeparadorInferior" layoutX="231.0" layoutY="-1.0" prefHeight="3.0" prefWidth="400.0" />
+            <Separator id="InferiorSeparator" layoutX="231.0" layoutY="-1.0" prefHeight="3.0" prefWidth="400.0" />
          </children>
       </Pane>
-      <Pane id="PaneOpcoesPesquisa" layoutX="207.0" layoutY="60.0" prefHeight="25.0" prefWidth="400.0">
+      <Pane id="SearchOptionsPane" layoutX="207.0" layoutY="60.0" prefHeight="25.0" prefWidth="400.0">
          <children>
-            <ButtonBar id="ButtonBarOpcoesPesquisa" layoutX="36.0" layoutY="6.0">
+            <ButtonBar id="SearchOptionsButtonBar" layoutX="36.0" layoutY="6.0">
                <buttons>
-                  <RadioButton id="PesquisaCodigo" mnemonicParsing="false" text="Código" />
-                  <RadioButton id="PesquisaNome" mnemonicParsing="false" text="Nome" />
-                  <RadioButton id="PesquisaColecao" mnemonicParsing="false" text="Coleção" />
-                  <RadioButton id="PesquisaStatus" mnemonicParsing="false" text="Status" />
+                  <RadioButton id="SearchByID" mnemonicParsing="false" text="Código">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toggleGroup1" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton id="SearchByName" mnemonicParsing="false" text="Nome" toggleGroup="$toggleGroup1" />
+                  <RadioButton id="SearchByColletion" mnemonicParsing="false" text="Coleção" toggleGroup="$toggleGroup1" />
+                  <RadioButton id="SearchByStatus" mnemonicParsing="false" text="Status" toggleGroup="$toggleGroup1" />
                </buttons>
             </ButtonBar>
          </children>
       </Pane>
-      <Separator id="SeparadorVertical" layoutX="223.0" layoutY="95.0" orientation="VERTICAL" prefHeight="330.0" prefWidth="12.0" />
-      <Separator id="SeparadorSuperior" layoutX="229.0" layoutY="96.0" prefHeight="3.0" prefWidth="410.0" />
-      <Pane id="PaneMuseu" layoutX="235.0" layoutY="99.0" prefHeight="323.0" prefWidth="400.0">
+      <Separator id="VerticalSeparator" layoutX="223.0" layoutY="95.0" orientation="VERTICAL" prefHeight="330.0" prefWidth="12.0" />
+      <Separator id="SuperiorSeparator" layoutX="229.0" layoutY="96.0" prefHeight="3.0" prefWidth="410.0" />
+      <Pane id="MuseumPane" layoutX="235.0" layoutY="99.0" prefHeight="323.0" prefWidth="400.0">
          <children>
-            <Label id="NomeMuseu" layoutX="99.0" layoutY="14.0" text="Museu MALG">
+            <Label id="MuseumNameLabel" layoutX="99.0" layoutY="14.0" text="Museu MALG">
                <font>
                   <Font size="34.0" />
                </font>
             </Label>
-            <Label id="CodigoMuseu" layoutX="25.0" layoutY="64.0" prefHeight="27.0" prefWidth="162.0" text="Código do museu">
+            <Label id="MuseumIDLabel" layoutX="25.0" layoutY="64.0" prefHeight="27.0" prefWidth="162.0" text="Código do museu">
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Label id="EnderecoMuseu" layoutX="25.0" layoutY="98.0" prefHeight="27.0" prefWidth="162.0" text="Endereço do museu">
+            <Label id="MuseumAddressLabel" layoutX="25.0" layoutY="98.0" prefHeight="27.0" prefWidth="162.0" text="Endereço do museu">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label id="TelefoneMuseu" layoutX="23.0" layoutY="135.0" text="Telefone do museu">
+            <Label id="MuseumPhoneLabel" layoutX="23.0" layoutY="135.0" text="Telefone do museu">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label id="EmailMuseu" layoutX="25.0" layoutY="168.0" text="Email do museu">
+            <Label id="MuseumEmailLabel" layoutX="25.0" layoutY="168.0" text="Email do museu">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label id="HorariosMuseu" layoutX="25.0" layoutY="202.0" text="Horários do museu">
+            <Label id="MuseumScheduleLabel" layoutX="25.0" layoutY="202.0" text="Horários do museu">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label id="DescricaoMuseu" layoutX="23.0" layoutY="236.0" text="Descrição do museu">
+            <Label id="MuseumDescriptionLabel" layoutX="23.0" layoutY="236.0" text="Descrição do museu">
                <font>
                   <Font size="18.0" />
                </font>
