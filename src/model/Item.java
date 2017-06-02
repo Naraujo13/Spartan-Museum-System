@@ -1,33 +1,39 @@
 package model;
 
 
+import java.util.Date;
+import java.util.TreeMap;
+
 /**
  * Created by naraujo on 29/05/17.
  */
 public class Item {
 
     private String ID;
-    private String nome;
+    private String name;
     private int year;
     private String status;
 
+    private TreeMap<Date, Movimentation> movimentationsTreeMap;
 
-    public Item(String ID, String nome, int year) {
+
+    public Item(String ID, String name, int year) {
         this.ID = ID;
-        this.nome = nome;
+        this.name = name;
         this.year = year;
+        this.movimentationsTreeMap = new TreeMap<>();
     }
 
     public String getID() {
         return ID;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getYear() {
@@ -45,4 +51,31 @@ public class Item {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public TreeMap<Date, Movimentation> getMovimentationsTreeMap() {
+        return movimentationsTreeMap;
+    }
+
+    public void addMovimentation(Movimentation m){
+        movimentationsTreeMap.put(m.getTimestamp(), m);
+    }
 }
+
+/*
+if (m instanceof  Storage){
+
+        }
+        else if (m instanceof Loan){
+
+        }
+        else if (m instanceof  Restoration){
+
+        }
+        else if (m instanceof Admission){
+
+        }
+        else if (m instanceof Discharge){
+
+        }
+        
+ */
