@@ -60,7 +60,6 @@ public class MainScreenController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println(MainScreen.getChildren().size());
         // TODO
     }    
     
