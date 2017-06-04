@@ -1,12 +1,15 @@
 package model;
 
+import java.lang.*;
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.TreeMap;
 
 /**
  * Created by naraujo on 29/05/17.
  */
-public class Collection {
+class Collection {
     //Info
     private String name;
 
@@ -31,14 +34,46 @@ public class Collection {
         this.name = name;
     }
 
-    public void addItem(Item item){
+    public TreeMap<String, Item> getItems() {
+        return items;
+    }
+
+    public HashMap<String, String> getNameToID() {
+        return nameToID;
+    }
+
+    public HashMap<String, String> getStatusToID() {
+        return statusToID;
+    }
+
+    /**
+     * Adiciona Item à coleção
+     * @param museumCode - código do museu
+     * @param name - nome do item
+     * @param year - ano do item
+     * @param origin - origem do item
+     * @return - true || false representando sucesso || fracasso na inserção
+     */
+    boolean addItem(String museumCode, String name, int year, String origin){
+
+        //Testa permissão
+        if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
+            return false;
+        if (!(System.getTechniciansTreeMap().containsKey(System.getActiveUser().getCpf())
+                || System.getDirectorsTreeMap().containsKey(System.getActiveUser().getCpf())
+                || System.getCoordinator().getCpf().equals(System.getActiveUser().getCpf())))
+            return false;
+
+        /* -- Cria novo item -- */
+        Item item = new Item(museumCode + items.size(), name, year, origin);
+
+        /* -- Adiciona item nas estruturas -- */
         this.items.put(item.getID(), item);
         this.nameToID.put(item.getName(), item.getID());
         this.statusToID.put(item.getStatus(), item.getID());
-    }
 
-    public void removeItem(String IDItem) {
-        items.remove(IDItem);
+        return true;
     }
 
 }
+

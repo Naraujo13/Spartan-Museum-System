@@ -1,8 +1,12 @@
 package model;
 
 
-import java.util.Date;
+import utils.Utils;
+
+import java.lang.*;
+import java.sql.Date;
 import java.util.TreeMap;
+import model.System;
 
 /**
  * Created by naraujo on 29/05/17.
@@ -17,11 +21,19 @@ public class Item {
     private TreeMap<Date, Movimentation> movimentationsTreeMap;
 
 
-    public Item(String ID, String name, int year) {
+    Item(String ID, String name, int year, String origin) {
+
+        /* -- Cria item --  */
         this.ID = ID;
         this.name = name;
         this.year = year;
+        this.status = Utils.AT_STORAGE;
         this.movimentationsTreeMap = new TreeMap<>();
+
+        /* -- Cria Movimentação de entrada -- */
+        Movimentation admission = new Admission(new Date(java.lang.System.currentTimeMillis()), origin, System.getActiveUser().getCpf());
+        movimentationsTreeMap.put(admission.getTimestamp(), admission);
+
     }
 
     public String getID() {
@@ -48,7 +60,7 @@ public class Item {
         return status;
     }
 
-    public void setStatus(String status) {
+    private void setStatus(String status) {
         this.status = status;
     }
 
@@ -56,26 +68,55 @@ public class Item {
         return movimentationsTreeMap;
     }
 
-    public void addMovimentation(Movimentation m){
+    /* -- Movimentation -- */
+
+    private void addMovimentation(Movimentation m){
         movimentationsTreeMap.put(m.getTimestamp(), m);
     }
+
+    boolean discharge(Date timestamp, String origin){
+        //Testa se já foi dado baixa ou está indisponível
+        if (this.status.equals(Utils.DISCHARGED) || this.status.equals(Utils.AT_RESTAURATION) || this.status.equals(Utils.AT_LOAN))
+            return false;
+
+        //Realiza baixa
+        Movimentation discharge = new Discharge(timestamp, origin, System.getActiveUser().getCpf());
+        addMovimentation(discharge);
+        this.setStatus(Utils.DISCHARGED);
+        return true;
+    }
+
+    boolean loan(Date timestamp, Date dateOfReturn, String origin, String destination){
+        //Testa status
+        if (this.status.equals(Utils.DISCHARGED) || this.status.equals(Utils.AT_RESTAURATION) || this.status.equals(Utils.AT_LOAN))
+            return false;
+
+        Movimentation loan = new Loan(timestamp, dateOfReturn, origin, destination, System.getActiveUser().getCpf());
+        addMovimentation(loan);
+        this.setStatus(Utils.AT_LOAN);
+        return true;
+    }
+
+    boolean restoration(Date timestamp, String origin, String destination){
+        if (this.status.equals(Utils.DISCHARGED) || this.status.equals(Utils.AT_RESTAURATION) || this.status.equals(Utils.AT_LOAN))
+            return false;
+
+        //Realiza envio para restauração
+        Movimentation restoration = new Restoration(timestamp, origin, destination, System.getActiveUser().getCpf());
+        addMovimentation(restoration);
+        this.setStatus(Utils.AT_RESTAURATION);
+        return true;
+    }
+
+    boolean storage(Date timestamp, String origin, String destination){
+        if (this.status.equals(Utils.DISCHARGED) || this.status.equals(Utils.AT_RESTAURATION) || this.status.equals(Utils.AT_LOAN))
+            return false;
+
+        //Realiza envio para restauração
+        Movimentation storage = new Storage(timestamp, origin, destination, System.getActiveUser().getCpf());
+        addMovimentation(storage);
+        this.setStatus(Utils.AT_STORAGE);
+        return true;
+    }
+
 }
-
-/*
-if (m instanceof  Storage){
-
-        }
-        else if (m instanceof Loan){
-
-        }
-        else if (m instanceof  Restoration){
-
-        }
-        else if (m instanceof Admission){
-
-        }
-        else if (m instanceof Discharge){
-
-        }
-        
- */

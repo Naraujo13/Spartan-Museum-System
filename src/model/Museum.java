@@ -7,7 +7,7 @@ import java.util.TreeMap;
 /**
  * Created by naraujo on 01/06/17.
  */
-public class Museum {
+class Museum {
 
     /* -- Info -- */
 
@@ -28,15 +28,15 @@ public class Museum {
     private TreeMap<String, Collection> collectionsTreeMap; /* -- TreeMap  nome->Coleção -- */
     /* ---------- */
 
-    /* -- Construtores -- */
-    public Museum(String museumCode, String name, String address) {
+    /*-- Construtores -- */
+    Museum(String museumCode, String name, String address) {
         this.museumCode = museumCode;
         this.name = name;
         this.address = address;
         this.collectionsTreeMap = new TreeMap<>();
     }
 
-    public Museum(String museumCode, String name, String address, String phone) {
+    Museum(String museumCode, String name, String address, String phone) {
         this.museumCode = museumCode;
         this.name = name;
         this.address = address;
@@ -44,7 +44,7 @@ public class Museum {
         this.collectionsTreeMap = new TreeMap<>();
     }
 
-    public Museum(String museumCode, String name, String address, String phone, String email) {
+    Museum(String museumCode, String name, String address, String phone, String email) {
         this.museumCode = museumCode;
         this.name = name;
         this.address = address;
@@ -53,7 +53,7 @@ public class Museum {
         this.collectionsTreeMap = new TreeMap<>();
     }
 
-    public Museum(String museumCode, String name, String address, String phone, String email, String openingHours) {
+    Museum(String museumCode, String name, String address, String phone, String email, String openingHours) {
         this.museumCode = museumCode;
         this.name = name;
         this.address = address;
@@ -63,7 +63,7 @@ public class Museum {
         this.collectionsTreeMap = new TreeMap<>();
     }
 
-    public Museum(String museumCode, String name, String address, String phone, String email, String openingHours, String description, Director director) {
+    Museum(String museumCode, String name, String address, String phone, String email, String openingHours, String description, Director director) {
         this.museumCode = museumCode;
         this.name = name;
         this.address = address;
@@ -132,7 +132,7 @@ public class Museum {
         return director;
     }
 
-    public void setDirector(Director director) {
+    void setDirector(Director director) {
         this.director = director;
     }
 
@@ -140,12 +140,22 @@ public class Museum {
         return collectionsTreeMap;
     }
 
-    /* -- Other -- */
-    public void addCollection(Collection collection){
+    /* -- Inserção -- */
+    boolean addCollection(String name){
+         //Testa se já existe coleção com este nome
+        if (System.getMuseum().getCollectionByName(name) != null)
+            return false;
+
+        //Insere coleção
+        Collection collection = new Collection(name);
         this.collectionsTreeMap.put(collection.getName(), collection);
+
+        return true;
     }
 
-    public Collection getCollectionByName(String name){
+    /* -- Pesquisa -- */
+
+    Collection getCollectionByName(String name){
         return this.collectionsTreeMap.get(name);
     }
 

@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * Created by naraujo on 29/05/17.
  */
-public abstract class Movimentation {
+abstract class Movimentation {
 
     private Date timestamp;
     private String origin;

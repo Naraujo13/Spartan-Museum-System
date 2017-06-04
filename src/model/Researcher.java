@@ -5,14 +5,14 @@ package model;
  */
 public class Researcher extends Person {
 
-    private String matricula;
+    private Integer matricula;
 
-    public Researcher(String name, String cpf, String senha, String email, String matricula) {
+    public Researcher(String name, String cpf, String senha, String email, Integer matricula) {
         super(name, cpf, senha, email);
         this.matricula = matricula;
     }
 
-    public String getMatricula() {
+    public Integer getMatricula() {
         return matricula;
     }
 }
