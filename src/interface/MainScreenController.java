@@ -38,6 +38,8 @@ public class MainScreenController implements Initializable {
     
     @FXML
     private void handleHomeAction(ActionEvent event) {
+        if(MainScreen.getChildren().size() > 7)
+            MainScreen.getChildren().remove(MainScreen.getChildren().size()-1);
         try {
             MainScreen.getChildren().add(FXMLLoader.load(getClass().getResource("MuseumPane.fxml")));
         } catch (IOException ex) {
@@ -45,8 +47,20 @@ public class MainScreenController implements Initializable {
         }
     }
     
+    @FXML
+    private void handleSearchAction(ActionEvent event) {
+        if(MainScreen.getChildren().size() > 7)
+            MainScreen.getChildren().remove(MainScreen.getChildren().size()-1);
+        try {
+            MainScreen.getChildren().add(FXMLLoader.load(getClass().getResource("SearchResultsPane.fxml")));
+        } catch (IOException ex) {
+            Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        System.out.println(MainScreen.getChildren().size());
         // TODO
     }    
     

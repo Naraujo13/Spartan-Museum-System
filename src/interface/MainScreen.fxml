@@ -24,7 +24,7 @@
          <children>
             <Button id="HomeButton" onAction="#handleHomeAction" layoutX="40.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Home" />
             <TextField id="SearchArea" layoutX="247.0" layoutY="18.0" prefHeight="25.0" prefWidth="317.0" promptText="Pesquisar" />
-            <Button id="SearchButton" layoutX="564.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" stylesheets="@lupa.CSS" textAlignment="CENTER" />
+            <Button id="SearchButton" onAction="#handleSearchAction" layoutX="564.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" stylesheets="@lupa.CSS" textAlignment="CENTER" />
          </children>
       </Pane>
       <Label id="CollectionsLabel" layoutX="57.0" layoutY="48.0" prefHeight="49.0" prefWidth="100.0" text="Coleções" textAlignment="CENTER">
