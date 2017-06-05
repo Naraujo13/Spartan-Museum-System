@@ -397,6 +397,69 @@ public final class System {
         return item.putToStorage(timestamp, destination);
     }
 
+    public static int exposeItem(String collectionName, String itemID, Date timestamp, String destination){
+        //Testa permissão
+        if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
+            return Utils.PERMISSION_ERROR;
+        if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
+                || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
+                || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
+            return Utils.PERMISSION_ERROR;
+
+        //Procura coleção
+        Collection collection = museum.getCollectionByName(collectionName).get(0);
+        if (collection == null)
+            return Utils.NOT_FOUND_ERROR;
+        //Procura Items
+        Item item = collection.getItemsByID(itemID);
+        if (item == null)
+            return Utils.NOT_FOUND_ERROR;
+        //Realiza movimentação
+        return item.putToExposition(timestamp, destination);
+    }
+
+    public static int returnFromLoan(String collectionName, String itemID, Date timestamp, String destination){
+        //Testa permissão
+        if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
+            return Utils.PERMISSION_ERROR;
+        if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
+                || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
+                || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
+            return Utils.PERMISSION_ERROR;
+
+        //Procura coleção
+        Collection collection = museum.getCollectionByName(collectionName).get(0);
+        if (collection == null)
+            return Utils.NOT_FOUND_ERROR;
+        //Procura Items
+        Item item = collection.getItemsByID(itemID);
+        if (item == null)
+            return Utils.NOT_FOUND_ERROR;
+        //Realiza movimentação
+        return item.returnFromLoan(timestamp, destination);
+    }
+
+    public static int returnFromRestoration(String collectionName, String itemID, Date timestamp, String destination){
+        //Testa permissão
+        if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
+            return Utils.PERMISSION_ERROR;
+        if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
+                || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
+                || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
+            return Utils.PERMISSION_ERROR;
+
+        //Procura coleção
+        Collection collection = museum.getCollectionByName(collectionName).get(0);
+        if (collection == null)
+            return Utils.NOT_FOUND_ERROR;
+        //Procura Items
+        Item item = collection.getItemsByID(itemID);
+        if (item == null)
+            return Utils.NOT_FOUND_ERROR;
+        //Realiza movimentação
+        return item.returnFromRestauration(timestamp, destination);
+    }
+
     /* -- Funções de Pesquisa -- */
 
     //Items
