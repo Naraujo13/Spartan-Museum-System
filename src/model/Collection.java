@@ -58,7 +58,7 @@ class Collection implements Comparable<Collection>{
      * @param origin - origem do item
      * @return - true || false representando sucesso || fracasso na inserção
      */
-    int addItem(String museumCode, String name, int year, String origin){
+    int addItem(String museumCode, String name, int year, String origin, String destination){
 
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
@@ -69,7 +69,7 @@ class Collection implements Comparable<Collection>{
             return Utils.NOT_FOUND_ERROR;
 
         /* -- Cria novo item -- */
-        Item item = new Item(museumCode + items.size(), name, year, origin);
+        Item item = new Item(museumCode + items.size(), name, year, origin, destination);
 
         /* -- Adiciona item nas estruturas -- */
         this.items.put(item.getID(), item);

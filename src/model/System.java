@@ -1,9 +1,7 @@
 package model;
 
-import com.sun.org.apache.regexp.internal.RE;
 import utils.Utils;
 
-import java.sql.Array;
 import java.sql.Date;
 import java.util.*;
 
@@ -87,25 +85,25 @@ public final class System {
         System.addPerson("Sias", "666.666.666.66", "sias123", "jonathan@ufpel.com", 14101235);
 
         /* -- Mock Items -- */
-        System.addItem(museum.getMuseumCode(), "Século XXI", "PS99", 2099, "Museu do Videogame de Roraima");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "PS50", 2050, "Museu do Videogame do Piauí");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "Xbox 0", 2050, "Museu do Videogame de Roraima");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "A mulher que sorri", 1974, "Museu do Videogame da Paraíba");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "Xbox 0.5", 2099,"Museu do Videogame de Rondonia");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "Nintendo Degraus (NDS)", 2024, "Museu do Videogame da Esquina");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "Nintendo Mario", 2099, "Museu do Videogame dei Berlim");
-        System.addItem(museum.getMuseumCode(), "Picasso", "Mona Lisa Falsificada", 1907, "Museu da Falsificação");
-        System.addItem(museum.getMuseumCode(), "Picasso", "O Grito Premeditado", 1908, "Museu da Falsificação");
-        System.addItem(museum.getMuseumCode(), "Picasso", "Guernica", 1937, "Museu da Falsificação");
-        System.addItem(museum.getMuseumCode(), "Picasso", "A mulher que sorri", 1974, "Museu da Falsificação");
-        System.addItem(museum.getMuseumCode(), "Picasso", "Zero Musicians", 1900, "Museu da Falsificação");
-        System.addItem(museum.getMuseumCode(), "Picasso", "Pixacação na Frente da Federal", 2014, "Museu da Falsificação");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de T-Rex", 0, "Sítio Arqueológico do Amapá");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Urso Polar Albino", 1983, "Sítio Arqueológico Papai Noel");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Cérebro de Felipe Luzzardi", 2017, "Dom Joaquim, Pelotas");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Aedes Aegypti", 2008, "Pneu do Terreno Baldio");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Tutancamon", 200, "Pirâmide");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes do Cusco da Esquina", 2017, "Esquina");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "PS99", 2099, "Museu do Videogame de Roraima", "Armazém 51");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "PS50", 2050, "Museu do Videogame do Piauí", "Armazém 56");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "Xbox 0", 2050, "Museu do Videogame de Roraima", "Armazém 535");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "A mulher que sorri", 1974, "Museu do Videogame da Paraíba", "Armazém 21");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "Xbox 0.5", 2099,"Museu do Videogame de Rondonia", "Armazém 52");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "Nintendo Degraus (NDS)", 2024, "Museu do Videogame da Esquina", "Armazém 02");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "Nintendo Mario", 2099, "Museu do Videogame dei Berlim", "Armazém 51");
+        System.addItem(museum.getMuseumCode(), "Picasso", "Mona Lisa Falsificada", 1907, "Museu da Falsificação", "Armazém 51");
+        System.addItem(museum.getMuseumCode(), "Picasso", "O Grito Premeditado", 1908, "Museu da Falsificação", "Armazém 43");
+        System.addItem(museum.getMuseumCode(), "Picasso", "Guernica", 1937, "Museu da Falsificação", "Armazém 54");
+        System.addItem(museum.getMuseumCode(), "Picasso", "A mulher que sorri", 1974, "Museu da Falsificação", "Armazém 53");
+        System.addItem(museum.getMuseumCode(), "Picasso", "Zero Musicians", 1900, "Museu da Falsificação", "Armazém 51");
+        System.addItem(museum.getMuseumCode(), "Picasso", "Pixacação na Frente da Federal", 2014, "Museu da Falsificação", "Armazém 21");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de T-Rex", 0, "Sítio Arqueológico do Amapá", "Armazém 76");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Urso Polar Albino", 1983, "Sítio Arqueológico Papai Noel", "Armazém 03");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Cérebro de Felipe Luzzardi", 2017, "Dom Joaquim, Pelotas", "Armazém 21");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Aedes Aegypti", 2008, "Pneu do Terreno Baldio", "Armazém 32");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Tutancamon", 200, "Pirâmide", "Armazém 76");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes do Cusco da Esquina", 2017, "Esquina", "Armazém 15");
 
         /* -- Mock Movimentations -- */
 
@@ -269,7 +267,7 @@ public final class System {
     }
 
     //Itens
-    public static int addItem(String museumCode, String collectionName, String name, int year, String origin){
+    public static int addItem(String museumCode, String collectionName, String name, int year, String origin, String destination){
 
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
@@ -284,7 +282,7 @@ public final class System {
         if (collection == null)
             return Utils.NOT_FOUND_ERROR;
 
-        return collection.addItem(museumCode + collection.getItems().size(), name, year, origin);
+        return collection.addItem(museumCode + collection.getItems().size(), name, year, origin, destination);
 
     }
 
@@ -295,10 +293,9 @@ public final class System {
      * @param collectionName - Nome da coleção do Item
      * @param itemID - ID do item
      * @param timestamp - Timestamp da Movimentação de Baixa
-     * @param origin - Origem da movimentação
      * @return - inteiro representando status (definidos em Utils)
      */
-    public static int dischargeItem(String collectionName, String itemID, Date timestamp, String origin){
+    public static int dischargeItem(String collectionName, String itemID, Date timestamp){
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -316,7 +313,7 @@ public final class System {
         if (item == null)
             return Utils.NOT_FOUND_ERROR;
         //Realiza Movimentação
-        return item.discharge(timestamp, origin);
+        return item.discharge(timestamp);
 
     }
 
@@ -326,11 +323,10 @@ public final class System {
      * @param itemID - ID do item
      * @param timestamp - Timestamp da Movimentação de Empréstimo
      * @param dateOfReturn - Data esperada de retorno
-     * @param origin - Origem da movimentação
      * @param destination - Destino do Empréstimo
      * @return - inteiro representando status (definidos em Utils)
      */
-    public static int loanItem(String collectionName, String itemID, Date timestamp, Date dateOfReturn, String origin, String destination){
+    public static int loanItem(String collectionName, String itemID, Date timestamp, Date dateOfReturn, String destination){
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -348,7 +344,7 @@ public final class System {
         if (item == null)
             return Utils.NOT_FOUND_ERROR;
         //Realiza Movimentação
-        return item.loan(timestamp, dateOfReturn, origin, destination);
+        return item.sendToLoan(timestamp, dateOfReturn, destination);
     }
 
     /**
@@ -356,11 +352,10 @@ public final class System {
      * @param collectionName - Nome da coleção do Item
      * @param itemID - ID do item
      * @param timestamp - Timestamp da Movimentação de Empréstimo
-     * @param origin - Origem da movimentação
      * @param destination - Destino do Empréstimo
      * @return - inteiro representando status (definidos em Utils)
      */
-    public static int restoreItem(String collectionName, String itemID, Date timestamp, String origin, String destination){
+    public static int restoreItem(String collectionName, String itemID, Date timestamp, String destination){
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -378,10 +373,10 @@ public final class System {
         if (item == null)
             return Utils.NOT_FOUND_ERROR;
         //Realiza movimentação
-        return item.restoration(timestamp, origin, destination);
+        return item.sendToRestoration(timestamp, destination);
     }
 
-    public static int storeItem(String collectionName, String itemID, Date timestamp, String origin, String destination){
+    public static int storeItem(String collectionName, String itemID, Date timestamp, String destination){
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -399,7 +394,7 @@ public final class System {
         if (item == null)
             return Utils.NOT_FOUND_ERROR;
         //Realiza movimentação
-        return item.storage(timestamp, origin, destination);
+        return item.putToStorage(timestamp, destination);
     }
 
     /* -- Funções de Pesquisa -- */
@@ -462,6 +457,11 @@ public final class System {
     }
 
     //Users
+    /**
+     * Pesquisa usuários por substring no nome
+     * @param searchString - substring de pesquisa
+     * @return - ArrayList de usuários correspondentes
+     */
     public static ArrayList<Person> searchUsersByName(String searchString){
         if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
                 || directorsTreeMap.containsKey(System.getActiveUser().getCpf())

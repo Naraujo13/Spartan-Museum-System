@@ -6,15 +6,14 @@ import java.sql.Date;
  * Created by naraujo on 29/05/17.
  */
 abstract class Movimentation implements Comparable<Movimentation>{
-
-    private Date timestamp;
     private String origin;
+    private Date timestamp;
     private String cpfAutor;
 
-    Movimentation(Date timestamp, String origin, String cpfAutor) {
+    Movimentation(Date timestamp, String cpfAutor, String origin) {
         this.timestamp = timestamp;
-        this.origin = origin;
         this.cpfAutor = cpfAutor;
+        this.origin = origin;
     }
 
     @Override
@@ -26,8 +25,11 @@ abstract class Movimentation implements Comparable<Movimentation>{
         return timestamp;
     }
 
+    public String getCpfAutor() {
+        return cpfAutor;
+    }
+
     public String getOrigin() {
         return origin;
     }
-
 }

@@ -15,8 +15,8 @@ public abstract class Utils {
     public static String AT_EXPOSITION = "Em Exposição";
     public static String AT_STORAGE = "Em Armazenamento";
     public static String AT_RESTAURATION = "Em Restauração";
-    public static String DISCHARGED = "Baixa";
     public static String AT_LOAN = "Emprestada";
+    public static String DISCHARGED = "Baixa";
 
     //Return Codes
     public static int REQUEST_OK = 200; // Operação realizada com sucesso
