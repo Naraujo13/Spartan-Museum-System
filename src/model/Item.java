@@ -13,7 +13,7 @@ import javax.rmi.CORBA.Util;
 /**
  * Created by naraujo on 29/05/17.
  */
-public class Item {
+public class Item implements Comparable<Item>{
 
     private String ID;
     private String name;
@@ -37,6 +37,12 @@ public class Item {
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
 
     }
+
+    @Override
+    public int compareTo(Item item) {
+        return this.getName().compareToIgnoreCase(item.getName());
+    }
+
 
     public String getID() {
         return ID;
@@ -120,5 +126,6 @@ public class Item {
         this.setStatus(Utils.AT_STORAGE);
         return Utils.REQUEST_OK;
     }
+
 
 }

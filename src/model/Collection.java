@@ -3,29 +3,31 @@ package model;
 import utils.Utils;
 
 import java.lang.*;
-import java.sql.Date;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by naraujo on 29/05/17.
  */
-class Collection {
+class Collection implements Comparable<Collection>{
     //Info
     private String name;
 
     //Dados
-    private TreeMap<String, Item> items; /* -- Tree Map com ID->Item -- */
-    private HashMap<String, String> nameToID; /* -- Hash Map com Nome->ID -- */
-    private HashMap<String, String> statusToID; /* -- Hash Map com Status->ID -- */
+    private HashMap<String, Item> items; /* -- Tree Map com ID->Item -- */
+    private TreeMap<String, String> nameToID; /* -- Hash Map com Nome->ID -- */
+    private TreeMap<String, String> statusToID; /* -- Hash Map com Status->ID -- */
 
 
     Collection(String name) {
         this.name = name;
-        this.items = new TreeMap<>();
-        this.nameToID = new HashMap<>();
-        this.statusToID = new HashMap<>();
+        this.items = new HashMap<>();
+        this.nameToID = new TreeMap<>();
+        this.statusToID = new TreeMap<>();
+    }
+
+    @Override
+    public int compareTo(Collection collection) {
+        return this.getName().compareToIgnoreCase(collection.getName());
     }
 
     public String getName() {
@@ -36,15 +38,15 @@ class Collection {
         this.name = name;
     }
 
-    public TreeMap<String, Item> getItems() {
+    public HashMap<String, Item> getItems() {
         return items;
     }
 
-    public HashMap<String, String> getNameToID() {
+    public TreeMap<String, String> getNameToID() {
         return nameToID;
     }
 
-    public HashMap<String, String> getStatusToID() {
+    public TreeMap<String, String> getStatusToID() {
         return statusToID;
     }
 
@@ -79,11 +81,18 @@ class Collection {
 
     /**
      * Pesquisa Item por nome
-     * @param name - nome do item desejado
-     * @return - Retorna item desejado ou null
+     * @param search - parametro de busca
+     * @return - Retorna array com items que contém parametro de busca no nome
      */
-    Item getItemsByName(String name){
-        return this.items.get(this.nameToID.get(name));
+    ArrayList <Item> getItemsByName(String search){
+
+        SortedMap<String, String> results = Utils.searchByPrefix(nameToID, search);
+        ArrayList<Item> final_results = new ArrayList<>();
+
+        for (String id : results.values()){
+            final_results.add(this.items.get(id));
+        }
+        return final_results;
     }
 
     /**
@@ -94,6 +103,7 @@ class Collection {
     Item getItemsByID(String ID){
         return this.items.get(ID);
     }
+
 
 }
 

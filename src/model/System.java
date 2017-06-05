@@ -2,7 +2,10 @@ package model;
 
 import utils.Utils;
 
+import java.sql.Array;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.TreeMap;
 
@@ -80,10 +83,10 @@ public final class System {
         System.addPerson("Lisane", "222.222.222.22", "lisane123", "lisane@diagrama.es");
 
         //Adiciona Pesquisador
-        System.addPerson("Nicolas", "333.333.333.33", "nicolas123", "nicolas@ufpel.com");
-        System.addPerson("Kellerson", "444.444.444.44", "kellerson123", "kellerson@ufpel.com");
-        System.addPerson("Xlager", "555.555.555.55", "kellerson123", "kellerson@ufpel.com");
-        System.addPerson("Sias", "666.666.666.66", "sias123", "jonathan@ufpel.com");
+        System.addPerson("Nicolas", "333.333.333.33", "nicolas123", "nicolas@ufpel.com", 14101238);
+        System.addPerson("Kellerson", "444.444.444.44", "kellerson123", "kellerson@ufpel.com", 14101237);
+        System.addPerson("Xlager", "555.555.555.55", "kellerson123", "kellerson@ufpel.com", 14101236);
+        System.addPerson("Sias", "666.666.666.66", "sias123", "jonathan@ufpel.com", 14101235);
 
         /* -- Mock Items -- */
         System.addItem(museum.getMuseumCode(), "Século XXI", "PS99", 2099, "Museu do Videogame de Roraima");
@@ -401,6 +404,50 @@ public final class System {
         return item.storage(timestamp, origin, destination);
     }
 
+    /* -- Funções de Pesquisa -- */
 
+    //Items
+    /**
+     * Função para pesquisa de Items por seu ID
+     * @param ID - ID desejado
+     * @return - ArrayList com itens com ID desejado
+     */
+    public static ArrayList<Item> searchItemByID(String ID){
+        if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
+                || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
+                || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
+            return null;
+
+        ArrayList<Item> results = new ArrayList<>();
+
+        for (Collection collection : museum.getCollectionsTreeMap().values()){
+            results.add(collection.getItemsByID(ID));
+        }
+
+        return results;
+    }
+
+    /**
+     * Pesquisa item que contenham a substring no nome
+     * @param searchString - string desejada
+     * @return - retorna ArrayList com itens que contenham searchstring no nome
+     */
+    public static ArrayList<Item> searchItemByName(String searchString){
+        if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
+                || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
+                || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
+            return null;
+
+        ArrayList<Item> results = new ArrayList<>();
+
+        for (Collection collection : museum.getCollectionsTreeMap().values()){
+            results.addAll(collection.getItemsByName(searchString));
+        }
+
+        results.sort(Comparator.naturalOrder());
+        return results;
+    }
+
+    //Coleções
 
 }

@@ -3,7 +3,7 @@ package model;
 /**
  * Created by naraujo on 29/05/17.
  */
-public class Person {
+public class Person implements Comparable<Person>{
     private String name;
     private String cpf;
     private String senha;
@@ -15,6 +15,11 @@ public class Person {
         this.cpf = cpf;
         this.senha = senha;
         this.email = email;
+    }
+
+    @Override
+    public int compareTo(Person person) {
+        return this.getName().compareToIgnoreCase(person.getName());
     }
 
     public String getEmail() {
