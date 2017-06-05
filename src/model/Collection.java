@@ -1,5 +1,7 @@
 package model;
 
+import utils.Utils;
+
 import java.lang.*;
 import java.sql.Date;
 import java.util.Calendar;
@@ -19,7 +21,7 @@ class Collection {
     private HashMap<String, String> statusToID; /* -- Hash Map com Status->ID -- */
 
 
-    public Collection(String name) {
+    Collection(String name) {
         this.name = name;
         this.items = new TreeMap<>();
         this.nameToID = new HashMap<>();
@@ -54,15 +56,15 @@ class Collection {
      * @param origin - origem do item
      * @return - true || false representando sucesso || fracasso na inserção
      */
-    boolean addItem(String museumCode, String name, int year, String origin){
+    int addItem(String museumCode, String name, int year, String origin){
 
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
-            return false;
+            return Utils.PERMISSION_ERROR;
         if (!(System.getTechniciansTreeMap().containsKey(System.getActiveUser().getCpf())
                 || System.getDirectorsTreeMap().containsKey(System.getActiveUser().getCpf())
                 || System.getCoordinator().getCpf().equals(System.getActiveUser().getCpf())))
-            return false;
+            return Utils.NOT_FOUND_ERROR;
 
         /* -- Cria novo item -- */
         Item item = new Item(museumCode + items.size(), name, year, origin);
@@ -72,7 +74,25 @@ class Collection {
         this.nameToID.put(item.getName(), item.getID());
         this.statusToID.put(item.getStatus(), item.getID());
 
-        return true;
+        return Utils.REQUEST_OK;
+    }
+
+    /**
+     * Pesquisa Item por nome
+     * @param name - nome do item desejado
+     * @return - Retorna item desejado ou null
+     */
+    Item getItemsByName(String name){
+        return this.items.get(this.nameToID.get(name));
+    }
+
+    /**
+     * Pesquisa item por ID
+     * @param ID - ID do item desejado
+     * @return - Retorna Item encontrado ou null
+     */
+    Item getItemsByID(String ID){
+        return this.items.get(ID);
     }
 
 }

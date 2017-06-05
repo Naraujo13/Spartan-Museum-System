@@ -11,7 +11,7 @@ abstract class Movimentation {
     private String origin;
     private String cpfAutor;
 
-    public Movimentation(Date timestamp, String origin, String cpfAutor) {
+    Movimentation(Date timestamp, String origin, String cpfAutor) {
         this.timestamp = timestamp;
         this.origin = origin;
         this.cpfAutor = cpfAutor;

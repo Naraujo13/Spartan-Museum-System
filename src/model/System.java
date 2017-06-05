@@ -1,5 +1,8 @@
 package model;
 
+import utils.Utils;
+
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.TreeMap;
 
@@ -64,14 +67,11 @@ public final class System {
 
         /* -- Mock Collections -- */
         Collection secXXI, picasso, fezes;
-        museum.addCollection("Século XXI");
-        secXXI = museum.getCollectionByName("Século XXI");
-        museum.addCollection("Picasso");
-        picasso = museum.getCollectionByName("Picasso");
-        museum.addCollection("Fezes Animais Raras");
-        fezes = museum.getCollectionByName("Fezes Animais Raras");
+        System.addCollection("Século XXI");
+        System.addCollection("Picasso");
+        System.addCollection("Fezes Animais Raras");
 
-        /* -- Mock Technician -- */
+        /* -- Mock Users -- */
         //Adiciona Diretor
         System.addPerson("Joãozinho", "123.123.123.123", "password", "joao@bonitao.uol.com", museum.getMuseumCode());
 
@@ -86,30 +86,30 @@ public final class System {
         System.addPerson("Sias", "666.666.666.66", "sias123", "jonathan@ufpel.com");
 
         /* -- Mock Items -- */
-        secXXI.addItem(museum.getMuseumCode(), "PS99", 2099, "Museu do Videogame de Roraima");
-        secXXI.addItem(museum.getMuseumCode(), "PS50", 2050, "Museu do Videogame do Piauí");
-        secXXI.addItem(museum.getMuseumCode(), "Xbox 0", 2050, "Museu do Videogame de Roraima");
-        picasso.addItem(museum.getMuseumCode(), "A mulher que sorri", 1974, "Museu do Videogame da Paraíba");
-        secXXI.addItem(museum.getMuseumCode(), "Xbox 0.5", 2099,"Museu do Videogame de Rondonia");
-        secXXI.addItem(museum.getMuseumCode(), "Nintendo Degraus (NDS)", 2024, "Museu do Videogame da Esquina");
-        secXXI.addItem(museum.getMuseumCode(), "Nintendo Mario", 2099, "Museu do Videogame dei Berlim");
-        picasso.addItem(museum.getMuseumCode(), "Mona Lisa Falsificada", 1907, "Museu da Falsificação");
-        picasso.addItem(museum.getMuseumCode(), "O Grito Premeditado", 1908, "Museu da Falsificação");
-        picasso.addItem(museum.getMuseumCode(), "Guernica", 1937, "Museu da Falsificação");
-        picasso.addItem(museum.getMuseumCode(), "A mulher que sorri", 1974, "Museu da Falsificação");
-        picasso.addItem(museum.getMuseumCode(), "Zero Musicians", 1900, "Museu da Falsificação");
-        picasso.addItem(museum.getMuseumCode(), "Pixacação na Frente da Federal", 2014, "Museu da Falsificação");
-        fezes.addItem(museum.getMuseumCode(), "Fezes de T-Rex", 0, "Sítio Arqueológico do Amapá");
-        fezes.addItem(museum.getMuseumCode(), "Fezes de Urso Polar Albino", 1983, "Sítio Arqueológico Papai Noel");
-        fezes.addItem(museum.getMuseumCode(), "Cérebro de Felipe Luzzardi", 2017, "Dom Joaquim, Pelotas");
-        fezes.addItem(museum.getMuseumCode(), "Fezes de Aedes Aegypti", 2008, "Pneu do Terreno Baldio");
-        fezes.addItem(museum.getMuseumCode(), "Fezes de Tutancamon", 200, "Pirâmide");
-        fezes.addItem(museum.getMuseumCode(), "Fezes do Cusco da Esquina", 2017, "Esquina");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "PS99", 2099, "Museu do Videogame de Roraima");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "PS50", 2050, "Museu do Videogame do Piauí");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "Xbox 0", 2050, "Museu do Videogame de Roraima");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "A mulher que sorri", 1974, "Museu do Videogame da Paraíba");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "Xbox 0.5", 2099,"Museu do Videogame de Rondonia");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "Nintendo Degraus (NDS)", 2024, "Museu do Videogame da Esquina");
+        System.addItem(museum.getMuseumCode(), "Século XXI", "Nintendo Mario", 2099, "Museu do Videogame dei Berlim");
+        System.addItem(museum.getMuseumCode(), "Picasso", "Mona Lisa Falsificada", 1907, "Museu da Falsificação");
+        System.addItem(museum.getMuseumCode(), "Picasso", "O Grito Premeditado", 1908, "Museu da Falsificação");
+        System.addItem(museum.getMuseumCode(), "Picasso", "Guernica", 1937, "Museu da Falsificação");
+        System.addItem(museum.getMuseumCode(), "Picasso", "A mulher que sorri", 1974, "Museu da Falsificação");
+        System.addItem(museum.getMuseumCode(), "Picasso", "Zero Musicians", 1900, "Museu da Falsificação");
+        System.addItem(museum.getMuseumCode(), "Picasso", "Pixacação na Frente da Federal", 2014, "Museu da Falsificação");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de T-Rex", 0, "Sítio Arqueológico do Amapá");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Urso Polar Albino", 1983, "Sítio Arqueológico Papai Noel");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Cérebro de Felipe Luzzardi", 2017, "Dom Joaquim, Pelotas");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Aedes Aegypti", 2008, "Pneu do Terreno Baldio");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Tutancamon", 200, "Pirâmide");
+        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes do Cusco da Esquina", 2017, "Esquina");
 
         /* -- Mock Movimentations -- */
 
 
-        /* -- Mock Users -- */
+
 
 
     }
@@ -171,24 +171,24 @@ public final class System {
      * @param universityRegistration - Integer contendo número de matrícula na universidade
      * @return - true ou false representando sucesso ou fracasso na inserção
      */
-    public static boolean addPerson(String name, String CPF, String password, String email, Integer universityRegistration){
+    public static int addPerson(String name, String CPF, String password, String email, Integer universityRegistration){
 
         //Testa permissão
         if (!(activeUser instanceof Technician || activeUser instanceof Director || activeUser instanceof Coordinator))
-            return false;
+            return Utils.PERMISSION_ERROR;
         if (!(techniciansTreeMap.containsKey(activeUser.getCpf())
                 || directorsTreeMap.containsKey(activeUser.getCpf())
                 || coordinator.getCpf().equals(activeUser.getCpf())))
-            return false;
+            return Utils.PERMISSION_ERROR;
         //Se já possui CPF, cancela inserção
         if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
-            return false;
+            return Utils.ALREADY_EXISTS_ERROR;
 
         Researcher researcher = new Researcher(name, CPF, password, email, universityRegistration);
         researchersTreeMap.put(CPF, researcher);
         nameToCPFResearchers.put(name, CPF);
 
-        return true;
+        return Utils.REQUEST_OK;
     }
 
     /**
@@ -199,24 +199,24 @@ public final class System {
      * @param email - String com email
      * @return - true ou false representando sucesso ou fracasso na inserção
      */
-    public static boolean addPerson(String name, String CPF, String password, String email){
+    public static int addPerson(String name, String CPF, String password, String email){
 
         //Testa permissão
         if (!(activeUser instanceof Technician || activeUser instanceof Director || activeUser instanceof Coordinator))
-            return false;
+            return Utils.PERMISSION_ERROR;
         if (!(techniciansTreeMap.containsKey(activeUser.getCpf())
                 || directorsTreeMap.containsKey(activeUser.getCpf())
                 || coordinator.getCpf().equals(activeUser.getCpf())))
-            return false;
+            return Utils.PERMISSION_ERROR;
         //Se já possui CPF, cancela inserção
         if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
-            return false;
+            return Utils.ALREADY_EXISTS_ERROR;
 
         Technician technician = new Technician(name, CPF, password, email);
         techniciansTreeMap.put(CPF, technician);
         nameToCPFTechnicians.put(name, CPF);
 
-        return true;
+        return Utils.REQUEST_OK;
     }
 
     /**
@@ -228,22 +228,22 @@ public final class System {
      * @param IDMuseum - String com ID do Museu
      * @return - true ou false representando sucesso ou fracasso na inserção
      */
-    public static boolean addPerson(String name, String CPF, String password, String email, String IDMuseum){
+    public static int addPerson(String name, String CPF, String password, String email, String IDMuseum){
 
         //Testa permissão
         if (!(activeUser instanceof Technician || activeUser instanceof Director || activeUser instanceof Coordinator))
-            return false;
+            return Utils.PERMISSION_ERROR;
         if (!(techniciansTreeMap.containsKey(activeUser.getCpf())
                 || directorsTreeMap.containsKey(activeUser.getCpf())
                 || coordinator.getCpf().equals(activeUser.getCpf())))
-            return false;
+            return Utils.PERMISSION_ERROR;
         //Se já possui CPF, cancela inserção
         if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
-            return false;
+            return Utils.ALREADY_EXISTS_ERROR;
 
         //Testa IDMuseum
         if (museum.getMuseumCode().equals(IDMuseum))
-            return false;
+            return Utils.NOT_FOUND_ERROR;
 
         Director director = new Director(name, CPF, password, email, IDMuseum);
         directorsTreeMap.put(CPF, director);
@@ -251,36 +251,64 @@ public final class System {
 
         museum.setDirector(director);
 
-        return true;
+        return Utils.REQUEST_OK;
     }
 
     //Collections
-    public boolean addCollection(String name){
+    public static int addCollection(String name){
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
-            return false;
+            return Utils.PERMISSION_ERROR;
         if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
                 || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
                 || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
-            return false;
+            return Utils.PERMISSION_ERROR;
 
         return (museum.addCollection(name));
     }
 
     //Itens
-    public boolean addItem(String museumCode, String collectionName, String name, int year, String origin){
+    public static int addItem(String museumCode, String collectionName, String name, int year, String origin){
 
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
-            return false;
+            return Utils.PERMISSION_ERROR;
         if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
                 || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
                 || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
-            return false;
+            return Utils.PERMISSION_ERROR;
 
-        //Insere item
+        //Verifica se coleção existe e insere item
         Collection collection = museum.getCollectionByName(collectionName);
-        return collection != null && collection.addItem(museumCode + collection.getItems().size(), name, year, origin);
+        if (collection == null)
+            return Utils.NOT_FOUND_ERROR;
+
+        return collection.addItem(museumCode + collection.getItems().size(), name, year, origin);
+
+    }
+
+    //Movimentation
+    public static int dischargeItem(String collectionName, String itemID, Date timestamp, String origin){
+        //Verifica Permissão
+        //Testa permissão
+        if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
+            return Utils.PERMISSION_ERROR;
+        if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
+                || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
+                || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
+            return Utils.PERMISSION_ERROR;
+
+        //Procura coleção
+        Collection collection = museum.getCollectionByName(collectionName);
+        if (collection == null)
+            return Utils.NOT_FOUND_ERROR;
+        //Procura Items
+        Item item = collection.getItemsByID(itemID);
+        if (item == null)
+            return Utils.NOT_FOUND_ERROR;
+        //Realiza Movimentação
+        return item.discharge(timestamp, origin);
+
     }
 
 

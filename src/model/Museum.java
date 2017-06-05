@@ -1,5 +1,7 @@
 package model;
 
+import utils.Utils;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.TreeMap;
@@ -141,16 +143,16 @@ class Museum {
     }
 
     /* -- Inserção -- */
-    boolean addCollection(String name){
+    int addCollection(String name){
          //Testa se já existe coleção com este nome
         if (System.getMuseum().getCollectionByName(name) != null)
-            return false;
+            return Utils.ALREADY_EXISTS_ERROR;
 
         //Insere coleção
         Collection collection = new Collection(name);
         this.collectionsTreeMap.put(collection.getName(), collection);
 
-        return true;
+        return Utils.REQUEST_OK;
     }
 
     /* -- Pesquisa -- */
