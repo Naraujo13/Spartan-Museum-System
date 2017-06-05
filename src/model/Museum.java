@@ -2,9 +2,7 @@ package model;
 
 import utils.Utils;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by naraujo on 01/06/17.
@@ -156,10 +154,24 @@ class Museum {
     }
 
     /* -- Pesquisa -- */
-
-    Collection getCollectionByName(String name){
-        return this.collectionsTreeMap.get(name);
+    /**
+     * Pesquisa Coleção por nome
+     * @param search - parametro de busca
+     * @return - Retorna array com coleções que contém parametro de busca no nome
+     */
+    ArrayList<Collection> getCollectionByName(String search){
+        return new ArrayList<>(searchByPrefix(collectionsTreeMap, search).values());
     }
+
+    private SortedMap<String, Collection> searchByPrefix(SortedMap<String, Collection> baseMap, String prefix) {
+        if(prefix.length() > 0) {
+            char nextLetter = (char) (prefix.charAt(prefix.length() -1) + 1);
+            String end = prefix.substring(0, prefix.length()-1) + nextLetter;
+            return baseMap.subMap(prefix, end);
+        }
+        return baseMap;
+    }
+
 
 
 }

@@ -136,7 +136,7 @@ public final class System {
 
     public static TreeMap<String, Director> getDirectorsTreeMap() {
         return directorsTreeMap;
-    };
+    }
 
     public static HashMap<String, String> getNameToCPFDirectors() {
         return nameToCPFDirectors;
@@ -282,7 +282,7 @@ public final class System {
             return Utils.PERMISSION_ERROR;
 
         //Verifica se coleção existe e insere item
-        Collection collection = museum.getCollectionByName(collectionName);
+        Collection collection = museum.getCollectionByName(collectionName).get(0);
         if (collection == null)
             return Utils.NOT_FOUND_ERROR;
 
@@ -310,7 +310,7 @@ public final class System {
             return Utils.PERMISSION_ERROR;
 
         //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName);
+        Collection collection = museum.getCollectionByName(collectionName).get(0);
         if (collection == null)
             return Utils.NOT_FOUND_ERROR;
         //Procura Items
@@ -342,7 +342,7 @@ public final class System {
             return Utils.PERMISSION_ERROR;
 
         //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName);
+        Collection collection = museum.getCollectionByName(collectionName).get(0);
         if (collection == null)
             return Utils.NOT_FOUND_ERROR;
         //Procura Items
@@ -372,7 +372,7 @@ public final class System {
             return Utils.PERMISSION_ERROR;
 
         //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName);
+        Collection collection = museum.getCollectionByName(collectionName).get(0);
         if (collection == null)
             return Utils.NOT_FOUND_ERROR;
         //Procura Items
@@ -393,7 +393,7 @@ public final class System {
             return Utils.PERMISSION_ERROR;
 
         //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName);
+        Collection collection = museum.getCollectionByName(collectionName).get(0);
         if (collection == null)
             return Utils.NOT_FOUND_ERROR;
         //Procura Items
@@ -449,5 +449,18 @@ public final class System {
     }
 
     //Coleções
+
+    /**
+     * Pesquisa coleção por substring no nome
+     * @param searchString - substring de pesquisa
+     * @return - ArrayList de coleções correspondentes
+     */
+    public static ArrayList<Collection> searchCollectionByName(String searchString){
+        if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
+                || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
+                || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
+            return null;
+        return museum.getCollectionByName(searchString);
+    }
 
 }
