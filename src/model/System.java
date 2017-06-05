@@ -1,13 +1,11 @@
 package model;
 
+import com.sun.org.apache.regexp.internal.RE;
 import utils.Utils;
 
 import java.sql.Array;
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by naraujo on 01/06/17.
@@ -17,17 +15,17 @@ public final class System {
 
     /* ------- Usuários ------- */
     /* -- Técnicos -- */
-    private static TreeMap<String, Technician> techniciansTreeMap; /* -- TreeMap com CPF->Técnico dos técnicos-- */
-    private static HashMap<String, String> nameToCPFTechnicians; /* -- HashMap Nome->CPF dos técnicos-- */
+    private static HashMap<String, Technician> techniciansTreeMap; /* -- TreeMap com CPF->Técnico dos técnicos-- */
+    private static TreeMap<String, String> nameToCPFTechnicians; /* -- HashMap Nome->CPF dos técnicos-- */
 
     /* -- Pesquisadores -- */
-    private static TreeMap<String, Researcher> researchersTreeMap; /* -- TreeMap com CPF->Pesquisador dos pesquisadores -- */
-    private static HashMap<String, String> nameToCPFResearchers; /* -- HashMap Nome->CPF dos pesquisadores-- */
+    private static HashMap<String, Researcher> researchersTreeMap; /* -- TreeMap com CPF->Pesquisador dos pesquisadores -- */
+    private static TreeMap<String, String> nameToCPFResearchers; /* -- HashMap Nome->CPF dos pesquisadores-- */
 
     /* -- Diretores -- */
-    private static TreeMap<String, Director> directorsTreeMap; /* -- TreeMap com CPF->Diretor dos diretores -- */
-    private static HashMap<String, String> nameToCPFDirectors; /* -- HashMap Nome->CPF dos diretores-- */
-    private static HashMap<String, String> museumIdToCPFDirectors; /* -- HashMap museuID->CPF dos diretores-- */
+    private static HashMap<String, Director> directorsTreeMap; /* -- TreeMap com CPF->Diretor dos diretores -- */
+    private static TreeMap<String, String> nameToCPFDirectors; /* -- HashMap Nome->CPF dos diretores-- */
+    private static TreeMap<String, String> museumIdToCPFDirectors; /* -- HashMap museuID->CPF dos diretores-- */
     /* ------------------------ */
 
     /* -- Coordinator -- */
@@ -49,15 +47,15 @@ public final class System {
         activeUser = coordinator;
 
         /* -- Prepara HashMaps -- */
-        techniciansTreeMap = new TreeMap<>();
-        nameToCPFTechnicians = new HashMap<>();
+        techniciansTreeMap = new HashMap<>();
+        nameToCPFTechnicians = new TreeMap<>();
 
-        researchersTreeMap = new TreeMap<>();
-        nameToCPFResearchers = new HashMap<>();
+        researchersTreeMap = new HashMap<>();
+        nameToCPFResearchers = new TreeMap<>();
 
-        directorsTreeMap = new TreeMap<>();
-        nameToCPFDirectors = new HashMap<>();
-        museumIdToCPFDirectors = new HashMap<>();
+        directorsTreeMap = new HashMap<>();
+        nameToCPFDirectors = new TreeMap<>();
+        museumIdToCPFDirectors = new TreeMap<>();
 
         /* -- Mock Museum -- */
         museum = new Museum(
@@ -118,31 +116,31 @@ public final class System {
     }
 
 
-    public static TreeMap<String, Technician> getTechniciansTreeMap() {
+    public static HashMap<String, Technician> getTechniciansTreeMap() {
         return techniciansTreeMap;
     }
 
-    public static HashMap<String, String> getNameToCPFTechnicians() {
+    public static TreeMap<String, String> getNameToCPFTechnicians() {
         return nameToCPFTechnicians;
     }
 
-    public static TreeMap<String, Researcher> getResearchersTreeMap() {
+    public static HashMap<String, Researcher> getResearchersTreeMap() {
         return researchersTreeMap;
     }
 
-    public static HashMap<String, String> getNameToCPFResearchers() {
+    public static TreeMap<String, String> getNameToCPFResearchers() {
         return nameToCPFResearchers;
     }
 
-    public static TreeMap<String, Director> getDirectorsTreeMap() {
+    public static HashMap<String, Director> getDirectorsTreeMap() {
         return directorsTreeMap;
     }
 
-    public static HashMap<String, String> getNameToCPFDirectors() {
+    public static TreeMap<String, String> getNameToCPFDirectors() {
         return nameToCPFDirectors;
     }
 
-    public static HashMap<String, String> getMuseumIdToCPFDirectors() {
+    public static TreeMap<String, String> getMuseumIdToCPFDirectors() {
         return museumIdToCPFDirectors;
     }
 
@@ -461,6 +459,39 @@ public final class System {
                 || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
             return null;
         return museum.getCollectionByName(searchString);
+    }
+
+    //Users
+    public static ArrayList<Person> searchUsersByName(String searchString){
+        if (!(techniciansTreeMap.containsKey(System.getActiveUser().getCpf())
+                || directorsTreeMap.containsKey(System.getActiveUser().getCpf())
+                || coordinator.getCpf().equals(System.getActiveUser().getCpf())))
+            return null;
+
+        //Results array
+        ArrayList<Person> results = new ArrayList<>();
+
+        //Get Researchers
+        ArrayList<String> cpfs = new ArrayList<>(Utils.searchByPrefix(System.getNameToCPFResearchers(), searchString).values());
+        for (String cpf : cpfs)
+            results.add(System.getResearchersTreeMap().get(cpf));
+
+        //Get Technicians
+        cpfs = new ArrayList<>(Utils.searchByPrefix(System.getNameToCPFTechnicians(), searchString).values());
+        for (String cpf : cpfs)
+            results.add(System.getTechniciansTreeMap().get(cpf));
+
+        //Get Technicians
+        cpfs = new ArrayList<>(Utils.searchByPrefix(System.getNameToCPFDirectors(), searchString).values());
+        for (String cpf : cpfs)
+            results.add(System.getDirectorsTreeMap().get(cpf));
+
+        //Get Coordinator
+        if (coordinator.getName().contains(searchString))
+            results.add(coordinator);
+
+        //Return results
+        return results;
     }
 
 }
