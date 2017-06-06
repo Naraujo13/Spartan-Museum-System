@@ -36,13 +36,32 @@ public class Item implements Comparable<Item>{
     private TreeMap<Date, Movimentation> movimentationsTreeMap;
 
 
-    Item(String ID, String name, int year, String origin, String destination, float weight, float width, float height, float thickness, String description, String author, java.sql.Date aquisitionDate) {
+    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, java.sql.Date aquisitionDate) {
 
         /* -- Cria item --  */
         this.ID = ID;
         this.name = name;
         this.year = year;
         this.movimentationsTreeMap = new TreeMap<>();
+        this.lenght = lenght;
+        this.weight = weight;
+        this.width = width;
+        this.height = height;
+        this.aquisitionDate = aquisitionDate;
+        /* -- Cria Movimentação de entrada -- */
+        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), System.getActiveUser().getCpf(), origin, destination);
+        movimentationsTreeMap.put(admission.getTimestamp(), admission);
+        this.status = Utils.AT_STORAGE;
+
+    }
+    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, String author, java.sql.Date aquisitionDate) {
+
+        /* -- Cria item --  */
+        this.ID = ID;
+        this.name = name;
+        this.year = year;
+        this.movimentationsTreeMap = new TreeMap<>();
+        this.lenght = lenght;
         this.weight = weight;
         this.width = width;
         this.height = height;
@@ -56,13 +75,14 @@ public class Item implements Comparable<Item>{
         this.status = Utils.AT_STORAGE;
 
     }
-    Item(String ID, String name, int year, String origin, String destination, float weight, float width, float height, float thickness, String description, float outerCircumference, float innerCircumference, float depth, String conservationState, String author, String historicalContext, java.sql.Date aquisitionDate) {
+    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, float outerCircumference, float innerCircumference, float depth, String conservationState, String author, String historicalContext, java.sql.Date aquisitionDate) {
 
         /* -- Cria item --  */
         this.ID = ID;
         this.name = name;
         this.year = year;
         this.movimentationsTreeMap = new TreeMap<>();
+        this.lenght = lenght;
         this.weight = weight;
         this.width = width;
         this.height = height;
@@ -80,13 +100,14 @@ public class Item implements Comparable<Item>{
 
     }
 
-    Item(String ID, String name, int year, String origin, String destination, float weight, float width, float height, float thickness, String description, String author, float outerCircumference, float innerCircumference, float depth) {
+    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, String author, float outerCircumference, float innerCircumference, float depth) {
 
         /* -- Cria item --  */
         this.ID = ID;
         this.name = name;
         this.year = year;
         this.movimentationsTreeMap = new TreeMap<>();
+        this.lenght = lenght;
         this.weight = weight;
         this.width = width;
         this.height = height;

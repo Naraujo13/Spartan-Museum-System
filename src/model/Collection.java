@@ -3,6 +3,7 @@ package model;
 import utils.Utils;
 
 import java.lang.*;
+import java.sql.*;
 import java.util.*;
 
 /**
@@ -56,9 +57,16 @@ class Collection implements Comparable<Collection>{
      * @param name - nome do item
      * @param year - ano do item
      * @param origin - origem do item
+     * @param weight - peso do item
+     * @param lenght - comprimento do item
+     * @param width - largura do item
+     * @param height - altura do item
+     * @param aquisitionDate - data de aquisição
      * @return - true || false representando sucesso || fracasso na inserção
      */
-    int addItem(String museumCode, String name, int year, String origin, String destination){
+
+    int addItem(String museumCode, String name, int year, String origin, String destination,
+                float weight, float lenght, float width, float height, java.sql.Date aquisitionDate){
 
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
@@ -69,7 +77,7 @@ class Collection implements Comparable<Collection>{
             return Utils.NOT_FOUND_ERROR;
 
         /* -- Cria novo item -- */
-        Item item = new Item(museumCode + items.size(), name, year, origin, destination);
+        Item item = new Item(museumCode + items.size(), name, year, origin, destination, weight, lenght, width, height, aquisitionDate);
 
         /* -- Adiciona item nas estruturas -- */
         this.items.put(item.getID(), item);

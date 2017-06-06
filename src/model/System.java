@@ -9,33 +9,25 @@ import java.util.*;
  * Created by naraujo on 01/06/17.
  */
 public final class System {
-    private System(){}
-
     /* ------- Usuários ------- */
     /* -- Técnicos -- */
     private static HashMap<String, Technician> techniciansTreeMap; /* -- TreeMap com CPF->Técnico dos técnicos-- */
     private static TreeMap<String, String> nameToCPFTechnicians; /* -- HashMap Nome->CPF dos técnicos-- */
-
     /* -- Pesquisadores -- */
     private static HashMap<String, Researcher> researchersTreeMap; /* -- TreeMap com CPF->Pesquisador dos pesquisadores -- */
     private static TreeMap<String, String> nameToCPFResearchers; /* -- HashMap Nome->CPF dos pesquisadores-- */
-
     /* -- Diretores -- */
     private static HashMap<String, Director> directorsTreeMap; /* -- TreeMap com CPF->Diretor dos diretores -- */
     private static TreeMap<String, String> nameToCPFDirectors; /* -- HashMap Nome->CPF dos diretores-- */
     private static TreeMap<String, String> museumIdToCPFDirectors; /* -- HashMap museuID->CPF dos diretores-- */
-    /* ------------------------ */
-
     /* -- Coordinator -- */
     private static Coordinator coordinator;
-
+    /* ------------------------ */
      /* ------- Dados ------- */
      /* -- Museu -- */
      private static Museum museum;
      /* -- Usuário -- */
      private static Person activeUser;
-    /* ---------------------- */
-
 
     /* -- Popula Arrays -- */
     static{
@@ -85,25 +77,259 @@ public final class System {
         System.addPerson("Sias", "666.666.666.66", "sias123", "jonathan@ufpel.com", 14101235);
 
         /* -- Mock Items -- */
-        System.addItem(museum.getMuseumCode(), "Século XXI", "PS99", 2099, "Museu do Videogame de Roraima", "Armazém 51");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "PS50", 2050, "Museu do Videogame do Piauí", "Armazém 56");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "Xbox 0", 2050, "Museu do Videogame de Roraima", "Armazém 535");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "A mulher que sorri", 1974, "Museu do Videogame da Paraíba", "Armazém 21");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "Xbox 0.5", 2099,"Museu do Videogame de Rondonia", "Armazém 52");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "Nintendo Degraus (NDS)", 2024, "Museu do Videogame da Esquina", "Armazém 02");
-        System.addItem(museum.getMuseumCode(), "Século XXI", "Nintendo Mario", 2099, "Museu do Videogame dei Berlim", "Armazém 51");
-        System.addItem(museum.getMuseumCode(), "Picasso", "Mona Lisa Falsificada", 1907, "Museu da Falsificação", "Armazém 51");
-        System.addItem(museum.getMuseumCode(), "Picasso", "O Grito Premeditado", 1908, "Museu da Falsificação", "Armazém 43");
-        System.addItem(museum.getMuseumCode(), "Picasso", "Guernica", 1937, "Museu da Falsificação", "Armazém 54");
-        System.addItem(museum.getMuseumCode(), "Picasso", "A mulher que sorri", 1974, "Museu da Falsificação", "Armazém 53");
-        System.addItem(museum.getMuseumCode(), "Picasso", "Zero Musicians", 1900, "Museu da Falsificação", "Armazém 51");
-        System.addItem(museum.getMuseumCode(), "Picasso", "Pixacação na Frente da Federal", 2014, "Museu da Falsificação", "Armazém 21");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de T-Rex", 0, "Sítio Arqueológico do Amapá", "Armazém 76");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Urso Polar Albino", 1983, "Sítio Arqueológico Papai Noel", "Armazém 03");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Cérebro de Felipe Luzzardi", 2017, "Dom Joaquim, Pelotas", "Armazém 21");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Aedes Aegypti", 2008, "Pneu do Terreno Baldio", "Armazém 32");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes de Tutancamon", 200, "Pirâmide", "Armazém 76");
-        System.addItem(museum.getMuseumCode(), "Fezes Animais Raras", "Fezes do Cusco da Esquina", 2017, "Esquina", "Armazém 15");
+        System.addItem(
+                museum.getMuseumCode(),
+                "Século XXI",
+                "PS99",
+                2099,
+                "Museu do Videogame de Roraima",
+                "Armazém 51",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Século XXI",
+                "PS50",
+                2050,
+                "Museu do Videogame do Piauí",
+                "Armazém 56",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Século XXI",
+                "Xbox 0",
+                2050,
+                "Museu do Videogame de Roraima",
+                "Armazém 535",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Século XXI",
+                "A mulher que sorri",
+                1974,
+                "Museu do Videogame da Paraíba",
+                "Armazém 21",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Século XXI",
+                "Xbox 0.5", 2099,
+                "Museu do Videogame de Rondonia",
+                "Armazém 52",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Século XXI",
+                "Nintendo Degraus (NDS)",
+                2024, "Museu do Videogame da Esquina",
+                "Armazém 02",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Século XXI",
+                "Nintendo Mario",
+                2099,
+                "Museu do Videogame dei Berlim",
+                "Armazém 51",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Picasso",
+                "Mona Lisa Falsificada",
+                1907, "Museu da Falsificação",
+                "Armazém 51",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Picasso",
+                "O Grito Premeditado",
+                1908, "Museu da Falsificação",
+                "Armazém 43",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Picasso",
+                "Guernica",
+                1937,
+                "Museu da Falsificação",
+                "Armazém 54",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(museum.getMuseumCode(),
+                "Picasso",
+                "A mulher que sorri",
+                1974,
+                "Museu da Falsificação",
+                "Armazém 53",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(museum.getMuseumCode(),
+                "Picasso",
+                "Zero Musicians",
+                1900,
+                "Museu da Falsificação",
+                "Armazém 51",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(museum.getMuseumCode(),
+                "Picasso",
+                "Pixacação na Frente da Federal",
+                2014, "Museu da Falsificação",
+                "Armazém 21",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(museum.getMuseumCode(),
+                "Fezes Animais Raras",
+                "Fezes de T-Rex",
+                0,
+                "Sítio Arqueológico do Amapá",
+                "Armazém 76",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Fezes Animais Raras",
+                "Fezes de Urso Polar Albino",
+                1983, "Sítio Arqueológico Papai Noel",
+                "Armazém 03",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Fezes Animais Raras",
+                "Cérebro de Felipe Luzzardi",
+                2017,
+                "Dom Joaquim, Pelotas",
+                "Armazém 21",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Fezes Animais Raras",
+                "Fezes de Aedes Aegypti",
+                2008,
+                "Pneu do Terreno Baldio",
+                "Armazém 32",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+
+        System.addItem(museum.getMuseumCode(),
+                "Fezes Animais Raras",
+                "Fezes de Tutancamon",
+                200,
+                "Pirâmide",
+                "Armazém 76",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis()));
+
+        System.addItem(
+                museum.getMuseumCode(),
+                "Fezes Animais Raras",
+                "Fezes do Cusco da Esquina",
+                2017,
+                "Esquina",
+                "Armazém 15",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
 
         /* -- Mock Movimentations -- */
 
@@ -112,7 +338,10 @@ public final class System {
 
 
     }
+    /* ---------------------- */
 
+
+    private System(){}
 
     public static HashMap<String, Technician> getTechniciansTreeMap() {
         return techniciansTreeMap;
@@ -266,8 +495,11 @@ public final class System {
         return (museum.addCollection(name));
     }
 
+
+
     //Itens
-    public static int addItem(String museumCode, String collectionName, String name, int year, String origin, String destination){
+    public static int addItem(String museumCode, String collectionName, String name, int year, String origin, String destination,
+                              float weight, float lenght, float width, float height, java.sql.Date aquisitionDate){
 
         //Testa permissão
         if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
@@ -282,7 +514,7 @@ public final class System {
         if (collection == null)
             return Utils.NOT_FOUND_ERROR;
 
-        return collection.addItem(museumCode + collection.getItems().size(), name, year, origin, destination);
+        return collection.addItem(museumCode + collection.getItems().size(), name, year, origin, destination, weight, lenght, width, height, aquisitionDate);
 
     }
 
