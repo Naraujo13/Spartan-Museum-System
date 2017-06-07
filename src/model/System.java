@@ -387,6 +387,44 @@ public final class System {
         return coordinator;
     }
 
+    /* -- Login -- */
+
+    /**
+     * Método de login
+     * @param cpf - cpf digitado
+     * @param password - senha digitada
+     * @return - Utils.NOT_FOUND_ERROR para usuário não encontrado (CPF nao esta cadastrado) ou Utils.PERMISSION_ERROR
+     * para senha incorreta.
+     */
+    public static int login(String cpf, String password){
+        Person newUser;
+        //Pesquisa usuário
+        if (coordinator.getCpf().equals(cpf)){
+            newUser = coordinator;
+        }
+        else if (directorsTreeMap.containsKey(cpf)){
+            newUser = directorsTreeMap.get(cpf);
+        }
+        else if (researchersTreeMap.containsKey(cpf)){
+            newUser = researchersTreeMap.get(cpf);
+        }
+        else if (techniciansTreeMap.containsKey(cpf)){
+            newUser = techniciansTreeMap.get(cpf);
+        }
+        else
+            return Utils.NOT_FOUND_ERROR;   //Não há usuário cadastrado com este CPF
+
+        if (newUser == null)
+            return Utils.NOT_FOUND_ERROR; //Não encontrado
+        else if (!newUser.getSenha().equals(password))
+            return Utils.PERMISSION_ERROR;      //Senha incorreta
+        else{
+            activeUser = newUser;
+            return Utils.REQUEST_OK; //Login Realizado com sucesso
+        }
+    }
+
+
     /* -- Funções de Inserção -- */
 
     //Usuários
