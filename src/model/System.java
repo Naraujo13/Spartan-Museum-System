@@ -72,7 +72,7 @@ public final class System {
 
         //Adiciona Pesquisador
         System.addPerson("Nicolas", "333.333.333.33", "nicolas123", "nicolas@ufpel.com", 14101238);
-        System.addPerson("Kellerson", "444.444.444.44", "kellerson123", "kellerson@ufpel.com", 14101237);
+        System.addPerson("Kellerson", "01939512077", "kellerson123", "kellerson@ufpel.com", 14101237);
         System.addPerson("Xlager", "555.555.555.55", "kellerson123", "kellerson@ufpel.com", 14101236);
         System.addPerson("Sias", "666.666.666.66", "sias123", "jonathan@ufpel.com", 14101235);
 
