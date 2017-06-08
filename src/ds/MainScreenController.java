@@ -23,6 +23,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
@@ -40,6 +42,21 @@ public class MainScreenController implements Initializable {
 
     @FXML
     private ListView ListViewCollections;
+    
+    @FXML
+    private TextField SearchArea;
+    
+    @FXML
+    private RadioButton SearchByID;
+    
+    @FXML
+    private RadioButton SearchByName;
+    
+    @FXML
+    private RadioButton SearchByCollection;
+    
+    @FXML
+    private RadioButton SearchByStatus;
     
     
     //@FXML public void handleMouseClick(MouseEvent arg0) {
@@ -65,13 +82,41 @@ public class MainScreenController implements Initializable {
     
     @FXML
     private void handleSearchAction(ActionEvent event) {
+        SearchResultsPaneController controller = null;
+        
         if(MainScreen.getChildren().size() > 7)
-            MainScreen.getChildren().remove(MainScreen.getChildren().size()-1);
-        try {
-            MainScreen.getChildren().add(FXMLLoader.load(getClass().getResource("SearchResultsPane.fxml")));
-        } catch (IOException ex) {
-            Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                MainScreen.getChildren().remove(MainScreen.getChildren().size()-1);
+            //SearchResultsPaneController controller;
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            
+            try {
+                
+                Pane p = fxmlLoader.load(getClass().getResource("SearchResultsPane.fxml").openStream());
+                MainScreen.getChildren().add(p);
+                controller = (SearchResultsPaneController) fxmlLoader.getController();
+                
+                
+                
+            } catch (IOException ex) {
+                Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
+            if(SearchByID.isSelected()){
+                //controller.showIDSearch(SearchArea.getText());
+                
+            }
+            if(SearchByName.isSelected()){
+                //controller.showNameSearch(SearchArea.getText());
+                
+            }
+            if(SearchByCollection.isSelected()){
+                controller.showCollectionSearch(SearchArea.getText());
+                
+            }
+            if(SearchByStatus.isSelected()){
+                System.out.println("Pesquisando por coleção6");
+                //controller.showStatusSearch(SearchArea.getText());
+            }
     }
     
     @Override

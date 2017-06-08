@@ -23,7 +23,7 @@
       <Pane id="SuperiorPane" layoutX="1.0" prefHeight="60.0" prefWidth="637.0">
          <children>
             <Button id="HomeButton" onAction="#handleHomeAction" layoutX="40.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Home" />
-            <TextField id="SearchArea" layoutX="247.0" layoutY="18.0" prefHeight="25.0" prefWidth="317.0" promptText="Pesquisar" />
+            <TextField fx:id="SearchArea" layoutX="247.0" layoutY="18.0" prefHeight="25.0" prefWidth="317.0" promptText="Pesquisar" />
             <Button id="SearchButton" onAction="#handleSearchAction" layoutX="564.0" layoutY="18.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" stylesheets="@lupa.CSS" textAlignment="CENTER" />
          </children>
       </Pane>
@@ -50,14 +50,14 @@
          <children>
             <ButtonBar id="SearchOptionsButtonBar" layoutX="36.0" layoutY="6.0">
                <buttons>
-                  <RadioButton id="SearchByID" mnemonicParsing="false" text="Código">
+                  <RadioButton fx:id="SearchByID" mnemonicParsing="false" selected="true" text="Código">
                      <toggleGroup>
                         <ToggleGroup fx:id="toggleGroup1" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton id="SearchByName" mnemonicParsing="false" text="Nome" toggleGroup="$toggleGroup1" />
-                  <RadioButton id="SearchByColletion" mnemonicParsing="false" text="Coleção" toggleGroup="$toggleGroup1" />
-                  <RadioButton id="SearchByStatus" mnemonicParsing="false" text="Status" toggleGroup="$toggleGroup1" />
+                  <RadioButton fx:id="SearchByName" mnemonicParsing="false" text="Nome" toggleGroup="$toggleGroup1" />
+                  <RadioButton fx:id="SearchByCollection" mnemonicParsing="false" text="Coleção" toggleGroup="$toggleGroup1" />
+                  <RadioButton fx:id="SearchByStatus" mnemonicParsing="false" text="Status" toggleGroup="$toggleGroup1" />
                </buttons>
             </ButtonBar>
          </children>

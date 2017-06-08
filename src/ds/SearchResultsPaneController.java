@@ -53,4 +53,72 @@ public class SearchResultsPaneController implements Initializable {
        
     }
     
+    @FXML
+    public void showCollectionSearch(String search){
+        this.collection=collection;
+        ArrayList<model.Collection> collections = model.System.searchCollectionByName(search);
+        ObservableList elements = FXCollections.observableArrayList();
+        for(model.Collection collection : collections){
+            elements.add(collection.getName());
+        }
+        if(collections.size()==0){
+            elements.add("Nenhuma coleção encontrada!");
+        }
+        else{
+            //código para ouvir o clique em alguma coleção
+        }
+        
+        
+        SearchResultsListView.setItems(elements);
+        MuseumNameLabel.setText("Coleções: ");
+       
+    }
+    
+    @FXML
+    public void showIDSearch(String search){
+        this.collection=collection;
+        
+       System.out.println("Setei " + collection.getName());
+       ObservableList elements = FXCollections.observableArrayList();
+       ArrayList<model.Item> itens = new ArrayList<>(collection.getItems().values());
+        
+        for(model.Item item : itens){
+        elements.add(item.getID()+ " - " + item.getName());
+        }
+        SearchResultsListView.setItems(elements);
+       MuseumNameLabel.setText("Obras Coleção " + collection.getName());
+       
+    }
+    
+    @FXML
+    public void showNameSearch(String search){
+        this.collection=collection;
+        
+       System.out.println("Setei " + collection.getName());
+       ObservableList elements = FXCollections.observableArrayList();
+       ArrayList<model.Item> itens = new ArrayList<>(collection.getItems().values());
+        
+        for(model.Item item : itens){
+        elements.add(item.getID()+ " - " + item.getName());
+        }
+        SearchResultsListView.setItems(elements);
+       MuseumNameLabel.setText("Obras Coleção " + collection.getName());
+       
+    }
+    
+    @FXML
+    public void showStatusSearch(String search){
+        this.collection=collection;
+        
+       System.out.println("Setei " + collection.getName());
+       ObservableList elements = FXCollections.observableArrayList();
+       ArrayList<model.Item> itens = new ArrayList<>(collection.getItems().values());
+        
+        for(model.Item item : itens){
+        elements.add(item.getID()+ " - " + item.getName());
+        }
+        SearchResultsListView.setItems(elements);
+       MuseumNameLabel.setText("Obras Coleção " + collection.getName());
+       
+    }
 }
