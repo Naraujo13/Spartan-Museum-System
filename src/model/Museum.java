@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Created by naraujo on 01/06/17.
  */
-class Museum {
+public class Museum {
 
     /* -- Info -- */
 

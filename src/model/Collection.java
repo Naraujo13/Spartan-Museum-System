@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * Created by naraujo on 29/05/17.
  */
-class Collection implements Comparable<Collection>{
+public class Collection implements Comparable<Collection>{
     //Info
     private String name;
 

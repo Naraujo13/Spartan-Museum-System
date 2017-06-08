@@ -7,14 +7,18 @@ package ds;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -29,6 +33,8 @@ public class MainScreenController implements Initializable {
     @FXML
     private AnchorPane MainScreen;
 
+    @FXML
+    private ListView ListViewCollections;
     
     @FXML
     private void handleLogoutAction(ActionEvent event) {
@@ -60,7 +66,12 @@ public class MainScreenController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        ObservableList elements = FXCollections.observableArrayList();
+        ArrayList<model.Collection> collections = new ArrayList<>(model.System.getMuseum().getCollectionsTreeMap().values());
+        for(model.Collection collection : collections){
+            elements.add(collection.getName());
+        }
+        ListViewCollections.setItems(elements);
     }    
     
 }
