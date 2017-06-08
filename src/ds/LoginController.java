@@ -46,24 +46,32 @@ public class LoginController implements Initializable {
     
     @FXML
     private void handleLoginAction(ActionEvent event) {
-        Stage stage; 
-        Parent root = null;
         
-        //get reference to the button's stage         
-        stage=(Stage) LoginButton.getScene().getWindow();
         
         //load up OTHER FXML document
-        if(model.System.login(CPFTextField.getText(), PasswordTextField.getText())==Utils.REQUEST_OK){
-        //if(CPFTextField.getText().equals("01939512077") && PasswordTextField.getText().equals("kellerson123")){
+        //if(model.System.login(CPFTextField.getText(), PasswordTextField.getText())==Utils.REQUEST_OK){
+        if(CPFTextField.getText().equals("019") && PasswordTextField.getText().equals("123")){
+            
+            Stage stage; 
+            Parent root = null;
+
+            //get reference to the button's stage         
+            stage=(Stage) LoginButton.getScene().getWindow();
             try {
                 root = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
-            } catch (IOException ex) {
+                
+                } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
             }
+            //create a new scene with root and set the stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            
         }
         else{
-            if(model.System.login(CPFTextField.getText(), PasswordTextField.getText())==Utils.NOT_FOUND_ERROR){
-            //if(CPFTextField.getText().equals("01939512077")){
+            //if(model.System.login(CPFTextField.getText(), PasswordTextField.getText())==Utils.NOT_FOUND_ERROR){
+            if(CPFTextField.getText().equals("019")){
                 WarnningLabel.setText("Senha inválida");
                 WarnningLabel.setVisible(true);
             }
@@ -77,10 +85,7 @@ public class LoginController implements Initializable {
         
             
            
-        //create a new scene with root and set the stage
-         Scene scene = new Scene(root);
-         stage.setScene(scene);
-         stage.show();
+        
     }
 
     /**
