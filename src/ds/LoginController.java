@@ -33,8 +33,7 @@ public class LoginController implements Initializable {
     
     @FXML
     private Button LoginButton;
-    @FXML
-    private Button btn2;
+    
     @FXML
     private TextField CPFTextField;
     @FXML
@@ -49,9 +48,8 @@ public class LoginController implements Initializable {
         
         
         //load up OTHER FXML document
-        //if(model.System.login(CPFTextField.getText(), PasswordTextField.getText())==Utils.REQUEST_OK){
-        if(CPFTextField.getText().equals("019") && PasswordTextField.getText().equals("123")){
-            
+        if(model.System.login(CPFTextField.getText(), PasswordTextField.getText())==Utils.REQUEST_OK){
+        //if(CPFTextField.getText().equals("01939512077") && PasswordTextField.getText().equals("kellerson123")){
             Stage stage; 
             Parent root = null;
 
@@ -59,24 +57,22 @@ public class LoginController implements Initializable {
             stage=(Stage) LoginButton.getScene().getWindow();
             try {
                 root = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
-                
-                } catch (IOException ex) {
+            } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
             }
             //create a new scene with root and set the stage
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            
         }
         else{
-            //if(model.System.login(CPFTextField.getText(), PasswordTextField.getText())==Utils.NOT_FOUND_ERROR){
-            if(CPFTextField.getText().equals("019")){
-                WarnningLabel.setText("Senha inválida");
+            if(model.System.login(CPFTextField.getText(), PasswordTextField.getText())==Utils.NOT_FOUND_ERROR){
+            //if(CPFTextField.getText().equals("01939512077")){
+                WarnningLabel.setText("CPF inválida");
                 WarnningLabel.setVisible(true);
             }
             else{
-                WarnningLabel.setText("CPF inválido");
+                WarnningLabel.setText("Senha inválido");
                 WarnningLabel.setVisible(true);
             }
         }
