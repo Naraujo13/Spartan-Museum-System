@@ -548,7 +548,11 @@ public final class System {
             return Utils.PERMISSION_ERROR;
 
         //Verifica se coleção existe e insere item
-        Collection collection = museum.getCollectionByName(collectionName).get(0);
+        ArrayList<Collection> collections = museum.getCollectionByName(collectionName);
+        if (collections.isEmpty())
+            return Utils.NOT_FOUND_ERROR;
+        
+        Collection collection = collections.get(0);
         if (collection == null)
             return Utils.NOT_FOUND_ERROR;
 
