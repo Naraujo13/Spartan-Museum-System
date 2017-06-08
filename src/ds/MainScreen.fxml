@@ -17,7 +17,7 @@
     <children>
       <ScrollPane id="ScrollPaneCollections" layoutX="7.0" layoutY="97.0" prefHeight="323.0" prefWidth="200.0">
          <content>
-            <ListView fx:id="ListViewCollections" prefHeight="325.0" prefWidth="179.0" />
+            <ListView fx:id="ListViewCollections"  prefHeight="325.0" prefWidth="179.0" />
          </content>
       </ScrollPane>
       <Pane id="SuperiorPane" layoutX="1.0" prefHeight="60.0" prefWidth="637.0">
