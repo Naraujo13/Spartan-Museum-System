@@ -76,6 +76,13 @@ public class MainScreenController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        if(MainScreen.getChildren().size() > 7)
+            MainScreen.getChildren().remove(MainScreen.getChildren().size()-1);
+        try {
+            MainScreen.getChildren().add(FXMLLoader.load(getClass().getResource("MuseumPane.fxml")));
+        } catch (IOException ex) {
+            Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ObservableList elements = FXCollections.observableArrayList();
         ArrayList<model.Collection> collections = new ArrayList<>(model.System.getMuseum().getCollectionsTreeMap().values());
         for(model.Collection collection : collections){
@@ -97,7 +104,7 @@ public class MainScreenController implements Initializable {
                 Pane p = fxmlLoader.load(getClass().getResource("SearchResultsPane.fxml").openStream());
                 MainScreen.getChildren().add(p);
                 SearchResultsPaneController controller = (SearchResultsPaneController) fxmlLoader.getController();
-                controller.setCollection(selectedCollection.get(0));
+                controller.showCollection(selectedCollection.get(0));
                 
             } catch (IOException ex) {
                 Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);

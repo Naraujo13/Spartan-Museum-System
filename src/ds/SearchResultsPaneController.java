@@ -38,7 +38,7 @@ public class SearchResultsPaneController implements Initializable {
         
     }
     @FXML
-    public void setCollection(model.Collection collection){
+    public void showCollection(model.Collection collection){
         this.collection=collection;
         
        System.out.println("Setei " + collection.getName());
