@@ -59,9 +59,6 @@ public class MainScreenController implements Initializable {
     private RadioButton SearchByStatus;
     
     
-    //@FXML public void handleMouseClick(MouseEvent arg0) {
-    //System.out.println("clicked on " + ListViewCollections.getSelectionModel().getSelectedItem());
-//}
     
     @FXML
     private void handleLogoutAction(ActionEvent event) {
