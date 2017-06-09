@@ -83,8 +83,7 @@ public class SearchResultsPaneController implements Initializable {
             for(model.Item item : itens){
                 if(item!=null)
                     elements.add(item.getID() + " - " + item.getName() + " - " + item.getStatus());
-                else
-                    System.out.println("ERA NULL");
+                
             }
         }
         if(itens.size()==0){
@@ -102,17 +101,24 @@ public class SearchResultsPaneController implements Initializable {
     
     @FXML
     public void showNameSearch(String search){
-        this.collection=collection;
-        
-       System.out.println("Setei " + collection.getName());
-       ObservableList elements = FXCollections.observableArrayList();
-       ArrayList<model.Item> itens = new ArrayList<>(collection.getItems().values());
-        
-        for(model.Item item : itens){
-        elements.add(item.getID()+ " - " + item.getName());
+        ArrayList<model.Item> itens = model.System.searchItemByName(search);
+        ObservableList elements = FXCollections.observableArrayList();
+        if(itens!=null){
+            for(model.Item item : itens){
+                if(item!=null)
+                    elements.add(item.getID() + " - " + item.getName() + " - " + item.getStatus());
+            }
         }
+        if(itens.size()==0){
+            elements.add("Nenhuma peça encontrada para este nome...");
+        }
+        else{
+            //código para ouvir o clique em alguma peça
+        }
+        
+        
         SearchResultsListView.setItems(elements);
-       MuseumNameLabel.setText("Obras Coleção " + collection.getName());
+        MuseumNameLabel.setText("Peças: ");
        
     }
     
