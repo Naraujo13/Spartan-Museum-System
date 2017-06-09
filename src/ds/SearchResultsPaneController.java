@@ -195,7 +195,40 @@ public class SearchResultsPaneController implements Initializable {
             elements.add("Nenhuma peça encontrada para este nome...");
         }
         else{
-            //código para ouvir o clique em alguma peça
+            SearchResultsListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                System.out.println("ListView selection changed from oldValue = " 
+                    + oldValue + " to newValue = " + newValue);
+                model.Item itemClicked=null;
+                for(model.Item item : itens){
+                    if(newValue.equals(item.getID() + " - " + item.getName() + " - " + item.getStatus())){
+                        itemClicked=item;
+                    }
+                }
+
+                if(SearchResultsPane.getChildren().size() > 7)
+                    SearchResultsPane.getChildren().remove(SearchResultsPane.getChildren().size()-1);
+
+                try {
+
+                   // Pane p2 = fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Item.fxml"));
+                    //fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
+                    ItemController itemController = new ItemController();
+                    fxmlLoader.setController(itemController);
+
+                    Parent root1 = (Parent) fxmlLoader.load();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root1));  
+                    stage.show();
+                    itemController.showItem(itemClicked);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            });
         }
         
         
