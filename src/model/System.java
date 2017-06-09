@@ -751,7 +751,8 @@ public final class System {
         ArrayList<Item> results = new ArrayList<>();
 
         for (Collection collection : museum.getCollectionsTreeMap().values()){
-            results.add(collection.getItemsByID(ID));
+            if(collection.getItemsByID(ID)!=null)
+                results.add(collection.getItemsByID(ID));
         }
 
         return results;

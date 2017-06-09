@@ -102,7 +102,7 @@ public class MainScreenController implements Initializable {
             }
            
             if(SearchByID.isSelected()){
-                //controller.showIDSearch(SearchArea.getText());
+                controller.showIDSearch(SearchArea.getText());
                 
             }
             if(SearchByName.isSelected()){
