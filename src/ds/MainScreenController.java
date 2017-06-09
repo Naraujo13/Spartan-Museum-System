@@ -114,8 +114,7 @@ public class MainScreenController implements Initializable {
                 
             }
             if(SearchByStatus.isSelected()){
-                System.out.println("Pesquisando por coleção6");
-                //controller.showStatusSearch(SearchArea.getText());
+                controller.showStatusSearch(SearchArea.getText());
             }
     }
     

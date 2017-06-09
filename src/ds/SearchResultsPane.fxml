@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="SearchResultsPane" layoutX="235.0" layoutY="99.0" prefHeight="323.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ds.SearchResultsPaneController">
+<Pane fx:id="SearchResultsPane" layoutX="235.0" layoutY="99.0" prefHeight="323.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ds.SearchResultsPaneController">
     <children>
        <Label fx:id="MuseumNameLabel" layoutX="72.0" layoutY="14.0" text="Obras encontradas">
           <font>

@@ -9,24 +9,24 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="ItemPane" prefHeight="345.0" prefWidth="523.0" stylesheets="@background.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="ds.ItemController">
+<AnchorPane id="ItemPane" prefHeight="345.0" prefWidth="523.0" stylesheets="@background.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102" >
    <children>
-      <Label id="Item Name" layoutX="24.0" layoutY="26.0" text="Vaso azul">
+      <Label fx:id="ItemName" layoutX="24.0" layoutY="26.0" text="Vaso azul">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label id="ItemID" layoutX="24.0" layoutY="109.0" text="Código do item">
+      <Label fx:id="ItemID" layoutX="24.0" layoutY="109.0" text="Código do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label id="ItemYear" layoutX="24.0" layoutY="152.0" text="Ano do item">
+      <Label fx:id="ItemYear" layoutX="24.0" layoutY="152.0" text="Ano do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label id="ItemStatus" layoutX="24.0" layoutY="200.0" text="Status do item">
+      <Label fx:id="ItemStatus" layoutX="24.0" layoutY="200.0" text="Status do item">
          <font>
             <Font size="18.0" />
          </font>
