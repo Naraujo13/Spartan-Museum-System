@@ -74,21 +74,10 @@ public class SearchResultsPaneController implements Initializable {
                     itemClicked=item;
                 }
             }
-            //ArrayList<model.Collection> selectedCollection = new ArrayList<>(model.System.searchCollectionByName(newValue));
-            //System.out.println("Selecionado: " + selectedCollection.get(0).getName());
+          
             if(SearchResultsPane.getChildren().size() > 7)
                 SearchResultsPane.getChildren().remove(SearchResultsPane.getChildren().size()-1);
-            //SearchResultsPaneController controller;
-            
-            //Pane p = fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
-            //SearchResultsPane.getChildren().add(p);
-            //SearchResultsPaneController controller = (SearchResultsPaneController) fxmlLoader.getController();
-            //controller.showCollection(selectedCollection.get(0));
-            //Stage stage;
-            Parent root = null;
-            //get reference to the button's stage
-            //stage=(Stage) LoginButton.getScene().getWindow();
-            
+
             try {
                 
                // Pane p2 = fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
@@ -96,27 +85,16 @@ public class SearchResultsPaneController implements Initializable {
                 //fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
                 ItemController itemController = new ItemController();
                 fxmlLoader.setController(itemController);
-                
-                //fxmlLoader.setRoot(itemController);
-                //itemController = (ItemController) fxmlLoader.getController();
-                
+
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root1));  
                 stage.show();
                 itemController.showItem(itemClicked);
-                //root = FXMLLoader.load(getClass().getResource("Item.fxml"));
-              
-
-                
+  
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            //create a new scene with root and set the stage
-            //Scene scene = new Scene(root);
-            //stage.setScene(scene);
-            //stage.show();
 
         }
         });
@@ -161,7 +139,40 @@ public class SearchResultsPaneController implements Initializable {
             elements.add("Nenhuma peça encontrada para este ID...");
         }
         else{
-            //código para ouvir o clique em alguma peça
+            SearchResultsListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                System.out.println("ListView selection changed from oldValue = " 
+                    + oldValue + " to newValue = " + newValue);
+                model.Item itemClicked=null;
+                for(model.Item item : itens){
+                    if(newValue.equals(item.getID() + " - " + item.getName() + " - " + item.getStatus())){
+                        itemClicked=item;
+                    }
+                }
+
+                if(SearchResultsPane.getChildren().size() > 7)
+                    SearchResultsPane.getChildren().remove(SearchResultsPane.getChildren().size()-1);
+
+                try {
+
+                   // Pane p2 = fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Item.fxml"));
+                    //fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
+                    ItemController itemController = new ItemController();
+                    fxmlLoader.setController(itemController);
+
+                    Parent root1 = (Parent) fxmlLoader.load();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root1));  
+                    stage.show();
+                    itemController.showItem(itemClicked);
+
+                } catch (IOException ex) {
+                    Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            });
         }
         
         
