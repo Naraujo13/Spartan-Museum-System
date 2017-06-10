@@ -29,6 +29,7 @@ import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Item;
 
 /**
  * FXML Controller class
@@ -89,69 +90,32 @@ public class AddItemController implements Initializable {
         SaveItem.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-               System.out.println("hello there,  you clicked me");
-               if(!ItemName.getText().equals("")){
-                   item.setName(ItemName.getText());
-               }
-               if(!ItemID.getText().equals("")){
-                   //item.setID(ItemID.getText());
-               }
-               if(!ItemYear.getText().equals("")){
-                   item.setYear(Integer.parseInt(ItemYear.getText()));
-               }
+                
+               model.System.addItem(
+                model.System.getMuseum().getMuseumCode(),
+                "Século XXI",
+                "PS99",
+                2099,
+                "Museu do Videogame de Roraima",
+                "Armazém 51",
+                2,
+                20,
+                40,
+                15,
+                new Date(java.lang.System.currentTimeMillis())
+        );
+               model.System.addItem(model.System.getMuseum().getMuseumCode(), (String) Collections.getValue(),
+                       ItemName.getText(),
+                       Integer.parseInt(ItemYear.getText()),
+                       "Falta parametro de origem",
+                       "Falta parametro de destino",
+                       Float.parseFloat(Deph.getText()),
+                       Float.parseFloat(Itemthickness.getText()),
+                       Float.parseFloat(ItemWidth.getText()),
+                       Float.parseFloat(ItemHeight.getText()),
+                       new Date(java.lang.System.currentTimeMillis()));
                
-               if(!ItemStatus.getText().equals("")){
-                   //item.setStatus(ItemStatus.getText()));
-               }
                
-               if(!ItemHeight.getText().equals("")){
-                   item.setHeight(Float.parseFloat(ItemHeight.getText()));
-               }
-               
-               if(!ItemWidth.getText().equals("")){
-                   item.setWidth(Float.parseFloat(ItemWidth.getText()));
-               }
-               
-               if(!Itemthickness.getText().equals("")){
-                   item.setThickness(Float.parseFloat(Itemthickness.getText()));
-               }
-               
-               if(!ItemAuthor.getText().equals("")){
-                   item.setAuthor(ItemAuthor.getText());
-               }
-               
-               if(!ItemDate.getText().equals("")){
-                   SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-                    
-                   try {
-                       item.setAquisitionDate((Date) formato.parse(ItemDate.getText()));
-                   } catch (ParseException ex) {
-                       Logger.getLogger(EditItemController.class.getName()).log(Level.SEVERE, null, ex);
-                   }
-               }
-               
-               if(!ItemDescription.getText().equals("")){
-                   item.setDescription(ItemDescription.getText());
-               }
-               
-               if(!ItemInnerCircumference.getText().equals("")){
-                   item.setInnerCircumference(Float.parseFloat(ItemInnerCircumference.getText()));
-               }
-               
-               if(!ItemOutnerCircumference.getText().equals("")){
-                   item.setOuterCircumference(Float.parseFloat(ItemOutnerCircumference.getText()));
-               }
-               
-               if(!Deph.getText().equals("")){
-                   item.setDepth(Float.parseFloat(Deph.getText()));
-               }
-               
-               if(Collections.getValue()!=null){
-                   //ArrayList<model.Collection> collectionsName = new ArrayList<>(model.System.searchCollectionByName(Collections.getValue()).values());
-                   System.out.println("COLEÇÃO ESCOLHIDA: " + Collections.getValue());
-
-                   //item.setCollection(Collections.getValue());
-               }
             }
         }
         );
