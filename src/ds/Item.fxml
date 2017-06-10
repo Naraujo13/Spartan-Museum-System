@@ -42,57 +42,57 @@
          </effect>
       </ImageView>
       <Separator layoutX="14.0" layoutY="69.0" prefHeight="3.0" prefWidth="309.0" />
-      <Label layoutX="24.0" layoutY="117.0" text="Coleção do item">
+      <Label fx:id="CollectionItem" layoutX="24.0" layoutY="117.0" text="Coleção do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="266.0" text="Altura do item">
+      <Label fx:id="HeightItem" layoutX="24.0" layoutY="266.0" text="Altura do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="303.0" text="Largura do item">
+      <Label fx:id="WidthItem" layoutX="24.0" layoutY="303.0" text="Largura do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="339.0" text="Peso do item">
+      <Label fx:id="WeightItem" layoutX="24.0" layoutY="339.0" text="Peso do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="373.0" text="Expessura do item">
+      <Label fx:id="ThicknessItem" layoutX="24.0" layoutY="373.0" text="Espessura do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="409.0" text="Autor do item">
+      <Label fx:id="AuthorItem" layoutX="24.0" layoutY="409.0" text="Autor do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="447.0" text="Data de aquisição do item">
+      <Label fx:id="DateItem" layoutX="24.0" layoutY="447.0" text="Data de aquisição do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="482.0" text="Descrição do item">
+      <Label fx:id="ItemDescription" layoutX="24.0" layoutY="482.0" text="Descrição do item">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="516.0" text="Cirunferencia interna">
+      <Label fx:id="InnerCircumference" layoutX="24.0" layoutY="516.0" text="Cirunferencia interna">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="550.0" text="Circunferencia externa">
+      <Label fx:id="OuterCircumference" layoutX="24.0" layoutY="550.0" text="Circunferencia externa">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="587.0" text="Profundidade">
+      <Label fx:id="Depth" layoutX="24.0" layoutY="587.0" text="Profundidade">
          <font>
             <Font size="18.0" />
          </font>

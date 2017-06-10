@@ -42,6 +42,39 @@ public class ItemController implements Initializable {
     
     @FXML
     private Button ViewMovimentation;
+    
+    @FXML
+    private Label CollectionItem;
+    
+    @FXML
+    private Label HeightItem;
+    
+    @FXML
+    private Label WidthItem;
+    
+    @FXML
+    private Label WeightItem;
+    
+    @FXML
+    private Label ThicknessItem;
+    
+    @FXML
+    private Label AuthorItem;
+    
+    @FXML
+    private Label DateItem;
+    
+    @FXML
+    private Label ItemDescription;
+    
+    @FXML
+    private Label InnerCircumference;
+    
+    @FXML
+    private Label OuterCircumference;
+    
+    @FXML
+    private Label Depth;
 
 
     /**
@@ -70,10 +103,20 @@ public class ItemController implements Initializable {
                 System.out.println("O LABEL É NULL");
             }
             else{
-                ItemName.setText(item.getName());
-                ItemID.setText(item.getID());
-                ItemYear.setText(""+item.getYear());
-                ItemStatus.setText(item.getStatus());
+                ItemName.setText( item.getName());
+                ItemID.setText("ID: " +item.getID());
+                ItemYear.setText("Ano: "+item.getYear());
+                ItemStatus.setText("Status: " + item.getStatus());
+                //CollectionItem.setText(item.getCollection());
+                HeightItem.setText("Altura: "+item.getHeight());
+                WidthItem.setText("Largura: "+item.getWidth());
+                ThicknessItem.setText("Espessura: "+item.getThickness());
+                AuthorItem.setText("Autor: " + item.getAuthor());
+                DateItem.setText("Data de Aquisição: "+item.getAquisitionDate());
+                ItemDescription.setText("Descrição: " +item.getDescription());
+                InnerCircumference.setText("Circunferência interna: "+item.getInnerCircumference());
+                OuterCircumference.setText("Circunferência externa: "+item.getOuterCircumference());
+                Depth.setText("Profundidade: "+ item.getDepth());
                 
             }
             
