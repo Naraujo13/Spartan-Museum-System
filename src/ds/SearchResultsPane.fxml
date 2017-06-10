@@ -7,9 +7,9 @@
 
 <Pane fx:id="SearchResultsPane" layoutX="235.0" layoutY="99.0" prefHeight="323.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ds.SearchResultsPaneController">
     <children>
-       <Label fx:id="MuseumNameLabel" layoutX="72.0" layoutY="14.0" text="Obras encontradas">
+       <Label fx:id="MuseumNameLabel" alignment="CENTER" layoutX="8.0" prefHeight="72.0" prefWidth="387.0" text="Obras encontradas" textAlignment="CENTER" wrapText="true">
           <font>
-             <Font size="34.0" />
+             <Font size="21.0" />
           </font>
        </Label>
      <ListView fx:id="SearchResultsListView" layoutX="8.0" layoutY="76.0" prefHeight="238.0" prefWidth="387.0" />

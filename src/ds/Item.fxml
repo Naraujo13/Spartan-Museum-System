@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ItemPane" prefHeight="627.0" prefWidth="523.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane fx:id="ItemPane" prefHeight="627.0" prefWidth="523.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="ItemName" layoutX="24.0" layoutY="26.0" text="Vaso azul">
+      <Label fx:id="ItemName" layoutX="14.0" layoutY="5.0" prefHeight="64.0" prefWidth="309.0" text="Nome do item" wrapText="true">
          <font>
-            <Font size="30.0" />
+            <Font size="21.0" />
          </font>
       </Label>
       <Label fx:id="ItemID" layoutX="24.0" layoutY="152.0" text="Código do item">
