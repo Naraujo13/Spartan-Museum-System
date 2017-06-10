@@ -13,35 +13,21 @@
 
 <AnchorPane id="AnchorPane" prefHeight="477.0" prefWidth="355.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ds.EditUserController">
    <children>
-      <Label id="AddUser" layoutX="72.0" layoutY="14.0" text="Adicionar Usuário">
+      <Label id="AddUser" layoutX="72.0" layoutY="14.0" text="Editar Usuário">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <ButtonBar id="UserTypeButtonBar" layoutX="14.0" layoutY="105.0" prefHeight="17.0" prefWidth="341.0">
-         <buttons>
-            <RadioButton id="ResearcherButton" mnemonicParsing="false" text="Pesquisador">
-               <toggleGroup>
-                  <ToggleGroup fx:id="UserType" />
-               </toggleGroup>
-            </RadioButton>
-            <RadioButton id="TecnicianButton" mnemonicParsing="false" text="Técnico" toggleGroup="$UserType" />
-            <RadioButton id="DirectorButton" minWidth="22.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="172.0" text="Diretor" toggleGroup="$UserType" />
-         </buttons>
-      </ButtonBar>
+      
       <Separator id="Separator" layoutX="24.0" layoutY="52.0" prefHeight="3.0" prefWidth="307.0" />
-      <Label id="UserType" layoutX="115.0" layoutY="65.0" text="Tipo do usuário">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField id="Name" layoutX="24.0" layoutY="151.0" prefHeight="25.0" prefWidth="307.0" promptText="Nome" />
-      <TextField id="CPF" layoutX="24.0" layoutY="188.0" prefHeight="25.0" prefWidth="307.0" promptText="CPF" />
-      <TextField id="Password" layoutX="24.0" layoutY="228.0" prefHeight="25.0" prefWidth="307.0" promptText="Senha" />
-      <TextField id="Email" layoutX="24.0" layoutY="267.0" prefHeight="25.0" prefWidth="307.0" promptText="Email" />
-      <TextField id="Phone" layoutX="24.0" layoutY="306.0" prefHeight="25.0" prefWidth="307.0" promptText="Telefone" />
-      <TextField id="universityRegistration" layoutX="24.0" layoutY="345.0" prefHeight="25.0" prefWidth="307.0" promptText="Matrícula" />
-      <TextField id="MuseumID" layoutX="24.0" layoutY="384.0" prefHeight="25.0" prefWidth="307.0" promptText="ID do museu dirigido" />
-      <Button id="AddUserButton" layoutX="24.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="307.0" text="Cadastar" />
+      
+      <TextField fx:id="Name" layoutX="24.0" layoutY="151.0" prefHeight="25.0" prefWidth="307.0" promptText="Nome" />
+      <TextField fx:id="CPF" layoutX="24.0" layoutY="188.0" prefHeight="25.0" prefWidth="307.0" promptText="CPF" />
+      <TextField fx:id="Password" layoutX="24.0" layoutY="228.0" prefHeight="25.0" prefWidth="307.0" promptText="Senha" />
+      <TextField fx:id="Email" layoutX="24.0" layoutY="267.0" prefHeight="25.0" prefWidth="307.0" promptText="Email" />
+      <TextField fx:id="Phone" layoutX="24.0" layoutY="306.0" prefHeight="25.0" prefWidth="307.0" promptText="Telefone" />
+      <TextField fx:id="UniversityRegistration" layoutX="24.0" layoutY="345.0" prefHeight="25.0" prefWidth="307.0" promptText="Matrícula" />
+      <TextField fx:id="MuseumID" layoutX="24.0" layoutY="384.0" prefHeight="25.0" prefWidth="307.0" promptText="ID do museu dirigido" />
+      <Button fx:id="AddUserButton" layoutX="24.0" layoutY="428.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="307.0" text="Recadastar" />
    </children>
 </AnchorPane>

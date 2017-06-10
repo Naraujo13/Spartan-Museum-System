@@ -105,7 +105,7 @@ public class MainScreenController implements Initializable {
     @FXML
     private void handleEditAccountAction(ActionEvent event){
         try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CreateUser.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EditUser.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root1));  
