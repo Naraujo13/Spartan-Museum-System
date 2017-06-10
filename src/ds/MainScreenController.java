@@ -94,6 +94,12 @@ public class MainScreenController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        ObservableList elements = FXCollections.observableArrayList();
+        ArrayList<model.Collection> collections = new ArrayList<>(model.System.getMuseum().getCollectionsTreeMap().values());
+        for(model.Collection collection : collections){
+            elements.add(collection.getName());
+        }
+        ListViewCollections.setItems(elements);
     }
     
     @FXML
