@@ -10,9 +10,12 @@ import java.net.URL;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -21,6 +24,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -61,15 +66,26 @@ public class EditItemController implements Initializable {
     @FXML
     private  TextField ItemOutnerCircumference;
     @FXML
+    private TextField Deph;
+    @FXML
     private Button SaveItem;
     @FXML
     private AnchorPane EditItemPane;
+    @FXML
+    private ChoiceBox Collections;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        ArrayList<String> collections;
+        collections = new ArrayList<>(model.System.getMuseum().getCollectionsTreeMap().keySet());
+        ObservableList<String> list = FXCollections.observableArrayList(collections);
+        Collections.setItems(list);
+        
+        
         SaveItem.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -124,6 +140,17 @@ public class EditItemController implements Initializable {
                
                if(!ItemOutnerCircumference.getText().equals("")){
                    item.setOuterCircumference(Float.parseFloat(ItemOutnerCircumference.getText()));
+               }
+               
+               if(!Deph.getText().equals("")){
+                   item.setDepth(Float.parseFloat(Deph.getText()));
+               }
+               
+               if(Collections.getValue()!=null){
+                   //ArrayList<model.Collection> collectionsName = new ArrayList<>(model.System.searchCollectionByName(Collections.getValue()).values());
+                   System.out.println("COLEÇÃO ESCOLHIDA: " + Collections.getValue());
+
+                   //item.setCollection(model.System.searchCollectionByName(Collections.getValue()))
                }
             }
         }
