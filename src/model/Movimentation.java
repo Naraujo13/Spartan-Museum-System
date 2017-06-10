@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * Created by naraujo on 29/05/17.
  */
-abstract class Movimentation implements Comparable<Movimentation>{
+public abstract class Movimentation implements Comparable<Movimentation>{
     private String origin;
     private Date timestamp;
     private String cpfAutor;

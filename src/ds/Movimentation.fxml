@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="MovimentationsPane" prefHeight="345.0" prefWidth="523.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ds.MovimentationController">
+<AnchorPane id="MovimentationsPane" prefHeight="345.0" prefWidth="523.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label id="MovimentationsLabel" layoutX="101.0" layoutY="28.0" text="Movimentações da obra">
          <font>
@@ -16,7 +16,7 @@
       </Label>
       <ScrollPane id="AccordionScrollPane" layoutX="14.0" layoutY="73.0" prefHeight="227.0" prefWidth="501.0">
          <content>
-            <Accordion id="Accordion" prefHeight="225.0" prefWidth="499.0" />
+            <Accordion fx:id="Accordion" prefHeight="225.0" prefWidth="499.0" />
          </content>
       </ScrollPane>
       <Button id="AddMovimentationPane" layoutX="361.0" layoutY="306.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Adicionar movimentação" />

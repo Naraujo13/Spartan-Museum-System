@@ -15,8 +15,12 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import model.Item;
 
 /**
@@ -27,6 +31,9 @@ import model.Item;
 public class ItemController implements Initializable {
     
     model.Item item;
+    
+    @FXML
+    private AnchorPane ItemPane;
     
     @FXML
     private Label ItemName;
@@ -86,7 +93,25 @@ public class ItemController implements Initializable {
         ViewMovimentation.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-               System.out.println("hello there,  you clicked me"); 
+               System.out.println("hello there,  you clicked me");
+               
+                try {
+                
+               // Pane p2 = fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Movimentation.fxml"));
+                //fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
+                MovimentationController movimentationController = new MovimentationController();
+                fxmlLoader.setController(movimentationController);
+
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));  
+                stage.show();
+                movimentationController.showMovimentations(item);
+  
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             }
         }
         );
