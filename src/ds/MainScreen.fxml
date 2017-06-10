@@ -40,7 +40,7 @@
                   <Button id="AddCollectionButton" onAction="#handleAddCollectionAction" mnemonicParsing="false" prefWidth="111.87109375" text="Adcionar Coleção" />
                   <Button id="AddItemButton" onAction="#handleAddItemAction" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Obra" />
                   <Button id="AddUserButton" onAction="#handleAddUserAction" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Usuário" />
-                  <Button id="LogoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="25.0" prefWidth="111.87109375" text="Logout" />
+                  <Button fx:id="LogoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="25.0" prefWidth="111.87109375" text="Logout" />
                </buttons>
             </ButtonBar>
             <Separator id="InferiorSeparator" layoutX="231.0" layoutY="-1.0" prefHeight="3.0" prefWidth="400.0" />

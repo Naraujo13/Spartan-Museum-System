@@ -23,6 +23,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
@@ -61,12 +62,27 @@ public class MainScreenController implements Initializable {
     @FXML
     private RadioButton SearchByStatus;
     
+    @FXML
+    private Button LogoutButton;
+    
     
     
     @FXML
     private void handleLogoutAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+        Stage stage; 
+        Parent root = null;
+
+        //get reference to the button's stage         
+        stage=(Stage) LogoutButton.getScene().getWindow();
+        try {
+            root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //create a new scene with root and set the stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
     @FXML
