@@ -82,6 +82,9 @@ public class ItemController implements Initializable {
     
     @FXML
     private Label Depth;
+    
+    @FXML
+    private Button EditItem;
 
 
     /**
@@ -108,6 +111,32 @@ public class ItemController implements Initializable {
                 stage.setScene(new Scene(root1));  
                 stage.show();
                 movimentationController.showMovimentations(item);
+  
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+        }
+        );
+        
+        EditItem.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+               System.out.println("hello there,  you clicked me");
+               
+                try {
+                
+               // Pane p2 = fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EditItem.fxml"));
+                //fxmlLoader.load(getClass().getResource("Item.fxml").openStream());
+                EditItemController editItemController = new EditItemController();
+                fxmlLoader.setController(editItemController);
+
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));  
+                stage.show();
+                editItemController.setItem(item);
   
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);

@@ -154,7 +154,7 @@ public class Item implements Comparable<Item>{
         return status;
     }
 
-    private void setStatus(String status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

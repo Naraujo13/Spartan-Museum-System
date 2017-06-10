@@ -31,7 +31,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button id="EditItem" layoutX="348.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Editar obra" />
+      <Button fx:id="EditItem" layoutX="348.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Editar obra" />
       <Button fx:id="ViewMovimentation" layoutX="348.0" layoutY="213.0" mnemonicParsing="false" text="Visualizar movimentações" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="349.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
