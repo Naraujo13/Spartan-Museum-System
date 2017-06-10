@@ -35,7 +35,7 @@ import javafx.stage.Stage;
  *
  * @author Usuário
  */
-public class EditItemController implements Initializable {
+public class AddItemController implements Initializable {
         
     model.Item item;
     
@@ -70,7 +70,7 @@ public class EditItemController implements Initializable {
     @FXML
     private Button SaveItem;
     @FXML
-    private AnchorPane EditItemPane;
+    private AnchorPane AddItemPane;
     @FXML
     private ChoiceBox Collections;
 

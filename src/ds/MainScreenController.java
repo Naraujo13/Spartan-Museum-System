@@ -21,12 +21,15 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  *
@@ -75,6 +78,62 @@ public class MainScreenController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    @FXML
+    private void handleEditAccountAction(ActionEvent event){
+        try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CreateUser.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));  
+                stage.show();
+  
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
+    @FXML
+    private void handleAddCollectionAction(ActionEvent event){
+        try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddCollection.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));  
+                stage.show();
+  
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
+    @FXML
+    private void handleAddItemAction(ActionEvent event){
+        try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddItem.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));  
+                stage.show();
+  
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
+    @FXML
+    private void handleAddUserAction(ActionEvent event){
+        try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CreateUser.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));  
+                stage.show();
+  
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
     
     @FXML

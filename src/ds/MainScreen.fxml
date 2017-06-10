@@ -36,10 +36,10 @@
          <children>
             <ButtonBar id="InferiorButtonBar" layoutY="18.0">
                <buttons>
-                  <Button id="EditAccountButton" mnemonicParsing="false" prefWidth="111.87109375" text="Editar Cadastro" />
-                  <Button id="AddCollectionButton" mnemonicParsing="false" prefWidth="111.87109375" text="Adcionar Coleção" />
-                  <Button id="AddItemButton" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Obra" />
-                  <Button id="AddUserButton" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Usuário" />
+                  <Button id="EditAccountButton" onAction="#handleEditAccountAction" mnemonicParsing="false" prefWidth="111.87109375" text="Editar Cadastro" />
+                  <Button id="AddCollectionButton" onAction="#handleAddCollectionAction" mnemonicParsing="false" prefWidth="111.87109375" text="Adcionar Coleção" />
+                  <Button id="AddItemButton" onAction="#handleAddItemAction" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Obra" />
+                  <Button id="AddUserButton" onAction="#handleAddUserAction" mnemonicParsing="false" prefWidth="111.87109375" text="Adicionar Usuário" />
                   <Button id="LogoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="25.0" prefWidth="111.87109375" text="Logout" />
                </buttons>
             </ButtonBar>
