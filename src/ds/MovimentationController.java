@@ -24,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.PutToExpositionMovimentation;
 
 /**
  * FXML Controller class
@@ -76,15 +77,50 @@ public class MovimentationController implements Initializable {
     @FXML
     public void showMovimentations(model.Item item){
         this.item = item;
-        AnchorPane newPanelContent = new AnchorPane();
+        
         ArrayList<model.Movimentation> movimentations = new ArrayList<>(item.getMovimentationsTreeMap().values());
         for(model.Movimentation movimentation : movimentations){
-            newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + " Responsável: " + movimentation.getCpfAutor()));
+            if(movimentation instanceof model.PutToExpositionMovimentation){
+                AnchorPane newPanelContent = new AnchorPane();
+                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + "\n" + "Destino: "+((PutToExpositionMovimentation) movimentation).getDestination() + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor()));
+                TitledPane pane = new TitledPane(utils.Utils.AT_EXPOSITION+" - " + movimentation.getTimestamp(), newPanelContent);
+                Accordion.getPanes().add(pane);
+            }
+            if(movimentation instanceof model.DischargeMovimentation){
+                AnchorPane newPanelContent = new AnchorPane();
+                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin()  + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor()));
+                TitledPane pane = new TitledPane(utils.Utils.DISCHARGED+" - " + movimentation.getTimestamp(), newPanelContent);
+                Accordion.getPanes().add(pane);
+            }
+            if(movimentation instanceof model.PutToStorageMovimentation){
+                AnchorPane newPanelContent = new AnchorPane();
+                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + "\n" + "Destino: "+((model.PutToStorageMovimentation) movimentation).getDestination() + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor()));
+                TitledPane pane = new TitledPane(utils.Utils.AT_STORAGE+" - " + movimentation.getTimestamp(), newPanelContent);
+                Accordion.getPanes().add(pane);
+            }
+            if(movimentation instanceof model.AdmissionMovimentation){
+                AnchorPane newPanelContent = new AnchorPane();
+                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + "\n" + "Destino: "+((model.AdmissionMovimentation) movimentation).getDestination() + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor()));
+                TitledPane pane = new TitledPane("Entrada"+" - " + movimentation.getTimestamp(), newPanelContent);
+                Accordion.getPanes().add(pane);
+            }
+            if(movimentation instanceof model.SendToLoanMovimentation){
+                AnchorPane newPanelContent = new AnchorPane();
+                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + "\n" + "Destino: "+((model.SendToLoanMovimentation) movimentation).getDestination() + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor()));
+                TitledPane pane = new TitledPane(utils.Utils.AT_LOAN+" - " + movimentation.getTimestamp(), newPanelContent);
+                Accordion.getPanes().add(pane);
+            }
+            if(movimentation instanceof model.SendToRestorationMovimentation){
+                AnchorPane newPanelContent = new AnchorPane();
+                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + "\n" + "Destino: "+((model.SendToRestorationMovimentation) movimentation).getDestination() + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor()));
+                TitledPane pane = new TitledPane(utils.Utils.AT_RESTAURATION+" - " + movimentation.getTimestamp(), newPanelContent);
+                Accordion.getPanes().add(pane);
+            }
+            
+            
         }
         
-        TitledPane pane = new TitledPane("Todas", newPanelContent);
-        //System.out.println(Accordion);
-        Accordion.getPanes().add(pane);
+        
     }
     
 }

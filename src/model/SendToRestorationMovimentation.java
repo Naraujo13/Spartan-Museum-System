@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * Created by naraujo on 29/05/17.
  */
-class SendToRestorationMovimentation extends MovimentationTo {
+public class SendToRestorationMovimentation extends MovimentationTo {
 
     private RestorationReport report;
 

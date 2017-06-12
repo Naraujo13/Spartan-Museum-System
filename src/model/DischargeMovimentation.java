@@ -9,4 +9,6 @@ public class DischargeMovimentation extends Movimentation {
     DischargeMovimentation(Date timestamp, String origin, String cpfAutor) {
         super(timestamp, origin, cpfAutor);
     }
+
+   
 }

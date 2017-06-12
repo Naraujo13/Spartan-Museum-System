@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * Created by naraujo on 29/05/17.
  */
-class SendToLoanMovimentation extends MovimentationTo {
+public class SendToLoanMovimentation extends MovimentationTo {
     private Date dateOfReturn;
 
     SendToLoanMovimentation(Date timestamp, Date dateOfReturn, String origin, String destination, String cpfAutor) {
