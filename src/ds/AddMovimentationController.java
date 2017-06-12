@@ -55,11 +55,11 @@ public class AddMovimentationController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         ArrayList<String> collections;
         collections = new ArrayList<>();
-        collections.add("Empréstimo");
-        collections.add("Restauração");
-        collections.add("Armazenamento");
-        collections.add("Baixa");
-        collections.add("Exposição");
+        collections.add(utils.Utils.AT_LOAN);
+        collections.add(utils.Utils.AT_RESTAURATION);
+        collections.add(utils.Utils.AT_STORAGE);
+        collections.add(utils.Utils.DISCHARGED);
+        collections.add(utils.Utils.AT_EXPOSITION);
         ObservableList<String> list = FXCollections.observableArrayList(collections);
         MovimentationTypeChoiceBox.setItems(list);
         
@@ -67,20 +67,21 @@ public class AddMovimentationController implements Initializable {
         AddMovimentationButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    if(MovimentationTypeChoiceBox.getValue().equals("Exposição")){                      
-                        //model.System.exposeItem("Picasso", item.getID(), null, Destination.getText());
+                    if(MovimentationTypeChoiceBox.getValue().equals(utils.Utils.AT_EXPOSITION)){                      
+                        model.System.exposeItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
-                    if(MovimentationTypeChoiceBox.getValue().equals("Empréstimo")){                      
-                        //model.System.loanItem("Picasso", item.getID(), null, null, Destination.getText());
+                    if(MovimentationTypeChoiceBox.getValue().equals(utils.Utils.AT_LOAN)){                      
+                        model.System.loanItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
+                       
                     }
-                    if(MovimentationTypeChoiceBox.getValue().equals("Restauração")){                                        
-                        //model.System.restoreItem("Picasso", item.getID(), null, Destination.getText());
+                    if(MovimentationTypeChoiceBox.getValue().equals(utils.Utils.AT_RESTAURATION)){                                        
+                        model.System.restoreItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
-                    if(MovimentationTypeChoiceBox.getValue().equals("Armazenamento")){                                        
-                        //model.System.storeItem("Picasso", item.getID(), null, Destination.getText());
+                    if(MovimentationTypeChoiceBox.getValue().equals(utils.Utils.AT_STORAGE)){                                        
+                        model.System.storeItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
-                    if(MovimentationTypeChoiceBox.getValue().equals("Baixa")){                                        
-                        //model.System.dischargeItem("Picasso", item.getID(), null);
+                    if(MovimentationTypeChoiceBox.getValue().equals(utils.Utils.AT_EXPOSITION)){                                        
+                        model.System.dischargeItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()));
                     }
                 }
             }   
