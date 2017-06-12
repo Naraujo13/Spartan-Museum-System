@@ -68,7 +68,7 @@ public class LoginController implements Initializable {
         else{
             if(model.System.login(CPFTextField.getText(), PasswordTextField.getText())==Utils.NOT_FOUND_ERROR){
             //if(CPFTextField.getText().equals("01939512077")){
-                WarnningLabel.setText("CPF inválida");
+                WarnningLabel.setText("CPF inválido");
                 WarnningLabel.setVisible(true);
             }
             else{

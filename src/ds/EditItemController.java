@@ -93,16 +93,12 @@ public class EditItemController implements Initializable {
                if(!ItemName.getText().equals("")){
                    item.setName(ItemName.getText());
                }
-               if(!ItemID.getText().equals("")){
-                   //item.setID(ItemID.getText());
-               }
+               
                if(!ItemYear.getText().equals("")){
                    item.setYear(Integer.parseInt(ItemYear.getText()));
                }
                
-               if(!ItemStatus.getText().equals("")){
-                   //item.setStatus(ItemStatus.getText()));
-               }
+               
                
                if(!ItemHeight.getText().equals("")){
                    item.setHeight(Float.parseFloat(ItemHeight.getText()));
