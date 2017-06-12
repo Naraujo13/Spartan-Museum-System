@@ -25,14 +25,13 @@
       <TextField fx:id="ItemName" layoutX="24.0" layoutY="29.0" prefHeight="36.0" prefWidth="309.0" promptText="Nome da obra" />
       <TextField fx:id="ItemID" layoutX="24.0" layoutY="152.0" prefHeight="25.0" prefWidth="309.0" promptText="Código da obra" />
       <TextField fx:id="ItemYear" layoutX="24.0" layoutY="191.0" prefHeight="25.0" prefWidth="309.0" promptText="Ano da obra" />
-      <TextField fx:id="ItemStatus" layoutX="24.0" layoutY="225.0" prefHeight="25.0" prefWidth="309.0" promptText="Status da obra" />
-      <TextField fx:id="ItemHeight" layoutX="24.0" layoutY="266.0" prefHeight="25.0" prefWidth="309.0" promptText="Altura da obra" />
-      <TextField fx:id="ItemWidth" layoutX="24.0" layoutY="303.0" prefHeight="25.0" prefWidth="309.0" promptText="Largura da obra" />
-      <TextField fx:id="ItemWeight" layoutX="24.0" layoutY="339.0" prefHeight="25.0" prefWidth="309.0" promptText="Peso da obra" />
-      <TextField fx:id="Itemthickness" layoutX="24.0" layoutY="373.0" prefHeight="25.0" prefWidth="309.0" promptText="Espessura da obra" />
-      <TextField fx:id="ItemAuthor" layoutX="24.0" layoutY="409.0" prefHeight="25.0" prefWidth="309.0" promptText="Autor da obra" />
-      <TextField fx:id="ItemDate" layoutX="24.0" layoutY="447.0" prefHeight="25.0" prefWidth="309.0" promptText="Data de aquisição da obra" />
-      <TextField fx:id="ItemDescription" layoutX="24.0" layoutY="482.0" prefHeight="25.0" prefWidth="309.0" promptText="Descrição da obra" />
+      <TextField fx:id="ItemHeight" layoutX="24.0" layoutY="228.0" prefHeight="25.0" prefWidth="309.0" promptText="Altura da obra" />
+      <TextField fx:id="ItemWidth" layoutX="24.0" layoutY="269.0" prefHeight="25.0" prefWidth="309.0" promptText="Largura da obra" />
+      <TextField fx:id="ItemWeight" layoutX="24.0" layoutY="314.0" prefHeight="25.0" prefWidth="309.0" promptText="Peso da obra" />
+      <TextField fx:id="Itemthickness" layoutX="24.0" layoutY="354.0" prefHeight="25.0" prefWidth="309.0" promptText="Espessura da obra" />
+      <TextField fx:id="ItemAuthor" layoutX="24.0" layoutY="398.0" prefHeight="25.0" prefWidth="309.0" promptText="Autor da obra" />
+      <TextField fx:id="ItemDate" layoutX="24.0" layoutY="439.0" prefHeight="25.0" prefWidth="309.0" promptText="Data de aquisição da obra" />
+      <TextField fx:id="ItemDescription" layoutX="24.0" layoutY="479.0" prefHeight="25.0" prefWidth="309.0" promptText="Descrição da obra" />
       <TextField fx:id="ItemInnerCircumference" layoutX="24.0" layoutY="516.0" prefHeight="25.0" prefWidth="309.0" promptText="Circunferência interna da obra" />
       <TextField fx:id="ItemOutnerCircumference" layoutX="24.0" layoutY="550.0" prefHeight="25.0" prefWidth="309.0" promptText="Circunferência externa da bora" />
       <ChoiceBox fx:id="Collections" layoutX="24.0" layoutY="117.0" prefHeight="25.0" prefWidth="309.0" />
@@ -41,7 +40,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Separator  layoutX="24.0" layoutY="79.0" prefHeight="3.0" prefWidth="309.0" />
+      <Separator layoutX="24.0" layoutY="79.0" prefHeight="3.0" prefWidth="309.0" />
       <TextField fx:id="Deph" layoutX="24.0" layoutY="588.0" prefHeight="25.0" prefWidth="309.0" promptText="Profundidade da obra" />
       
    </children>

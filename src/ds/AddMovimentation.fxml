@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AddMovimentationPane" prefHeight="282.0" prefWidth="368.0" stylesheets="@background.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102" >
+<AnchorPane id="AddMovimentationPane" prefHeight="248.0" prefWidth="368.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label id="AddMovimentationLabel" layoutX="21.0" layoutY="14.0" prefHeight="45.0" prefWidth="331.0" text="Adicionar Movimentação">
          <font>
@@ -25,7 +24,6 @@
       </Label>
       <TextField fx:id="Origin" layoutX="15.0" layoutY="145.0" prefHeight="25.0" prefWidth="344.0" promptText="Origem" />
       <TextField fx:id="Destination" layoutX="14.0" layoutY="179.0" prefHeight="25.0" prefWidth="344.0" promptText="Destino" />
-      <TextField fx:id="AuthorCPF" layoutX="15.0" layoutY="211.0" prefHeight="25.0" prefWidth="344.0" promptText="CPF do autor" />
-      <Button fx:id="AddMovimentationButton" layoutX="14.0" layoutY="246.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="344.0" text="Adicionar" />
+      <Button fx:id="AddMovimentationButton" layoutX="12.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="344.0" text="Adicionar" />
    </children>
 </AnchorPane>
