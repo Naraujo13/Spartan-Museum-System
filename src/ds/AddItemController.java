@@ -74,6 +74,8 @@ public class AddItemController implements Initializable {
     private AnchorPane AddItemPane;
     @FXML
     private ChoiceBox Collections;
+    @FXML
+    private TextField ItemOrigin;
 
     /**
      * Initializes the controller class.
@@ -91,34 +93,25 @@ public class AddItemController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 
-               model.System.addItem(
-                model.System.getMuseum().getMuseumCode(),
-                "Século XXI",
-                "PS99",
-                2099,
-                "Museu do Videogame de Roraima",
-                "Armazém 51",
-                2,
-                20,
-                40,
-                15,
-                new Date(java.lang.System.currentTimeMillis())
-        );
+               
                model.System.addItem(model.System.getMuseum().getMuseumCode(), (String) Collections.getValue(),
                        ItemName.getText(),
                        Integer.parseInt(ItemYear.getText()),
-                       "Falta parametro de origem",
+                       ItemOrigin.getText(),
                        "Falta parametro de destino",
                        Float.parseFloat(Deph.getText()),
                        Float.parseFloat(Itemthickness.getText()),
                        Float.parseFloat(ItemWidth.getText()),
                        Float.parseFloat(ItemHeight.getText()),
                        new Date(java.lang.System.currentTimeMillis()));
-               
+                       Stage stage = (Stage) SaveItem.getScene().getWindow();
+                        stage.close();
                
             }
         }
+        
         );
+        
     }    
     
     @FXML

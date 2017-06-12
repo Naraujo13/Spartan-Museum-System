@@ -37,9 +37,9 @@
             <ButtonBar id="InferiorButtonBar" layoutY="18.0">
                <buttons>
                   <Button id="EditAccountButton" mnemonicParsing="false" onAction="#handleEditAccountAction" prefWidth="111.87109375" text="Editar Cadastro" />
-                  <Button id="AddCollectionButton" mnemonicParsing="false" onAction="#handleAddCollectionAction" prefWidth="111.87109375" text="Adcionar Coleção" />
-                  <Button id="AddItemButton" mnemonicParsing="false" onAction="#handleAddItemAction" prefWidth="111.87109375" text="Adicionar Obra" />
-                  <Button id="AddUserButton" mnemonicParsing="false" onAction="#handleAddUserAction" prefWidth="111.87109375" text="Adicionar Usuário" />
+                  <Button fx:id="AddCollectionButton" mnemonicParsing="false" onAction="#handleAddCollectionAction" prefWidth="111.87109375" text="Adcionar Coleção" />
+                  <Button fx:id="AddItemButton" mnemonicParsing="false" onAction="#handleAddItemAction" prefWidth="111.87109375" text="Adicionar Obra" />
+                  <Button fx:id="AddUserButton" mnemonicParsing="false" onAction="#handleAddUserAction" prefWidth="111.87109375" text="Adicionar Usuário" />
                   <Button fx:id="LogoutButton" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="25.0" prefWidth="111.87109375" text="Logout" />
                </buttons>
             </ButtonBar>

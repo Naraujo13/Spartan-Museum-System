@@ -148,6 +148,9 @@ public class EditItemController implements Initializable {
 
                    //item.setCollection(Collections.getValue());
                }
+               
+               Stage stage = (Stage) SaveItem.getScene().getWindow();
+                stage.close();
             }
         }
         );

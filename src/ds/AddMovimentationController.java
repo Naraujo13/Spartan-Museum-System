@@ -22,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.PutToExpositionMovimentation;
 
 /**
@@ -109,6 +110,8 @@ public class AddMovimentationController implements Initializable {
                     if(MovimentationTypeChoiceBox.getValue().equals("Retornar de Exposição")){                                                               
                         model.System.storeItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());   
                     }
+                    Stage stage = (Stage) AddMovimentationButton.getScene().getWindow();
+                    stage.close();
                 }
             }   
         );

@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -72,6 +73,8 @@ public class CreateUserController implements Initializable {
                 if(ResearcherButton.isSelected()){
                     model.System.addPerson(Name.getText(), CPF.getText(), Password.getText(), Email.getText());
                 }
+                Stage stage = (Stage) AddUserButton.getScene().getWindow();
+                stage.close();
                 
             }
         });

@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -74,16 +75,10 @@ public class EditUserController implements Initializable {
                 if(!Email.getText().equals("")){
                     model.System.getActiveUser().setEmail(Email.getText());
                 }
-                if(!Phone.getText().equals("")){
-                    model.System.getActiveUser().setTelefone(Phone.getText());
-                }
-                if(!UniversityRegistration.getText().equals("")){
-                    //model.System.getActiveUser().setUniversityRegistration(Integer.parseInt(UniversityRegistration.getText()));
-                }
-                if(!MuseumID.getText().equals("")){
-                    //model.System.getActiveUser().setMuseumID(MuseumID.getText());
-          
-                }
+                
+                
+                Stage stage = (Stage) AddUserButton.getScene().getWindow();
+                stage.close();
             }
         });
     }    

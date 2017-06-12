@@ -20,8 +20,8 @@ public class MuseumPaneController implements Initializable {
     
     @FXML
     private Label MuseumNameLabel;
-    //@FXML
-    //private Label MuseumIDLabel;
+    @FXML
+    private Label MuseumIDLabel;
     @FXML
     private Label MuseumAddressLabel;
     @FXML
@@ -40,6 +40,7 @@ public class MuseumPaneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         MuseumNameLabel.setText(model.System.getMuseum().getName());
         //MuseumIDLabel.setText(model.System.getMuseum().); ??? cadê o método???
+        MuseumIDLabel.setText("");
         MuseumAddressLabel.setText(model.System.getMuseum().getAddress());
         MuseumPhoneLabel.setText(model.System.getMuseum().getPhone());
         MuseumEmailLabel.setText(model.System.getMuseum().getEmail());

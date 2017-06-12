@@ -59,11 +59,20 @@ public class MainScreenController implements Initializable {
     @FXML
     private RadioButton SearchByCollection;
     
-    @FXML
-    private RadioButton SearchByStatus;
+    //@FXML
+    //private RadioButton SearchByStatus;
     
     @FXML
     private Button LogoutButton;
+    
+    @FXML
+    private Button AddCollectionButton;
+    
+    @FXML
+    private Button AddItemButton;
+    
+    @FXML
+    private Button AddUserButton;
     
     
     
@@ -191,13 +200,20 @@ public class MainScreenController implements Initializable {
                 controller.showCollectionSearch(SearchArea.getText());
                 
             }
-            if(SearchByStatus.isSelected()){
-                controller.showStatusSearch(SearchArea.getText());
-            }
+            //if(SearchByStatus.isSelected()){
+                //.showStatusSearch(SearchArea.getText());
+            //}
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        if(model.System.getActiveUser() instanceof model.Researcher){
+            
+            AddCollectionButton.setVisible(false);
+            AddItemButton.setVisible(false);
+            AddUserButton.setVisible(false);
+        }
         if(MainScreen.getChildren().size() > 7)
             MainScreen.getChildren().remove(MainScreen.getChildren().size()-1);
         try {

@@ -91,6 +91,7 @@ public class SearchResultsPaneController implements Initializable {
                 stage.setScene(new Scene(root1));  
                 stage.show();
                 itemController.showItem(itemClicked);
+                
   
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
