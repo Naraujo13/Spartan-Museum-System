@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane id="MuseumPane" layoutX="235.0" layoutY="99.0" prefHeight="323.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+        <children>
+           <Label id="MuseumNameLabel" layoutX="14.0" layoutY="14.0" text="Museu MALG">
+              <font>
+                 <Font size="34.0" />
+              </font>
+           </Label>
+           <Label id="MuseumIDLabel" layoutX="25.0" layoutY="64.0" prefHeight="27.0" prefWidth="162.0" text="Código do museu">
+              <font>
+                 <Font size="18.0" />
+              </font></Label>
+           <Label id="MuseumAddressLabel" layoutX="25.0" layoutY="98.0" prefHeight="27.0" prefWidth="162.0" text="Endereço do museu">
+              <font>
+                 <Font size="18.0" />
+              </font>
+           </Label>
+           <Label id="MuseumPhoneLabel" layoutX="23.0" layoutY="135.0" text="Telefone do museu">
+              <font>
+                 <Font size="18.0" />
+              </font>
+           </Label>
+           <Label id="MuseumEmailLabel" layoutX="25.0" layoutY="168.0" text="Email do museu">
+              <font>
+                 <Font size="18.0" />
+              </font>
+           </Label>
+           <Label id="MuseumScheduleLabel" layoutX="25.0" layoutY="202.0" text="Horários do museu">
+              <font>
+                 <Font size="18.0" />
+              </font>
+           </Label>
+           <Label id="MuseumDescriptionLabel" layoutX="23.0" layoutY="236.0" text="Descrição do museu">
+              <font>
+                 <Font size="18.0" />
+              </font>
+           </Label>
+           <javafx.scene.image.ImageView id="MuseumPicture" fitHeight="86.0" fitWidth="126.0" layoutX="260.0" layoutY="14.0">
+            <image>
+            <Image url="@images/MALG.png" />
+            </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+           </javafx.scene.image.ImageView>
+               
+        </children>
+     </Pane>
