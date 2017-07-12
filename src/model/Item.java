@@ -49,7 +49,7 @@ public class Item implements Comparable<Item>{
         this.height = height;
         this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
-        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), System.getActiveUser().getCpf(), origin, destination);
+        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
@@ -70,7 +70,7 @@ public class Item implements Comparable<Item>{
         this.author = author;
         this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
-        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), System.getActiveUser().getCpf(), origin, destination);
+        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
@@ -94,7 +94,7 @@ public class Item implements Comparable<Item>{
         this.depth = depth;
         this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
-        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), System.getActiveUser().getCpf(), origin, destination);
+        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
@@ -118,7 +118,7 @@ public class Item implements Comparable<Item>{
         this.outerCircumference = outerCircumference;
         this.depth = depth;
         /* -- Cria Movimentação de entrada -- */
-        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), System.getActiveUser().getCpf(), origin, destination);
+        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
@@ -291,7 +291,7 @@ public class Item implements Comparable<Item>{
             Movimentation discharge = new DischargeMovimentation(
                     timestamp,
                     ((PutToStorageMovimentation) m).getDestination(),
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(discharge);
             this.setStatus(Utils.DISCHARGED);
             return Utils.REQUEST_OK;
@@ -300,7 +300,7 @@ public class Item implements Comparable<Item>{
             Movimentation discharge = new DischargeMovimentation(
                     timestamp,
                     ((AdmissionMovimentation) m).getDestination(),
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(discharge);
             this.setStatus(Utils.DISCHARGED);
             return Utils.REQUEST_OK;
@@ -319,7 +319,7 @@ public class Item implements Comparable<Item>{
                     timestamp,
                     ((PutToStorageMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(exposition);
             this.setStatus(Utils.AT_EXPOSITION);
             return Utils.REQUEST_OK;
@@ -330,7 +330,7 @@ public class Item implements Comparable<Item>{
                     timestamp,
                     ((AdmissionMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(exposition);
             this.setStatus(Utils.AT_EXPOSITION);
             return Utils.REQUEST_OK;
@@ -349,7 +349,7 @@ public class Item implements Comparable<Item>{
                     timestamp,
                     ((PutToStorageMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(storage);
             this.setStatus(Utils.AT_STORAGE);
             return Utils.REQUEST_OK;
@@ -360,7 +360,7 @@ public class Item implements Comparable<Item>{
                     timestamp,
                     ((AdmissionMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(storage);
             this.setStatus(Utils.AT_STORAGE);
             return Utils.REQUEST_OK;
@@ -379,7 +379,7 @@ public class Item implements Comparable<Item>{
                     timestamp,
                     ((SendToLoanMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(loan);
             this.setStatus(Utils.AT_STORAGE);
             return Utils.REQUEST_OK;
@@ -398,7 +398,7 @@ public class Item implements Comparable<Item>{
                     timestamp,
                     ((SendToRestorationMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(restauration);
             this.setStatus(Utils.AT_STORAGE);
             return Utils.REQUEST_OK;
@@ -419,7 +419,7 @@ public class Item implements Comparable<Item>{
                     dateOfReturn,
                     ((PutToStorageMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(loan);
             this.setStatus(Utils.AT_LOAN);
             return Utils.REQUEST_OK;
@@ -430,7 +430,7 @@ public class Item implements Comparable<Item>{
                     dateOfReturn,
                     ((AdmissionMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(loan);
             this.setStatus(Utils.AT_LOAN);
             return Utils.REQUEST_OK;
@@ -449,7 +449,7 @@ public class Item implements Comparable<Item>{
                     timestamp,
                     ((PutToStorageMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(restoration);
             this.setStatus(Utils.AT_RESTAURATION);
             return Utils.REQUEST_OK;
@@ -460,7 +460,7 @@ public class Item implements Comparable<Item>{
                     timestamp,
                     ((AdmissionMovimentation) m).getDestination(),
                     destination,
-                    System.getActiveUser().getCpf());
+                    DatabaseHelper.getActiveUser().getCpf());
             addMovimentation(restoration);
             this.setStatus(Utils.AT_RESTAURATION);
             return Utils.REQUEST_OK;

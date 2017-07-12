@@ -143,7 +143,7 @@ public class Museum {
     /* -- Inserção -- */
     int addCollection(String name){
          //Testa se já existe coleção com este nome
-        if (!System.getMuseum().getCollectionByName(name).isEmpty())
+        if (!DatabaseHelper.getMuseum().getCollectionByName(name).isEmpty())
             return Utils.ALREADY_EXISTS_ERROR;
 
         //Insere coleção

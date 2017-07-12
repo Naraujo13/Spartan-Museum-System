@@ -3,7 +3,6 @@ package model;
 import utils.Utils;
 
 import java.lang.*;
-import java.sql.*;
 import java.util.*;
 
 /**
@@ -69,11 +68,11 @@ public class Collection implements Comparable<Collection>{
                 float weight, float lenght, float width, float height, java.sql.Date aquisitionDate){
 
         //Testa permissão
-        if (!(System.getActiveUser() instanceof Technician || System.getActiveUser() instanceof Director || System.getActiveUser() instanceof Coordinator))
+        if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(System.getTechniciansTreeMap().containsKey(System.getActiveUser().getCpf())
-                || System.getDirectorsTreeMap().containsKey(System.getActiveUser().getCpf())
-                || System.getCoordinator().getCpf().equals(System.getActiveUser().getCpf())))
+        if (!(DatabaseHelper.getTechniciansTreeMap().containsKey(DatabaseHelper.getActiveUser().getCpf())
+                || DatabaseHelper.getDirectorsTreeMap().containsKey(DatabaseHelper.getActiveUser().getCpf())
+                || DatabaseHelper.getCoordinator().getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.NOT_FOUND_ERROR;
 
         /* -- Cria novo item -- */
