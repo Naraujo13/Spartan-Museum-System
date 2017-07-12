@@ -18,6 +18,12 @@ public abstract class Utils {
     public static String AT_LOAN = "Emprestada";
     public static String DISCHARGED = "Baixa";
 
+    //User functions
+    public static int RESEARCHER = 1;
+    public static int TECHNICIAN = 2;
+    public static int DIRECTOR = 3;
+    public static int COORDINATOR = 4;
+
     //Return Codes
     public static int REQUEST_OK = 200; // Operação realizada com sucesso
     public static int ALREADY_EXISTS_ERROR = 402; // Erro de inserção, já existe valor

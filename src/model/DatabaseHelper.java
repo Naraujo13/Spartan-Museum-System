@@ -3,11 +3,9 @@ package model;
 
 import utils.Utils;
 
+import java.sql.*;
 import java.sql.Date;
 import java.util.*;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
 
 /**
  * Created by naraujo on 01/06/17.
@@ -473,6 +471,25 @@ public final class DatabaseHelper {
         if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
             return Utils.ALREADY_EXISTS_ERROR;
 
+
+        Statement stm = null;
+        try {
+            stm = databaseConnection.createStatement();
+            String sql =    "INSERT INTO PERSON" +
+                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO)" +
+                    "VALUES (" +
+                    CPF +
+                    name +
+                    password +
+                    email +
+                    universityRegistration +
+                    Utils.RESEARCHER +
+                    ");";
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
         Researcher researcher = new Researcher(name, CPF, password, email, universityRegistration);
         researchersTreeMap.put(CPF, researcher);
         nameToCPFResearchers.put(name, CPF);
@@ -500,6 +517,24 @@ public final class DatabaseHelper {
         //Se já possui CPF, cancela inserção
         if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
             return Utils.ALREADY_EXISTS_ERROR;
+
+        Statement stm = null;
+        try {
+            stm = databaseConnection.createStatement();
+            String sql =    "INSERT INTO PERSON" +
+                            "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO)" +
+                            "VALUES (" +
+                                CPF +
+                                name +
+                                password +
+                                email +
+                                null +
+                                Utils.RESEARCHER +
+                            ");";
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
 
         Technician technician = new Technician(name, CPF, password, email);
         techniciansTreeMap.put(CPF, technician);
@@ -534,6 +569,24 @@ public final class DatabaseHelper {
         if (museum.getMuseumCode().equals(IDMuseum))
             return Utils.NOT_FOUND_ERROR;
 
+        Statement stm = null;
+        try {
+            stm = databaseConnection.createStatement();
+            String sql =    "INSERT INTO PERSON" +
+                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO)" +
+                    "VALUES (" +
+                    CPF +
+                    name +
+                    password +
+                    email +
+                    null +
+                    Utils.DIRECTOR +
+                    ");";
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
         Director director = new Director(name, CPF, password, email, IDMuseum);
         directorsTreeMap.put(CPF, director);
         nameToCPFDirectors.put(name, CPF);
@@ -552,6 +605,22 @@ public final class DatabaseHelper {
                 || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
+
+
+        Statement stm = null;
+        try {
+            stm = databaseConnection.createStatement();
+            String sql =    "INSERT INTO COLLECTION" +
+                    "(COLLECTIONID, CODMUSEUM, NAME)" +
+                    "VALUES (" +
+                        0000 +
+                        museum.getMuseumCode() +
+                        name +
+                    ");";
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
 
         return (museum.addCollection(name));
     }
@@ -578,6 +647,32 @@ public final class DatabaseHelper {
         Collection collection = collections.get(0);
         if (collection == null)
             return Utils.NOT_FOUND_ERROR;
+
+        Statement stm = null;
+        try {
+            stm = databaseConnection.createStatement();
+            String sql =   "INSERT INTO ITEM" +
+                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT, OUTERCIRCUNFERENCE, INNERCIRCUNFERENCE, WEIGHT, AUTHOR, CONSERVATIONSTATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
+                    "VALUES (" +
+                    0000 +
+                    0000 +
+                    name +
+                    year +
+                    destination +
+                    lenght +
+                    null + //Falta parâmetro
+                    null + //Falta parâmetro
+                    weight +
+                    null + //Falta parâmetro
+                    null + //Falta parâmetro
+                    null + //Falta parâmetro
+                    null + //Falta parâmetro
+                    aquisitionDate +
+                    ");";
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
 
         return collection.addItem(museumCode + collection.getItems().size(), name, year, origin, destination, weight, lenght, width, height, aquisitionDate);
 
@@ -823,7 +918,7 @@ public final class DatabaseHelper {
      * @param searchString - substring de pesquisa
      * @return - ArrayList de usuários correspondentes
      */
-    public static ArrayList<Person> searchUsersByName(String searchString){
+    public static ArrayList<Person> searchUsersByName(String searchString) {
         if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
                 || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
