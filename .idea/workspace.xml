@@ -2,93 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Adicionado banco de dados Postgresql.&#10;Refatorado nome de algumas classes e pacotes.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/e4bb4c71-0e98-4164-9c7e-2a781e719aed/_metadata_/metadata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/e4bb4c71-0e98-4164-9c7e-2a781e719aed/_metadata_/metadata.keystream" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/e4bb4c71-0e98-4164-9c7e-2a781e719aed/_metadata_/metadata.keystream.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/e4bb4c71-0e98-4164-9c7e-2a781e719aed/_metadata_/metadata.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/e4bb4c71-0e98-4164-9c7e-2a781e719aed/_metadata_/metadata_i" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/e4bb4c71-0e98-4164-9c7e-2a781e719aed/_metadata_/metadata_i.len" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Diagramas/19650378_1376111889142064_1817025224_o.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/AddCollectionController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/AddCollectionController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/AddItemController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/AddItemController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/AddMovimentationController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/AddMovimentationController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/CreateUserController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/CreateUserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/EditItemController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/EditItemController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/EditUserController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/EditUserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/ItemController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/ItemController$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/ItemController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/LoginController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/MainScreenController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/MainScreenController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/MovimentationController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/MovimentationController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/MuseumPaneController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/SearchResultsPaneController$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/SearchResultsPaneController$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/SearchResultsPaneController$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/SearchResultsPaneController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/images/MALG.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/images/ic_search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/images/vasoAzul.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/main.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/AdmissionMovimentation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/Collection.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/Coordinator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/DatabaseHelper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/Director.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/DischargeMovimentation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/Item.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/Movimentation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/MovimentationTo.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/Museum.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/Person.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/PutToExpositionMovimentation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/PutToStorageMovimentation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/Researcher.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/RestorationReport.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/ReturnFromLoan.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/ReturnFromRestauration.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/SendToLoanMovimentation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/SendToRestorationMovimentation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/model/Technician.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/utils/Utils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/e4bb4c71-0e98-4164-9c7e-2a781e719aed.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/description.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/AddCollection.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/AddItem.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/AddMovimentation.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/CreateUser.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/EditItem.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/EditUser.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/Item.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/Login.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/MainScreen.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/Movimentation.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/MuseumPane.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/SearchResultsPane.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/background.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/DS/UI/lupa.CSS" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UI/main.java" afterPath="$PROJECT_DIR$/src/UI/main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/DatabaseHelper.java" afterPath="$PROJECT_DIR$/src/model/DatabaseHelper.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -170,13 +83,18 @@
       <file leaf-file-name="DatabaseHelper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/DatabaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+            <state relative-caret-position="295">
+              <caret line="748" column="48" lean-forward="true" selection-start-line="748" selection-start-column="48" selection-end-line="748" selection-end-column="48" />
               <folding>
-                <marker date="1499900683466" expanded="true" signature="2347:2743" ph="CREATE TABLE... PERSON" />
-                <marker date="1499900683466" expanded="true" signature="2931:3412" ph="CREATE TABLE... MUSEUM" />
-                <marker date="1499900683466" expanded="true" signature="3604:3860" ph="CREATE TABLE... COLLECTION" />
-                <marker date="1499900683466" expanded="true" signature="4046:4840" ph="CREATE TABLE... ITEM" />
+                <marker date="1499901748055" expanded="true" signature="2347:2743" ph="CREATE TABLE... PERSON" />
+                <marker date="1499901748055" expanded="true" signature="2931:3412" ph="CREATE TABLE... MUSEUM" />
+                <marker date="1499901748055" expanded="true" signature="3604:3860" ph="CREATE TABLE... COLLECTION" />
+                <marker date="1499901748055" expanded="true" signature="4046:4840" ph="CREATE TABLE... ITEM" />
+                <marker date="1499901748055" expanded="true" signature="18086:18438" ph="INSERT INTO PERSON... " />
+                <marker date="1499901748055" expanded="true" signature="20065:20495" ph="INSERT INTO PERSON... " />
+                <marker date="1499901748055" expanded="true" signature="22284:22616" ph="INSERT INTO PERSON... " />
+                <marker date="1499901748055" expanded="true" signature="23812:24060" ph="INSERT INTO COLLECTION... " />
+                <marker date="1499901748055" expanded="true" signature="25603:26375" ph="INSERT INTO ITEM... " />
               </folding>
             </state>
           </provider>
@@ -185,9 +103,11 @@
       <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -195,10 +115,11 @@
       <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UI/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="408">
               <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding>
                 <element signature="e#0#819#0" expanded="false" />
+                <element signature="imports" expanded="false" />
                 <element signature="e#531#532#0" expanded="false" />
                 <element signature="e#559#560#0" expanded="false" />
               </folding>
@@ -291,9 +212,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="29" />
-    <option name="width" value="1920" />
-    <option name="height" value="1051" />
+    <option name="x" value="3" />
+    <option name="y" value="14" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -312,8 +234,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -378,6 +298,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -869,6 +791,7 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1499887996473" duration="3339000" />
       <workItem from="1499897002546" duration="3939000" />
+      <workItem from="1499901619470" duration="131000" />
     </task>
     <task id="LOCAL-00001" summary="Removendo diagramas duplicados">
       <created>1496083023217</created>
@@ -993,10 +916,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8580000" />
+    <option name="totallyTimeSpent" value="8711000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="29" width="1920" height="1051" extended-state="0" />
+    <frame x="3" y="14" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1013,7 +936,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25989583" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25939307" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30052084" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1203,7 +1126,6 @@
           <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="false" />
-            <marker date="1499896017953" expanded="true" signature="2881:2887" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1217,13 +1139,7 @@
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/lang/String.class" />
     <entry file="file://$PROJECT_DIR$/src/FXMLDocument.fxml" />
     <entry file="file://$PROJECT_DIR$/src/FXMLDocumentController.java" />
     <entry file="file://$PROJECT_DIR$/src/model/Researcher.java">
@@ -1233,26 +1149,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/util/TreeMap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-721">
-          <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/util/TreeMap.class" />
     <entry file="file://$PROJECT_DIR$/src/UI/MainScreen.fxml" />
     <entry file="file://$PROJECT_DIR$/src/UI/Login.fxml" />
     <entry file="file://$PROJECT_DIR$/src/UI/LoginController.java" />
     <entry file="file://$PROJECT_DIR$/src/UI/MainScreenController.java" />
     <entry file="file://$PROJECT_DIR$/out/production/DS/interface/background.css" />
     <entry file="file://$PROJECT_DIR$/src/UI/AddCollection.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="16" column="117" lean-forward="false" selection-start-line="16" selection-start-column="117" selection-end-line="16" selection-end-column="117" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Collection.java">
@@ -1261,7 +1171,6 @@
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-            <marker date="1499896017953" expanded="true" signature="2881:2887" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1308,7 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1316,10 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-          <folding>
-            <element signature="e#730#731#0" expanded="false" />
-            <element signature="e#759#760#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1327,7 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="57" lean-forward="true" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1335,7 +1238,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1343,7 +1245,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1351,7 +1252,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1380,7 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1388,7 +1287,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1421,19 +1319,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e4bb4c71-0e98-4164-9c7e-2a781e719aed/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e4bb4c71-0e98-4164-9c7e-2a781e719aed/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/UI/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="408">
           <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
           <folding>
             <element signature="e#0#819#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="e#531#532#0" expanded="false" />
             <element signature="e#559#560#0" expanded="false" />
           </folding>
@@ -1442,21 +1335,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/DatabaseHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        <state relative-caret-position="295">
+          <caret line="748" column="48" lean-forward="true" selection-start-line="748" selection-start-column="48" selection-end-line="748" selection-end-column="48" />
           <folding>
-            <marker date="1499900683466" expanded="true" signature="2347:2743" ph="CREATE TABLE... PERSON" />
-            <marker date="1499900683466" expanded="true" signature="2931:3412" ph="CREATE TABLE... MUSEUM" />
-            <marker date="1499900683466" expanded="true" signature="3604:3860" ph="CREATE TABLE... COLLECTION" />
-            <marker date="1499900683466" expanded="true" signature="4046:4840" ph="CREATE TABLE... ITEM" />
+            <marker date="1499901748055" expanded="true" signature="2347:2743" ph="CREATE TABLE... PERSON" />
+            <marker date="1499901748055" expanded="true" signature="2931:3412" ph="CREATE TABLE... MUSEUM" />
+            <marker date="1499901748055" expanded="true" signature="3604:3860" ph="CREATE TABLE... COLLECTION" />
+            <marker date="1499901748055" expanded="true" signature="4046:4840" ph="CREATE TABLE... ITEM" />
+            <marker date="1499901748055" expanded="true" signature="18086:18438" ph="INSERT INTO PERSON... " />
+            <marker date="1499901748055" expanded="true" signature="20065:20495" ph="INSERT INTO PERSON... " />
+            <marker date="1499901748055" expanded="true" signature="22284:22616" ph="INSERT INTO PERSON... " />
+            <marker date="1499901748055" expanded="true" signature="23812:24060" ph="INSERT INTO COLLECTION... " />
+            <marker date="1499901748055" expanded="true" signature="25603:26375" ph="INSERT INTO ITEM... " />
           </folding>
         </state>
       </provider>

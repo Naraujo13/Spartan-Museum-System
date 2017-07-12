@@ -550,6 +550,8 @@ public final class DatabaseHelper {
                     universityRegistration +
                     Utils.RESEARCHER +
                     ");";
+            stm.executeUpdate(sql);
+            stm.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
@@ -596,6 +598,8 @@ public final class DatabaseHelper {
                                 null +
                                 Utils.RESEARCHER +
                             ");";
+            stm.executeUpdate(sql);
+            stm.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
@@ -647,6 +651,8 @@ public final class DatabaseHelper {
                     null +
                     Utils.DIRECTOR +
                     ");";
+            stm.executeUpdate(sql);
+            stm.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
@@ -682,6 +688,8 @@ public final class DatabaseHelper {
                         museum.getMuseumCode() +
                         name +
                     ");";
+            stm.executeUpdate(sql);
+            stm.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
@@ -734,6 +742,8 @@ public final class DatabaseHelper {
                     null + //Falta parâmetro
                     aquisitionDate +
                     ");";
+            stm.executeUpdate(sql);
+            stm.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
