@@ -33,16 +33,17 @@ public final class DatabaseHelper {
 
      /* -- DB INFO -- */
     /* -- DB INFO -- */
-    private static String TAG = DatabaseHelper.class.getSimpleName();
     private static String DBNAME = "MuseumSystemDB"; //SUBSTITUAM PELO NOME DO BANCO
     private static String USER = "naraujo";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
     private static String PASS = "noaicolas";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
-    private static Connection databaseConnection;
 
+    private static Connection databaseConnection;
+    private static Statement statement = null;
 
     /* -- Popula Arrays -- */
     static{
 
+        //Cria conexão com database
         databaseConnection = null;
         try {
             Class.forName("org.postgresql.Driver");
@@ -53,7 +54,71 @@ public final class DatabaseHelper {
             e.printStackTrace();
         }
 
-        /* -- Cria Admin -- */
+        try {
+            String sql = "";
+
+            //Create PERSON
+            statement = databaseConnection.createStatement();
+            sql =   "CREATE TABLE IF NOT EXISTS PERSON" +
+                    " (CPF CHAR(11) PRIMARY KEY NOT NULL," +
+                    " NAME VARCHAR(50) NOT NULL," +
+                    " PASSWORD VARCHAR(20) NOT NULL," +
+                    " EMAIL VARCHAR (30) NOT NULL," +
+                    " PHONE VARCHAR (10) NOT NULL," +
+                    " MATRICULA INT," +
+                    " FUNCAO INT NOT NULL)";
+            statement.executeUpdate(sql);
+            statement.close();
+
+            //Create MUSEUM
+            statement = databaseConnection.createStatement();
+            sql =   "CREATE TABLE IF NOT EXISTS MUSEUM" +
+                    " (CODMUSEUM CHAR(5) PRIMARY KEY NOT NULL," +
+                    " CPFTECHNICIAN CHAR(11) REFERENCES PERSON(CPF) ON DELETE SET NULL," +
+                    " CPFDIRECTOR CHAR(11) REFERENCES PERSON(CPF) ON DELETE SET NULL," +
+                    " ADRESS VARCHAR (50) NOT NULL," +
+                    " PHONE VARCHAR (10)," +
+                    " OPENINGHOURS VARCHAR(30)," +
+                    " DESCRIPTION VARCHAR(100))";
+            statement.executeUpdate(sql);
+            statement.close();
+
+            //Create COLLECTION
+            statement = databaseConnection.createStatement();
+            sql =   "CREATE TABLE IF NOT EXISTS COLLECTION" +
+                    " (COLLECTIONID CHAR(5) PRIMARY KEY NOT NULL," +
+                    " CODMUSEU CHAR(5) NOT NULL REFERENCES MUSEUM(CODMUSEU) ON DELETE CASCADE," +
+                    " NAME VARCHAR(20) NOT NULL)";
+            statement.executeUpdate(sql);
+            statement.close();
+
+            //Create ITEM
+            statement = databaseConnection.createStatement();
+            sql =   "CREATE TABLE IF NOT EXISTS ITEM" +
+                    " (ITEMID CHAR(5) PRIMARY KEY NOT NULL," +
+                    " COLLECTIONID CHAR(5) NOT NULL REFERENCES COLLECTION(COLLECTIONID) ON DELETE CASCADE," +
+                    " NAME VARCHAR(20) NOT NULL," +
+                    " YEAR INT NOT NULL," +
+                    " STATUS VARCHAR(18) NOT NULL," +
+                    " LENGHT FLOAT," +
+                    " OUTERCIRCUMFERENCE FLOAT," +
+                    " INNERCIRCUMFERENCE FLOAT," +
+                    " WEIGHT FLOAT," +
+                    " AUTHOR VARCHAR (50)," +
+                    " CONSERVATIONSATATE VARCHAR(100)," +
+                    " BIOGRAPHY VARCHAR(150)," +
+                    " DESCRIPTION VARCHAR (150)," +
+                    " AQUISITIONDATE DATE NOT NULL)";
+            statement.executeUpdate(sql);
+            statement.close();
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
+
         DatabaseHelper.coordinator = new Coordinator("Administrador", "000.000.000-00", "admin", "admin@admin.admin");
         activeUser = coordinator;
 
