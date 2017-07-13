@@ -112,6 +112,28 @@ public final class DatabaseHelper {
             statement.executeUpdate(sql);
             statement.close();
 
+            /* -- Inserts -- */
+
+            //INSERT COORDINATOR
+            statement = databaseConnection.createStatement();
+            sql =   "INSERT INTO PERSON (CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
+                    " VALUES " +
+                    "('000.000.000-00', 'Administrador', 'admin'," +
+                    " 'admin@admin.admin', null, " +
+                    Utils.RESEARCHER +
+                    ") ON CONFLICT (CPF) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.close();
+
+            //INSERT MUSEUM
+            statement = databaseConnection.createStatement();
+            sql = "INSERT INTO MUSEUM (CODMUSEUM, CPFTECHNICIAN, CPFDIRECTOR, ADRESS, PHONE, OPENINGHOURS, DESCRIPTION)" +
+                    " VALUES ('TST', null, null, 'Rua Teste 123', '123123123', '2:00 as 4:00', 'Descricao teste')" +
+                    " ON CONFLICT (CODMUSEUM) DO NOTHING ";
+            statement.executeUpdate(sql);
+            statement.close();
+
+            /* --------------- */
         }
         catch (SQLException e){
             e.printStackTrace();
