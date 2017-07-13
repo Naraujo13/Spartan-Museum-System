@@ -3,6 +3,7 @@ package model;
 
 import utils.Utils;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
@@ -118,8 +119,8 @@ public final class DatabaseHelper {
             statement = databaseConnection.createStatement();
             sql =   "INSERT INTO PERSON (CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
                     " VALUES " +
-                    "('000.000.000-00', 'Administrador', 'admin'," +
-                    " 'admin@admin.admin', null, " +
+                    "('00000000000', 'Administrador', 'admin'," +
+                    " 'admin@admin.admin', null, null, " +
                     Utils.RESEARCHER +
                     ") ON CONFLICT (CPF) DO NOTHING";
             statement.executeUpdate(sql);
@@ -141,7 +142,7 @@ public final class DatabaseHelper {
         }
 
 
-        DatabaseHelper.coordinator = new Coordinator("Administrador", "000.000.000-00", "admin", "admin@admin.admin");
+        DatabaseHelper.coordinator = new Coordinator("Administrador", "00000000000", "admin", "admin@admin.admin");
         activeUser = coordinator;
 
         /* -- Prepara HashMaps -- */
@@ -172,17 +173,17 @@ public final class DatabaseHelper {
 
         /* -- Mock Users -- */
         //Adiciona Diretor
-        DatabaseHelper.addPerson("Joãozinho", "123.123.123.123", "password", "joao@bonitao.uol.com", museum.getMuseumCode());
+        DatabaseHelper.addPerson("Joãozinho", "123123123123", "password", "joao@bonitao.uol.com", museum.getMuseumCode());
 
         //Adiciona Técnicos
-        DatabaseHelper.addPerson("Paulo", "111.111.111.11", "paulo123", "paulo@banco.de.dados");
-        DatabaseHelper.addPerson("Lisane", "222.222.222.22", "lisane123", "lisane@diagrama.es");
+        DatabaseHelper.addPerson("Paulo", "11111111111", "paulo123", "paulo@banco.de.dados");
+        DatabaseHelper.addPerson("Lisane", "22222222222", "lisane123", "lisane@diagrama.es");
 
         //Adiciona Pesquisador
-        DatabaseHelper.addPerson("Nicolas", "333.333.333.33", "nicolas123", "nicolas@ufpel.com", 14101238);
+        DatabaseHelper.addPerson("Nicolas", "03369037076", "nicolas123", "nicolas@ufpel.com", 14101238);
         DatabaseHelper.addPerson("Kellerson", "01939512077", "kellerson123", "kellerson@ufpel.com", 14101237);
-        DatabaseHelper.addPerson("Xlager", "555.555.555.55", "kellerson123", "kellerson@ufpel.com", 14101236);
-        DatabaseHelper.addPerson("Sias", "666.666.666.66", "sias123", "jonathan@ufpel.com", 14101235);
+        DatabaseHelper.addPerson("Xlager", "55555555555", "kellerson123", "kellerson@ufpel.com", 14101236);
+        DatabaseHelper.addPerson("Sias", "66666666666", "sias123", "jonathan@ufpel.com", 14101235);
 
         /* -- Mock Items -- */
         DatabaseHelper.addItem(
@@ -706,10 +707,25 @@ public final class DatabaseHelper {
         Statement stm = null;
         try {
             stm = databaseConnection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("SELECT COUNT(DISTINCT COLLECTIONID) AS NUMCOL FROM COLLECTION");
+            String collectionID = resultSet.getString("NUMCOL");
+
+            if (Integer.parseInt(collectionID) < 10000)
+                collectionID = "0" + collectionID;
+            if (Integer.parseInt(collectionID) < 1000)
+                collectionID = "0" + collectionID;
+            if (Integer.parseInt(collectionID) < 100)
+                collectionID = "0" + collectionID;
+            if (Integer.parseInt(collectionID) < 10)
+                collectionID = "0" + collectionID;
+
+
+
             String sql =    "INSERT INTO COLLECTION " +
                     "(COLLECTIONID, CODMUSEUM, NAME) " +
                     "VALUES (" +
-                       "'" + "12345" + "'," +
+                       "'" + collectionID + "'," +
                         "'" + museum.getMuseumCode() + "'," +
                         "'" + name + "'" +
                     ");";
