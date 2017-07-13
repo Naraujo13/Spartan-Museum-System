@@ -87,7 +87,7 @@ public final class DatabaseHelper {
             statement = databaseConnection.createStatement();
             sql =   "CREATE TABLE IF NOT EXISTS COLLECTION" +
                     " (COLLECTIONID CHAR(5) PRIMARY KEY NOT NULL," +
-                    " CODMUSEU CHAR(5) NOT NULL REFERENCES MUSEUM(CODMUSEU) ON DELETE CASCADE," +
+                    " CODMUSEUM CHAR(5) NOT NULL REFERENCES MUSEUM(codmuseum) ON DELETE CASCADE," +
                     " NAME VARCHAR(20) NOT NULL)";
             statement.executeUpdate(sql);
             statement.close();
