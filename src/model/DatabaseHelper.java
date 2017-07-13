@@ -589,16 +589,17 @@ public final class DatabaseHelper {
         Statement stm = null;
         try {
             stm = databaseConnection.createStatement();
-            String sql =    "INSERT INTO PERSON" +
-                            "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO)" +
-                            "VALUES (" +
-                                CPF +
-                                name +
-                                password +
-                                email +
-                                null +
-                                Utils.RESEARCHER +
-                            ");";
+            String sql =    "INSERT INTO PERSON " +
+                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
+                    "VALUES (" +
+                    CPF + "," +
+                    "'"+ name + "'" + "," +
+                    "'"+ password + "'" + "," +
+                    "'"+ email + "'" + "," +
+                    8134 + "," +
+                    null + "," +
+                    Utils.TECHNICIAN +
+                    ");";
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
@@ -642,15 +643,16 @@ public final class DatabaseHelper {
         Statement stm = null;
         try {
             stm = databaseConnection.createStatement();
-            String sql =    "INSERT INTO PERSON" +
-                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO)" +
+            String sql =    "INSERT INTO PERSON " +
+                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
                     "VALUES (" +
-                    CPF +
-                    name +
-                    password +
-                    email +
-                    null +
-                    Utils.DIRECTOR +
+                        CPF + "," +
+                        "'"+ name + "'" + "," +
+                        "'"+ password + "'" + "," +
+                        "'"+ email + "'" + "," +
+                        8134 + "," +
+                        null + "," +
+                        Utils.DIRECTOR +
                     ");";
             stm.executeUpdate(sql);
             stm.close();
@@ -682,12 +684,12 @@ public final class DatabaseHelper {
         Statement stm = null;
         try {
             stm = databaseConnection.createStatement();
-            String sql =    "INSERT INTO COLLECTION" +
-                    "(COLLECTIONID, CODMUSEUM, NAME)" +
+            String sql =    "INSERT INTO COLLECTION " +
+                    "(COLLECTIONID, CODMUSEUM, NAME) " +
                     "VALUES (" +
-                        0000 +
-                        museum.getMuseumCode() +
-                        name +
+                       "'" + "12345" + "'," +
+                        "'" + museum.getMuseumCode() + "'," +
+                        "'" + name + "'" +
                     ");";
             stm.executeUpdate(sql);
             stm.close();
