@@ -189,6 +189,9 @@ public final class DatabaseHelper {
         DatabaseHelper.addPerson("Sias", "66666666666", "sias123", "jonathan@ufpel.com", 14101235);
 
         /* -- Mock Items -- */
+
+        java.sql.Date data = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Século XXI",
@@ -200,7 +203,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new java.sql.Date(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -261,7 +264,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Século XXI",
-                "Nintendo Degraus (NDS)",
+                "Nintendo Degraus",
                 2024, "Museu do Videogame da Esquina",
                 "Armazém 02",
                 2,
@@ -288,7 +291,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Picasso",
-                "Mona Lisa Falsificada",
+                "Mona Lisa",
                 1907, "Museu da Falsificação",
                 "Armazém 51",
                 2,
@@ -353,7 +356,7 @@ public final class DatabaseHelper {
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
                 "Picasso",
-                "Pixacação na Frente da Federal",
+                "Pixacação da Federal",
                 2014, "Museu da Falsificação",
                 "Armazém 21",
                 2,
@@ -379,7 +382,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Fezes Animais Raras",
-                "Fezes de Urso Polar Albino",
+                "Fezes de Urso",
                 1983, "Sítio Arqueológico Papai Noel",
                 "Armazém 03",
                 2,
@@ -392,7 +395,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Fezes Animais Raras",
-                "Cérebro de Felipe Luzzardi",
+                "Cérebro",
                 2017,
                 "Dom Joaquim, Pelotas",
                 "Armazém 21",
@@ -406,7 +409,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Fezes Animais Raras",
-                "Fezes de Aedes Aegypti",
+                "Fezes de Aedes",
                 2008,
                 "Pneu do Terreno Baldio",
                 "Armazém 32",
@@ -432,7 +435,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Fezes Animais Raras",
-                "Fezes do Cusco da Esquina",
+                "Fezes do Cusco",
                 2017,
                 "Esquina",
                 "Armazém 15",
@@ -767,13 +770,15 @@ public final class DatabaseHelper {
             return Utils.NOT_FOUND_ERROR;
 
         Statement stm = null;
+
         try {
             stm = databaseConnection.createStatement();
+
             String sql =   "INSERT INTO ITEM" +
                     "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT, OUTERCIRCUMFERENCE, INNERCIRCUMFERENCE, WEIGHT, AUTHOR, CONSERVATIONSATATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
                     "VALUES (" +
-                    "'" + "itemID" + "'," + //PLACEHOLDER
-                    "'" + "collectionID" + "'," + //PLACEHOLDER
+                    "'" + "ID" + "'," + //PLACEHOLDER
+                    "'" + 1 + "'," + //PLACEHOLDER
                     "'" + name + "'," +
                     year + "," +
                     "'" + destination + "'," +
@@ -785,7 +790,7 @@ public final class DatabaseHelper {
                     null + "," + //Falta parâmetro
                     null + "," + //Falta parâmetro
                     null + "," + //Falta parâmetro
-                    aquisitionDate +
+                    "'" + aquisitionDate + "'" +
                     ") ON CONFLICT (itemid) DO NOTHING ";
             stm.executeUpdate(sql);
             stm.close();

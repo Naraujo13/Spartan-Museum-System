@@ -90,7 +90,7 @@ public class AddItemController implements Initializable {
                        ItemName.getText(),
                        Integer.parseInt(ItemYear.getText()),
                        ItemOrigin.getText(),
-                       "Falta parametro de destino",
+                       "Falta",
                        Float.parseFloat(Deph.getText()),
                        Float.parseFloat(Itemthickness.getText()),
                        Float.parseFloat(ItemWidth.getText()),
