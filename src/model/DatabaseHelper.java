@@ -34,8 +34,8 @@ public final class DatabaseHelper {
      /* -- DB INFO -- */
     /* -- DB INFO -- */
     private static String DBNAME = "MuseumSystemDB"; //SUBSTITUAM PELO NOME DO BANCO
-    private static String USER = "naraujo";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
-    private static String PASS = "noaicolas";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
+    private static String USER = "postgres";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
+    private static String PASS = "admin";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
 
     private static Connection databaseConnection;
     private static Statement statement = null;
@@ -540,15 +540,16 @@ public final class DatabaseHelper {
         Statement stm = null;
         try {
             stm = databaseConnection.createStatement();
-            String sql =    "INSERT INTO PERSON" +
-                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO)" +
+            String sql =    "INSERT INTO PERSON " +
+                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
                     "VALUES (" +
-                    CPF +
-                    name +
-                    password +
-                    email +
-                    universityRegistration +
-                    Utils.RESEARCHER +
+                            CPF + "," +
+                            "'"+ name + "'" + "," +
+                            "'"+ password + "'" + "," +
+                            "'"+ email + "'" + "," +
+                            8134 + "," +
+                            universityRegistration + "," +
+                            Utils.RESEARCHER +
                     ");";
             stm.executeUpdate(sql);
             stm.close();

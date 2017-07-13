@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AddMovimentationPane" prefHeight="248.0" prefWidth="368.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AddMovimentationPane" prefHeight="248.0" prefWidth="368.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102">
    <children>
       <Label id="AddMovimentationLabel" layoutX="21.0" layoutY="14.0" prefHeight="45.0" prefWidth="331.0" text="Adicionar Movimentação">
          <font>

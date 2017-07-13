@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="MainScreen" prefHeight="489.0" prefWidth="637.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.MainScreenController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="MainScreen" prefHeight="489.0" prefWidth="637.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="UI.MainScreenController">
     <children>
       <ScrollPane id="ScrollPaneCollections" layoutX="7.0" layoutY="97.0" prefHeight="323.0" prefWidth="200.0">
          <content>
