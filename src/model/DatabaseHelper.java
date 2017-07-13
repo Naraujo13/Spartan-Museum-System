@@ -12,6 +12,7 @@ import java.util.*;
  * Created by naraujo on 01/06/17.
  */
 public final class DatabaseHelper {
+
     /* ------- Usuários ------- */
     /* -- Técnicos -- */
     private static HashMap<String, Technician> techniciansTreeMap; /* -- TreeMap com CPF->Técnico dos técnicos-- */
@@ -120,7 +121,7 @@ public final class DatabaseHelper {
             sql =   "INSERT INTO PERSON (CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
                     " VALUES " +
                     "('00000000000', 'Administrador', 'admin'," +
-                    " 'admin@admin.admin', null, null, " +
+                    " 'admin@admin.admin', '981343999', null," +
                     Utils.RESEARCHER +
                     ") ON CONFLICT (CPF) DO NOTHING";
             statement.executeUpdate(sql);
@@ -157,6 +158,8 @@ public final class DatabaseHelper {
         museumIdToCPFDirectors = new TreeMap<>();
 
         /* -- Mock Museum -- */
+
+
         museum = new Museum(
                 "TST",
                 "Teste",
@@ -573,7 +576,7 @@ public final class DatabaseHelper {
                             8134 + "," +
                             universityRegistration + "," +
                             Utils.RESEARCHER +
-                    ");";
+                    ") ON CONFLICT (CPF) DO NOTHING ";
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
@@ -622,7 +625,7 @@ public final class DatabaseHelper {
                     8134 + "," +
                     null + "," +
                     Utils.TECHNICIAN +
-                    ");";
+                    ") ON CONFLICT (CPF) DO NOTHING ";
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
@@ -676,7 +679,7 @@ public final class DatabaseHelper {
                         8134 + "," +
                         null + "," +
                         Utils.DIRECTOR +
-                    ");";
+                    ") ON CONFLICT (CPF) DO NOTHING ";
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
@@ -703,22 +706,23 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-
         Statement stm = null;
         try {
             stm = databaseConnection.createStatement();
+            Statement stm2 = databaseConnection.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("SELECT COUNT(DISTINCT COLLECTIONID) AS NUMCOL FROM COLLECTION");
-            String collectionID = resultSet.getString("NUMCOL");
+            ResultSet resultSet = stm2.executeQuery("SELECT COUNT(DISTINCT COLLECTIONID) AS NUMCOL FROM COLLECTION");
+            resultSet.next();
+            int collectionID = resultSet.getInt("NUMCOL");
 
-            if (Integer.parseInt(collectionID) < 10000)
-                collectionID = "0" + collectionID;
-            if (Integer.parseInt(collectionID) < 1000)
-                collectionID = "0" + collectionID;
-            if (Integer.parseInt(collectionID) < 100)
-                collectionID = "0" + collectionID;
-            if (Integer.parseInt(collectionID) < 10)
-                collectionID = "0" + collectionID;
+            if (collectionID < 10000)
+                collectionID = Integer.parseInt("0" + collectionID);
+            if (collectionID < 1000)
+                collectionID = Integer.parseInt("0" + collectionID);
+            if (collectionID < 100)
+                collectionID = Integer.parseInt("0" + collectionID);
+            if (collectionID < 10)
+                collectionID = Integer.parseInt("0" + collectionID);
 
 
 
@@ -728,7 +732,7 @@ public final class DatabaseHelper {
                        "'" + collectionID + "'," +
                         "'" + museum.getMuseumCode() + "'," +
                         "'" + name + "'" +
-                    ");";
+                    ") ON CONFLICT (collectionid) DO NOTHING ";
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
@@ -766,23 +770,23 @@ public final class DatabaseHelper {
         try {
             stm = databaseConnection.createStatement();
             String sql =   "INSERT INTO ITEM" +
-                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT, OUTERCIRCUNFERENCE, INNERCIRCUNFERENCE, WEIGHT, AUTHOR, CONSERVATIONSTATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
+                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT, OUTERCIRCUMFERENCE, INNERCIRCUMFERENCE, WEIGHT, AUTHOR, CONSERVATIONSATATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
                     "VALUES (" +
-                    0000 +
-                    0000 +
-                    name +
-                    year +
-                    destination +
-                    lenght +
-                    null + //Falta parâmetro
-                    null + //Falta parâmetro
-                    weight +
-                    null + //Falta parâmetro
-                    null + //Falta parâmetro
-                    null + //Falta parâmetro
-                    null + //Falta parâmetro
+                    "'" + "itemID" + "'," + //PLACEHOLDER
+                    "'" + "collectionID" + "'," + //PLACEHOLDER
+                    "'" + name + "'," +
+                    year + "," +
+                    "'" + destination + "'," +
+                    lenght + "," +
+                    null + "," + //Falta parâmetro
+                    null + "," + //Falta parâmetro
+                    weight + "," +
+                    null + "," + //Falta parâmetro
+                    null + "," + //Falta parâmetro
+                    null + "," + //Falta parâmetro
+                    null + "," + //Falta parâmetro
                     aquisitionDate +
-                    ");";
+                    ") ON CONFLICT (itemid) DO NOTHING ";
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
