@@ -117,6 +117,39 @@ public final class DatabaseHelper {
             statement.executeUpdate(sql);
             statement.close();
 
+            //Creates MOVIMENTATION
+            statement = databaseConnection.createStatement();
+            sql =   "CREATE TABLE IF NOT EXISTS MOVIMENTATION" +
+                    " (TIMESTAMP DATE PRIMARY KEY NOT NULL," +
+                    " ITEMID VARCHAR(15) NOT NULL REFERENCES ITEM(ITEMID) ON DELETE CASCADE," +
+                    " TYPE INTEGER NOT NULL," +
+                    " ORIGIN VARCHAR(20) NOT NULL," +
+                    " DESTINATION VARCHAR(20) NOT NULL)";
+            statement.executeUpdate(sql);
+            statement.close();
+
+            //Creates RESTORATION
+            statement = databaseConnection.createStatement();
+            sql =   "CREATE TABLE IF NOT EXISTS RESTORATION" +
+                    " (TIMESTAMP DATE PRIMARY KEY NOT NULL REFERENCES MOVIMENTATION(TIMESTAMP) ON DELETE CASCADE," +
+                    " ITEMID VARCHAR(15) NOT NULL REFERENCES ITEM(ITEMID) ON DELETE CASCADE," +
+                    " DATEOFRETURN DATE NOT NULL," +
+                    " DAMAGE VARCHAR(100) NOT NULL," +
+                    " RESTORER VARCHAR(30) NOT NULL," +
+                    " REPAIR VARCHAR(100) NOT NULL)";
+            statement.executeUpdate(sql);
+            statement.close();
+
+            //Creates LOAN
+            statement = databaseConnection.createStatement();
+            sql =   "CREATE TABLE IF NOT EXISTS LOAN" +
+                    " (TIMESTAMP DATE PRIMARY KEY NOT NULL REFERENCES MOVIMENTATION(TIMESTAMP) ON DELETE CASCADE," +
+                    " ITEMID VARCHAR(15) NOT NULL REFERENCES ITEM(ITEMID) ON DELETE CASCADE," +
+                    " DATEOFRETURN DATE NOT NULL)";
+            statement.executeUpdate(sql);
+            statement.close();
+
+
             /* -- Inserts -- */
 
             //INSERT COORDINATOR
@@ -686,10 +719,6 @@ public final class DatabaseHelper {
         if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
             return Utils.ALREADY_EXISTS_ERROR;
 
-        //Testa IDMuseum
-        if (museum.getMuseumCode().equals(IDMuseum))
-            return Utils.NOT_FOUND_ERROR;
-
         Statement stm = null;
         try {
             stm = databaseConnection.createStatement();
@@ -704,6 +733,9 @@ public final class DatabaseHelper {
                         Utils.DIRECTOR +
                     ") ON CONFLICT (CPF) DO NOTHING ";
             stm.executeUpdate(sql);
+
+            //TODO: ADD DIRECTOR CPF INTO MUSEUM
+
             stm.close();
         } catch (SQLException e){
             e.printStackTrace();
@@ -729,16 +761,14 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-
+        Statement stm = null;
         try {
-            statement = databaseConnection.createStatement();
+            stm = databaseConnection.createStatement();
+            Statement stm2 = databaseConnection.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("SELECT COUNT(DISTINCT COLLECTIONID) AS NUMCOL FROM COLLECTION");
-            int collectionID;
-            if (resultSet.next())
-              collectionID = resultSet.getInt("NUMCOL");
-            else
-                return Utils.FORBIDDEN_ERROR;
+            ResultSet resultSet = stm2.executeQuery("SELECT COUNT(DISTINCT COLLECTIONID) AS NUMCOL FROM COLLECTION");
+            resultSet.next();
+            int collectionID = resultSet.getInt("NUMCOL");
 
             if (collectionID < 10000)
                 collectionID = Integer.parseInt("0" + collectionID);
@@ -751,15 +781,15 @@ public final class DatabaseHelper {
 
 
 
-            String sql = "INSERT INTO COLLECTION " +
+            String sql =    "INSERT INTO COLLECTION " +
                     "(COLLECTIONID, CODMUSEUM, NAME) " +
                     "VALUES (" +
                        "'" + collectionID + "'," +
                         "'" + museum.getMuseumCode() + "'," +
                         "'" + name + "'" +
                     ") ON CONFLICT (NAME) DO NOTHING";
-            statement.executeUpdate(sql);
-            statement.close();
+            stm.executeUpdate(sql);
+            stm.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
@@ -768,67 +798,6 @@ public final class DatabaseHelper {
         return (museum.addCollection(name));
     }
 
-
-
-    //Itens
-//    public static int addItem(String museumCode, String collectionName, String name, int year, String origin, String destination,
-//                              float weight, float lenght, float width, float height, java.sql.Date aquisitionDate){
-//
-//        //Testa permissão
-//        if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
-//            return Utils.PERMISSION_ERROR;
-//        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-//                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-//                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-//            return Utils.PERMISSION_ERROR;
-//
-//        //Verifica se coleção existe e insere item
-//        ArrayList<Collection> collections = museum.getCollectionByName(collectionName);
-//        if (collections.isEmpty())
-//            return Utils.NOT_FOUND_ERROR;
-//
-//        Collection collection = collections.get(0);
-//        if (collection == null)
-//            return Utils.NOT_FOUND_ERROR;
-//
-//        Statement stm = null;
-//
-//        try {
-//            stm = databaseConnection.createStatement();
-//
-//            String sql =   "INSERT INTO ITEM" +
-//                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT, HEIGHT, WIDTH," +
-//                    " THICKNESS, OUTERCIRCUMFERENCE, INNERCIRCUMFERENCE, WEIGHT," +
-//                    " AUTHOR, CONSERVATIONSTATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
-//                    "VALUES (" +
-//                    "'" + "ID" + "'," + //ItemID
-//                    "'" + 1 + "'," + //CollectionID
-//                    "'" + name + "'," + //Name
-//                    year + "," + //Year
-//                    "'" + Utils.AT_STORAGE + "'," + //Status
-//                    lenght + "," + //Lenght
-//                    height + "," + //Height
-//                    width + "," +  //Width
-//                    null + "," +  //Thickness
-//                    null + "," + //Out Circum
-//                    null + "," + //In Circum
-//                    weight + "," +
-//                    null + "," + //Author
-//                    null + "," + //ConservationState
-//                    null + "," + //Biography
-//                    null + "," + //Description
-//                    null + "," + //HistoricalContext
-//                    "'" + aquisitionDate + "'" +
-//                    ") ON CONFLICT (ITEMID) DO NOTHING ";
-//            stm.executeUpdate(sql);
-//            stm.close();
-//        } catch (SQLException e){
-//            e.printStackTrace();
-//            System.out.println(e.getSQLState());
-//        }
-//        return collection.addItem(museumCode , name, year, origin, destination, weight, lenght, width, height, aquisitionDate);
-//
-//    }
     public static int addItem(String museumCode, String collectionName, String itemID, String name, int year, String origin, String destination,
                               float weight, float lenght, float width, float height, java.sql.Date aquisitionDate){
 
@@ -908,6 +877,33 @@ public final class DatabaseHelper {
                 || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
+
+
+        try {
+            //INSERT COORDINATOR
+            statement = databaseConnection.createStatement();
+            String sql =
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                    " VALUES (" +
+                    timestamp + ", " +
+                    itemID + ", " +
+                    "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET DESTINATION TO SET AS NEW ORIGIN
+                    null + ", " +   //discharge movimentation has no destination
+                    Utils.DISCHARGE +
+                    ") ON CONFLICT (timestamp) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.close();
+
+
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
+
+
 
         //Procura coleção
         Collection collection = museum.getCollectionByName(collectionName).get(0);
@@ -1292,8 +1288,17 @@ public final class DatabaseHelper {
                         person = new Technician(resultsName, resultsCPF, resultsPassword, resultsEmail);
                         break;
                     case Utils.DIRECTOR:
-                        //TODO: Search museum that holds directors ID and get its own id
-                            person = new Director(resultsName, resultsCPF, resultsPassword, resultsEmail, null);
+                        //Query for MuseumID
+                        sql = "SELECT codmuseum FROM museum WHERE cpfdirector = UPPER('" + resultsCPF + "')";
+                        ResultSet museums = statement.executeQuery(sql);
+
+                        String codMuseum = "";
+                        if (museums.next()){
+                            codMuseum = museums.getString("codmuseum");
+                        }
+
+                        //Creates Director
+                        person = new Director(resultsName, resultsCPF, resultsPassword, resultsEmail, codMuseum);
                         break;
                     case Utils.COORDINATOR:
                         person = new Coordinator(resultsName, resultsCPF, resultsPassword, resultsEmail);
@@ -1306,8 +1311,7 @@ public final class DatabaseHelper {
                 //Add object to array
                 objectsArray.add(person);
             }
-
-
+            statement.closeOnCompletion();
         }
         catch(SQLException e){
             e.printStackTrace();

@@ -24,6 +24,17 @@ public abstract class Utils {
     public static final int DIRECTOR = 3;
     public static final int COORDINATOR = 4;
 
+    //Movimentation Functions
+    public static final int ADMISSION = 1;
+    public static final int PUT_TO_STORAGE = 2;
+    public static final int PUT_TO_EXPOSITION = 3;
+    public static final int SEND_TO_LOAN = 4;
+    public static final int SEND_TO_RESTORATION = 5;
+    public static final int RETURN_FROM_LOAN = 6;
+    public static final int RETURN_FROM_RESTORATION = 7;
+    public static final int DISCHARGE = 8;
+
+
     //Return Codes
     public static final int REQUEST_OK = 200; // Operação realizada com sucesso
     public static final int ALREADY_EXISTS_ERROR = 402; // Erro de inserção, já existe valor
