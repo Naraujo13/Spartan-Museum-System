@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="NewCollectionPane" prefHeight="168.0" prefWidth="287.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="UI.AddCollectionController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="NewCollectionPane" prefHeight="168.0" prefWidth="287.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="view_controller.AddCollectionController">
    <children>
       <Label id="NewCollectionLabel" layoutX="37.0" layoutY="14.0" prefHeight="38.0" prefWidth="217.0" text="Nova Coleção">
          <font>

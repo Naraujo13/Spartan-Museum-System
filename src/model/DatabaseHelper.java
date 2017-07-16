@@ -36,8 +36,8 @@ public final class DatabaseHelper {
      /* -- DB INFO -- */
     /* -- DB INFO -- */
     private static String DBNAME = "MuseumSystemDB"; //SUBSTITUAM PELO NOME DO BANCO
-    private static String USER = "postgres";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
-    private static String PASS = "admin";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
+    private static String USER = "naraujo";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
+    private static String PASS = "noaicolas";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
 
     private static Connection databaseConnection;
     private static Statement statement = null;
@@ -64,9 +64,8 @@ public final class DatabaseHelper {
             sql =   "CREATE TABLE IF NOT EXISTS PERSON" +
                     " (CPF CHAR(11) PRIMARY KEY NOT NULL," +
                     " NAME VARCHAR(50) NOT NULL," +
-                    " PASSWORD VARCHAR(20) NOT NULL," +
+                    " PASSWORD VARCHAR(30) NOT NULL," +
                     " EMAIL VARCHAR (30) NOT NULL," +
-                    " PHONE VARCHAR (10) NOT NULL," +
                     " MATRICULA INT," +
                     " FUNCAO INT NOT NULL)";
             statement.executeUpdate(sql);
@@ -75,7 +74,7 @@ public final class DatabaseHelper {
             //Create MUSEUM
             statement = databaseConnection.createStatement();
             sql =   "CREATE TABLE IF NOT EXISTS MUSEUM" +
-                    " (CODMUSEUM CHAR(5) PRIMARY KEY NOT NULL," +
+                    " (CODMUSEUM VARCHAR(10) PRIMARY KEY NOT NULL," +
                     " CPFTECHNICIAN CHAR(11) REFERENCES PERSON(CPF) ON DELETE SET NULL," +
                     " CPFDIRECTOR CHAR(11) REFERENCES PERSON(CPF) ON DELETE SET NULL," +
                     " ADRESS VARCHAR (50) NOT NULL," +
@@ -88,28 +87,32 @@ public final class DatabaseHelper {
             //Create COLLECTION
             statement = databaseConnection.createStatement();
             sql =   "CREATE TABLE IF NOT EXISTS COLLECTION" +
-                    " (COLLECTIONID CHAR(5) PRIMARY KEY NOT NULL," +
-                    " CODMUSEUM CHAR(5) NOT NULL REFERENCES MUSEUM(codmuseum) ON DELETE CASCADE," +
-                    " NAME VARCHAR(20) NOT NULL)";
+                    " (COLLECTIONID VARCHAR(10) PRIMARY KEY NOT NULL," +
+                    " CODMUSEUM VARCHAR(10) NOT NULL REFERENCES MUSEUM(CODMUSEUM) ON DELETE CASCADE," +
+                    " NAME VARCHAR(30) UNIQUE NOT NULL)";
             statement.executeUpdate(sql);
             statement.close();
 
             //Create ITEM
             statement = databaseConnection.createStatement();
             sql =   "CREATE TABLE IF NOT EXISTS ITEM" +
-                    " (ITEMID CHAR(5) PRIMARY KEY NOT NULL," +
-                    " COLLECTIONID CHAR(5) NOT NULL REFERENCES COLLECTION(COLLECTIONID) ON DELETE CASCADE," +
-                    " NAME VARCHAR(20) NOT NULL," +
+                    " (ITEMID VARCHAR(15) PRIMARY KEY NOT NULL," +
+                    " COLLECTIONID VARCHAR(10) NOT NULL REFERENCES COLLECTION(COLLECTIONID) ON DELETE CASCADE," +
+                    " NAME VARCHAR(30) NOT NULL," +
                     " YEAR INT NOT NULL," +
                     " STATUS VARCHAR(18) NOT NULL," +
                     " LENGHT FLOAT," +
+                    " HEIGHT FLOAT," +
+                    " WIDTH FLOAT," +
+                    " THICKNESS FLOAT," +
                     " OUTERCIRCUMFERENCE FLOAT," +
                     " INNERCIRCUMFERENCE FLOAT," +
                     " WEIGHT FLOAT," +
                     " AUTHOR VARCHAR (50)," +
-                    " CONSERVATIONSATATE VARCHAR(100)," +
+                    " CONSERVATIONSTATE VARCHAR(100)," +
                     " BIOGRAPHY VARCHAR(150)," +
                     " DESCRIPTION VARCHAR (150)," +
+                    " HISTORICALCONTEXT VARCHAR (150)," +
                     " AQUISITIONDATE DATE NOT NULL)";
             statement.executeUpdate(sql);
             statement.close();
@@ -118,11 +121,11 @@ public final class DatabaseHelper {
 
             //INSERT COORDINATOR
             statement = databaseConnection.createStatement();
-            sql =   "INSERT INTO PERSON (CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
+            sql =   "INSERT INTO PERSON (CPF, NAME, PASSWORD, EMAIL, MATRICULA, FUNCAO) " +
                     " VALUES " +
                     "('00000000000', 'Administrador', 'admin'," +
-                    " 'admin@admin.admin', '981343999', null," +
-                    Utils.RESEARCHER +
+                    " 'admin@admin.admin', null," +
+                    Utils.COORDINATOR +
                     ") ON CONFLICT (CPF) DO NOTHING";
             statement.executeUpdate(sql);
             statement.close();
@@ -195,6 +198,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Século XXI",
+                museum.getMuseumCode() + "P99",
                 "PS99",
                 2099,
                 "Museu do Videogame de Roraima",
@@ -209,6 +213,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Século XXI",
+                museum.getMuseumCode() + "P50",
                 "PS50",
                 2050,
                 "Museu do Videogame do Piauí",
@@ -223,6 +228,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Século XXI",
+                museum.getMuseumCode() + "XB0",
                 "Xbox 0",
                 2050,
                 "Museu do Videogame de Roraima",
@@ -237,6 +243,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Século XXI",
+                museum.getMuseumCode() + "MQS",
                 "A mulher que sorri",
                 1974,
                 "Museu do Videogame da Paraíba",
@@ -251,7 +258,9 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Século XXI",
-                "Xbox 0.5", 2099,
+                museum.getMuseumCode() + "XB.5",
+                "Xbox 0.5",
+                2099,
                 "Museu do Videogame de Rondonia",
                 "Armazém 52",
                 2,
@@ -264,6 +273,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Século XXI",
+                museum.getMuseumCode() + "NDGS",
                 "Nintendo Degraus",
                 2024, "Museu do Videogame da Esquina",
                 "Armazém 02",
@@ -278,6 +288,7 @@ public final class DatabaseHelper {
                 museum.getMuseumCode(),
                 "Século XXI",
                 "Nintendo Mario",
+                museum.getMuseumCode() + "NMR",
                 2099,
                 "Museu do Videogame dei Berlim",
                 "Armazém 51",
@@ -291,6 +302,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Picasso",
+                museum.getMuseumCode() + "MLS",
                 "Mona Lisa",
                 1907, "Museu da Falsificação",
                 "Armazém 51",
@@ -304,6 +316,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Picasso",
+                museum.getMuseumCode() + "GPDT",
                 "O Grito Premeditado",
                 1908, "Museu da Falsificação",
                 "Armazém 43",
@@ -317,6 +330,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Picasso",
+                museum.getMuseumCode() + "GNCA",
                 "Guernica",
                 1937,
                 "Museu da Falsificação",
@@ -330,6 +344,7 @@ public final class DatabaseHelper {
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
                 "Picasso",
+                museum.getMuseumCode() + "AMS",
                 "A mulher que sorri",
                 1974,
                 "Museu da Falsificação",
@@ -343,6 +358,7 @@ public final class DatabaseHelper {
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
                 "Picasso",
+                museum.getMuseumCode() + "0MSC",
                 "Zero Musicians",
                 1900,
                 "Museu da Falsificação",
@@ -356,6 +372,7 @@ public final class DatabaseHelper {
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
                 "Picasso",
+                museum.getMuseumCode() + "PXC",
                 "Pixacação da Federal",
                 2014, "Museu da Falsificação",
                 "Armazém 21",
@@ -368,6 +385,7 @@ public final class DatabaseHelper {
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
                 "Fezes Animais Raras",
+                museum.getMuseumCode() + "FTRX",
                 "Fezes de T-Rex",
                 0,
                 "Sítio Arqueológico do Amapá",
@@ -382,6 +400,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Fezes Animais Raras",
+                museum.getMuseumCode() + "FURS",
                 "Fezes de Urso",
                 1983, "Sítio Arqueológico Papai Noel",
                 "Armazém 03",
@@ -395,7 +414,8 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Fezes Animais Raras",
-                "Cérebro",
+                museum.getMuseumCode() + "LUZZ",
+                "Cérebro do Felipe",
                 2017,
                 "Dom Joaquim, Pelotas",
                 "Armazém 21",
@@ -409,7 +429,8 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Fezes Animais Raras",
-                "Fezes de Aedes",
+                museum.getMuseumCode() + "FAEPT",
+                "Fezes de Aedes Egypt",
                 2008,
                 "Pneu do Terreno Baldio",
                 "Armazém 32",
@@ -422,6 +443,7 @@ public final class DatabaseHelper {
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
                 "Fezes Animais Raras",
+                "FZTTM",
                 "Fezes de Tutancamon",
                 200,
                 "Pirâmide",
@@ -435,6 +457,7 @@ public final class DatabaseHelper {
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Fezes Animais Raras",
+                "FZCSC",
                 "Fezes do Cusco",
                 2017,
                 "Esquina",
@@ -570,13 +593,12 @@ public final class DatabaseHelper {
         try {
             stm = databaseConnection.createStatement();
             String sql =    "INSERT INTO PERSON " +
-                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
+                    "(CPF, NAME, PASSWORD, EMAIL, MATRICULA, FUNCAO) " +
                     "VALUES (" +
                             CPF + "," +
                             "'"+ name + "'" + "," +
                             "'"+ password + "'" + "," +
                             "'"+ email + "'" + "," +
-                            8134 + "," +
                             universityRegistration + "," +
                             Utils.RESEARCHER +
                     ") ON CONFLICT (CPF) DO NOTHING ";
@@ -619,13 +641,12 @@ public final class DatabaseHelper {
         try {
             stm = databaseConnection.createStatement();
             String sql =    "INSERT INTO PERSON " +
-                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
+                    "(CPF, NAME, PASSWORD, EMAIL, MATRICULA, FUNCAO) " +
                     "VALUES (" +
                     CPF + "," +
                     "'"+ name + "'" + "," +
                     "'"+ password + "'" + "," +
                     "'"+ email + "'" + "," +
-                    8134 + "," +
                     null + "," +
                     Utils.TECHNICIAN +
                     ") ON CONFLICT (CPF) DO NOTHING ";
@@ -673,13 +694,12 @@ public final class DatabaseHelper {
         try {
             stm = databaseConnection.createStatement();
             String sql =    "INSERT INTO PERSON " +
-                    "(CPF, NAME, PASSWORD, EMAIL, PHONE, MATRICULA, FUNCAO) " +
+                    "(CPF, NAME, PASSWORD, EMAIL, MATRICULA, FUNCAO) " +
                     "VALUES (" +
                         CPF + "," +
                         "'"+ name + "'" + "," +
                         "'"+ password + "'" + "," +
                         "'"+ email + "'" + "," +
-                        8134 + "," +
                         null + "," +
                         Utils.DIRECTOR +
                     ") ON CONFLICT (CPF) DO NOTHING ";
@@ -709,14 +729,16 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-        Statement stm = null;
-        try {
-            stm = databaseConnection.createStatement();
-            Statement stm2 = databaseConnection.createStatement();
 
-            ResultSet resultSet = stm2.executeQuery("SELECT COUNT(DISTINCT COLLECTIONID) AS NUMCOL FROM COLLECTION");
-            resultSet.next();
-            int collectionID = resultSet.getInt("NUMCOL");
+        try {
+            statement = databaseConnection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("SELECT COUNT(DISTINCT COLLECTIONID) AS NUMCOL FROM COLLECTION");
+            int collectionID;
+            if (resultSet.next())
+              collectionID = resultSet.getInt("NUMCOL");
+            else
+                return Utils.FORBIDDEN_ERROR;
 
             if (collectionID < 10000)
                 collectionID = Integer.parseInt("0" + collectionID);
@@ -729,15 +751,15 @@ public final class DatabaseHelper {
 
 
 
-            String sql =    "INSERT INTO COLLECTION " +
+            String sql = "INSERT INTO COLLECTION " +
                     "(COLLECTIONID, CODMUSEUM, NAME) " +
                     "VALUES (" +
                        "'" + collectionID + "'," +
                         "'" + museum.getMuseumCode() + "'," +
                         "'" + name + "'" +
-                    ") ON CONFLICT (collectionid) DO NOTHING ";
-            stm.executeUpdate(sql);
-            stm.close();
+                    ") ON CONFLICT (NAME) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
@@ -749,7 +771,65 @@ public final class DatabaseHelper {
 
 
     //Itens
-    public static int addItem(String museumCode, String collectionName, String name, int year, String origin, String destination,
+//    public static int addItem(String museumCode, String collectionName, String name, int year, String origin, String destination,
+//                              float weight, float lenght, float width, float height, java.sql.Date aquisitionDate){
+//
+//        //Testa permissão
+//        if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
+//            return Utils.PERMISSION_ERROR;
+//        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
+//                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
+//                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
+//            return Utils.PERMISSION_ERROR;
+//
+//        //Verifica se coleção existe e insere item
+//        ArrayList<Collection> collections = museum.getCollectionByName(collectionName);
+//        if (collections.isEmpty())
+//            return Utils.NOT_FOUND_ERROR;
+//
+//        Collection collection = collections.get(0);
+//        if (collection == null)
+//            return Utils.NOT_FOUND_ERROR;
+//
+//        Statement stm = null;
+//
+//        try {
+//            stm = databaseConnection.createStatement();
+//
+//            String sql =   "INSERT INTO ITEM" +
+//                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT, HEIGHT, WIDTH," +
+//                    " THICKNESS, OUTERCIRCUMFERENCE, INNERCIRCUMFERENCE, WEIGHT," +
+//                    " AUTHOR, CONSERVATIONSTATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
+//                    "VALUES (" +
+//                    "'" + "ID" + "'," + //ItemID
+//                    "'" + 1 + "'," + //CollectionID
+//                    "'" + name + "'," + //Name
+//                    year + "," + //Year
+//                    "'" + Utils.AT_STORAGE + "'," + //Status
+//                    lenght + "," + //Lenght
+//                    height + "," + //Height
+//                    width + "," +  //Width
+//                    null + "," +  //Thickness
+//                    null + "," + //Out Circum
+//                    null + "," + //In Circum
+//                    weight + "," +
+//                    null + "," + //Author
+//                    null + "," + //ConservationState
+//                    null + "," + //Biography
+//                    null + "," + //Description
+//                    null + "," + //HistoricalContext
+//                    "'" + aquisitionDate + "'" +
+//                    ") ON CONFLICT (ITEMID) DO NOTHING ";
+//            stm.executeUpdate(sql);
+//            stm.close();
+//        } catch (SQLException e){
+//            e.printStackTrace();
+//            System.out.println(e.getSQLState());
+//        }
+//        return collection.addItem(museumCode , name, year, origin, destination, weight, lenght, width, height, aquisitionDate);
+//
+//    }
+    public static int addItem(String museumCode, String collectionName, String itemID, String name, int year, String origin, String destination,
                               float weight, float lenght, float width, float height, java.sql.Date aquisitionDate){
 
         //Testa permissão
@@ -760,28 +840,31 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-        //Verifica se coleção existe e insere item
-        ArrayList<Collection> collections = museum.getCollectionByName(collectionName);
-        if (collections.isEmpty())
-            return Utils.NOT_FOUND_ERROR;
-        
-        Collection collection = collections.get(0);
-        if (collection == null)
-            return Utils.NOT_FOUND_ERROR;
-
-        Statement stm = null;
-
         try {
-            stm = databaseConnection.createStatement();
+            //Crates statement
+            statement = databaseConnection.createStatement();
 
-            String sql =   "INSERT INTO ITEM" +
-                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT, OUTERCIRCUMFERENCE, INNERCIRCUMFERENCE, WEIGHT, AUTHOR, CONSERVATIONSATATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
+            //Querys for CollectionID
+            String sql = "SELECT * FROM collection WHERE NAME = '" + collectionName + "'";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            String collectionID;
+            if (resultSet.next())
+                collectionID = resultSet.getString("COLLECTIONID");
+            else
+                return Utils.NOT_FOUND_ERROR;   //Collection not found
+
+            //Creates SQL for insertion
+            sql =   "INSERT INTO ITEM" +
+                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT," +
+                    " OUTERCIRCUMFERENCE, INNERCIRCUMFERENCE, WEIGHT," +
+                    " AUTHOR, CONSERVATIONSTATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
                     "VALUES (" +
-                    "'" + "ID" + "'," + //PLACEHOLDER
-                    "'" + 1 + "'," + //PLACEHOLDER
+                    "'" + itemID + "'," +
+                    "'" + collectionID + "'," +
                     "'" + name + "'," +
                     year + "," +
-                    "'" + destination + "'," +
+                    "'" + Utils.AT_STORAGE + "'," +
                     lenght + "," +
                     null + "," + //Falta parâmetro
                     null + "," + //Falta parâmetro
@@ -791,17 +874,22 @@ public final class DatabaseHelper {
                     null + "," + //Falta parâmetro
                     null + "," + //Falta parâmetro
                     "'" + aquisitionDate + "'" +
-                    ") ON CONFLICT (itemid) DO NOTHING ";
-            stm.executeUpdate(sql);
-            stm.close();
+                    ") ON CONFLICT (ITEMID) DO NOTHING ";
+
+            //Execute Statement
+            statement.executeUpdate(sql);
+
+            //Close Statement
+            statement.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
         }
 
-        return collection.addItem(museumCode + collection.getItems().size(), name, year, origin, destination, weight, lenght, width, height, aquisitionDate);
+        return Utils.REQUEST_OK;
 
     }
+
 
     //Movimentation
 
@@ -991,14 +1079,25 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return null;
 
-        ArrayList<Item> results = new ArrayList<>();
+        ArrayList<Item> objectsArray = new ArrayList<>();
 
-        for (Collection collection : museum.getCollectionsTreeMap().values()){
-            if(collection.getItemsByID(ID)!=null)
-                results.add(collection.getItemsByID(ID));
+        try {
+
+            //Make query
+            statement = databaseConnection.createStatement();
+            String sql = "SELECT * FROM ITEM WHERE UPPER(ITEMID) LIKE UPPER('%" + ID + "%')";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            objectsArray = itemResultSetToArray(resultSet);
+
+            //Closes statement
+            statement.close();
         }
-
-        return results;
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        return objectsArray;
     }
 
     /**
@@ -1012,18 +1111,92 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return null;
 
-        ArrayList<Item> results = new ArrayList<>();
+        ArrayList<Item> objectsArray = new ArrayList<>();
 
-        for (Collection collection : museum.getCollectionsTreeMap().values()){
-            results.addAll(collection.getItemsByName(searchString));
+        try {
+
+            //Make query
+            statement = databaseConnection.createStatement();
+            String sql = "SELECT * FROM ITEM WHERE UPPER(NAME) LIKE UPPER('%" + searchString + "%')";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            objectsArray = itemResultSetToArray(resultSet);
+
+            //Closes statement
+            statement.close();
         }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        return objectsArray;
+    }
 
-        results.sort(Comparator.naturalOrder());
-        return results;
+    private static ArrayList<Item> itemResultSetToArray(ResultSet resultSet){
+
+        ArrayList<Item> objectsArray = new ArrayList<>();
+        try {
+            //Puts results in array list
+            while (resultSet.next()) {
+                //Gets info
+                //Basic info
+                String resultsID = resultSet.getString(("itemid"));
+                String resultsName = resultSet.getString(("name"));
+                int resultsYear = resultSet.getInt(("year"));
+                String resultsStatus = resultSet.getString(("status"));
+                //Measures
+                float resultsLenght = resultSet.getFloat("lenght");
+                //float resultsHeight = resultSet.getFloat("height");
+                float resultsHeight = 0.0f;
+                float resultsWidht = resultSet.getFloat("width");
+                float resultsThickness = resultSet.getFloat("thickness");
+                float resultsOuterCircumference = resultSet.getFloat("outerCircumference");
+                float resultsInnerCircumference = resultSet.getFloat("innerCircumference");
+                float resultsWeight = resultSet.getFloat("weight");
+                //Extra info
+                String resultsAuthor = resultSet.getString(("author"));
+                String resultsConservationState = resultSet.getString(("conservationState"));
+                String resultsHistoricalContext = resultSet.getString(("historicalContext"));
+                String resultsBiography = resultSet.getString(("biography"));
+                String resultsDescription = resultSet.getString(("description"));
+
+                //TODO: GETS ITEM ORIGIN AND DESTINATION FROM ENTRY MOVIMENTATION
+                String resultsOrigin = "NO ENTRY";
+                String resultsDestination = "NO ENTRY";
+
+                //Creates object
+                Item item = new Item(
+                        resultsID,
+                        resultsName,
+                        resultsYear,
+                        resultsOrigin,
+                        resultsDestination,
+                        resultsWeight,
+                        resultsLenght,
+                        resultsWidht,
+                        resultsHeight, resultsThickness,
+                        resultsDescription,
+                        resultsAuthor,
+                        resultsOuterCircumference,
+                        resultsInnerCircumference,
+                        0,
+                        resultsStatus);
+                item.setConservationState(resultsConservationState);
+                item.setHistoricalContext(resultsHistoricalContext);
+                item.setBiography(resultsBiography);
+
+                //Add object to array
+                objectsArray.add(item);
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        return objectsArray;
     }
 
     //Coleções
-
     /**
      * Pesquisa coleção por substring no nome
      * @param searchString - substring de pesquisa
@@ -1034,7 +1207,44 @@ public final class DatabaseHelper {
                 || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return null;
-        return museum.getCollectionByName(searchString);
+
+        ArrayList<Collection> objectsArray = new ArrayList<>();
+
+        try {
+            //Crates statement
+            statement = databaseConnection.createStatement();
+
+            //Querys for CollectionID
+            String sql = "SELECT * FROM collection WHERE NAME = UPPER('%" + searchString + "%')";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+
+            //Puts results in array list
+            while (resultSet.next()) {
+                //Gets info
+                //Basic info
+                String resultsID = resultSet.getString(("collectionid"));
+                String resultsCodMuseum = resultSet.getString(("codmuseum"));
+                String resultsName = resultSet.getString(("name"));
+
+                //Creates object
+                Collection collection = new Collection(
+                        resultsID,
+                        resultsCodMuseum,
+                        resultsName
+                );
+                //Add object to array
+                objectsArray.add(collection);
+            }
+
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
+        return objectsArray;
     }
 
     //Users
@@ -1050,29 +1260,61 @@ public final class DatabaseHelper {
             return null;
 
         //Results array
-        ArrayList<Person> results = new ArrayList<>();
+        ArrayList<Person> objectsArray = new ArrayList<>();
 
-        //Get Researchers
-        ArrayList<String> cpfs = new ArrayList<>(Utils.searchByPrefix(DatabaseHelper.getNameToCPFResearchers(), searchString).values());
-        for (String cpf : cpfs)
-            results.add(DatabaseHelper.getResearchersTreeMap().get(cpf));
+        try {
+            //Crates statement
+            statement = databaseConnection.createStatement();
 
-        //Get Technicians
-        cpfs = new ArrayList<>(Utils.searchByPrefix(DatabaseHelper.getNameToCPFTechnicians(), searchString).values());
-        for (String cpf : cpfs)
-            results.add(DatabaseHelper.getTechniciansTreeMap().get(cpf));
+            //Querys for CollectionID
+            String sql = "SELECT * FROM PERSON WHERE NAME = UPPER('%" + searchString + "%')";
+            ResultSet resultSet = statement.executeQuery(sql);
 
-        //Get Technicians
-        cpfs = new ArrayList<>(Utils.searchByPrefix(DatabaseHelper.getNameToCPFDirectors(), searchString).values());
-        for (String cpf : cpfs)
-            results.add(DatabaseHelper.getDirectorsTreeMap().get(cpf));
 
-        //Get Coordinator
-        if (coordinator.getName().contains(searchString))
-            results.add(coordinator);
+            //Puts results in array list
+            while (resultSet.next()) {
+                //Gets info
+                //Basic info
+                String resultsCPF = resultSet.getString(("cpf"));
+                String resultsName = resultSet.getString(("name"));
+                String resultsPassword = resultSet.getString("password");
+                String resultsEmail = resultSet.getString(("email"));
+                int resultsMatricula = resultSet.getInt(("matricula"));
+                int resultsFuncao = resultSet.getInt(("funcao"));
 
-        //Return results
-        return results;
+                //Creates object
+                Person person;
+                switch (resultsFuncao){
+                    case Utils.RESEARCHER:
+                        person = new Researcher(resultsName, resultsCPF, resultsPassword, resultsEmail, resultsMatricula);
+                        break;
+                    case Utils.TECHNICIAN:
+                        person = new Technician(resultsName, resultsCPF, resultsPassword, resultsEmail);
+                        break;
+                    case Utils.DIRECTOR:
+                        //TODO: Search museum that holds directors ID and get its own id
+                            person = new Director(resultsName, resultsCPF, resultsPassword, resultsEmail, null);
+                        break;
+                    case Utils.COORDINATOR:
+                        person = new Coordinator(resultsName, resultsCPF, resultsPassword, resultsEmail);
+                        break;
+                    default:
+                        person = new Technician(resultsName, resultsCPF, resultsPassword, resultsEmail);
+                        break;
+                }
+
+                //Add object to array
+                objectsArray.add(person);
+            }
+
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
+        return objectsArray;
     }
 
 }

@@ -124,6 +124,29 @@ public class Item implements Comparable<Item>{
 
     }
 
+    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, String author, float outerCircumference, float innerCircumference, float depth, String status) {
+
+        /* -- Cria item --  */
+        this.ID = ID;
+        this.name = name;
+        this.year = year;
+        this.movimentationsTreeMap = new TreeMap<>();
+        this.lenght = lenght;
+        this.weight = weight;
+        this.width = width;
+        this.height = height;
+        this.thickness = thickness;
+        this.description = description;
+        this.author = author;
+        this.innerCircumference = innerCircumference;
+        this.outerCircumference = outerCircumference;
+        this.depth = depth;
+        /* -- Cria Movimentação de entrada -- */
+        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
+        movimentationsTreeMap.put(admission.getTimestamp(), admission);
+        this.status = status;
+    }
+
     @Override
     public int compareTo(Item item) {
         return this.getName().compareToIgnoreCase(item.getName());

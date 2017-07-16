@@ -11,6 +11,8 @@ import java.util.*;
 public class Collection implements Comparable<Collection>{
     //Info
     private String name;
+    private String collectionID;
+    private String codMuseum;
 
     //Dados
     private HashMap<String, Item> items; /* -- Tree Map com ID->Item -- */
@@ -19,6 +21,15 @@ public class Collection implements Comparable<Collection>{
 
 
     Collection(String name) {
+        this.name = name;
+        this.items = new HashMap<>();
+        this.nameToID = new TreeMap<>();
+        this.statusToID = new TreeMap<>();
+    }
+
+    Collection(String ID, String codMuseum, String name) {
+        this.name = name;
+        this.codMuseum = codMuseum;
         this.name = name;
         this.items = new HashMap<>();
         this.nameToID = new TreeMap<>();

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="266.0" prefWidth="355.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="UI.EditUserController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="266.0" prefWidth="355.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="view_controller.EditUserController">
    <children>
       <Label id="AddUser" alignment="CENTER" layoutX="25.0" layoutY="14.0" prefHeight="39.0" prefWidth="307.0" text="Editar Usuário">
          <font>

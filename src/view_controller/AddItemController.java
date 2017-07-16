@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UI;
+package view_controller;
 
 import java.net.URL;
 import java.sql.Date;
@@ -86,7 +86,10 @@ public class AddItemController implements Initializable {
             public void handle(ActionEvent event) {
                 
                
-               DatabaseHelper.addItem(DatabaseHelper.getMuseum().getMuseumCode(), (String) Collections.getValue(),
+               DatabaseHelper.addItem(
+                       DatabaseHelper.getMuseum().getMuseumCode(),
+                       (String) Collections.getValue(),
+                       ItemName.getText().substring(ItemName.getText().length()-3, ItemName.getText().length()), //TODO: Replace with correct textfield
                        ItemName.getText(),
                        Integer.parseInt(ItemYear.getText()),
                        ItemOrigin.getText(),

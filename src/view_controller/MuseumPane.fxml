@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane xmlns:fx="http://javafx.com/fxml/1" id="MuseumPane" layoutX="235.0" layoutY="99.0" prefHeight="323.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="UI.MuseumPaneController">
+<Pane xmlns:fx="http://javafx.com/fxml/1" id="MuseumPane" layoutX="235.0" layoutY="99.0" prefHeight="323.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="view_controller.MuseumPaneController">
         <children>
            <Label fx:id="MuseumNameLabel" layoutX="14.0" layoutY="14.0" text="Museu MALG">
               <font>
