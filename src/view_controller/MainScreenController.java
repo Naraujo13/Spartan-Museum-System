@@ -31,6 +31,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.DatabaseHelper;
 
+import javax.xml.crypto.Data;
+
 /**
  *
  * @author Usuário
@@ -103,7 +105,7 @@ public class MainScreenController implements Initializable {
             Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         ObservableList elements = FXCollections.observableArrayList();
-        ArrayList<model.Collection> collections = new ArrayList<>(DatabaseHelper.getMuseum().getCollectionsTreeMap().values());
+        ArrayList<model.Collection> collections = DatabaseHelper.getAllCollections();
         for(model.Collection collection : collections){
             elements.add(collection.getName());
         }
@@ -221,7 +223,7 @@ public class MainScreenController implements Initializable {
             Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);
         }
         ObservableList elements = FXCollections.observableArrayList();
-        ArrayList<model.Collection> collections = new ArrayList<>(DatabaseHelper.getMuseum().getCollectionsTreeMap().values());
+        ArrayList<model.Collection> collections = DatabaseHelper.getAllCollections();
         for(model.Collection collection : collections){
             elements.add(collection.getName());
         }
@@ -230,8 +232,10 @@ public class MainScreenController implements Initializable {
         public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
             //DatabaseHelper.out.println("ListView selection changed from oldValue = "
                // + oldValue + " to newValue = " + newValue);
-            ArrayList<model.Collection> selectedCollection = new ArrayList<>(DatabaseHelper.searchCollectionByName(newValue));
-            System.out.println("Selecionado: " + selectedCollection.get(0).getName());
+            ArrayList<model.Collection> selectedCollection = DatabaseHelper.searchCollectionByName(newValue);
+            System.out.println("Coleção selecionada:" + newValue);
+            if (!selectedCollection.isEmpty())
+                System.out.println("Selecionado: " + selectedCollection.get(0).getName());
             if(MainScreen.getChildren().size() > 7)
                 MainScreen.getChildren().remove(MainScreen.getChildren().size()-1);
             //SearchResultsPaneController controller;
@@ -241,7 +245,8 @@ public class MainScreenController implements Initializable {
                 Pane p = fxmlLoader.load(getClass().getResource("SearchResultsPane.fxml").openStream());
                 MainScreen.getChildren().add(p);
                 SearchResultsPaneController controller = (SearchResultsPaneController) fxmlLoader.getController();
-                controller.showCollection(selectedCollection.get(0));
+                if (!selectedCollection.isEmpty())
+                    controller.showCollection(selectedCollection.get(0));
                 
             } catch (IOException ex) {
                 Logger.getLogger(MainScreenController.class.getName()).log(Level.SEVERE, null, ex);

@@ -24,16 +24,12 @@ public class Museum {
     //Diretor
     private Director director;
 
-    //Coleções
-    private TreeMap<String, Collection> collectionsTreeMap; /* -- TreeMap  nome->Coleção -- */
-    /* ---------- */
 
     /*-- Construtores -- */
     Museum(String museumCode, String name, String address) {
         this.museumCode = museumCode;
         this.name = name;
         this.address = address;
-        this.collectionsTreeMap = new TreeMap<>();
     }
 
     Museum(String museumCode, String name, String address, String phone) {
@@ -41,7 +37,6 @@ public class Museum {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.collectionsTreeMap = new TreeMap<>();
     }
 
     Museum(String museumCode, String name, String address, String phone, String email) {
@@ -50,7 +45,6 @@ public class Museum {
         this.address = address;
         this.phone = phone;
         this.email = email;
-        this.collectionsTreeMap = new TreeMap<>();
     }
 
     Museum(String museumCode, String name, String address, String phone, String email, String openingHours) {
@@ -60,7 +54,6 @@ public class Museum {
         this.phone = phone;
         this.email = email;
         this.openingHours = openingHours;
-        this.collectionsTreeMap = new TreeMap<>();
     }
 
     Museum(String museumCode, String name, String address, String phone, String email, String openingHours, String description, Director director) {
@@ -72,7 +65,6 @@ public class Museum {
         this.openingHours = openingHours;
         this.description = description;
         this.director = director;
-        this.collectionsTreeMap = new TreeMap<>();
     }
 
     /* -- Getters and Setters -- */
@@ -135,43 +127,6 @@ public class Museum {
     void setDirector(Director director) {
         this.director = director;
     }
-
-    public TreeMap<String, Collection> getCollectionsTreeMap() {
-        return collectionsTreeMap;
-    }
-
-    /* -- Inserção -- */
-    int addCollection(String name){
-         //Testa se já existe coleção com este nome
-        if (!DatabaseHelper.getMuseum().getCollectionByName(name).isEmpty())
-            return Utils.ALREADY_EXISTS_ERROR;
-
-        //Insere coleção
-        Collection collection = new Collection(name);
-        this.collectionsTreeMap.put(collection.getName(), collection);
-
-        return Utils.REQUEST_OK;
-    }
-
-    /* -- Pesquisa -- */
-    /**
-     * Pesquisa Coleção por nome
-     * @param search - parametro de busca
-     * @return - Retorna array com coleções que contém parametro de busca no nome
-     */
-    ArrayList<Collection> getCollectionByName(String search){
-        return new ArrayList<>(searchByPrefix(collectionsTreeMap, search).values());
-    }
-
-    private SortedMap<String, Collection> searchByPrefix(SortedMap<String, Collection> baseMap, String prefix) {
-        if(prefix!=null && prefix.length() > 0) {
-            char nextLetter = (char) (prefix.charAt(prefix.length() -1) + 1);
-            String end = prefix.substring(0, prefix.length()-1) + nextLetter;
-            return baseMap.subMap(prefix, end);
-        }
-        return baseMap;
-    }
-
 
 
 }

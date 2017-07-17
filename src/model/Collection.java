@@ -81,10 +81,6 @@ public class Collection implements Comparable<Collection>{
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(DatabaseHelper.getTechniciansTreeMap().containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || DatabaseHelper.getDirectorsTreeMap().containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || DatabaseHelper.getCoordinator().getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-            return Utils.NOT_FOUND_ERROR;
 
         /* -- Cria novo item -- */
         Item item = new Item(museumCode + items.size(), name, year, origin, destination, weight, lenght, width, height, aquisitionDate);

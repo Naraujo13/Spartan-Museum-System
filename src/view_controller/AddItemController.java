@@ -10,6 +10,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,7 +23,10 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Collection;
 import model.DatabaseHelper;
+
+import javax.xml.crypto.Data;
 
 /**
  * FXML Controller class
@@ -76,9 +80,16 @@ public class AddItemController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        ArrayList<String> collections;
-        collections = new ArrayList<>(DatabaseHelper.getMuseum().getCollectionsTreeMap().keySet());
-        ObservableList<String> list = FXCollections.observableArrayList(collections);
+        ArrayList<String> collectionNames = DatabaseHelper.getCollectionNames();
+        if (collectionNames.isEmpty())
+            System.out.println("Array de nomes vazio");
+
+//        collectionNames = new ArrayList<>(DatabaseHelper.searchCollectionByName("").stream()
+//                .map(obj -> obj.getName())
+//                .collect(Collectors.toList()));
+
+
+        ObservableList<String> list = FXCollections.observableArrayList(collectionNames);
         Collections.setItems(list);
         
         

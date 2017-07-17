@@ -26,6 +26,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.DatabaseHelper;
 
+import javax.xml.crypto.Data;
+
 /**
  * FXML Controller class
  *
@@ -50,11 +52,11 @@ public class SearchResultsPaneController implements Initializable {
     }
     @FXML
     public void showCollection(model.Collection collection){
-        this.collection=collection;
+        SearchResultsPaneController.collection = collection;
         //FXMLLoader fxmlLoader;
         
         ObservableList elements = FXCollections.observableArrayList();
-        ArrayList<model.Item> itens = new ArrayList<>(collection.getItems().values());
+        ArrayList<model.Item> itens = DatabaseHelper.searchItemByCollection(collection.getName());
         
         for(model.Item item : itens){
         elements.add(item.getID()+ " - " + item.getName());

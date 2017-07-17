@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -76,9 +78,15 @@ public class EditItemController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        ArrayList<String> collections;
-        collections = new ArrayList<>(DatabaseHelper.getMuseum().getCollectionsTreeMap().keySet());
-        ObservableList<String> list = FXCollections.observableArrayList(collections);
+        ArrayList<String> collectionNames = DatabaseHelper.getCollectionNames();
+        if (collectionNames.isEmpty())
+            System.out.println("Array de nomes vazio");
+
+//        collectionNames = new ArrayList<>(DatabaseHelper.searchCollectionByName("").stream()
+//                .map(obj -> obj.getName())
+//                .collect(Collectors.toList()));
+
+        ObservableList<String> list = FXCollections.observableArrayList(collectionNames);
         Collections.setItems(list);
         
         

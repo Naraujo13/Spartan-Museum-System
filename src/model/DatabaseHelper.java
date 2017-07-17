@@ -13,24 +13,10 @@ import java.util.*;
 public final class DatabaseHelper {
 
     /* ------- Usuários ------- */
-    /* -- Técnicos -- */
-    private static HashMap<String, Technician> techniciansTreeMap; /* -- TreeMap com CPF->Técnico dos técnicos-- */
-    private static TreeMap<String, String> nameToCPFTechnicians; /* -- HashMap Nome->CPF dos técnicos-- */
-    /* -- Pesquisadores -- */
-    private static HashMap<String, Researcher> researchersTreeMap; /* -- TreeMap com CPF->Pesquisador dos pesquisadores -- */
-    private static TreeMap<String, String> nameToCPFResearchers; /* -- HashMap Nome->CPF dos pesquisadores-- */
-    /* -- Diretores -- */
-    private static HashMap<String, Director> directorsTreeMap; /* -- TreeMap com CPF->Diretor dos diretores -- */
-    private static TreeMap<String, String> nameToCPFDirectors; /* -- HashMap Nome->CPF dos diretores-- */
-    private static TreeMap<String, String> museumIdToCPFDirectors; /* -- HashMap museuID->CPF dos diretores-- */
-    /* -- Coordinator -- */
-    private static Coordinator coordinator;
-    /* ------------------------ */
-     /* ------- Dados ------- */
-     /* -- Museu -- */
-     private static Museum museum;
-     /* -- Usuário -- */
+
+     /* -- Usuário Ativo -- */
      private static Person activeUser;
+     private static Museum museum;
 
      /* -- DB INFO -- */
     /* -- DB INFO -- */
@@ -74,6 +60,7 @@ public final class DatabaseHelper {
             statement = databaseConnection.createStatement();
             sql =   "CREATE TABLE IF NOT EXISTS MUSEUM" +
                     " (CODMUSEUM VARCHAR(10) PRIMARY KEY NOT NULL," +
+                    " NAME VARCHAR (30) NOT NULL," +
                     " CPFTECHNICIAN CHAR(11) REFERENCES PERSON(CPF) ON DELETE SET NULL," +
                     " CPFDIRECTOR CHAR(11) REFERENCES PERSON(CPF) ON DELETE SET NULL," +
                     " ADRESS VARCHAR (50) NOT NULL," +
@@ -163,13 +150,24 @@ public final class DatabaseHelper {
             statement.executeUpdate(sql);
             statement.close();
 
+            activeUser = new Coordinator("Administrador", "00000000000","admin", "admin@admin.admin");
+
             //INSERT MUSEUM
             statement = databaseConnection.createStatement();
-            sql = "INSERT INTO MUSEUM (CODMUSEUM, CPFTECHNICIAN, CPFDIRECTOR, ADRESS, PHONE, OPENINGHOURS, DESCRIPTION)" +
-                    " VALUES ('TST', null, null, 'Rua Teste 123', '123123123', '2:00 as 4:00', 'Descricao teste')" +
+            sql = "INSERT INTO MUSEUM (CODMUSEUM, NAME, CPFTECHNICIAN, CPFDIRECTOR, ADRESS, PHONE, OPENINGHOURS, DESCRIPTION)" +
+                    " VALUES ('TST', 'Teste', null, null, 'Rua Teste 123', '123123123', '2:00 as 4:00', 'Descricao teste')" +
                     " ON CONFLICT (CODMUSEUM) DO NOTHING ";
             statement.executeUpdate(sql);
             statement.close();
+
+            museum = new Museum(
+                    "TST",
+                    "Teste",
+                    "Rua Teste 123",
+                    "123123123",
+                    "teste@museum.org",
+                    "2:00 as 4:00");
+            museum.setDescription("Descrição Teste");
 
             /* --------------- */
         }
@@ -179,30 +177,6 @@ public final class DatabaseHelper {
         }
 
 
-        DatabaseHelper.coordinator = new Coordinator("Administrador", "00000000000", "admin", "admin@admin.admin");
-        activeUser = coordinator;
-
-        /* -- Prepara HashMaps -- */
-        techniciansTreeMap = new HashMap<>();
-        nameToCPFTechnicians = new TreeMap<>();
-
-        researchersTreeMap = new HashMap<>();
-        nameToCPFResearchers = new TreeMap<>();
-
-        directorsTreeMap = new HashMap<>();
-        nameToCPFDirectors = new TreeMap<>();
-        museumIdToCPFDirectors = new TreeMap<>();
-
-        /* -- Mock Museum -- */
-
-
-        museum = new Museum(
-                "TST",
-                "Teste",
-                "Rua Teste 123",
-                "123123123123",
-                "teste@testando.tst",
-                "2:00 às 4:00hrs");
 
         /* -- Mock Collections -- */
         Collection secXXI, picasso, fezes;
@@ -212,7 +186,7 @@ public final class DatabaseHelper {
 
         /* -- Mock Users -- */
         //Adiciona Diretor
-        DatabaseHelper.addPerson("Joãozinho", "12312312312", "password", "joao@bonitao.uol.com", museum.getMuseumCode());
+        DatabaseHelper.addPerson("Joãozinho", "12312312312", "password", "joao@bonitao.uol.com", "TST");
 
         //Adiciona Técnicos
         DatabaseHelper.addPerson("Paulo", "11111111111", "paulo123", "paulo@banco.de.dados");
@@ -227,9 +201,9 @@ public final class DatabaseHelper {
         /* -- Mock Items -- */
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Século XXI",
-                museum.getMuseumCode() + "P99",
+                "TST" + "P99",
                 "PS99",
                 2099,
                 "Museu do Videogame de Roraima",
@@ -242,9 +216,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Século XXI",
-                museum.getMuseumCode() + "P50",
+                "TST" + "P50",
                 "PS50",
                 2050,
                 "Museu do Videogame do Piauí",
@@ -257,9 +231,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Século XXI",
-                museum.getMuseumCode() + "XB0",
+                "TST" + "XB0",
                 "Xbox 0",
                 2050,
                 "Museu do Videogame de Roraima",
@@ -272,9 +246,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Século XXI",
-                museum.getMuseumCode() + "MQS",
+                "TST" + "MQS",
                 "A mulher que sorri",
                 1974,
                 "Museu do Videogame da Paraíba",
@@ -287,9 +261,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Século XXI",
-                museum.getMuseumCode() + "XB.5",
+                "TST" + "XB.5",
                 "Xbox 0.5",
                 2099,
                 "Museu do Videogame de Rondonia",
@@ -302,9 +276,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Século XXI",
-                museum.getMuseumCode() + "NDGS",
+                "TST" + "NDGS",
                 "Nintendo Degraus",
                 2024, "Museu do Videogame da Esquina",
                 "Armazém 02",
@@ -316,10 +290,10 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Século XXI",
                 "Nintendo Mario",
-                museum.getMuseumCode() + "NMR",
+                "TST" + "NMR",
                 2099,
                 "Museu do Videogame dei Berlim",
                 "Armazém 51",
@@ -331,9 +305,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Picasso",
-                museum.getMuseumCode() + "MLS",
+                "TST" + "MLS",
                 "Mona Lisa",
                 1907, "Museu da Falsificação",
                 "Armazém 51",
@@ -345,9 +319,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Picasso",
-                museum.getMuseumCode() + "GPDT",
+                "TST" + "GPDT",
                 "O Grito Premeditado",
                 1908, "Museu da Falsificação",
                 "Armazém 43",
@@ -359,9 +333,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Picasso",
-                museum.getMuseumCode() + "GNCA",
+                "TST" + "GNCA",
                 "Guernica",
                 1937,
                 "Museu da Falsificação",
@@ -373,9 +347,10 @@ public final class DatabaseHelper {
                 new Timestamp(java.lang.System.currentTimeMillis())
         );
 
-        DatabaseHelper.addItem(museum.getMuseumCode(),
+        DatabaseHelper.addItem(
+                "TST",
                 "Picasso",
-                museum.getMuseumCode() + "AMS",
+                "TST" + "AMS",
                 "A mulher que sorri",
                 1974,
                 "Museu da Falsificação",
@@ -387,9 +362,10 @@ public final class DatabaseHelper {
                 new Timestamp(java.lang.System.currentTimeMillis())
         );
 
-        DatabaseHelper.addItem(museum.getMuseumCode(),
+        DatabaseHelper.addItem(
+                "TST",
                 "Picasso",
-                museum.getMuseumCode() + "0MSC",
+                "TST" + "0MSC",
                 "Zero Musicians",
                 1900,
                 "Museu da Falsificação",
@@ -401,9 +377,10 @@ public final class DatabaseHelper {
                 new Timestamp(java.lang.System.currentTimeMillis())
         );
 
-        DatabaseHelper.addItem(museum.getMuseumCode(),
+        DatabaseHelper.addItem(
+                "TST",
                 "Picasso",
-                museum.getMuseumCode() + "PXC",
+                "TST" + "PXC",
                 "Pixacação da Federal",
                 2014, "Museu da Falsificação",
                 "Armazém 21",
@@ -414,9 +391,10 @@ public final class DatabaseHelper {
                 new Timestamp(java.lang.System.currentTimeMillis())
         );
 
-        DatabaseHelper.addItem(museum.getMuseumCode(),
+        DatabaseHelper.addItem(
+                "TST",
                 "Fezes Animais Raras",
-                museum.getMuseumCode() + "FTRX",
+                "TST" + "FTRX",
                 "Fezes de T-Rex",
                 0,
                 "Sítio Arqueológico do Amapá",
@@ -429,9 +407,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Fezes Animais Raras",
-                museum.getMuseumCode() + "FURS",
+                "TST" + "FURS",
                 "Fezes de Urso",
                 1983, "Sítio Arqueológico Papai Noel",
                 "Armazém 03",
@@ -443,9 +421,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Fezes Animais Raras",
-                museum.getMuseumCode() + "LUZZ",
+                "TST" + "LUZZ",
                 "Cérebro do Felipe",
                 2017,
                 "Dom Joaquim, Pelotas",
@@ -458,9 +436,9 @@ public final class DatabaseHelper {
         );
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Fezes Animais Raras",
-                museum.getMuseumCode() + "FAEPT",
+                "TST" + "FAEPT",
                 "Fezes de Aedes Egypt",
                 2008,
                 "Pneu do Terreno Baldio",
@@ -472,7 +450,8 @@ public final class DatabaseHelper {
                 new Timestamp(java.lang.System.currentTimeMillis())
         );
 
-        DatabaseHelper.addItem(museum.getMuseumCode(),
+        DatabaseHelper.addItem(
+                "TST",
                 "Fezes Animais Raras",
                 "FZTTM",
                 "Fezes de Tutancamon",
@@ -486,7 +465,7 @@ public final class DatabaseHelper {
                 new Timestamp(java.lang.System.currentTimeMillis()));
 
         DatabaseHelper.addItem(
-                museum.getMuseumCode(),
+                "TST",
                 "Fezes Animais Raras",
                 "FZCSC",
                 "Fezes do Cusco",
@@ -512,48 +491,12 @@ public final class DatabaseHelper {
 
     private DatabaseHelper(){}
 
-    public static HashMap<String, Technician> getTechniciansTreeMap() {
-        return techniciansTreeMap;
-    }
-
-    public static TreeMap<String, String> getNameToCPFTechnicians() {
-        return nameToCPFTechnicians;
-    }
-
-    public static HashMap<String, Researcher> getResearchersTreeMap() {
-        return researchersTreeMap;
-    }
-
-    public static TreeMap<String, String> getNameToCPFResearchers() {
-        return nameToCPFResearchers;
-    }
-
-    public static HashMap<String, Director> getDirectorsTreeMap() {
-        return directorsTreeMap;
-    }
-
-    public static TreeMap<String, String> getNameToCPFDirectors() {
-        return nameToCPFDirectors;
-    }
-
-    public static TreeMap<String, String> getMuseumIdToCPFDirectors() {
-        return museumIdToCPFDirectors;
-    }
-
-    public static Museum getMuseum() {
-        return museum;
-    }
-
     public static Person getActiveUser() {
         return activeUser;
     }
 
-    public static void setActiveUser(Person activeUser) {
-        DatabaseHelper.activeUser = activeUser;
-    }
-
-    public static Coordinator getCoordinator() {
-        return coordinator;
+    public static Museum getMuseum() {
+        return museum;
     }
 
     /* -- Login -- */
@@ -566,32 +509,64 @@ public final class DatabaseHelper {
      * para senha incorreta.
      */
     public static int login(String cpf, String password){
-        Person newUser;
-        //Pesquisa usuário
-        if (coordinator.getCpf().equals(cpf)){
-            newUser = coordinator;
-        }
-        else if (directorsTreeMap.containsKey(cpf)){
-            newUser = directorsTreeMap.get(cpf);
-        }
-        else if (researchersTreeMap.containsKey(cpf)){
-            newUser = researchersTreeMap.get(cpf);
-        }
-        else if (techniciansTreeMap.containsKey(cpf)){
-            newUser = techniciansTreeMap.get(cpf);
-        }
-        else
-            return Utils.NOT_FOUND_ERROR;   //Não há usuário cadastrado com este CPF
 
-        if (newUser == null)
-            return Utils.NOT_FOUND_ERROR; //Não encontrado
-        else if (!newUser.getSenha().equals(password))
-            return Utils.PERMISSION_ERROR;      //Senha incorreta
-        else{
+        Person newUser;
+        try {
+            statement = databaseConnection.createStatement();
+            String sql = "SELECT * FROM PERSON WHERE UPPER(CPF) = UPPER('" + "')";
+
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            if (resultSet.next()) {
+                String resultsCpf = resultSet.getString("CPF");
+                String resultsPassword = resultSet.getString("PASSWORD");
+
+                if (!password.equals(resultsPassword))
+                    return Utils.PERMISSION_ERROR;  //Wrong Password
+
+                String resultsName = resultSet.getString("NAME");
+                String resultsEmail = resultSet.getString("EMAIL");
+                int resultsMatricula = resultSet.getInt("MATRICULA");
+                int resultsFuncao = resultSet.getInt("FUNCAO");
+
+                switch (resultsFuncao){
+                    case Utils.RESEARCHER:
+                        newUser = new Researcher(resultsName, resultsCpf, resultsPassword, resultsEmail, resultsMatricula);
+                        break;
+                    case Utils.TECHNICIAN:
+                        newUser = new Technician(resultsName, resultsCpf, resultsPassword, resultsEmail);
+                        break;
+                    case Utils.DIRECTOR:
+                        sql = "SELECT codmuseum FROM museum WHERE cpfdirector = UPPER('" + resultsCpf + "')";
+                        ResultSet museums = statement.executeQuery(sql);
+                        String codMuseum = "";
+                        if (museums.next())
+                            codMuseum = museums.getString("codmuseum");
+                        newUser = new Director(resultsName, resultsCpf, resultsPassword, resultsEmail, codMuseum);
+                        break;
+                    case Utils.COORDINATOR:
+                        newUser = new Coordinator(resultsName, resultsCpf, resultsPassword, resultsEmail);
+                        break;
+                    default:
+                        newUser = new Researcher(resultsName, resultsCpf, resultsPassword, resultsEmail, resultsMatricula);
+                        break;
+                }
+
+            }
+            else
+                return Utils.NOT_FOUND_ERROR;
+
             activeUser = newUser;
-            return Utils.REQUEST_OK; //Login Realizado com sucesso
+            statement.close();
+            return Utils.REQUEST_OK;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+            return Utils.FORBIDDEN_ERROR;
         }
     }
+
 
 
     /* -- Funções de Inserção -- */
@@ -611,16 +586,8 @@ public final class DatabaseHelper {
         //Testa permissão
         if (!(activeUser instanceof Technician || activeUser instanceof Director || activeUser instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(activeUser.getCpf())
-                || directorsTreeMap.containsKey(activeUser.getCpf())
-                || coordinator.getCpf().equals(activeUser.getCpf())))
-            return Utils.PERMISSION_ERROR;
-        //Se já possui CPF, cancela inserção
-        if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
-            return Utils.ALREADY_EXISTS_ERROR;
-
-
         Statement stm = null;
+
         try {
             stm = databaseConnection.createStatement();
             String sql =    "INSERT INTO PERSON " +
@@ -639,11 +606,6 @@ public final class DatabaseHelper {
             e.printStackTrace();
             System.out.println(e.getSQLState());
         }
-
-        Researcher researcher = new Researcher(name, CPF, password, email, universityRegistration);
-        researchersTreeMap.put(CPF, researcher);
-        nameToCPFResearchers.put(name, CPF);
-
         return Utils.REQUEST_OK;
     }
 
@@ -660,13 +622,6 @@ public final class DatabaseHelper {
         //Testa permissão
         if (!(activeUser instanceof Technician || activeUser instanceof Director || activeUser instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(activeUser.getCpf())
-                || directorsTreeMap.containsKey(activeUser.getCpf())
-                || coordinator.getCpf().equals(activeUser.getCpf())))
-            return Utils.PERMISSION_ERROR;
-        //Se já possui CPF, cancela inserção
-        if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
-            return Utils.ALREADY_EXISTS_ERROR;
 
         Statement stm = null;
         try {
@@ -688,10 +643,6 @@ public final class DatabaseHelper {
             System.out.println(e.getSQLState());
         }
 
-        Technician technician = new Technician(name, CPF, password, email);
-        techniciansTreeMap.put(CPF, technician);
-        nameToCPFTechnicians.put(name, CPF);
-
         return Utils.REQUEST_OK;
     }
 
@@ -709,13 +660,6 @@ public final class DatabaseHelper {
         //Testa permissão
         if (!(activeUser instanceof Technician || activeUser instanceof Director || activeUser instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(activeUser.getCpf())
-                || directorsTreeMap.containsKey(activeUser.getCpf())
-                || coordinator.getCpf().equals(activeUser.getCpf())))
-            return Utils.PERMISSION_ERROR;
-        //Se já possui CPF, cancela inserção
-        if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
-            return Utils.ALREADY_EXISTS_ERROR;
 
         try {
             statement = databaseConnection.createStatement();
@@ -743,12 +687,6 @@ public final class DatabaseHelper {
             System.out.println(e.getSQLState());
         }
 
-        Director director = new Director(name, CPF, password, email, IDMuseum);
-        directorsTreeMap.put(CPF, director);
-        nameToCPFDirectors.put(name, CPF);
-
-        museum.setDirector(director);
-
         return Utils.REQUEST_OK;
     }
 
@@ -757,14 +695,10 @@ public final class DatabaseHelper {
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-            return Utils.PERMISSION_ERROR;
 
-        Statement stm = null;
+
         try {
-            stm = databaseConnection.createStatement();
+            statement = databaseConnection.createStatement();
             Statement stm2 = databaseConnection.createStatement();
 
             ResultSet resultSet = stm2.executeQuery("SELECT COUNT(DISTINCT COLLECTIONID) AS NUMCOL FROM COLLECTION");
@@ -789,14 +723,14 @@ public final class DatabaseHelper {
                         "'" + museum.getMuseumCode() + "'," +
                         "'" + name + "'" +
                     ") ON CONFLICT (NAME) DO NOTHING";
-            stm.executeUpdate(sql);
-            stm.close();
+            statement.executeUpdate(sql);
+            statement.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
         }
 
-        return (museum.addCollection(name));
+        return Utils.REQUEST_OK;
     }
 
     public static int addItem(String museumCode, String collectionName, String itemID, String name, int year, String origin, String destination,
@@ -804,10 +738,6 @@ public final class DatabaseHelper {
 
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
-            return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
         try {
@@ -888,11 +818,6 @@ public final class DatabaseHelper {
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-            return Utils.PERMISSION_ERROR;
-
 
         try {
 
@@ -932,10 +857,6 @@ public final class DatabaseHelper {
     public static int loanItem(String collectionName, String itemID, Timestamp timestamp, Timestamp dateOfReturn, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
-            return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
         try {
@@ -986,10 +907,6 @@ public final class DatabaseHelper {
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-            return Utils.PERMISSION_ERROR;
 
         try {
 
@@ -1022,10 +939,6 @@ public final class DatabaseHelper {
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-            return Utils.PERMISSION_ERROR;
 
         try {
 
@@ -1056,10 +969,6 @@ public final class DatabaseHelper {
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-            return Utils.PERMISSION_ERROR;
 
         try {
 
@@ -1088,10 +997,6 @@ public final class DatabaseHelper {
     public static int returnFromLoan(String collectionName, String itemID, Timestamp timestamp, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
-            return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
         try {
@@ -1122,10 +1027,6 @@ public final class DatabaseHelper {
     public static int returnFromRestoration(String collectionName, String itemID, Timestamp timestamp, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
-            return Utils.PERMISSION_ERROR;
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
         try {
@@ -1162,10 +1063,6 @@ public final class DatabaseHelper {
      * @return - ArrayList com itens com ID desejado
      */
     public static ArrayList<Item> searchItemByID(String ID){
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-            return null;
 
         ArrayList<Item> objectsArray = new ArrayList<>();
 
@@ -1194,10 +1091,6 @@ public final class DatabaseHelper {
      * @return - retorna ArrayList com itens que contenham searchstring no nome
      */
     public static ArrayList<Item> searchItemByName(String searchString){
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-            return null;
 
         ArrayList<Item> objectsArray = new ArrayList<>();
 
@@ -1207,6 +1100,46 @@ public final class DatabaseHelper {
             statement = databaseConnection.createStatement();
             String sql = "SELECT * FROM ITEM WHERE UPPER(NAME) LIKE UPPER('%" + searchString + "%')";
             ResultSet resultSet = statement.executeQuery(sql);
+
+            objectsArray = itemResultSetToArray(resultSet);
+
+            //Closes statement
+            statement.close();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        return objectsArray;
+    }
+
+    /**
+     * Pesquisa item que contenham a substring no nome
+     * @param searchString - string desejada
+     * @return - retorna ArrayList com itens que contenham searchstring no nome
+     */
+    public static ArrayList<Item> searchItemByCollection(String searchString){
+
+        ArrayList<Item> objectsArray = new ArrayList<>();
+
+        try {
+
+            //Make query
+            statement = databaseConnection.createStatement();
+
+            String collectionID;
+            String sql =
+                    "SELECT collectionid FROM collection WHERE UPPER(NAME) = UPPER('" + searchString + "')";
+            ResultSet resultSet = statement.executeQuery(sql);
+            if (resultSet.next()){
+                collectionID = resultSet.getString("COLLECTIONID");
+            }
+            else
+                return null;
+
+            //Get Items
+            sql = "SELECT * FROM ITEM WHERE UPPER(collectionid) LIKE UPPER('%" + collectionID + "%')";
+            resultSet = statement.executeQuery(sql);
 
             objectsArray = itemResultSetToArray(resultSet);
 
@@ -1285,31 +1218,14 @@ public final class DatabaseHelper {
     }
 
     //Coleções
-    /**
-     * Pesquisa coleção por substring no nome
-     * @param searchString - substring de pesquisa
-     * @return - ArrayList de coleções correspondentes
-     */
-    public static ArrayList<Collection> searchCollectionByName(String searchString){
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
-            return null;
+
+
+    private static ArrayList<Collection> collectionResultSetToArray(ResultSet resultSet){
 
         ArrayList<Collection> objectsArray = new ArrayList<>();
-
         try {
-            //Crates statement
-            statement = databaseConnection.createStatement();
-
-            //Querys for CollectionID
-            String sql = "SELECT * FROM collection WHERE NAME = UPPER('%" + searchString + "%')";
-            ResultSet resultSet = statement.executeQuery(sql);
-
-
             //Puts results in array list
             while (resultSet.next()) {
-                //Gets info
                 //Basic info
                 String resultsID = resultSet.getString(("collectionid"));
                 String resultsCodMuseum = resultSet.getString(("codmuseum"));
@@ -1323,6 +1239,96 @@ public final class DatabaseHelper {
                 );
                 //Add object to array
                 objectsArray.add(collection);
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        return objectsArray;
+    }
+
+    /**
+     * Pesquisa coleção por substring no nome
+     * @param searchString - substring de pesquisa
+     * @return - ArrayList de coleções correspondentes
+     */
+    public static ArrayList<Collection> searchCollectionByName(String searchString){
+
+        System.out.println("Pesquisando por " + searchString);
+
+        ArrayList<Collection> objectsArray = new ArrayList<>();
+
+        try {
+
+            //Make query
+            statement = databaseConnection.createStatement();
+            String sql = "SELECT * FROM collection WHERE UPPER(NAME) LIKE UPPER('%" + searchString + "%')";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            objectsArray = collectionResultSetToArray(resultSet);
+
+            //Closes statement
+            statement.close();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        return objectsArray;
+    }
+
+    /**
+     * Gets all collections
+     * @return - ArrayList de coleções correspondentes
+     */
+    public static ArrayList<Collection> getAllCollections(){
+
+        ArrayList<Collection> objectsArray = new ArrayList<>();
+
+        try {
+            //Crates statement
+            statement = databaseConnection.createStatement();
+
+            //Querys for CollectionID
+            String sql = "SELECT * FROM collection";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            objectsArray = collectionResultSetToArray(resultSet);
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
+        return objectsArray;
+    }
+
+
+    /**
+     * Busca nome das coleções
+     * @return - ArrayList com nomes das coleções
+     */
+    public static ArrayList<String> getCollectionNames(){
+
+        ArrayList<String> objectsArray = new ArrayList<>();
+
+        try {
+            //Crates statement
+            statement = databaseConnection.createStatement();
+
+            //Querys for CollectionID
+            String sql = "SELECT NAME FROM collection ";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+
+            //Puts results in array list
+            while (resultSet.next()) {
+
+                String resultsName = resultSet.getString(("name"));
+                //Add object to array
+                objectsArray.add(resultsName);
             }
 
 
@@ -1342,9 +1348,9 @@ public final class DatabaseHelper {
      * @return - ArrayList de usuários correspondentes
      */
     public static ArrayList<Person> searchUsersByName(String searchString) {
-        if (!(techniciansTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || directorsTreeMap.containsKey(DatabaseHelper.getActiveUser().getCpf())
-                || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
+        if (!(activeUser instanceof Technician
+                || activeUser instanceof Director
+                || activeUser instanceof Coordinator))
             return null;
 
         //Results array
