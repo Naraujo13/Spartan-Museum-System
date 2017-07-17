@@ -24,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.DatabaseHelper;
 import model.PutToExpositionMovimentation;
 
 /**
@@ -78,7 +79,7 @@ public class MovimentationController implements Initializable {
     public void showMovimentations(model.Item item){
         this.item = item;
         
-        ArrayList<model.Movimentation> movimentations = new ArrayList<>(item.getMovimentationsTreeMap().values());
+        ArrayList<model.Movimentation> movimentations = DatabaseHelper.getItemMovimentations(item.getID());
         for(model.Movimentation movimentation : movimentations){
             if(movimentation instanceof model.PutToExpositionMovimentation){
                 AnchorPane newPanelContent = new AnchorPane();

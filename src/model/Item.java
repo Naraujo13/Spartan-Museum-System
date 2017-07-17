@@ -34,7 +34,6 @@ public class Item implements Comparable<Item>{
     private String description;
     private java.sql.Date aquisitionDate;
 
-    private TreeMap<Timestamp, Movimentation> movimentationsTreeMap;
 
 
     Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, java.sql.Date aquisitionDate) {
@@ -43,7 +42,6 @@ public class Item implements Comparable<Item>{
         this.ID = ID;
         this.name = name;
         this.year = year;
-        this.movimentationsTreeMap = new TreeMap<>();
         this.lenght = lenght;
         this.weight = weight;
         this.width = width;
@@ -51,7 +49,6 @@ public class Item implements Comparable<Item>{
         this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
         Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
-        movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
     }
@@ -61,7 +58,6 @@ public class Item implements Comparable<Item>{
         this.ID = ID;
         this.name = name;
         this.year = year;
-        this.movimentationsTreeMap = new TreeMap<>();
         this.lenght = lenght;
         this.weight = weight;
         this.width = width;
@@ -72,7 +68,6 @@ public class Item implements Comparable<Item>{
         this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
         Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
-        movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
     }
@@ -82,7 +77,6 @@ public class Item implements Comparable<Item>{
         this.ID = ID;
         this.name = name;
         this.year = year;
-        this.movimentationsTreeMap = new TreeMap<>();
         this.lenght = lenght;
         this.weight = weight;
         this.width = width;
@@ -96,7 +90,6 @@ public class Item implements Comparable<Item>{
         this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
         Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
-        movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
     }
@@ -107,7 +100,6 @@ public class Item implements Comparable<Item>{
         this.ID = ID;
         this.name = name;
         this.year = year;
-        this.movimentationsTreeMap = new TreeMap<>();
         this.lenght = lenght;
         this.weight = weight;
         this.width = width;
@@ -120,7 +112,6 @@ public class Item implements Comparable<Item>{
         this.depth = depth;
         /* -- Cria Movimentação de entrada -- */
         Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
-        movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
     }
@@ -131,7 +122,6 @@ public class Item implements Comparable<Item>{
         this.ID = ID;
         this.name = name;
         this.year = year;
-        this.movimentationsTreeMap = new TreeMap<>();
         this.lenght = lenght;
         this.weight = weight;
         this.width = width;
@@ -144,7 +134,6 @@ public class Item implements Comparable<Item>{
         this.depth = depth;
         /* -- Cria Movimentação de entrada -- */
         Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
-        movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = status;
     }
 
@@ -182,9 +171,6 @@ public class Item implements Comparable<Item>{
         this.status = status;
     }
 
-    public TreeMap<Timestamp, Movimentation> getMovimentationsTreeMap() {
-        return movimentationsTreeMap;
-    }
 
     public float getLenght() {
         return lenght;
@@ -296,201 +282,6 @@ public class Item implements Comparable<Item>{
 
     public void setAquisitionDate(Date aquisitionDate) {
         this.aquisitionDate = aquisitionDate;
-    }
-
-    /* -- Movimentation -- */
-
-    private void addMovimentation(Movimentation m){
-        movimentationsTreeMap.put(m.getTimestamp(), m);
-    }
-
-    int discharge(Timestamp timestamp){
-        //Testa se já foi dado baixa ou está indisponível
-        if (!this.status.equals(Utils.AT_STORAGE))
-            return Utils.FORBIDDEN_ERROR;
-
-        //Realiza baixa
-        Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
-        if (m instanceof PutToStorageMovimentation) {
-            Movimentation discharge = new DischargeMovimentation(
-                    timestamp,
-                    ((PutToStorageMovimentation) m).getDestination(),
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(discharge);
-            this.setStatus(Utils.DISCHARGED);
-            return Utils.REQUEST_OK;
-        }
-        else  if (m instanceof AdmissionMovimentation) {
-            Movimentation discharge = new DischargeMovimentation(
-                    timestamp,
-                    ((AdmissionMovimentation) m).getDestination(),
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(discharge);
-            this.setStatus(Utils.DISCHARGED);
-            return Utils.REQUEST_OK;
-        }
-        else
-            return Utils.FORBIDDEN_ERROR;
-    }
-
-    int putToExposition(Timestamp timestamp, String destination){
-        if (!this.status.equals(Utils.AT_STORAGE))
-            return Utils.FORBIDDEN_ERROR;
-        Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
-        if (m instanceof PutToStorageMovimentation) {
-            //Realiza envio para exposição
-            Movimentation exposition = new PutToExpositionMovimentation(
-                    timestamp,
-                    ((PutToStorageMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(exposition);
-            this.setStatus(Utils.AT_EXPOSITION);
-            return Utils.REQUEST_OK;
-        }
-        else if (m instanceof AdmissionMovimentation) {
-            //Realiza envio para exposição
-            Movimentation exposition = new PutToExpositionMovimentation(
-                    timestamp,
-                    ((AdmissionMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(exposition);
-            this.setStatus(Utils.AT_EXPOSITION);
-            return Utils.REQUEST_OK;
-        }
-        else
-            return Utils.FORBIDDEN_ERROR;
-    }
-
-    int putToStorage(Timestamp timestamp, String destination){
-        if (!this.status.equals(Utils.AT_STORAGE) && !this.status.equals(Utils.AT_EXPOSITION))
-            return Utils.FORBIDDEN_ERROR;
-        Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
-        if (m instanceof PutToStorageMovimentation) {
-            //Realiza envio para restauração
-            Movimentation storage = new PutToStorageMovimentation(
-                    timestamp,
-                    ((PutToStorageMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(storage);
-            this.setStatus(Utils.AT_STORAGE);
-            return Utils.REQUEST_OK;
-        }
-        else if (m instanceof AdmissionMovimentation) {
-            //Realiza envio para restauração
-            Movimentation storage = new PutToStorageMovimentation(
-                    timestamp,
-                    ((AdmissionMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(storage);
-            this.setStatus(Utils.AT_STORAGE);
-            return Utils.REQUEST_OK;
-        }
-        else
-            return Utils.FORBIDDEN_ERROR;
-    }
-
-    int returnFromLoan(Timestamp timestamp, String destination){
-        if (!this.status.equals(Utils.AT_LOAN))
-            return Utils.FORBIDDEN_ERROR;
-        Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
-        if (m instanceof SendToLoanMovimentation) {
-            //Recebe movimentação de retorno de empréstimo ou restauração
-            Movimentation loan = new PutToStorageMovimentation(
-                    timestamp,
-                    ((SendToLoanMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(loan);
-            this.setStatus(Utils.AT_STORAGE);
-            return Utils.REQUEST_OK;
-        }
-        else
-            return Utils.FORBIDDEN_ERROR;
-    }
-
-    int returnFromRestauration(Timestamp timestamp, String destination){
-        if (!this.status.equals(Utils.AT_RESTAURATION))
-            return Utils.FORBIDDEN_ERROR;
-        Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
-        if (m instanceof SendToRestorationMovimentation) {
-            //Recebe movimentação de retorno de empréstimo ou restauração
-            Movimentation restauration = new PutToStorageMovimentation(
-                    timestamp,
-                    ((SendToRestorationMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(restauration);
-            this.setStatus(Utils.AT_STORAGE);
-            return Utils.REQUEST_OK;
-        }
-        else
-            return Utils.FORBIDDEN_ERROR;
-    }
-
-    int sendToLoan(Timestamp timestamp, Timestamp dateOfReturn, String destination){
-        //Testa status
-        if (!this.status.equals(Utils.AT_STORAGE))
-            return Utils.FORBIDDEN_ERROR;
-
-        Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
-        if (m instanceof PutToStorageMovimentation) {
-            Movimentation loan = new SendToLoanMovimentation(
-                    timestamp,
-                    dateOfReturn,
-                    ((PutToStorageMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(loan);
-            this.setStatus(Utils.AT_LOAN);
-            return Utils.REQUEST_OK;
-        }
-        else if (m instanceof AdmissionMovimentation) {
-            Movimentation loan = new SendToLoanMovimentation(
-                    timestamp,
-                    dateOfReturn,
-                    ((AdmissionMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(loan);
-            this.setStatus(Utils.AT_LOAN);
-            return Utils.REQUEST_OK;
-        }
-        else
-            return Utils.FORBIDDEN_ERROR;
-    }
-
-    int sendToRestoration(Timestamp timestamp, String destination){
-        if (!this.status.equals(Utils.AT_STORAGE))
-            return Utils.FORBIDDEN_ERROR;
-        Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
-        if (m instanceof PutToStorageMovimentation) {
-            //Realiza envio para restauração
-            Movimentation restoration = new SendToRestorationMovimentation(
-                    timestamp,
-                    ((PutToStorageMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(restoration);
-            this.setStatus(Utils.AT_RESTAURATION);
-            return Utils.REQUEST_OK;
-        }
-        else if (m instanceof AdmissionMovimentation) {
-            //Realiza envio para restauração
-            Movimentation restoration = new SendToRestorationMovimentation(
-                    timestamp,
-                    ((AdmissionMovimentation) m).getDestination(),
-                    destination,
-                    DatabaseHelper.getActiveUser().getCpf());
-            addMovimentation(restoration);
-            this.setStatus(Utils.AT_RESTAURATION);
-            return Utils.REQUEST_OK;
-        }
-        else
-            return Utils.FORBIDDEN_ERROR;
     }
 
 }

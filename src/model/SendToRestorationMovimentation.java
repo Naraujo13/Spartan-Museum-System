@@ -7,10 +7,12 @@ import java.sql.Timestamp;
  */
 public class SendToRestorationMovimentation extends MovimentationTo {
 
+    private Timestamp dateOfReturn;
     private RestorationReport report;
 
-     SendToRestorationMovimentation(Timestamp timestamp, String origin, String destination, String cpfAutor) {
+     SendToRestorationMovimentation(Timestamp timestamp, Timestamp dateOfReturn, String origin, String destination, String cpfAutor) {
         super(timestamp, cpfAutor, origin, destination);
+        this.dateOfReturn = dateOfReturn;
     }
 
     public RestorationReport getReport() {
@@ -19,5 +21,13 @@ public class SendToRestorationMovimentation extends MovimentationTo {
 
     public void setReport(RestorationReport report) {
         this.report = report;
+    }
+
+    public Timestamp getDateOfReturn() {
+        return dateOfReturn;
+    }
+
+    public void setDateOfReturn(Timestamp dateOfReturn) {
+        this.dateOfReturn = dateOfReturn;
     }
 }
