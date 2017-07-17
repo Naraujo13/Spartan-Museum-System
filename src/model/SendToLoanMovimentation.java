@@ -1,19 +1,19 @@
 package model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * Created by naraujo on 29/05/17.
  */
 public class SendToLoanMovimentation extends MovimentationTo {
-    private Date dateOfReturn;
+    private Timestamp dateOfReturn;
 
-    SendToLoanMovimentation(Date timestamp, Date dateOfReturn, String origin, String destination, String cpfAutor) {
+    SendToLoanMovimentation(Timestamp timestamp, Timestamp dateOfReturn, String origin, String destination, String cpfAutor) {
         super(timestamp, cpfAutor, origin, destination);
         this.dateOfReturn = dateOfReturn;
     }
 
-    public Date getDateOfReturn() {
+    public Timestamp getDateOfReturn() {
         return dateOfReturn;
     }
 }

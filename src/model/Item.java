@@ -5,6 +5,7 @@ import utils.Utils;
 
 import java.lang.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.TreeMap;
 
 /**
@@ -33,7 +34,7 @@ public class Item implements Comparable<Item>{
     private String description;
     private java.sql.Date aquisitionDate;
 
-    private TreeMap<Date, Movimentation> movimentationsTreeMap;
+    private TreeMap<Timestamp, Movimentation> movimentationsTreeMap;
 
 
     Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, java.sql.Date aquisitionDate) {
@@ -49,7 +50,7 @@ public class Item implements Comparable<Item>{
         this.height = height;
         this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
-        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
+        Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
@@ -70,7 +71,7 @@ public class Item implements Comparable<Item>{
         this.author = author;
         this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
-        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
+        Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
@@ -94,7 +95,7 @@ public class Item implements Comparable<Item>{
         this.depth = depth;
         this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
-        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
+        Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
@@ -118,7 +119,7 @@ public class Item implements Comparable<Item>{
         this.outerCircumference = outerCircumference;
         this.depth = depth;
         /* -- Cria Movimentação de entrada -- */
-        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
+        Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = Utils.AT_STORAGE;
 
@@ -142,7 +143,7 @@ public class Item implements Comparable<Item>{
         this.outerCircumference = outerCircumference;
         this.depth = depth;
         /* -- Cria Movimentação de entrada -- */
-        Movimentation admission = new AdmissionMovimentation(new Date(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
+        Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         movimentationsTreeMap.put(admission.getTimestamp(), admission);
         this.status = status;
     }
@@ -181,7 +182,7 @@ public class Item implements Comparable<Item>{
         this.status = status;
     }
 
-    public TreeMap<Date, Movimentation> getMovimentationsTreeMap() {
+    public TreeMap<Timestamp, Movimentation> getMovimentationsTreeMap() {
         return movimentationsTreeMap;
     }
 
@@ -303,7 +304,7 @@ public class Item implements Comparable<Item>{
         movimentationsTreeMap.put(m.getTimestamp(), m);
     }
 
-    int discharge(Date timestamp){
+    int discharge(Timestamp timestamp){
         //Testa se já foi dado baixa ou está indisponível
         if (!this.status.equals(Utils.AT_STORAGE))
             return Utils.FORBIDDEN_ERROR;
@@ -332,7 +333,7 @@ public class Item implements Comparable<Item>{
             return Utils.FORBIDDEN_ERROR;
     }
 
-    int putToExposition(Date timestamp, String destination){
+    int putToExposition(Timestamp timestamp, String destination){
         if (!this.status.equals(Utils.AT_STORAGE))
             return Utils.FORBIDDEN_ERROR;
         Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
@@ -362,7 +363,7 @@ public class Item implements Comparable<Item>{
             return Utils.FORBIDDEN_ERROR;
     }
 
-    int putToStorage(Date timestamp, String destination){
+    int putToStorage(Timestamp timestamp, String destination){
         if (!this.status.equals(Utils.AT_STORAGE) && !this.status.equals(Utils.AT_EXPOSITION))
             return Utils.FORBIDDEN_ERROR;
         Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
@@ -392,7 +393,7 @@ public class Item implements Comparable<Item>{
             return Utils.FORBIDDEN_ERROR;
     }
 
-    int returnFromLoan(Date timestamp, String destination){
+    int returnFromLoan(Timestamp timestamp, String destination){
         if (!this.status.equals(Utils.AT_LOAN))
             return Utils.FORBIDDEN_ERROR;
         Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
@@ -411,7 +412,7 @@ public class Item implements Comparable<Item>{
             return Utils.FORBIDDEN_ERROR;
     }
 
-    int returnFromRestauration(Date timestamp, String destination){
+    int returnFromRestauration(Timestamp timestamp, String destination){
         if (!this.status.equals(Utils.AT_RESTAURATION))
             return Utils.FORBIDDEN_ERROR;
         Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();
@@ -430,7 +431,7 @@ public class Item implements Comparable<Item>{
             return Utils.FORBIDDEN_ERROR;
     }
 
-    int sendToLoan(Date timestamp, Date dateOfReturn, String destination){
+    int sendToLoan(Timestamp timestamp, Timestamp dateOfReturn, String destination){
         //Testa status
         if (!this.status.equals(Utils.AT_STORAGE))
             return Utils.FORBIDDEN_ERROR;
@@ -462,7 +463,7 @@ public class Item implements Comparable<Item>{
             return Utils.FORBIDDEN_ERROR;
     }
 
-    int sendToRestoration(Date timestamp, String destination){
+    int sendToRestoration(Timestamp timestamp, String destination){
         if (!this.status.equals(Utils.AT_STORAGE))
             return Utils.FORBIDDEN_ERROR;
         Movimentation m = this.getMovimentationsTreeMap().lastEntry().getValue();

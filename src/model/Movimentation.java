@@ -1,16 +1,17 @@
 package model;
 
-import java.sql.Date;
+
+import java.sql.Timestamp;
 
 /**
  * Created by naraujo on 29/05/17.
  */
 public abstract class Movimentation implements Comparable<Movimentation>{
     private String origin;
-    private Date timestamp;
+    private Timestamp timestamp;
     private String cpfAutor;
 
-    Movimentation(Date timestamp, String cpfAutor, String origin) {
+    Movimentation(Timestamp timestamp, String cpfAutor, String origin) {
         this.timestamp = timestamp;
         this.cpfAutor = cpfAutor;
         this.origin = origin;
@@ -21,7 +22,7 @@ public abstract class Movimentation implements Comparable<Movimentation>{
         return this.getTimestamp().compareTo(movimentation.getTimestamp());
     }
 
-    public Date getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
