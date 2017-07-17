@@ -7,6 +7,7 @@ package view_controller;
 
 import java.net.URL;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -83,29 +84,29 @@ public class AddMovimentationController implements Initializable {
                 @Override
                 public void handle(ActionEvent event) {
                     if(MovimentationTypeChoiceBox.getValue().equals("Expor")){                      
-                        DatabaseHelper.exposeItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.exposeItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Emprestar")){                      
-                        DatabaseHelper.loanItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.loanItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                        
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Restaurar")){                                        
-                        DatabaseHelper.restoreItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.restoreItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Armazenar")){                                        
-                        DatabaseHelper.storeItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.storeItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Remover")){                                        
-                        DatabaseHelper.dischargeItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()));
+                        DatabaseHelper.dischargeItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()));
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Retornar da Restauração")){                                                               
-                        DatabaseHelper.returnFromRestoration("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.returnFromRestoration("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Retornar de Empréstimo")){                                                               
-                        DatabaseHelper.returnFromLoan("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.returnFromLoan("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Retornar de Exposição")){                                                               
-                        DatabaseHelper.storeItem("Picasso", item.getID(), new Date(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.storeItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     Stage stage = (Stage) AddMovimentationButton.getScene().getWindow();
                     stage.close();

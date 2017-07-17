@@ -5,7 +5,6 @@ import utils.Utils;
 
 import javax.xml.transform.Result;
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 /**
@@ -57,7 +56,7 @@ public final class DatabaseHelper {
         }
 
         try {
-            String sql = "";
+            String sql;
 
             //Create PERSON
             statement = databaseConnection.createStatement();
@@ -120,22 +119,23 @@ public final class DatabaseHelper {
             //Creates MOVIMENTATION
             statement = databaseConnection.createStatement();
             sql =   "CREATE TABLE IF NOT EXISTS MOVIMENTATION" +
-                    " (TIMESTAMP DATE PRIMARY KEY NOT NULL," +
+                    " (TIMESTAMP TIMESTAMP PRIMARY KEY NOT NULL," +
                     " ITEMID VARCHAR(15) NOT NULL REFERENCES ITEM(ITEMID) ON DELETE CASCADE," +
                     " TYPE INTEGER NOT NULL," +
-                    " ORIGIN VARCHAR(20) NOT NULL," +
-                    " DESTINATION VARCHAR(20) NOT NULL)";
+                    " ORIGIN VARCHAR(30) NOT NULL," +
+                    " DESTINATION VARCHAR(30) NOT NULL" +
+                    ")";
             statement.executeUpdate(sql);
             statement.close();
 
             //Creates RESTORATION
             statement = databaseConnection.createStatement();
             sql =   "CREATE TABLE IF NOT EXISTS RESTORATION" +
-                    " (TIMESTAMP DATE PRIMARY KEY NOT NULL REFERENCES MOVIMENTATION(TIMESTAMP) ON DELETE CASCADE," +
+                    " (TIMESTAMP TIMESTAMP PRIMARY KEY NOT NULL REFERENCES MOVIMENTATION(TIMESTAMP) ON DELETE CASCADE," +
                     " ITEMID VARCHAR(15) NOT NULL REFERENCES ITEM(ITEMID) ON DELETE CASCADE," +
-                    " DATEOFRETURN DATE NOT NULL," +
+                    " DATEOFRETURN TIMESTAMP NOT NULL," +
                     " DAMAGE VARCHAR(100) NOT NULL," +
-                    " RESTORER VARCHAR(30) NOT NULL," +
+                    " RESTORER VARCHAR(40) NOT NULL," +
                     " REPAIR VARCHAR(100) NOT NULL)";
             statement.executeUpdate(sql);
             statement.close();
@@ -143,9 +143,9 @@ public final class DatabaseHelper {
             //Creates LOAN
             statement = databaseConnection.createStatement();
             sql =   "CREATE TABLE IF NOT EXISTS LOAN" +
-                    " (TIMESTAMP DATE PRIMARY KEY NOT NULL REFERENCES MOVIMENTATION(TIMESTAMP) ON DELETE CASCADE," +
+                    " (TIMESTAMP TIMESTAMP PRIMARY KEY NOT NULL REFERENCES MOVIMENTATION(TIMESTAMP) ON DELETE CASCADE," +
                     " ITEMID VARCHAR(15) NOT NULL REFERENCES ITEM(ITEMID) ON DELETE CASCADE," +
-                    " DATEOFRETURN DATE NOT NULL)";
+                    " DATEOFRETURN TIMESTAMP NOT NULL)";
             statement.executeUpdate(sql);
             statement.close();
 
@@ -212,7 +212,7 @@ public final class DatabaseHelper {
 
         /* -- Mock Users -- */
         //Adiciona Diretor
-        DatabaseHelper.addPerson("Joãozinho", "123123123123", "password", "joao@bonitao.uol.com", museum.getMuseumCode());
+        DatabaseHelper.addPerson("Joãozinho", "12312312312", "password", "joao@bonitao.uol.com", museum.getMuseumCode());
 
         //Adiciona Técnicos
         DatabaseHelper.addPerson("Paulo", "11111111111", "paulo123", "paulo@banco.de.dados");
@@ -226,8 +226,6 @@ public final class DatabaseHelper {
 
         /* -- Mock Items -- */
 
-        java.sql.Date data = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
                 "Século XXI",
@@ -240,7 +238,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new java.sql.Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -255,7 +253,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -270,7 +268,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -285,7 +283,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -300,7 +298,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -314,7 +312,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -329,7 +327,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -343,7 +341,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -357,7 +355,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -372,7 +370,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
@@ -386,7 +384,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
@@ -400,7 +398,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
@@ -413,7 +411,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
@@ -427,7 +425,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -441,7 +439,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -456,7 +454,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(
@@ -471,7 +469,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         DatabaseHelper.addItem(museum.getMuseumCode(),
@@ -485,7 +483,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis()));
+                new Timestamp(java.lang.System.currentTimeMillis()));
 
         DatabaseHelper.addItem(
                 museum.getMuseumCode(),
@@ -499,7 +497,7 @@ public final class DatabaseHelper {
                 20,
                 40,
                 15,
-                new Date(java.lang.System.currentTimeMillis())
+                new Timestamp(java.lang.System.currentTimeMillis())
         );
 
         /* -- Mock Movimentations -- */
@@ -719,9 +717,8 @@ public final class DatabaseHelper {
         if (techniciansTreeMap.containsKey(CPF) || researchersTreeMap.containsKey(CPF) || directorsTreeMap.containsKey(CPF) || coordinator.getCpf().equals(CPF))
             return Utils.ALREADY_EXISTS_ERROR;
 
-        Statement stm = null;
         try {
-            stm = databaseConnection.createStatement();
+            statement = databaseConnection.createStatement();
             String sql =    "INSERT INTO PERSON " +
                     "(CPF, NAME, PASSWORD, EMAIL, MATRICULA, FUNCAO) " +
                     "VALUES (" +
@@ -732,11 +729,15 @@ public final class DatabaseHelper {
                         null + "," +
                         Utils.DIRECTOR +
                     ") ON CONFLICT (CPF) DO NOTHING ";
-            stm.executeUpdate(sql);
+            statement.executeUpdate(sql);
 
-            //TODO: ADD DIRECTOR CPF INTO MUSEUM
+            //Add Director's CPF to MUSEUM
+            sql = "UPDATE MUSEUM " +
+                    "SET cpfdirector = '" + CPF + "' " +
+                    "WHERE UPPER(codmuseum) = UPPER('" + IDMuseum + "')";
+            statement.executeUpdate(sql);
 
-            stm.close();
+            statement.close();
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
@@ -799,7 +800,7 @@ public final class DatabaseHelper {
     }
 
     public static int addItem(String museumCode, String collectionName, String itemID, String name, int year, String origin, String destination,
-                              float weight, float lenght, float width, float height, java.sql.Date aquisitionDate){
+                              float weight, float lenght, float width, float height, Timestamp aquisitionDate){
 
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
@@ -847,9 +848,23 @@ public final class DatabaseHelper {
 
             //Execute Statement
             statement.executeUpdate(sql);
-
-            //Close Statement
             statement.close();
+
+
+            statement = databaseConnection.createStatement();
+            //Inserts admission in MOVIMENTATION
+            sql = "INSERT INTO MOVIMENTATION " +
+                    "(timestamp, itemid, type, origin, destination) " +
+                    " VALUES(" +
+                    " '" + new Timestamp(System.currentTimeMillis()) + "'," +
+                    " '" + itemID + "'," +
+                    " '" + Utils.ADMISSION + "'," +
+                    " '" + origin + "'," +
+                    " '" + destination + "'" +
+                    ") ";
+            statement.executeUpdate(sql);
+            statement.closeOnCompletion();
+
         } catch (SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
@@ -869,7 +884,7 @@ public final class DatabaseHelper {
      * @param timestamp - Timestamp da Movimentação de Baixa
      * @return - inteiro representando status (definidos em Utils)
      */
-    public static int dischargeItem(String collectionName, String itemID, Date timestamp){
+    public static int dischargeItem(String collectionName, String itemID, Timestamp timestamp){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -880,7 +895,7 @@ public final class DatabaseHelper {
 
 
         try {
-            //INSERT COORDINATOR
+
             statement = databaseConnection.createStatement();
             String sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, ORIGIN, DESTINATION, TYPE) " +
@@ -894,27 +909,14 @@ public final class DatabaseHelper {
             statement.executeUpdate(sql);
             statement.close();
 
-
-
         }
         catch(SQLException e){
             e.printStackTrace();
             System.out.println(e.getSQLState());
+            return Utils.FORBIDDEN_ERROR;
         }
 
-
-
-
-        //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName).get(0);
-        if (collection == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Procura Items
-        Item item = collection.getItemsByID(itemID);
-        if (item == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Realiza Movimentação
-        return item.discharge(timestamp);
+        return Utils.REQUEST_OK;
 
     }
 
@@ -927,7 +929,7 @@ public final class DatabaseHelper {
      * @param destination - Destino do Empréstimo
      * @return - inteiro representando status (definidos em Utils)
      */
-    public static int loanItem(String collectionName, String itemID, Date timestamp, Date dateOfReturn, String destination){
+    public static int loanItem(String collectionName, String itemID, Timestamp timestamp, Timestamp dateOfReturn, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -936,16 +938,40 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-        //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName).get(0);
-        if (collection == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Procura Items
-        Item item = collection.getItemsByID(itemID);
-        if (item == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Realiza Movimentação
-        return item.sendToLoan(timestamp, dateOfReturn, destination);
+        try {
+
+            statement = databaseConnection.createStatement();
+            String sql =
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                            " VALUES (" +
+                            timestamp + ", " +
+                            itemID + ", " +
+                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            destination + ", " +
+                            Utils.SEND_TO_LOAN +
+                            ") ON CONFLICT (timestamp) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.close();
+
+            //TODO: ADD LOAM DETAILS DO LOAN TABLE
+            statement = databaseConnection.createStatement();
+            sql = "INSERT INTO LOAN(TIMESTAMP, ITEMID, DATEOFRETURN) " +
+                    " VALUES(" +
+                    " '" + timestamp + "'," +
+                    " '" + itemID + "'," +
+                    " '" + dateOfReturn + "'," +
+                    ") ON CONFLICT (TIMESTAMP) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.closeOnCompletion();
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+            return Utils.FORBIDDEN_ERROR;
+        }
+
+        return Utils.REQUEST_OK;
     }
 
     /**
@@ -956,7 +982,7 @@ public final class DatabaseHelper {
      * @param destination - Destino do Empréstimo
      * @return - inteiro representando status (definidos em Utils)
      */
-    public static int restoreItem(String collectionName, String itemID, Date timestamp, String destination){
+    public static int restoreItem(String collectionName, String itemID, Timestamp timestamp, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -965,19 +991,34 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-        //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName).get(0);
-        if (collection == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Procura Items
-        Item item = collection.getItemsByID(itemID);
-        if (item == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Realiza movimentação
-        return item.sendToRestoration(timestamp, destination);
+        try {
+
+            statement = databaseConnection.createStatement();
+            String sql =
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                            " VALUES (" +
+                            timestamp + ", " +
+                            itemID + ", " +
+                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            destination + ", " +
+                            Utils.SEND_TO_RESTORATION +
+                            ") ON CONFLICT (timestamp) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.close();
+
+            //TODO: ADD RESTORATION DETAILS DO RESTORATION TABLE
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+            return Utils.FORBIDDEN_ERROR;
+        }
+
+        return Utils.REQUEST_OK;
     }
 
-    public static int storeItem(String collectionName, String itemID, Date timestamp, String destination){
+    public static int storeItem(String collectionName, String itemID, Timestamp timestamp, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -986,19 +1027,32 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-        //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName).get(0);
-        if (collection == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Procura Items
-        Item item = collection.getItemsByID(itemID);
-        if (item == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Realiza movimentação
-        return item.putToStorage(timestamp, destination);
+        try {
+
+            statement = databaseConnection.createStatement();
+            String sql =
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                            " VALUES (" +
+                            timestamp + ", " +
+                            itemID + ", " +
+                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET DESTINATION TO SET AS NEW ORIGIN
+                            destination + ", " +
+                            Utils.PUT_TO_STORAGE +
+                            ") ON CONFLICT (timestamp) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.close();
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+            return Utils.FORBIDDEN_ERROR;
+        }
+
+        return Utils.REQUEST_OK;
     }
 
-    public static int exposeItem(String collectionName, String itemID, Date timestamp, String destination){
+    public static int exposeItem(String collectionName, String itemID, Timestamp timestamp, String destination) {
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -1007,19 +1061,31 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-        //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName).get(0);
-        if (collection == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Procura Items
-        Item item = collection.getItemsByID(itemID);
-        if (item == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Realiza movimentação
-        return item.putToExposition(timestamp, destination);
+        try {
+
+            statement = databaseConnection.createStatement();
+            String sql =
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                            " VALUES (" +
+                            timestamp + ", " +
+                            itemID + ", " +
+                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET DESTINATION TO SET AS NEW ORIGIN
+                            destination + ", " +
+                            Utils.PUT_TO_EXPOSITION +
+                            ") ON CONFLICT (timestamp) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+            return Utils.FORBIDDEN_ERROR;
+        }
+
+        return Utils.REQUEST_OK;
     }
 
-    public static int returnFromLoan(String collectionName, String itemID, Date timestamp, String destination){
+    public static int returnFromLoan(String collectionName, String itemID, Timestamp timestamp, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -1028,19 +1094,32 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-        //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName).get(0);
-        if (collection == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Procura Items
-        Item item = collection.getItemsByID(itemID);
-        if (item == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Realiza movimentação
-        return item.returnFromLoan(timestamp, destination);
+        try {
+
+            statement = databaseConnection.createStatement();
+            String sql =
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                            " VALUES (" +
+                            timestamp + ", " +
+                            itemID + ", " +
+                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET DESTINATION TO SET AS NEW ORIGIN
+                            destination + ", " +
+                            Utils.RETURN_FROM_LOAN +
+                            ") ON CONFLICT (timestamp, itemid) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.close();
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+            return Utils.FORBIDDEN_ERROR;
+        }
+
+        return Utils.REQUEST_OK;
     }
 
-    public static int returnFromRestoration(String collectionName, String itemID, Date timestamp, String destination){
+    public static int returnFromRestoration(String collectionName, String itemID, Timestamp timestamp, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -1049,16 +1128,29 @@ public final class DatabaseHelper {
                 || coordinator.getCpf().equals(DatabaseHelper.getActiveUser().getCpf())))
             return Utils.PERMISSION_ERROR;
 
-        //Procura coleção
-        Collection collection = museum.getCollectionByName(collectionName).get(0);
-        if (collection == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Procura Items
-        Item item = collection.getItemsByID(itemID);
-        if (item == null)
-            return Utils.NOT_FOUND_ERROR;
-        //Realiza movimentação
-        return item.returnFromRestauration(timestamp, destination);
+        try {
+
+            statement = databaseConnection.createStatement();
+            String sql =
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                            " VALUES (" +
+                            timestamp + ", " +
+                            itemID + ", " +
+                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET DESTINATION TO SET AS NEW ORIGIN
+                            destination + ", " +
+                            Utils.RETURN_FROM_RESTORATION +
+                            ") ON CONFLICT (timestamp, itemid) DO NOTHING";
+            statement.executeUpdate(sql);
+            statement.close();
+
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+            return Utils.FORBIDDEN_ERROR;
+        }
+
+        return Utils.REQUEST_OK;
     }
 
     /* -- Funções de Pesquisa -- */

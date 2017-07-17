@@ -7,6 +7,7 @@ package view_controller;
 
 import java.net.URL;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -98,7 +99,7 @@ public class AddItemController implements Initializable {
                        Float.parseFloat(Itemthickness.getText()),
                        Float.parseFloat(ItemWidth.getText()),
                        Float.parseFloat(ItemHeight.getText()),
-                       new Date(java.lang.System.currentTimeMillis()));
+                       new Timestamp(java.lang.System.currentTimeMillis()));
                        Stage stage = (Stage) SaveItem.getScene().getWindow();
                         stage.close();
                
