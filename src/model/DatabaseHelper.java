@@ -111,7 +111,7 @@ public final class DatabaseHelper {
                     " CPFAUTHOR CHAR(11) NOT NULL REFERENCES PERSON(CPF) ON DELETE RESTRICT," +
                     " TYPE INTEGER NOT NULL," +
                     " ORIGIN VARCHAR(30) NOT NULL," +
-                    " DESTINATION VARCHAR(30) NOT NULL" +
+                    " DESTINATION VARCHAR(30)" +
                     ")";
             statement.executeUpdate(sql);
             statement.close();
@@ -933,7 +933,20 @@ public final class DatabaseHelper {
             statement.executeUpdate(sql);
             statement.close();
 
-            //TODO: ADD RESTORATION DETAILS DO RESTORATION TABLE
+            statement = databaseConnection.createStatement();
+            sql =
+                    "INSERT INTO restoration (timestamp, itemid, dateofreturn, damage, restorer, repair) " +
+                            "VALUES (" +
+                            "'" + timestamp + "'," +
+                            "'" + itemID + "'," +
+                            "'" + timestamp + "'," +
+                            "'" + "damage" + "'," +
+                            "'" + "restorer" + "'," +
+                            "'" + "repair" + "'" +
+                            ") ON CONFLICT (timestamp) DO NOTHING ";
+            statement.executeUpdate(sql);
+            statement.close();
+            //TODO: ADD RESTORATION DETAILS ON UI, CURRENT VALUES ARE PLACEHOLDERS
 
         }
         catch(SQLException e){
