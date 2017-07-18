@@ -16,6 +16,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.DatabaseHelper;
+import model.Technician;
 
 /**
  * FXML Controller class
@@ -68,10 +69,10 @@ public class CreateUserController implements Initializable {
                 if(ResearcherButton.isSelected()){
                     DatabaseHelper.addPerson(Name.getText(), CPF.getText(), Password.getText(), Email.getText(), Integer.parseInt(UniversityRegistration.getText()));
                 }
-                if(TecnicianButton.isSelected()){
+                if(DirectorButton.isSelected()){
                     DatabaseHelper.addPerson(Name.getText(), CPF.getText(), Password.getText(), Email.getText(), MuseumID.getText());
                 }
-                if(ResearcherButton.isSelected()){
+                if(TecnicianButton.isSelected()){
                     DatabaseHelper.addPerson(Name.getText(), CPF.getText(), Password.getText(), Email.getText());
                 }
                 Stage stage = (Stage) AddUserButton.getScene().getWindow();

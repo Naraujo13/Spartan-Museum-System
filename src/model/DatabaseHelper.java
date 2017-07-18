@@ -600,7 +600,12 @@ public final class DatabaseHelper {
                             "'"+ email + "'" + "," +
                             universityRegistration + "," +
                             Utils.RESEARCHER +
-                    ") ON CONFLICT (CPF) DO NOTHING ";
+                    ") ON CONFLICT (CPF) DO UPDATE SET " +
+                        "name = EXCLUDED.name" +
+                        "password = EXCLUDED.password" +
+                        "email = EXCLUDED.email" +
+                        "matricula = EXCLUDED.matricula";
+            //TODO: REDIRECT UI'S EDIT PERSON TO HERE
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
@@ -636,7 +641,11 @@ public final class DatabaseHelper {
                     "'"+ email + "'" + "," +
                     null + "," +
                     Utils.TECHNICIAN +
-                    ") ON CONFLICT (CPF) DO NOTHING ";
+                    ") ON CONFLICT (CPF) DO UPDATE SET " +
+                        "name = EXCLUDED.name," +
+                        "password = EXCLUDED.password," +
+                        "email = EXCLUDED.email";
+            //TODO: REDIRECT UI'S EDIT PERSON TO HERE
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
@@ -673,7 +682,11 @@ public final class DatabaseHelper {
                         "'"+ email + "'" + "," +
                         null + "," +
                         Utils.DIRECTOR +
-                    ") ON CONFLICT (CPF) DO NOTHING ";
+                    ") ON CONFLICT (CPF) DO UPDATE SET " +
+                    "name = EXCLUDED.name," +
+                    "password = EXCLUDED.password," +
+                    "email = EXCLUDED.email";
+            //TODO: REDIRECT UI'S EDIT PERSON TO HERE
             statement.executeUpdate(sql);
 
             //Add Director's CPF to MUSEUM
@@ -775,8 +788,16 @@ public final class DatabaseHelper {
                     null + "," + //Falta parâmetro
                     null + "," + //Falta parâmetro
                     "'" + aquisitionDate + "'" +
-                    ") ON CONFLICT (ITEMID) DO NOTHING ";
-
+                    ") ON CONFLICT (ITEMID) DO UPDATE SET " +
+                        "itemid = EXCLUDED.itemid" +
+                        "collectionid = EXCLUDED.collectionid" +
+                        "name = EXCLUDED.name" +
+                        "year = EXCLUDED.year" +
+                        "lenght = EXCLUDED.lenght" +
+                        //Parametros que faltam
+                        "weight = EXCLUDED.weight";
+                        //Mais parâmetros que faltam
+            //TODO: REDIRECT UI'S EDIT ITEM TO HERE
             //Execute Statement
             statement.executeUpdate(sql);
             statement.close();
