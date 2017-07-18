@@ -21,8 +21,8 @@ public final class DatabaseHelper {
      /* -- DB INFO -- */
     /* -- DB INFO -- */
     private static String DBNAME = "MuseumSystemDB"; //SUBSTITUAM PELO NOME DO BANCO
-    private static String USER = "naraujo";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
-    private static String PASS = "noaicolas";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
+    private static String USER = "postgres";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
+    private static String PASS = "admin";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
 
     private static Connection databaseConnection;
     private static Statement statement = null;
@@ -781,21 +781,26 @@ public final class DatabaseHelper {
             statement.executeUpdate(sql);
             statement.close();
 
-
+            //Verify if this itemID is already in the movimentation table, if it is, it already has an admission movimentation
             statement = databaseConnection.createStatement();
-            //Inserts admission in MOVIMENTATION
-            sql = "INSERT INTO MOVIMENTATION " +
-                    "(timestamp, itemid, cpfauthor, type, origin, destination) " +
-                    " VALUES(" +
-                    " '" + new Timestamp(System.currentTimeMillis()) + "'," +
-                    " '" + itemID + "'," +
-                    " '" + activeUser.getCpf() + "'," +
-                    " '" + Utils.ADMISSION + "'," +
-                    " '" + origin + "'," +
-                    " '" + destination + "'" +
-                    ") ";
-            statement.executeUpdate(sql);
-            statement.closeOnCompletion();
+            sql = "SELECT * FROM movimentation WHERE itemid = '" + itemID + "'";
+            resultSet = statement.executeQuery(sql);
+            if(!resultSet.next()) {
+
+                //Inserts admission in MOVIMENTATION
+                sql = "INSERT INTO MOVIMENTATION " +
+                        "(timestamp, itemid, cpfauthor, type, origin, destination) " +
+                        " VALUES(" +
+                        " '" + new Timestamp(System.currentTimeMillis()) + "'," +
+                        " '" + itemID + "'," +
+                        " '" + activeUser.getCpf() + "'," +
+                        " '" + Utils.ADMISSION + "'," +
+                        " '" + origin + "'," +
+                        " '" + destination + "'" +
+                        ") ON CONFLICT (timestamp) DO NOTHING ";
+                statement.executeUpdate(sql);
+                statement.closeOnCompletion();
+            }
 
         } catch (SQLException e){
             e.printStackTrace();
@@ -827,12 +832,12 @@ public final class DatabaseHelper {
             String sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                     " VALUES (" +
-                    timestamp + ", " +
-                    itemID + ", " +
-                    activeUser.getCpf() + ", " +
-                    "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET DESTINATION TO SET AS NEW ORIGIN
-                    null + ", " +   //discharge movimentation has no destination
-                    Utils.DISCHARGE +
+                            "'" + timestamp + "', " +
+                            "'" + itemID + "', " +
+                            "'" + activeUser.getCpf() + "', " +
+                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            null + ", " +   //discharge movimentation has no destination
+                            Utils.DISCHARGE +
                     ") ON CONFLICT (timestamp) DO NOTHING";
             statement.executeUpdate(sql);
             statement.close();
@@ -868,11 +873,11 @@ public final class DatabaseHelper {
             String sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
-                            timestamp + ", " +
-                            itemID + ", " +
-                            activeUser.getCpf() + ", " +
-                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
-                            destination + ", " +
+                            "'" + timestamp + "', " +
+                            "'" + itemID + "', " +
+                            "'" + activeUser.getCpf() + "', " +
+                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + destination + "', " +
                             Utils.SEND_TO_LOAN +
                             ") ON CONFLICT (timestamp) DO NOTHING";
             statement.executeUpdate(sql);
@@ -884,7 +889,7 @@ public final class DatabaseHelper {
                     " VALUES(" +
                     " '" + timestamp + "'," +
                     " '" + itemID + "'," +
-                    " '" + dateOfReturn + "'," +
+                    " '" + dateOfReturn + "'" +
                     ") ON CONFLICT (TIMESTAMP) DO NOTHING";
             statement.executeUpdate(sql);
             statement.closeOnCompletion();
@@ -916,13 +921,13 @@ public final class DatabaseHelper {
 
             statement = databaseConnection.createStatement();
             String sql =
-                    "INSERT INTO MOVIMENTATION (TIMESTAMP, CPFAUTHOR, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
-                            timestamp + ", " +
-                            itemID + ", " +
-                            activeUser.getCpf() + ", " +
-                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
-                            destination + ", " +
+                            "'" + timestamp + "', " +
+                            "'" + itemID + "', " +
+                            "'" + activeUser.getCpf() + "', " +
+                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + destination + "', " +
                             Utils.SEND_TO_RESTORATION +
                             ") ON CONFLICT (timestamp) DO NOTHING";
             statement.executeUpdate(sql);
@@ -949,13 +954,13 @@ public final class DatabaseHelper {
 
             statement = databaseConnection.createStatement();
             String sql =
-                    "INSERT INTO MOVIMENTATION (TIMESTAMP, CPFAUTHOR, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
-                            timestamp + ", " +
-                            itemID + ", " +
-                            activeUser.getCpf() + ", " +
-                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
-                            destination + ", " +
+                            "'" + timestamp + "', " +
+                            "'" + itemID + "', " +
+                            "'" + activeUser.getCpf() + "', " +
+                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + destination + "', " +
                             Utils.PUT_TO_STORAGE +
                             ") ON CONFLICT (timestamp) DO NOTHING";
             statement.executeUpdate(sql);
@@ -980,13 +985,13 @@ public final class DatabaseHelper {
 
             statement = databaseConnection.createStatement();
             String sql =
-                    "INSERT INTO MOVIMENTATION (TIMESTAMP, CPFAUTHOR, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
-                            timestamp + ", " +
-                            itemID + ", " +
-                            activeUser.getCpf() + ", " +
-                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
-                            destination + ", " +
+                            "'" + timestamp + "', " +
+                            "'" + itemID + "', " +
+                            "'" + activeUser.getCpf() + "', " +
+                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + destination + "', " +
                             Utils.PUT_TO_EXPOSITION +
                             ") ON CONFLICT (timestamp) DO NOTHING";
             statement.executeUpdate(sql);
@@ -1010,13 +1015,13 @@ public final class DatabaseHelper {
 
             statement = databaseConnection.createStatement();
             String sql =
-                    "INSERT INTO MOVIMENTATION (TIMESTAMP, CPFAUTHOR, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
-                            timestamp + ", " +
-                            itemID + ", " +
-                            activeUser.getCpf() + ", " +
-                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
-                            destination + ", " +
+                            "'" + timestamp + "', " +
+                            "'" + itemID + "', " +
+                            "'" + activeUser.getCpf() + "', " +
+                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + destination + "', " +
                             Utils.RETURN_FROM_LOAN +
                             ") ON CONFLICT (timestamp) DO NOTHING";
             statement.executeUpdate(sql);
@@ -1041,13 +1046,13 @@ public final class DatabaseHelper {
 
             statement = databaseConnection.createStatement();
             String sql =
-                    "INSERT INTO MOVIMENTATION (TIMESTAMP, CPFAUTHOR, ITEMID, ORIGIN, DESTINATION, TYPE) " +
+                    "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
-                            timestamp + ", " +
-                            itemID + ", " +
-                            activeUser.getCpf() + ", " +
-                            "ORIGIN" + ", " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
-                            destination + ", " +
+                            "'" + timestamp + "', " +
+                            "'" + itemID + "', " +
+                            "'" + activeUser.getCpf() + "', " +
+                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + destination + "', " +
                             Utils.RETURN_FROM_RESTORATION +
                             ") ON CONFLICT (timestamp) DO NOTHING";
             statement.executeUpdate(sql);
@@ -1440,11 +1445,16 @@ public final class DatabaseHelper {
             String sql = "SELECT * FROM movimentation WHERE UPPER(itemid) = UPPER('" + itemID + "')";
             ResultSet resultSet = statement.executeQuery(sql);
 
+            //Variables for loan and restoration querys
+            Statement statement2;
+            String sql2;
+            ResultSet resultSet2;
+            Timestamp resultDateOfReturn;
 
             //Puts results in array list
             while (resultSet.next()) {
 
-                Movimentation movimentation;
+                Movimentation movimentation = null;
 
                 Timestamp resultTimestamp = resultSet.getTimestamp("timestamp");
                 int resultType = resultSet.getInt("type");
@@ -1463,16 +1473,27 @@ public final class DatabaseHelper {
                         movimentation = new PutToExpositionMovimentation(resultTimestamp, origin, destination, "REPLACE");
                         break;
                     case Utils.SEND_TO_LOAN:
-                        Timestamp resultDateOfReturn = resultSet.getTimestamp("dateOfReturn");
-                        movimentation = new SendToLoanMovimentation(
-                                resultTimestamp, resultDateOfReturn, origin, destination, "REPLACE"
-                        );
+                        sql2 = "SELECT * FROM loan WHERE timestamp = '" + resultTimestamp + "'";
+                        statement2 = databaseConnection.createStatement();
+                        resultSet2 = statement2.executeQuery(sql2);
+                        if(resultSet2.next()) {
+                            resultDateOfReturn = resultSet2.getTimestamp("dateofreturn");
+
+                            movimentation = new SendToLoanMovimentation(
+                                    resultTimestamp, resultDateOfReturn, origin, destination, "REPLACE"
+                            );
+                        }
                         break;
                     case Utils.SEND_TO_RESTORATION:
-                        resultDateOfReturn = resultSet.getTimestamp("dateOfReturn");
-                        movimentation = new SendToRestorationMovimentation(
-                                resultTimestamp, resultDateOfReturn, origin, destination, "REPLACE"
-                        );
+                        sql2 = "SELECT * FROM restoration WHERE timestamp = '" + resultTimestamp + "'";
+                        statement2 = databaseConnection.createStatement();
+                        resultSet2 = statement2.executeQuery(sql2);
+                        if(resultSet2.next()) {
+                            resultDateOfReturn = resultSet2.getTimestamp("dateOfReturn");
+                            movimentation = new SendToRestorationMovimentation(
+                                    resultTimestamp, resultDateOfReturn, origin, destination, "REPLACE"
+                            );
+                        }
                         break;
                     case Utils.RETURN_FROM_LOAN:
                         movimentation = new ReturnFromLoan(resultTimestamp, origin, destination, "REPLACE");
