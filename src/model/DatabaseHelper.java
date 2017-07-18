@@ -828,14 +828,24 @@ public final class DatabaseHelper {
 
         try {
 
+            //Get last destination of that item
+            String origin = "";
             statement = databaseConnection.createStatement();
-            String sql =
+            String sql = "SELECT * FROM movimentation WHERE itemid = '" + itemID + "' ORDER BY timestamp DESC LIMIT 1";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                origin = resultSet.getString("destination");
+            }
+            statement.close();
+
+            statement = databaseConnection.createStatement();
+            sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                     " VALUES (" +
                             "'" + timestamp + "', " +
                             "'" + itemID + "', " +
                             "'" + activeUser.getCpf() + "', " +
-                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + origin + "', " +
                             null + ", " +   //discharge movimentation has no destination
                             Utils.DISCHARGE +
                     ") ON CONFLICT (timestamp) DO NOTHING";
@@ -869,21 +879,31 @@ public final class DatabaseHelper {
 
         try {
 
+            //Get last destination of that item
+            String origin = "";
             statement = databaseConnection.createStatement();
-            String sql =
+            String sql = "SELECT * FROM movimentation WHERE itemid = '" + itemID + "' ORDER BY timestamp DESC LIMIT 1";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                origin = resultSet.getString("destination");
+            }
+            statement.close();
+
+            statement = databaseConnection.createStatement();
+            sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
                             "'" + timestamp + "', " +
                             "'" + itemID + "', " +
                             "'" + activeUser.getCpf() + "', " +
-                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + origin + "', " +
                             "'" + destination + "', " +
                             Utils.SEND_TO_LOAN +
                             ") ON CONFLICT (timestamp) DO NOTHING";
             statement.executeUpdate(sql);
             statement.close();
 
-            //TODO: ADD LOAM DETAILS DO LOAN TABLE
+            //TODO: ADD LOAM DATE OF RETURN TO UI
             statement = databaseConnection.createStatement();
             sql = "INSERT INTO LOAN(TIMESTAMP, ITEMID, DATEOFRETURN) " +
                     " VALUES(" +
@@ -919,14 +939,24 @@ public final class DatabaseHelper {
 
         try {
 
+            //Get last destination of that item
+            String origin = "";
             statement = databaseConnection.createStatement();
-            String sql =
+            String sql = "SELECT * FROM movimentation WHERE itemid = '" + itemID + "' ORDER BY timestamp DESC LIMIT 1";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                origin = resultSet.getString("destination");
+            }
+            statement.close();
+
+            statement = databaseConnection.createStatement();
+            sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
                             "'" + timestamp + "', " +
                             "'" + itemID + "', " +
                             "'" + activeUser.getCpf() + "', " +
-                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + origin + "', " +
                             "'" + destination + "', " +
                             Utils.SEND_TO_RESTORATION +
                             ") ON CONFLICT (timestamp) DO NOTHING";
@@ -964,15 +994,24 @@ public final class DatabaseHelper {
             return Utils.PERMISSION_ERROR;
 
         try {
+            //Get last destination of that item
+            String origin = "";
+            statement = databaseConnection.createStatement();
+            String sql = "SELECT * FROM movimentation WHERE itemid = '" + itemID + "' ORDER BY timestamp DESC LIMIT 1";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                origin = resultSet.getString("destination");
+            }
+            statement.close();
 
             statement = databaseConnection.createStatement();
-            String sql =
+            sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
                             "'" + timestamp + "', " +
                             "'" + itemID + "', " +
                             "'" + activeUser.getCpf() + "', " +
-                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + origin + "', " +
                             "'" + destination + "', " +
                             Utils.PUT_TO_STORAGE +
                             ") ON CONFLICT (timestamp) DO NOTHING";
@@ -995,15 +1034,24 @@ public final class DatabaseHelper {
             return Utils.PERMISSION_ERROR;
 
         try {
+            //Get last destination of that item
+            String origin = "";
+            statement = databaseConnection.createStatement();
+            String sql = "SELECT * FROM movimentation WHERE itemid = '" + itemID + "' ORDER BY timestamp DESC LIMIT 1";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                origin = resultSet.getString("destination");
+            }
+            statement.close();
 
             statement = databaseConnection.createStatement();
-            String sql =
+            sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
                             "'" + timestamp + "', " +
                             "'" + itemID + "', " +
                             "'" + activeUser.getCpf() + "', " +
-                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + origin + "', " +
                             "'" + destination + "', " +
                             Utils.PUT_TO_EXPOSITION +
                             ") ON CONFLICT (timestamp) DO NOTHING";
@@ -1025,15 +1073,24 @@ public final class DatabaseHelper {
             return Utils.PERMISSION_ERROR;
 
         try {
+            //Get last destination of that item
+            String origin = "";
+            statement = databaseConnection.createStatement();
+            String sql = "SELECT * FROM movimentation WHERE itemid = '" + itemID + "' ORDER BY timestamp DESC LIMIT 1";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                origin = resultSet.getString("destination");
+            }
+            statement.close();
 
             statement = databaseConnection.createStatement();
-            String sql =
+            sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
                             "'" + timestamp + "', " +
                             "'" + itemID + "', " +
                             "'" + activeUser.getCpf() + "', " +
-                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + origin + "', " +
                             "'" + destination + "', " +
                             Utils.RETURN_FROM_LOAN +
                             ") ON CONFLICT (timestamp) DO NOTHING";
@@ -1056,15 +1113,24 @@ public final class DatabaseHelper {
             return Utils.PERMISSION_ERROR;
 
         try {
+            //Get last destination of that item
+            String origin = "";
+            statement = databaseConnection.createStatement();
+            String sql = "SELECT * FROM movimentation WHERE itemid = '" + itemID + "' ORDER BY timestamp DESC LIMIT 1";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                origin = resultSet.getString("destination");
+            }
+            statement.close();
 
             statement = databaseConnection.createStatement();
-            String sql =
+            sql =
                     "INSERT INTO MOVIMENTATION (TIMESTAMP, ITEMID, CPFAUTHOR, ORIGIN, DESTINATION, TYPE) " +
                             " VALUES (" +
                             "'" + timestamp + "', " +
                             "'" + itemID + "', " +
                             "'" + activeUser.getCpf() + "', " +
-                            "'" + "ORIGIN" + "', " + //TODO: QUERY FOR LAST MOVIMENTATION AND GET LAST DESTINATION TO SET AS NEW ORIGIN
+                            "'" + origin + "', " +
                             "'" + destination + "', " +
                             Utils.RETURN_FROM_RESTORATION +
                             ") ON CONFLICT (timestamp) DO NOTHING";
