@@ -144,7 +144,7 @@ public final class DatabaseHelper {
             statement = databaseConnection.createStatement();
             sql =   "INSERT INTO PERSON (CPF, NAME, PASSWORD, EMAIL, MATRICULA, FUNCAO) " +
                     " VALUES " +
-                    "('00000000000', 'Administrador', 'admin'," +
+                    "('00000000001', 'Administrador', 'admin'," +
                     " 'admin@admin.admin', null," +
                     Utils.COORDINATOR +
                     ") ON CONFLICT (CPF) DO NOTHING";
@@ -514,7 +514,7 @@ public final class DatabaseHelper {
         Person newUser;
         try {
             statement = databaseConnection.createStatement();
-            String sql = "SELECT * FROM PERSON WHERE UPPER(CPF) = UPPER('" + "')";
+            String sql = "SELECT * FROM PERSON WHERE UPPER(CPF) = UPPER('" + cpf + "')";
 
             ResultSet resultSet = statement.executeQuery(sql);
 
@@ -1274,9 +1274,19 @@ public final class DatabaseHelper {
                 String resultsBiography = resultSet.getString(("biography"));
                 String resultsDescription = resultSet.getString(("description"));
 
-                //TODO: GETS ITEM ORIGIN AND DESTINATION FROM ENTRY MOVIMENTATION
-                String resultsOrigin = "NO ENTRY";
-                String resultsDestination = "NO ENTRY";
+                //Get last destination of that item
+                String origin = "";
+                String destination = "";
+                statement = databaseConnection.createStatement();
+                String sql = "SELECT * FROM movimentation WHERE itemid = '" + resultSet.getString(("itemid")) + "' ORDER BY timestamp DESC LIMIT 1";
+                ResultSet resultSet2 = statement.executeQuery(sql);
+                while (resultSet2.next()) {
+                    origin = resultSet2.getString("origin");
+                    destination = resultSet2.getString("destination");
+                }
+                statement.close();
+                String resultsOrigin = origin;
+                String resultsDestination = destination;
 
                 //Creates object
                 Item item = new Item(
@@ -1539,17 +1549,17 @@ public final class DatabaseHelper {
                 int resultType = resultSet.getInt("type");
                 String origin = resultSet.getString("origin");
                 String destination = resultSet.getString("destination");
+                String cpfAutor = resultSet.getString("cpfauthor");
 
                 switch (resultType) {
                     case Utils.ADMISSION:
-                        movimentation = new AdmissionMovimentation(resultTimestamp, origin, destination, "REPLACE");
-                        //TODO: ADD CPFAUTHOR TO TABLE
+                        movimentation = new AdmissionMovimentation(resultTimestamp, origin, destination, cpfAutor);
                         break;
                     case Utils.PUT_TO_STORAGE:
-                        movimentation = new PutToStorageMovimentation(resultTimestamp, origin, destination, "REPLACE");
+                        movimentation = new PutToStorageMovimentation(resultTimestamp, origin, destination, cpfAutor);
                         break;
                     case Utils.PUT_TO_EXPOSITION:
-                        movimentation = new PutToExpositionMovimentation(resultTimestamp, origin, destination, "REPLACE");
+                        movimentation = new PutToExpositionMovimentation(resultTimestamp, origin, destination, cpfAutor);
                         break;
                     case Utils.SEND_TO_LOAN:
                         sql2 = "SELECT * FROM loan WHERE timestamp = '" + resultTimestamp + "'";
@@ -1559,7 +1569,7 @@ public final class DatabaseHelper {
                             resultDateOfReturn = resultSet2.getTimestamp("dateofreturn");
 
                             movimentation = new SendToLoanMovimentation(
-                                    resultTimestamp, resultDateOfReturn, origin, destination, "REPLACE"
+                                    resultTimestamp, resultDateOfReturn, origin, destination, cpfAutor
                             );
                         }
                         break;
@@ -1570,18 +1580,18 @@ public final class DatabaseHelper {
                         if(resultSet2.next()) {
                             resultDateOfReturn = resultSet2.getTimestamp("dateOfReturn");
                             movimentation = new SendToRestorationMovimentation(
-                                    resultTimestamp, resultDateOfReturn, origin, destination, "REPLACE"
+                                    resultTimestamp, resultDateOfReturn, origin, destination, cpfAutor
                             );
                         }
                         break;
                     case Utils.RETURN_FROM_LOAN:
-                        movimentation = new ReturnFromLoan(resultTimestamp, origin, destination, "REPLACE");
+                        movimentation = new ReturnFromLoan(resultTimestamp, origin, destination, cpfAutor);
                         break;
                     case Utils.RETURN_FROM_RESTORATION:
-                        movimentation = new ReturnFromRestauration(resultTimestamp, origin, destination, "REPLACE");
+                        movimentation = new ReturnFromRestauration(resultTimestamp, origin, destination, cpfAutor);
                         break;
                     default:
-                        movimentation = new PutToStorageMovimentation(resultTimestamp, origin, destination, "REPLACE");
+                        movimentation = new PutToStorageMovimentation(resultTimestamp, origin, destination, cpfAutor);
                         break;
                 }
 
