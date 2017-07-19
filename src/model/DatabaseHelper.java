@@ -870,11 +870,11 @@ public final class DatabaseHelper {
                     lenght + "," +
                     itemOutnerCircumference + "," +
                     itemInnerCircumference + "," +
-                    weight + "," +
-                    author + "," +
-                    itemConservationState + "," +
-                    itemBiography + "," +
-                    itemDescription + "," +
+                    weight + ",'" +
+                    author + "','" +
+                    itemConservationState + "','" +
+                    itemBiography + "','" +
+                    itemDescription + "'," +
                     "'" + itemAquisitionDate + "'" +
                     ") ON CONFLICT (ITEMID) DO UPDATE SET " +
                     "itemid = EXCLUDED.itemid," +
