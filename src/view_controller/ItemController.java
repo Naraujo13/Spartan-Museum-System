@@ -170,6 +170,7 @@ public class ItemController implements Initializable {
                 InnerCircumference.setText("Circunferência interna: "+item.getInnerCircumference());
                 OuterCircumference.setText("Circunferência externa: "+item.getOuterCircumference());
                 Depth.setText("Profundidade: "+ item.getDepth());
+
                 
             }
             

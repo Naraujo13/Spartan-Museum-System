@@ -34,7 +34,9 @@ import javax.xml.crypto.Data;
  * @author Usuário
  */
 public class AddItemController implements Initializable {
-        
+
+
+
     model.Item item;
     
     @FXML
@@ -73,6 +75,16 @@ public class AddItemController implements Initializable {
     private ChoiceBox Collections;
     @FXML
     private TextField ItemOrigin;
+    @FXML
+    private TextField Destination;
+    @FXML
+    public TextField ItemConservationState;
+    @FXML
+    public TextField ItemBiography;
+    @FXML
+    public TextField ItemAquisitionDate;
+    @FXML
+    public TextField ItemHistoricalContext;
 
     /**
      * Initializes the controller class.
@@ -99,22 +111,31 @@ public class AddItemController implements Initializable {
                 
                
                DatabaseHelper.addItem(
-                       DatabaseHelper.getMuseum().getMuseumCode(),
+                       ItemID.getText(),
                        (String) Collections.getValue(),
-                       ItemName.getText().substring(ItemName.getText().length()-3, ItemName.getText().length()), //TODO: Replace with correct textfield
                        ItemName.getText(),
-                       Integer.parseInt(ItemYear.getText()),
-                       ItemOrigin.getText(),
-                       "Falta",
-                       Float.parseFloat(Deph.getText()),
-                       Float.parseFloat(Itemthickness.getText()),
-                       Float.parseFloat(ItemWidth.getText()),
-                       Float.parseFloat(ItemHeight.getText()),
-                       new Timestamp(java.lang.System.currentTimeMillis()));
+                       ItemYear.getText(),
+                       ItemStatus.getText(),
+                       Itemthickness.getText(),
+                       ItemOutnerCircumference.getText(),
+                       ItemInnerCircumference.getText(),
+                       ItemWeight.getText(),
+                       ItemAuthor.getText(),
+                       ItemConservationState.getText(),
+                       ItemBiography.getText(),
+                       ItemDescription.getText(),
+                       ItemAquisitionDate.getText(),
+                       ItemHeight.getText(),
+                       ItemWidth.getText(),
+                       ItemHistoricalContext.getText()
+
+                       );
+
                        Stage stage = (Stage) SaveItem.getScene().getWindow();
                         stage.close();
                
             }
+
         }
         
         );

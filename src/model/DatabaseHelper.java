@@ -144,7 +144,7 @@ public final class DatabaseHelper {
             statement = databaseConnection.createStatement();
             sql =   "INSERT INTO PERSON (CPF, NAME, PASSWORD, EMAIL, MATRICULA, FUNCAO) " +
                     " VALUES " +
-                    "('00000000001', 'Administrador', 'admin'," +
+                    "('00000000000', 'Administrador', 'admin'," +
                     " 'admin@admin.admin', null," +
                     Utils.COORDINATOR +
                     ") ON CONFLICT (CPF) DO NOTHING";
@@ -832,6 +832,93 @@ public final class DatabaseHelper {
 
     }
 
+
+
+    public static int addItem(String itemID, String collectionName, String name, String year, String itemStatus, String lenght, String itemOutnerCircumference,
+                              String itemInnerCircumference, String weight, String author, String itemConservationState, String itemBiography, String itemDescription,
+                              String itemAquisitionDate, String ItemHeight, String ItemWidth, String  ItemHistoricalContext){
+
+        //Testa permissão
+        if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
+            return Utils.PERMISSION_ERROR;
+
+        try {
+            //Crates statement
+            statement = databaseConnection.createStatement();
+
+            //Querys for CollectionID
+            String sql = "SELECT * FROM collection WHERE NAME = '" + collectionName + "'";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            String collectionID;
+            if (resultSet.next())
+                collectionID = resultSet.getString("COLLECTIONID");
+            else
+                return Utils.NOT_FOUND_ERROR;   //Collection not found
+
+            //Creates SQL for insertion
+            sql =   "INSERT INTO ITEM" +
+                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT," +
+                    " OUTERCIRCUMFERENCE, INNERCIRCUMFERENCE, WEIGHT," +
+                    " AUTHOR, CONSERVATIONSTATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
+                    "VALUES (" +
+                    "'" + itemID + "'," +
+                    "'" + collectionID + "'," +
+                    "'" + name + "'," +
+                    year + "," +
+                    "'" + Utils.AT_STORAGE + "'," +
+                    lenght + "," +
+                    itemOutnerCircumference + "," +
+                    itemInnerCircumference + "," +
+                    weight + "," +
+                    author + "," +
+                    itemConservationState + "," +
+                    itemBiography + "," +
+                    itemDescription + "," +
+                    "'" + itemAquisitionDate + "'" +
+                    ") ON CONFLICT (ITEMID) DO UPDATE SET " +
+                    "itemid = EXCLUDED.itemid," +
+                    "collectionid = EXCLUDED.collectionid," +
+                    "name = EXCLUDED.name," +
+                    "year = EXCLUDED.year," +
+                    "lenght = EXCLUDED.lenght," +
+                    //Parametros que faltam
+                    "weight = EXCLUDED.weight";
+            //Mais parâmetros que faltam
+            //TODO: REDIRECT UI'S EDIT ITEM TO HERE
+            //Execute Statement
+            statement.executeUpdate(sql);
+            statement.close();
+
+            //Verify if this itemID is already in the movimentation table, if it is, it already has an admission movimentation
+            statement = databaseConnection.createStatement();
+            sql = "SELECT * FROM movimentation WHERE itemid = '" + itemID + "'";
+            resultSet = statement.executeQuery(sql);
+            if(!resultSet.next()) {
+
+                //Inserts admission in MOVIMENTATION
+                sql = "INSERT INTO MOVIMENTATION " +
+                        "(timestamp, itemid, cpfauthor, type, origin, destination) " +
+                        " VALUES(" +
+                        " '" + new Timestamp(System.currentTimeMillis()) + "'," +
+                        " '" + itemID + "'," +
+                        " '" + activeUser.getCpf() + "'," +
+                        " '" + Utils.ADMISSION + "'," +
+                        " '" + null + "'," +
+                        " '" + null + "'" +
+                        ") ON CONFLICT (timestamp) DO NOTHING ";
+                statement.executeUpdate(sql);
+                statement.closeOnCompletion();
+            }
+
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
+        return Utils.REQUEST_OK;
+
+    }
 
     //Movimentation
 

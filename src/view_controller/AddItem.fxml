@@ -42,7 +42,13 @@
       </Label>
       <Separator layoutX="24.0" layoutY="79.0" prefHeight="3.0" prefWidth="309.0" />
       <TextField fx:id="Deph" layoutX="24.0" layoutY="609.0" prefHeight="25.0" prefWidth="309.0" promptText="Profundidade da obra" />
-      <TextField layoutX="24.0" layoutY="192.0" prefHeight="25.0" prefWidth="309.0" promptText="Destino da obra" />
-      
+      <TextField fx:id="Destination" layoutX="24.0" layoutY="192.0" prefHeight="25.0" prefWidth="309.0" promptText="Destino da obra" />
+      <TextField fx:id="ItemConservationState" layoutX="24.0" layoutY="192.0" prefHeight="25.0" prefWidth="309.0" promptText="Estato de Conservação" />
+      <TextField fx:id="ItemBiography" layoutX="24.0" layoutY="192.0" prefHeight="25.0" prefWidth="309.0" promptText="Estato de Conservação" />
+      <TextField fx:id="ItemAquisitionDate" layoutX="24.0" layoutY="192.0" prefHeight="25.0" prefWidth="309.0" promptText="Data de Aquisição" />
+      <TextField fx:id="ItemHistoricalContext" layoutX="24.0" layoutY="192.0" prefHeight="25.0" prefWidth="309.0" promptText="Contexto Histórico" />
+      <TextField fx:id="ItemID" layoutX="24.0" layoutY="192.0" prefHeight="25.0" prefWidth="309.0" promptText="Contexto Histórico" />
+      <TextField fx:id="ItemStatus" layoutX="24.0" layoutY="192.0" prefHeight="25.0" prefWidth="309.0" promptText="Contexto Histórico" />
+
    </children>
 </AnchorPane>
