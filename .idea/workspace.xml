@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/model/DatabaseHelper.java" line="104" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Métodos para movimentações. Criação de movimentações de entrada.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DS/model/DatabaseHelper.class" afterPath="$PROJECT_DIR$/out/production/DS/model/DatabaseHelper.class" />
+    <list default="true" id="d1bcfd37-f55e-4804-a630-da1f5ac8bdf3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/AdmissionMovimentation.java" afterPath="$PROJECT_DIR$/src/model/AdmissionMovimentation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/DischargeMovimentation.java" afterPath="$PROJECT_DIR$/src/model/DischargeMovimentation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Item.java" afterPath="$PROJECT_DIR$/src/model/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Movimentation.java" afterPath="$PROJECT_DIR$/src/model/Movimentation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/MovimentationTo.java" afterPath="$PROJECT_DIR$/src/model/MovimentationTo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/PutToExpositionMovimentation.java" afterPath="$PROJECT_DIR$/src/model/PutToExpositionMovimentation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/PutToStorageMovimentation.java" afterPath="$PROJECT_DIR$/src/model/PutToStorageMovimentation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ReturnFromLoan.java" afterPath="$PROJECT_DIR$/src/model/ReturnFromLoan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ReturnFromRestauration.java" afterPath="$PROJECT_DIR$/src/model/ReturnFromRestauration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/SendToLoanMovimentation.java" afterPath="$PROJECT_DIR$/src/model/SendToLoanMovimentation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/SendToRestorationMovimentation.java" afterPath="$PROJECT_DIR$/src/model/SendToRestorationMovimentation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/DatabaseHelper.java" afterPath="$PROJECT_DIR$/src/model/DatabaseHelper.java" />
     </list>
-    <ignored path="JavaFxApplication.iws" />
-    <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,226 +14,50 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DesktopDS$main.coverage" NAME="main Coverage Results" MODIFIED="1500264857320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>view_controller.*</FILTER>
-    </SUITE>
-  </component>
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MuseumSystemDB@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MuseumSystemDB@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MuseumSystemDB" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="public" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-  </component>
-  <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
-    <ui_properties converted="true" />
-    <breakpoint_rules converted="true" />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DatabaseHelper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/DatabaseHelper.java">
+    <leaf>
+      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view_controller/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="962" column="57" lean-forward="true" selection-start-line="962" selection-start-column="57" selection-end-line="962" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1500268168199" expanded="true" signature="2356:2698" ph="CREATE TABLE... PERSON" />
-                <marker date="1500268168199" expanded="true" signature="2886:3371" ph="CREATE TABLE... MUSEUM" />
-                <marker date="1500268168199" expanded="true" signature="3563:3836" ph="CREATE TABLE... COLLECTION" />
-                <marker date="1500268168199" expanded="true" signature="4022:5000" ph="CREATE TABLE... ITEM" />
-                <marker date="1500268168199" expanded="true" signature="5196:5560" ph="CREATE TABLE... ITEM" />
-                <marker date="1500268168199" expanded="true" signature="5196:5586" ph="CREATE TABLE... MOVIMENTATION" />
-                <marker date="1500268168199" expanded="true" signature="5780:6260" ph="CREATE TABLE... MOVIMENTATION" />
-                <marker date="1500268168199" expanded="true" signature="6447:6753" ph="CREATE TABLE... MOVIMENTATION" />
-                <marker date="1500268168199" expanded="true" signature="6447:6754" ph="CREATE TABLE... LOAN" />
-                <marker date="1500268168199" expanded="true" signature="6981:7294" ph="INSERT INTO PERSON... " />
-                <marker date="1500268168199" expanded="true" signature="7480:7757" ph="INSERT INTO MUSEUM... " />
-                <marker date="1500268168199" expanded="true" signature="21943:22430" ph="INSERT INTO PERSON... " />
-                <marker date="1500268168199" expanded="true" signature="24057:24478" ph="INSERT INTO PERSON... " />
-                <marker date="1500268168199" expanded="true" signature="26122:26565" ph="INSERT INTO PERSON... " />
-                <marker date="1500268168199" expanded="true" signature="26674:26687" ph="UPDATE MUSEU... " />
-                <marker date="1500268168199" expanded="true" signature="26674:26730" ph="UPDATE MUSEU... " />
-                <marker date="1500268168199" expanded="true" signature="26674:26744" ph="UPDATE MUSEU... " />
-                <marker date="1500268168199" expanded="true" signature="26674:26794" ph="UPDATE MUSEU... " />
-                <marker date="1500268168199" expanded="true" signature="26674:26820" ph="UPDATE MUSEU... " />
-                <marker date="1500268168199" expanded="true" signature="28119:28180" ph="SELECT COUNT... COLLECTION" />
-                <marker date="1500268168199" expanded="true" signature="28728:29024" ph="INSERT INTO COLLECTION... " />
-                <marker date="1500268168199" expanded="true" signature="28728:29053" ph="INSERT INTO COLLECTION... " />
-                <marker date="1500268168199" expanded="true" signature="30284:30346" ph="SELECT colle... collection" />
-                <marker date="1500268168199" expanded="true" signature="30698:31685" ph="INSERT INTO ITEM... " />
-                <marker date="1500268168199" expanded="true" signature="31377:31685" ph="INSERT INTO ITEM... " />
-                <marker date="1500268168199" expanded="true" signature="31927:31939" ph="INSERT INTO movimentation... " />
-                <marker date="1500268168199" expanded="true" signature="31927:32024" ph="INSERT INTO movimentation... " />
-                <marker date="1500268168199" expanded="true" signature="31927:32085" ph="INSERT INTO movimentation... " />
-                <marker date="1500268168199" expanded="true" signature="31927:32135" ph="INSERT INTO movimentation... " />
-                <marker date="1500268168199" expanded="true" signature="31927:32347" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="33678:33783" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="33678:33820" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="33678:33823" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="33678:33860" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="33678:33891" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="33678:33897" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="33678:34156" ph="INSERT INTO PERSON... " />
-                <marker date="1500268168199" expanded="true" signature="35655:36038" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="35655:36157" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="36366:36415" ph="INSERT INTO LOAN... " />
-                <marker date="1500268168199" expanded="true" signature="36366:36476" ph="INSERT INTO LOAN... " />
-                <marker date="1500268168199" expanded="true" signature="36366:36494" ph="INSERT INTO LOAN... " />
-                <marker date="1500268168199" expanded="true" signature="36366:36495" ph="INSERT INTO LOAN... " />
-                <marker date="1500268168199" expanded="true" signature="36366:36613" ph="INSERT INTO LOAN... " />
-                <marker date="1500268168199" expanded="true" signature="36366:36648" ph="INSERT INTO LOAN... " />
-                <marker date="1500268168199" expanded="true" signature="38092:38601" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="39753:40252" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="41340:41842" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="42927:43436" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="44534:45050" ph="INSERT INTO MOVIMENTATION... " />
-                <marker date="1500268168199" expanded="true" signature="46079:46098" ph="SELECT * FRO... PERSON" />
-                <marker date="1500268168199" expanded="true" signature="46079:46130" ph="SELECT * FRO... ITEM" />
-                <marker date="1500268168199" expanded="true" signature="46079:46143" ph="SELECT * FRO... ITEM" />
-                <marker date="1500268168199" expanded="true" signature="46079:46144" ph="SELECT * FRO... ITEM" />
-                <marker date="1500268168199" expanded="true" signature="46087:46098" ph="INSERT INTO PERSON... " />
-                <marker date="1500268168199" expanded="true" signature="47250:47322" ph="SELECT * FRO... ITEM" />
-                <marker date="1500268168199" expanded="true" signature="47250:47323" ph="SELECT * FRO... ITEM" />
-                <marker date="1500268168199" expanded="true" signature="51418:51484" ph="SELECT * FRO... collection" />
-                <marker date="1500268168199" expanded="true" signature="51418:51487" ph="SELECT * FRO... collection" />
-                <marker date="1500268168199" expanded="true" signature="53210:53275" ph="SELECT * FRO... PERSON" />
-                <marker date="1500268168199" expanded="true" signature="54494:54550" ph="SELECT codmu... museum" />
-                <marker date="1500268168199" expanded="true" signature="54494:54570" ph="SELECT * FRO... collection" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/Utils.java">
+      <file leaf-file-name="DatabaseHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/DatabaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+            <state relative-caret-position="1289">
+              <caret line="250" column="29" lean-forward="true" selection-start-line="250" selection-start-column="29" selection-end-line="250" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PgStatement.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../../NetBeansProjects/DS/postgresql-42.1.1.jar!/org/postgresql/jdbc/PgStatement.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11307">
+              <caret line="886" column="0" lean-forward="false" selection-start-line="886" selection-start-column="0" selection-end-line="886" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompositeEventDispatcher.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/com/sun/javafx/event/CompositeEventDispatcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>booç</find>
-      <find>dischar</find>
-      <find>setSt</find>
-      <find>addCollec</find>
-      <find>1234</find>
-      <find>Result</find>
-      <find>ResultSet</find>
-      <find>select</find>
-      <find>ITEMID</find>
-      <find>ITEM</find>
-      <find>addItme</find>
-      <find>coordinat</find>
-      <find>while (resul</find>
-      <find>resultSet.next</find>
-      <find>addColec</find>
-      <find>byID</find>
-      <find>from collection</find>
-      <find>insert</find>
-      <find>inser</find>
-      <find>addPerson</find>
-      <find>joazi</find>
-      <find>add</find>
-      <find>char(11)</find>
-      <find>INSERT INTO MOVIMENT</find>
-      <find>varchar(20)</find>
-      <find>addItem</find>
-      <find>ON CONFLICT (TIMES</find>
-      <find>MOVIMENTATION</find>
-      <find>java.sql</find>
-      <find>Date</find>
-    </findStrings>
-  </component>
-  <component name="FindManager">
-    <FindUsagesManager>
-      <setting name="OPEN_NEW_TAB" value="false" />
-    </FindUsagesManager>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -261,68 +70,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/model/Pessoa.java" />
-        <option value="$PROJECT_DIR$/src/model/Pesquisador.java" />
-        <option value="$PROJECT_DIR$/src/model/Technician.java" />
-        <option value="$PROJECT_DIR$/src/model/Coordenador.java" />
-        <option value="$PROJECT_DIR$/src/model/Peca.java" />
-        <option value="$PROJECT_DIR$/src/model/Entrada.java" />
-        <option value="$PROJECT_DIR$/src/model/RestorationReport.java" />
-        <option value="$PROJECT_DIR$/src/model/Researcher.java" />
-        <option value="$PROJECT_DIR$/src/model/Person.java" />
-        <option value="$PROJECT_DIR$/src/model/Director.java" />
-        <option value="$PROJECT_DIR$/src/model/ReceivingMovimentation.java" />
-        <option value="$PROJECT_DIR$/src/model/Restoration.java" />
-        <option value="$PROJECT_DIR$/src/model/Admission.java" />
-        <option value="$PROJECT_DIR$/src/model/Discharge.java" />
-        <option value="$PROJECT_DIR$/src/model/Loan.java" />
-        <option value="$PROJECT_DIR$/src/model/Storage.java" />
-        <option value="$PROJECT_DIR$/src/model/Expose.java" />
-        <option value="$PROJECT_DIR$/src/model/DispatchingMovimentation.java" />
-        <option value="$PROJECT_DIR$/src/model/MovimentationWithDestination.java" />
-        <option value="$PROJECT_DIR$/src/model/ReceiveMovimentation.java" />
-        <option value="$PROJECT_DIR$/src/interface/DS.java" />
-        <option value="$PROJECT_DIR$/src/ds/DS.java" />
-        <option value="$PROJECT_DIR$/src/ds/MainScreen.fxml" />
-        <option value="$PROJECT_DIR$/src/model/Museum.java" />
-        <option value="$PROJECT_DIR$/src/model/System.java" />
-        <option value="$PROJECT_DIR$/src/model/DataBaseManager.java" />
-        <option value="$PROJECT_DIR$/src/UI/main.java" />
-        <option value="$PROJECT_DIR$/src/UI/AddItemController.java" />
-        <option value="dbtable:/8a636679/31c23cc5-356e-4d85-82a1-eb0cf2df0650/MuseumSystemDB.public.person" />
-        <option value="$PROJECT_DIR$/src/model/Collection.java" />
-        <option value="$PROJECT_DIR$/src/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/model/DatabaseHelper.java" />
-        <option value="$PROJECT_DIR$/src/view_controller/AddItemController.java" />
-        <option value="$PROJECT_DIR$/src/view_controller/AddMovimentationController.java" />
-        <option value="$PROJECT_DIR$/src/model/Movimentation.java" />
-        <option value="$PROJECT_DIR$/src/model/MovimentationTo.java" />
-        <option value="$PROJECT_DIR$/src/model/DischargeMovimentation.java" />
-        <option value="$PROJECT_DIR$/src/model/AdmissionMovimentation.java" />
-        <option value="$PROJECT_DIR$/src/model/PutToExpositionMovimentation.java" />
-        <option value="$PROJECT_DIR$/src/model/PutToStorageMovimentation.java" />
-        <option value="$PROJECT_DIR$/src/model/ReturnFromLoan.java" />
-        <option value="$PROJECT_DIR$/src/model/ReturnFromRestauration.java" />
-        <option value="$PROJECT_DIR$/src/model/SendToLoanMovimentation.java" />
-        <option value="$PROJECT_DIR$/src/model/SendToRestorationMovimentation.java" />
-        <option value="$PROJECT_DIR$/src/model/Item.java" />
+        <option value="$PROJECT_DIR$/../../NetBeansProjects/DS/postgresql-42.1.1.jar!/org/postgresql/jdbc/PgStatement.class" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="29" />
-    <option name="width" value="1920" />
-    <option name="height" value="1051" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="PackagesPane" proportions="" version="1">
@@ -339,6 +96,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -347,7 +105,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DS" />
+              <option name="myItemId" value="DesktopDS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -357,7 +115,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DS" />
+              <option name="myItemId" value="DesktopDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view_controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DesktopDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DesktopDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DesktopDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DesktopDS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -368,7 +154,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -400,23 +185,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="OverrideImplement.combined" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
-    <property name="last_opened_file_path" value="$USER_HOME$/postgresql-42.1.1.jar!/" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../NetBeansProjects/DS/postgresql-42.1.1.jar!/" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -447,13 +219,13 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="DS" />
+      <module name="DesktopDS" />
       <envs />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
       <method />
@@ -519,7 +291,6 @@
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -535,136 +306,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
@@ -683,15 +324,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="true" />
-      <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -703,11 +335,11 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
+        <value defaultName="singleModule" />
       </option>
       <envs />
       <patterns />
@@ -734,22 +366,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -759,7 +375,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="DS" />
+      <module name="DesktopDS" />
       <envs />
       <method />
     </configuration>
@@ -783,12 +399,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -802,13 +412,13 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
+        <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
@@ -817,407 +427,97 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
-      <method />
-    </configuration>
-    <configuration default="false" name="Main" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="sample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="DS" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.main" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.main" />
     </list>
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Application.main" />
       </list>
     </recent_temporary>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
-      <created>1359379246138</created>
+      <changelist id="d1bcfd37-f55e-4804-a630-da1f5ac8bdf3" name="Default" comment="" />
+      <created>1500492962577</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1359379246138</updated>
-      <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1499887996473" duration="3339000" />
-      <workItem from="1499897002546" duration="3939000" />
-      <workItem from="1499901619470" duration="3897000" />
-      <workItem from="1499914265878" duration="2836000" />
-      <workItem from="1500041253754" duration="659000" />
-      <workItem from="1500041979109" duration="1802000" />
-      <workItem from="1500058116515" duration="10496000" />
-      <workItem from="1500224956501" duration="4387000" />
-      <workItem from="1500263421328" duration="5261000" />
+      <updated>1500492962577</updated>
     </task>
-    <task id="LOCAL-00001" summary="Removendo diagramas duplicados">
-      <created>1496083023217</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1496083023217</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Adicionadas classes restantes do model">
-      <created>1496087397632</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1496087397632</updated>
-    </task>
-    <task id="LOCAL-00003" summary="System criado. Iniciada inserção de métodos para pesquisa em System, Museum, Item e Collection">
-      <created>1496368358755</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1496368358755</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Métodos para inserção e verificação de permissões.">
-      <created>1496599952312</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1496599952312</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Funções de Inserção finalizadas. Códigos de erro definidos em Utils.">
-      <created>1496631232603</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1496631232603</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Métodos para realização de movimentações">
-      <created>1496631865949</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1496631865949</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Inseridos métodos compareTo nas classes. Iniciadas pesquisas otimizadas.">
-      <created>1496635519271</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1496635519271</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Pesquisa de coleções implementada">
-      <created>1496635949183</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1496635949183</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Pesquisa por nome de usuários em System finalizada">
-      <created>1496680813232</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1496680813232</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Sistema de movimentações totalmente remodelado">
-      <created>1496685638958</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1496685638958</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Funções de retorno de empréstimo e restauração">
-      <created>1496685819585</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1496685819585</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Adicionado campos do formulário de inscrição ao model.Item">
-      <created>1496767378781</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1496767378781</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Funções de System adaptadas para modificações em model.Item">
-      <created>1496768487318</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1496768487318</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Método de Login adicionado">
-      <created>1496809291158</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1496809291158</updated>
-    </task>
-    <task id="LOCAL-00015" summary="System.addItem agora retorna ERROR_NOT_FOUND para coleção inexistente">
-      <created>1496947962116</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1496947962116</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Corrigida condição em inserção de coleção">
-      <created>1496948199034</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1496948199034</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Adicionado banco de dados Postgresql.&#10;Refatorado nome de algumas classes e pacotes.">
-      <created>1499896143349</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1499896143349</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Adicionada inserção de museu e coordenador">
-      <created>1499913957059</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1499913957059</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Geração de IDs para coleções">
-      <created>1499915691295</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1499915691295</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Inserções corrigidas. Pesquisas implementadas.">
-      <created>1500181301993</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1500181301993</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Pesquisa por usuário, criação de tabelas de movimentação, início de função de baixa">
-      <created>1500229303074</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1500229303074</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Métodos para movimentações. Criação de movimentações de entrada.">
-      <created>1500268348745</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1500268348745</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39908000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="29" width="1920" height="1051" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21611527" sideWeight="0.49346405" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37623763" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43092105" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21611527" sideWeight="0.50653595" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2022412" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21611527" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45335516" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37623763" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43124312" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32673267" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19316968" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41798106" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Removendo diagramas duplicados" />
-    <MESSAGE value="Adicionadas classes restantes do model" />
-    <MESSAGE value="System criado. Iniciada inserção de métodos para pesquisa em System, Museum, Item e Collection" />
-    <MESSAGE value="Métodos para inserção e verificação de permissões." />
-    <MESSAGE value="Funções de Inserção finalizadas. Códigos de erro definidos em Utils." />
-    <MESSAGE value="Métodos para realização de movimentações" />
-    <MESSAGE value="Inseridos métodos compareTo nas classes. Iniciadas pesquisas otimizadas." />
-    <MESSAGE value="Pesquisa de coleções implementada" />
-    <MESSAGE value="Pesquisa por nome de usuários em System finalizada" />
-    <MESSAGE value="Sistema de movimentações totalmente remodelado" />
-    <MESSAGE value="Funções de retorno de empréstimo e restauração" />
-    <MESSAGE value="Adicionado campos do formulário de inscrição ao model.Item" />
-    <MESSAGE value="Funções de System adaptadas para modificações em model.Item" />
-    <MESSAGE value="Método de Login adicionado" />
-    <MESSAGE value="System.addItem agora retorna ERROR_NOT_FOUND para coleção inexistente." />
-    <MESSAGE value="System.addItem agora retorna ERROR_NOT_FOUND para coleção inexistente" />
-    <MESSAGE value="Corrigida condição em inserção de coleção" />
-    <MESSAGE value="Adicionado banco de dados Postgresql.&#10;Refatorado nome de algumas classes e pacotes." />
-    <MESSAGE value="Adicionada inserção de museu e coordenador" />
-    <MESSAGE value="Geração de IDs para coleções" />
-    <MESSAGE value="Inserções corrigidas. Pesquisas implementadas." />
-    <MESSAGE value="Pesquisa por usuário, criação de tabelas de movimentação, início de função de baixa" />
-    <MESSAGE value="Métodos para movimentações. Criação de movimentações de entrada." />
-    <option name="LAST_COMMIT_MESSAGE" value="Métodos para movimentações. Criação de movimentações de entrada." />
-    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/model/Coordinator.java</url>
-          <line>5</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="6" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1225,412 +525,51 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/lang/String.class" />
-    <entry file="file://$PROJECT_DIR$/src/FXMLDocument.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/FXMLDocumentController.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/Researcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/util/TreeMap.class" />
-    <entry file="file://$PROJECT_DIR$/src/view_controller/MainScreen.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/view_controller/Login.fxml" />
-    <entry file="file://$PROJECT_DIR$/out/production/DS/interface/background.css" />
-    <entry file="file://$PROJECT_DIR$/src/view_controller/AddCollection.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="117" lean-forward="false" selection-start-line="16" selection-start-column="117" selection-end-line="16" selection-end-column="117" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Museum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="153" column="5" lean-forward="false" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Director.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Technician.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Coordinator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view_controller/AddCollectionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/net/URLClassLoader.java" />
-    <entry file="jar://$USER_HOME$/postgresql-42.1.1.jar!/org/postgresql/core/v3/QueryExecutorImpl.class" />
-    <entry file="dbDummy://dbtable:/a58b79d8/e4bb4c71-0e98-4164-9c7e-2a781e719aed/MuseumSystemDB.public.person" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e4bb4c71-0e98-4164-9c7e-2a781e719aed/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/view_controller/lupa.CSS">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Downloads/postgresql-42.1.1.jar!/org/postgresql/core/v3/QueryExecutorImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="1822" column="0" lean-forward="false" selection-start-line="1822" selection-start-column="0" selection-end-line="1822" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view_controller/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view_controller/SearchResultsPaneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Downloads/postgresql-42.1.1.jar!/org/postgresql/jdbc/PgResultSet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1822" column="0" lean-forward="false" selection-start-line="1822" selection-start-column="0" selection-end-line="1822" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/31c23cc5-356e-4d85-82a1-eb0cf2df0650/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/ext/jfxrt.jar!/com/sun/javafx/tk/quantum/QuantumToolkit.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="381" column="0" lean-forward="false" selection-start-line="381" selection-start-column="0" selection-end-line="381" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/8a636679/31c23cc5-356e-4d85-82a1-eb0cf2df0650/MuseumSystemDB.public.museum">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/8a636679/31c23cc5-356e-4d85-82a1-eb0cf2df0650/MuseumSystemDB.public.person">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/8a636679/31c23cc5-356e-4d85-82a1-eb0cf2df0650/MuseumSystemDB.public.collection">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view_controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="91" column="11" lean-forward="false" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        <state relative-caret-position="-442">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/8a636679/31c23cc5-356e-4d85-82a1-eb0cf2df0650/MuseumSystemDB.public.item">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view_controller/MainScreenController.java">
+    <entry file="file://$PROJECT_DIR$/src/view_controller/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/8a636679/31c23cc5-356e-4d85-82a1-eb0cf2df0650/MuseumSystemDB.public.movimentation">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view_controller/AddMovimentationController.java">
+    <entry file="jar://$PROJECT_DIR$/../../NetBeansProjects/DS/postgresql-42.1.1.jar!/org/postgresql/jdbc/PgStatement.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="101" column="159" lean-forward="false" selection-start-line="101" selection-start-column="159" selection-end-line="101" selection-end-column="159" />
+        <state relative-caret-position="11307">
+          <caret line="886" column="0" lean-forward="false" selection-start-line="886" selection-start-column="0" selection-end-line="886" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view_controller/AddItemController.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/com/sun/javafx/event/CompositeEventDispatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="101" column="27" lean-forward="false" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Movimentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="e#780#781#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/MovimentationTo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/DischargeMovimentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/AdmissionMovimentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/PutToExpositionMovimentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/PutToStorageMovimentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/RestorationReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/SendToLoanMovimentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/SendToRestorationMovimentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ReturnFromRestauration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ReturnFromLoan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="465" column="35" lean-forward="false" selection-start-line="465" selection-start-column="35" selection-end-line="465" selection-end-column="35" />
+        <state relative-caret-position="237">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/DatabaseHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="962" column="57" lean-forward="true" selection-start-line="962" selection-start-column="57" selection-end-line="962" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1500268168199" expanded="true" signature="2356:2698" ph="CREATE TABLE... PERSON" />
-            <marker date="1500268168199" expanded="true" signature="2886:3371" ph="CREATE TABLE... MUSEUM" />
-            <marker date="1500268168199" expanded="true" signature="3563:3836" ph="CREATE TABLE... COLLECTION" />
-            <marker date="1500268168199" expanded="true" signature="4022:5000" ph="CREATE TABLE... ITEM" />
-            <marker date="1500268168199" expanded="true" signature="5196:5560" ph="CREATE TABLE... ITEM" />
-            <marker date="1500268168199" expanded="true" signature="5196:5586" ph="CREATE TABLE... MOVIMENTATION" />
-            <marker date="1500268168199" expanded="true" signature="5780:6260" ph="CREATE TABLE... MOVIMENTATION" />
-            <marker date="1500268168199" expanded="true" signature="6447:6753" ph="CREATE TABLE... MOVIMENTATION" />
-            <marker date="1500268168199" expanded="true" signature="6447:6754" ph="CREATE TABLE... LOAN" />
-            <marker date="1500268168199" expanded="true" signature="6981:7294" ph="INSERT INTO PERSON... " />
-            <marker date="1500268168199" expanded="true" signature="7480:7757" ph="INSERT INTO MUSEUM... " />
-            <marker date="1500268168199" expanded="true" signature="21943:22430" ph="INSERT INTO PERSON... " />
-            <marker date="1500268168199" expanded="true" signature="24057:24478" ph="INSERT INTO PERSON... " />
-            <marker date="1500268168199" expanded="true" signature="26122:26565" ph="INSERT INTO PERSON... " />
-            <marker date="1500268168199" expanded="true" signature="26674:26687" ph="UPDATE MUSEU... " />
-            <marker date="1500268168199" expanded="true" signature="26674:26730" ph="UPDATE MUSEU... " />
-            <marker date="1500268168199" expanded="true" signature="26674:26744" ph="UPDATE MUSEU... " />
-            <marker date="1500268168199" expanded="true" signature="26674:26794" ph="UPDATE MUSEU... " />
-            <marker date="1500268168199" expanded="true" signature="26674:26820" ph="UPDATE MUSEU... " />
-            <marker date="1500268168199" expanded="true" signature="28119:28180" ph="SELECT COUNT... COLLECTION" />
-            <marker date="1500268168199" expanded="true" signature="28728:29024" ph="INSERT INTO COLLECTION... " />
-            <marker date="1500268168199" expanded="true" signature="28728:29053" ph="INSERT INTO COLLECTION... " />
-            <marker date="1500268168199" expanded="true" signature="30284:30346" ph="SELECT colle... collection" />
-            <marker date="1500268168199" expanded="true" signature="30698:31685" ph="INSERT INTO ITEM... " />
-            <marker date="1500268168199" expanded="true" signature="31377:31685" ph="INSERT INTO ITEM... " />
-            <marker date="1500268168199" expanded="true" signature="31927:31939" ph="INSERT INTO movimentation... " />
-            <marker date="1500268168199" expanded="true" signature="31927:32024" ph="INSERT INTO movimentation... " />
-            <marker date="1500268168199" expanded="true" signature="31927:32085" ph="INSERT INTO movimentation... " />
-            <marker date="1500268168199" expanded="true" signature="31927:32135" ph="INSERT INTO movimentation... " />
-            <marker date="1500268168199" expanded="true" signature="31927:32347" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="33678:33783" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="33678:33820" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="33678:33823" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="33678:33860" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="33678:33891" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="33678:33897" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="33678:34156" ph="INSERT INTO PERSON... " />
-            <marker date="1500268168199" expanded="true" signature="35655:36038" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="35655:36157" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="36366:36415" ph="INSERT INTO LOAN... " />
-            <marker date="1500268168199" expanded="true" signature="36366:36476" ph="INSERT INTO LOAN... " />
-            <marker date="1500268168199" expanded="true" signature="36366:36494" ph="INSERT INTO LOAN... " />
-            <marker date="1500268168199" expanded="true" signature="36366:36495" ph="INSERT INTO LOAN... " />
-            <marker date="1500268168199" expanded="true" signature="36366:36613" ph="INSERT INTO LOAN... " />
-            <marker date="1500268168199" expanded="true" signature="36366:36648" ph="INSERT INTO LOAN... " />
-            <marker date="1500268168199" expanded="true" signature="38092:38601" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="39753:40252" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="41340:41842" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="42927:43436" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="44534:45050" ph="INSERT INTO MOVIMENTATION... " />
-            <marker date="1500268168199" expanded="true" signature="46079:46098" ph="SELECT * FRO... PERSON" />
-            <marker date="1500268168199" expanded="true" signature="46079:46130" ph="SELECT * FRO... ITEM" />
-            <marker date="1500268168199" expanded="true" signature="46079:46143" ph="SELECT * FRO... ITEM" />
-            <marker date="1500268168199" expanded="true" signature="46079:46144" ph="SELECT * FRO... ITEM" />
-            <marker date="1500268168199" expanded="true" signature="46087:46098" ph="INSERT INTO PERSON... " />
-            <marker date="1500268168199" expanded="true" signature="47250:47322" ph="SELECT * FRO... ITEM" />
-            <marker date="1500268168199" expanded="true" signature="47250:47323" ph="SELECT * FRO... ITEM" />
-            <marker date="1500268168199" expanded="true" signature="51418:51484" ph="SELECT * FRO... collection" />
-            <marker date="1500268168199" expanded="true" signature="51418:51487" ph="SELECT * FRO... collection" />
-            <marker date="1500268168199" expanded="true" signature="53210:53275" ph="SELECT * FRO... PERSON" />
-            <marker date="1500268168199" expanded="true" signature="54494:54550" ph="SELECT codmu... museum" />
-            <marker date="1500268168199" expanded="true" signature="54494:54570" ph="SELECT * FRO... collection" />
-          </folding>
+        <state relative-caret-position="1289">
+          <caret line="250" column="29" lean-forward="true" selection-start-line="250" selection-start-column="29" selection-end-line="250" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1640,12 +579,10 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>JavaFXApp</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1688,7 +625,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>DS</last-edited>
+          <last-edited>DesktopDS</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1700,7 +637,6 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1712,6 +648,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>postgresql-42.1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

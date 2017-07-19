@@ -22,7 +22,7 @@ public final class DatabaseHelper {
     /* -- DB INFO -- */
     private static String DBNAME = "MuseumSystemDB"; //SUBSTITUAM PELO NOME DO BANCO
     private static String USER = "postgres";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
-    private static String PASS = "admin";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
+    private static String PASS = "9994445897kk";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
 
     private static Connection databaseConnection;
     private static Statement statement = null;
