@@ -601,9 +601,9 @@ public final class DatabaseHelper {
                             universityRegistration + "," +
                             Utils.RESEARCHER +
                     ") ON CONFLICT (CPF) DO UPDATE SET " +
-                        "name = EXCLUDED.name" +
-                        "password = EXCLUDED.password" +
-                        "email = EXCLUDED.email" +
+                        "name = EXCLUDED.name," +
+                        "password = EXCLUDED.password," +
+                        "email = EXCLUDED.email," +
                         "matricula = EXCLUDED.matricula";
             //TODO: REDIRECT UI'S EDIT PERSON TO HERE
             stm.executeUpdate(sql);
@@ -789,11 +789,11 @@ public final class DatabaseHelper {
                     null + "," + //Falta parâmetro
                     "'" + aquisitionDate + "'" +
                     ") ON CONFLICT (ITEMID) DO UPDATE SET " +
-                        "itemid = EXCLUDED.itemid" +
-                        "collectionid = EXCLUDED.collectionid" +
-                        "name = EXCLUDED.name" +
-                        "year = EXCLUDED.year" +
-                        "lenght = EXCLUDED.lenght" +
+                        "itemid = EXCLUDED.itemid," +
+                        "collectionid = EXCLUDED.collectionid," +
+                        "name = EXCLUDED.name," +
+                        "year = EXCLUDED.year," +
+                        "lenght = EXCLUDED.lenght," +
                         //Parametros que faltam
                         "weight = EXCLUDED.weight";
                         //Mais parâmetros que faltam
