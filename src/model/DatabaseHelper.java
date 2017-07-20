@@ -22,7 +22,7 @@ public final class DatabaseHelper {
     /* -- DB INFO -- */
     private static String DBNAME = "MuseumSystemDB"; //SUBSTITUAM PELO NOME DO BANCO
     private static String USER = "postgres";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
-    private static String PASS = "9994445897kk";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
+    private static String PASS = "admin";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
 
     private static Connection databaseConnection;
     private static Statement statement = null;
@@ -1377,8 +1377,7 @@ public final class DatabaseHelper {
                 String resultsStatus = resultSet.getString(("status"));
                 //Measures
                 float resultsLenght = resultSet.getFloat("lenght");
-                //float resultsHeight = resultSet.getFloat("height");
-                float resultsHeight = 0.0f;
+                float resultsHeight = resultSet.getFloat("height");
                 float resultsWidht = resultSet.getFloat("width");
                 float resultsThickness = resultSet.getFloat("thickness");
                 float resultsOuterCircumference = resultSet.getFloat("outerCircumference");
@@ -1390,6 +1389,7 @@ public final class DatabaseHelper {
                 String resultsHistoricalContext = resultSet.getString(("historicalContext"));
                 String resultsBiography = resultSet.getString(("biography"));
                 String resultsDescription = resultSet.getString(("description"));
+                String resultsAquisitionDate = resultSet.getString(("aquisitiondate"));
 
                 //Get last destination of that item
                 String origin = "";
@@ -1420,7 +1420,7 @@ public final class DatabaseHelper {
                         resultsAuthor,
                         resultsOuterCircumference,
                         resultsInnerCircumference,
-                        0,
+                        resultsAquisitionDate,
                         resultsStatus);
                 item.setConservationState(resultsConservationState);
                 item.setHistoricalContext(resultsHistoricalContext);

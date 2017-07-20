@@ -171,13 +171,13 @@ public class ItemController implements Initializable {
                 BiographyItem.setText("Biografia: " + item.getBiography());
                 HeightItem.setText("Altura: "+item.getHeight());
                 WidthItem.setText("Largura: "+item.getWidth());
+                WeightItem.setText("Peso: " + item.getWeight());
                 ThicknessItem.setText("Espessura: "+item.getThickness());
                 AuthorItem.setText("Autor: " + item.getAuthor());
                 DateItem.setText("Data de Aquisição: "+item.getAquisitionDate());
                 ItemDescription.setText("Descrição: " +item.getDescription());
                 InnerCircumference.setText("Circunferência interna: "+item.getInnerCircumference());
                 OuterCircumference.setText("Circunferência externa: "+item.getOuterCircumference());
-                Depth.setText("Profundidade: "+ item.getDepth());
                 ConservationStateItem.setText("Estado de Conservação: " + item.getConservationState());
                 HistoricalContextItem.setText("Contexto Histórico: " + item.getHistoricalContext());
                 LenghtItem.setText("Comprimento: "+item.getLenght());

@@ -23,6 +23,7 @@ public class Item implements Comparable<Item>{
     private float width;
     private float thickness;
     private float depth;
+    private String aquisitionDate;
     private float outerCircumference;
     private float innerCircumference;
     private float weight;
@@ -32,11 +33,10 @@ public class Item implements Comparable<Item>{
     private String historicalContext;
     private String biography;
     private String description;
-    private java.sql.Date aquisitionDate;
 
 
 
-    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, java.sql.Date aquisitionDate) {
+    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, String aquisitionDate) {
 
         /* -- Cria item --  */
         this.ID = ID;
@@ -52,7 +52,7 @@ public class Item implements Comparable<Item>{
         this.status = Utils.AT_STORAGE;
 
     }
-    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, String author, java.sql.Date aquisitionDate) {
+    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, String author, String aquisitionDate) {
 
         /* -- Cria item --  */
         this.ID = ID;
@@ -71,7 +71,7 @@ public class Item implements Comparable<Item>{
         this.status = Utils.AT_STORAGE;
 
     }
-    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, float outerCircumference, float innerCircumference, float depth, String conservationState, String author, String historicalContext, java.sql.Date aquisitionDate) {
+    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, float outerCircumference, float innerCircumference, float depth, String conservationState, String author, String historicalContext, String aquisitionDate) {
 
         /* -- Cria item --  */
         this.ID = ID;
@@ -116,7 +116,7 @@ public class Item implements Comparable<Item>{
 
     }
 
-    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, String author, float outerCircumference, float innerCircumference, float depth, String status) {
+    Item(String ID, String name, int year, String origin, String destination, float weight, float lenght, float width, float height, float thickness, String description, String author, float outerCircumference, float innerCircumference, String aquisitionDate, String status) {
 
         /* -- Cria item --  */
         this.ID = ID;
@@ -131,7 +131,7 @@ public class Item implements Comparable<Item>{
         this.author = author;
         this.innerCircumference = innerCircumference;
         this.outerCircumference = outerCircumference;
-        this.depth = depth;
+        this.aquisitionDate = aquisitionDate;
         /* -- Cria Movimentação de entrada -- */
         Movimentation admission = new AdmissionMovimentation(new Timestamp(java.lang.System.currentTimeMillis()), DatabaseHelper.getActiveUser().getCpf(), origin, destination);
         this.status = status;
@@ -276,11 +276,11 @@ public class Item implements Comparable<Item>{
         this.description = description;
     }
 
-    public Date getAquisitionDate() {
+    public String getAquisitionDate() {
         return aquisitionDate;
     }
 
-    public void setAquisitionDate(Date aquisitionDate) {
+    public void setAquisitionDate(String aquisitionDate) {
         this.aquisitionDate = aquisitionDate;
     }
 
