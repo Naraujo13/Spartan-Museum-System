@@ -25,6 +25,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Collection;
 import model.DatabaseHelper;
+import sun.security.krb5.internal.crypto.Des;
 
 import javax.xml.crypto.Data;
 
@@ -46,7 +47,7 @@ public class AddItemController implements Initializable {
     @FXML
     private  TextField ItemYear;
     @FXML
-    private  TextField ItemStatus;
+    private  TextField ItemLenght;
     @FXML
     private  TextField ItemHeight;
     @FXML
@@ -58,15 +59,11 @@ public class AddItemController implements Initializable {
     @FXML
     private  TextField ItemAuthor;
     @FXML
-    private  TextField ItemDate;
-    @FXML
     private  TextField ItemDescription;
     @FXML
     private  TextField ItemInnerCircumference;
     @FXML
     private  TextField ItemOutnerCircumference;
-    @FXML
-    private TextField Deph;
     @FXML
     private Button SaveItem;
     @FXML
@@ -115,7 +112,9 @@ public class AddItemController implements Initializable {
                        (String) Collections.getValue(),
                        ItemName.getText(),
                        ItemYear.getText(),
-                       ItemStatus.getText(),
+                       ItemLenght.getText(),
+                       ItemHeight.getText(),
+                       ItemWidth.getText(),
                        Itemthickness.getText(),
                        ItemOutnerCircumference.getText(),
                        ItemInnerCircumference.getText(),
@@ -124,11 +123,10 @@ public class AddItemController implements Initializable {
                        ItemConservationState.getText(),
                        ItemBiography.getText(),
                        ItemDescription.getText(),
+                       ItemHistoricalContext.getText(),
                        ItemAquisitionDate.getText(),
-                       ItemHeight.getText(),
-                       ItemWidth.getText(),
-                       ItemHistoricalContext.getText()
-
+                       ItemOrigin.getText(),
+                       Destination.getText()
                        );
 
                        Stage stage = (Stage) SaveItem.getScene().getWindow();

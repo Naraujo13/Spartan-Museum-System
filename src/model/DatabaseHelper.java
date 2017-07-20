@@ -22,7 +22,7 @@ public final class DatabaseHelper {
     /* -- DB INFO -- */
     private static String DBNAME = "MuseumSystemDB"; //SUBSTITUAM PELO NOME DO BANCO
     private static String USER = "postgres";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
-    private static String PASS = "9994445897kk";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
+    private static String PASS = "admin";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
 
     private static Connection databaseConnection;
     private static Statement statement = null;
@@ -834,9 +834,9 @@ public final class DatabaseHelper {
 
 
 
-    public static int addItem(String itemID, String collectionName, String name, String year, String itemStatus, String lenght, String itemOutnerCircumference,
+    public static int addItem(String itemID, String collectionName, String name, String year,  String lenght, String ItemHeight, String ItemWidth, String thickness, String itemOutnerCircumference,
                               String itemInnerCircumference, String weight, String author, String itemConservationState, String itemBiography, String itemDescription,
-                              String itemAquisitionDate, String ItemHeight, String ItemWidth, String  ItemHistoricalContext){
+                              String  ItemHistoricalContext, String itemAquisitionDate, String origin, String destination){
 
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
@@ -858,34 +858,44 @@ public final class DatabaseHelper {
 
             //Creates SQL for insertion
             sql =   "INSERT INTO ITEM" +
-                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT," +
+                    "(ITEMID, COLLECTIONID, NAME, YEAR, STATUS, LENGHT, HEIGHT, WIDTH, THICKNESS," +
                     " OUTERCIRCUMFERENCE, INNERCIRCUMFERENCE, WEIGHT," +
-                    " AUTHOR, CONSERVATIONSTATE, BIOGRAPHY, DESCRIPTION, AQUISITIONDATE)" +
+                    " AUTHOR, CONSERVATIONSTATE, BIOGRAPHY, DESCRIPTION, HISTORICALCONTEXT, AQUISITIONDATE)" +
                     "VALUES (" +
-                    "'" + itemID + "'," +
-                    "'" + collectionID + "'," +
-                    "'" + name + "'," +
-                    year + "," +
-                    "'" + Utils.AT_STORAGE + "'," +
-                    lenght + "," +
-                    itemOutnerCircumference + "," +
-                    itemInnerCircumference + "," +
-                    weight + ",'" +
-                    author + "','" +
-                    itemConservationState + "','" +
-                    itemBiography + "','" +
-                    itemDescription + "'," +
-                    "'" + itemAquisitionDate + "'" +
+                        "'" + itemID + "'," +
+                        "'" + collectionID + "'," +
+                        "'" + name + "'," +
+                        year + "," +
+                        "'" + Utils.AT_STORAGE + "'," +
+                        lenght + "," +
+                        ItemHeight + "," +
+                        ItemWidth + "," +
+                        thickness + "," +
+                        itemOutnerCircumference + "," +
+                        itemInnerCircumference + "," +
+                        weight + "," +
+                        "'" + author + "'," +
+                        "'" + itemConservationState + "'," +
+                        "'" + itemBiography + "'," +
+                        "'" + itemDescription + "'," +
+                        "'" + ItemHistoricalContext + "'," +
+                        "'" + itemAquisitionDate + "'" +
                     ") ON CONFLICT (ITEMID) DO UPDATE SET " +
-                    "itemid = EXCLUDED.itemid," +
                     "collectionid = EXCLUDED.collectionid," +
                     "name = EXCLUDED.name," +
                     "year = EXCLUDED.year," +
                     "lenght = EXCLUDED.lenght," +
-                    //Parametros que faltam
-                    "weight = EXCLUDED.weight";
-            //Mais parâmetros que faltam
-            //TODO: REDIRECT UI'S EDIT ITEM TO HERE
+                    "width = EXCLUDED.width," +
+                    "thickness = EXCLUDED.thickness," +
+                    "outercircumference = EXCLUDED.outercircumference," +
+                    "innercircumference = EXCLUDED.innercircumference," +
+                    "weight = EXCLUDED.weight," +
+                    "author = EXCLUDED.author," +
+                    "conservationstate = EXCLUDED.conservationstate," +
+                    "biography = EXCLUDED.biography," +
+                    "description = EXCLUDED.description," +
+                    "historicalcontext = EXCLUDED.historicalcontext";
+
             //Execute Statement
             statement.executeUpdate(sql);
             statement.close();
@@ -904,8 +914,8 @@ public final class DatabaseHelper {
                         " '" + itemID + "'," +
                         " '" + activeUser.getCpf() + "'," +
                         " '" + Utils.ADMISSION + "'," +
-                        " '" + null + "'," +
-                        " '" + null + "'" +
+                        " '" + origin + "'," +
+                        " '" + destination + "'" +
                         ") ON CONFLICT (timestamp) DO NOTHING ";
                 statement.executeUpdate(sql);
                 statement.closeOnCompletion();
