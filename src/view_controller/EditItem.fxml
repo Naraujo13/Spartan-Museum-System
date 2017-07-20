@@ -23,16 +23,16 @@
          </effect>
       </ImageView>
       <TextField fx:id="ItemName" layoutX="24.0" layoutY="29.0" prefHeight="36.0" prefWidth="309.0" promptText="Nome da obra" />
-      <TextField fx:id="ItemYear" layoutX="24.0" layoutY="152.0" prefHeight="25.0" prefWidth="309.0" promptText="Ano da obra" />
-      <TextField fx:id="ItemHeight" layoutX="24.0" layoutY="192.0" prefHeight="25.0" prefWidth="309.0" promptText="Altura da obra" />
-      <TextField fx:id="ItemWidth" layoutX="24.0" layoutY="229.0" prefHeight="25.0" prefWidth="309.0" promptText="Largura da obra" />
-      <TextField fx:id="ItemWeight" layoutX="24.0" layoutY="264.0" prefHeight="25.0" prefWidth="309.0" promptText="Peso da obra" />
-      <TextField fx:id="Itemthickness" layoutX="24.0" layoutY="301.0" prefHeight="25.0" prefWidth="309.0" promptText="Espessura da obra" />
-      <TextField fx:id="ItemAuthor" layoutX="24.0" layoutY="336.0" prefHeight="25.0" prefWidth="309.0" promptText="Autor da obra" />
-      <TextField fx:id="ItemDate" layoutX="24.0" layoutY="373.0" prefHeight="25.0" prefWidth="309.0" promptText="Data de aquisição da obra" />
-      <TextField fx:id="ItemDescription" layoutX="24.0" layoutY="407.0" prefHeight="25.0" prefWidth="309.0" promptText="Descrição da obra" />
-      <TextField fx:id="ItemInnerCircumference" layoutX="24.0" layoutY="443.0" prefHeight="25.0" prefWidth="309.0" promptText="Circunferência interna da obra" />
-      <TextField fx:id="ItemOutnerCircumference" layoutX="24.0" layoutY="477.0" prefHeight="25.0" prefWidth="309.0" promptText="Circunferência externa da bora" />
+      <TextField fx:id="ItemOrigin" layoutX="24.0" layoutY="204.0" prefHeight="25.0" prefWidth="309.0" promptText="Origem da obra" />
+      <TextField fx:id="ItemYear" layoutX="24.0" layoutY="309.0" prefHeight="25.0" prefWidth="309.0" promptText="Ano da obra" />
+      <TextField fx:id="ItemHeight" layoutX="24.0" layoutY="342.0" prefHeight="25.0" prefWidth="309.0" promptText="Altura da obra" />
+      <TextField fx:id="ItemWidth" layoutX="24.0" layoutY="410.0" prefHeight="25.0" prefWidth="309.0" promptText="Largura da obra" />
+      <TextField fx:id="ItemWeight" layoutX="24.0" layoutY="450.0" prefHeight="25.0" prefWidth="309.0" promptText="Peso da obra" />
+      <TextField fx:id="Itemthickness" layoutX="24.0" layoutY="492.0" prefHeight="25.0" prefWidth="309.0" promptText="Espessura da obra" />
+      <TextField fx:id="ItemAuthor" layoutX="24.0" layoutY="531.0" prefHeight="25.0" prefWidth="309.0" promptText="Autor da obra" />
+      <TextField fx:id="ItemDescription" layoutX="24.0" layoutY="611.0" prefHeight="25.0" prefWidth="309.0" promptText="Descrição da obra" />
+      <TextField fx:id="ItemInnerCircumference" layoutX="24.0" layoutY="691.0" prefHeight="25.0" prefWidth="309.0" promptText="Circunferência interna da obra" />
+      <TextField fx:id="ItemOutnerCircumference" layoutX="24.0" layoutY="730.0" prefHeight="25.0" prefWidth="309.0" promptText="Circunferência externa da bora" />
       <ChoiceBox fx:id="Collections" layoutX="24.0" layoutY="117.0" prefHeight="25.0" prefWidth="309.0" />
       <Label layoutX="24.0" layoutY="89.0" text="Coleção:">
          <font>
@@ -40,7 +40,13 @@
          </font>
       </Label>
       <Separator layoutX="24.0" layoutY="79.0" prefHeight="3.0" prefWidth="309.0" />
-      <TextField fx:id="Deph" layoutX="24.0" layoutY="516.0" prefHeight="25.0" prefWidth="309.0" promptText="Profundidade da obra" />
-      
+      <TextField fx:id="Destination" layoutX="24.0" layoutY="242.0" prefHeight="25.0" prefWidth="309.0" promptText="Destino da obra" />
+      <TextField fx:id="ItemConservationState" layoutX="24.0" layoutY="277.0" prefHeight="25.0" prefWidth="309.0" promptText="Estato de Conservação" />
+      <TextField fx:id="ItemBiography" layoutX="24.0" layoutY="768.0" prefHeight="25.0" prefWidth="309.0" promptText="Biografia da Obra" />
+      <TextField fx:id="ItemAquisitionDate" layoutX="24.0" layoutY="572.0" prefHeight="25.0" prefWidth="309.0" promptText="Data de Aquisição" />
+      <TextField fx:id="ItemHistoricalContext" layoutX="24.0" layoutY="648.0" prefHeight="25.0" prefWidth="309.0" promptText="Contexto Histórico" />
+      <TextField fx:id="ItemID" layoutX="24.0" layoutY="167.0" prefHeight="25.0" prefWidth="309.0" promptText="ID da obra" />
+      <TextField fx:id="ItemLenght" layoutX="24.0" layoutY="377.0" prefHeight="25.0" prefWidth="309.0" promptText="Comprimento do item" />
+
    </children>
 </AnchorPane>

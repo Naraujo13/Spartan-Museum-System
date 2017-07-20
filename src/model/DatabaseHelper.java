@@ -22,7 +22,7 @@ public final class DatabaseHelper {
     /* -- DB INFO -- */
     private static String DBNAME = "MuseumSystemDB"; //SUBSTITUAM PELO NOME DO BANCO
     private static String USER = "postgres";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
-    private static String PASS = "admin";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
+    private static String PASS = "9994445897kk";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
 
     private static Connection databaseConnection;
     private static Statement statement = null;
@@ -187,11 +187,10 @@ public final class DatabaseHelper {
 
         /* -- Mock Users -- */
         //Adiciona Diretor
-        DatabaseHelper.addPerson("Joãozinho", "12312312312", "password", "joao@bonitao.uol.com", "TST");
-
         //Adiciona Técnicos
         DatabaseHelper.addPerson("Paulo", "11111111111", "paulo123", "paulo@banco.de.dados");
         DatabaseHelper.addPerson("Lisane", "22222222222", "lisane123", "lisane@diagrama.es");
+        DatabaseHelper.addPerson("Lisane2", "0", "0", "lisane2@diagrama.es");
 
         //Adiciona Pesquisador
         DatabaseHelper.addPerson("Nicolas", "03369037076", "nicolas123", "nicolas@ufpel.com", 14101238);

@@ -42,7 +42,7 @@
          </effect>
       </ImageView>
       <Separator layoutX="14.0" layoutY="69.0" prefHeight="3.0" prefWidth="309.0" />
-      <Label fx:id="CollectionItem" layoutX="24.0" layoutY="117.0" text="Coleção do item">
+      <Label fx:id="BiographyItem" layoutX="24.0" layoutY="117.0" text="Biografia do item">
          <font>
             <Font size="18.0" />
          </font>
@@ -97,5 +97,24 @@
             <Font size="18.0" />
          </font>
       </Label>
+
+      <Label fx:id="ConservationStateItem" layoutX="24.0" layoutY="620.0" text="Estado de Conservação">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+      <Label fx:id="HistoricalContextItem" layoutX="24.0" layoutY="655.0" text="Contexto Histórico">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+      <Label fx:id="LenghtItem" layoutX="24.0" layoutY="700.0" text="Comprimento">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
    </children>
 </AnchorPane>

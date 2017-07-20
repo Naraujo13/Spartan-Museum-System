@@ -50,7 +50,7 @@ public class ItemController implements Initializable {
     private Button ViewMovimentation;
     
     @FXML
-    private Label CollectionItem;
+    private Label BiographyItem;
     
     @FXML
     private Label HeightItem;
@@ -85,6 +85,14 @@ public class ItemController implements Initializable {
     @FXML
     private Button EditItem;
 
+    @FXML
+    private Label ConservationStateItem;
+
+    @FXML
+    private Label HistoricalContextItem;
+
+    @FXML
+    private Label LenghtItem;
 
     /**
      * Initializes the controller class.
@@ -160,7 +168,7 @@ public class ItemController implements Initializable {
                 ItemID.setText("ID: " +item.getID());
                 ItemYear.setText("Ano: "+item.getYear());
                 ItemStatus.setText("Status: " + item.getStatus());
-                //CollectionItem.setText(item.getCollection());
+                BiographyItem.setText("Biografia: " + item.getBiography());
                 HeightItem.setText("Altura: "+item.getHeight());
                 WidthItem.setText("Largura: "+item.getWidth());
                 ThicknessItem.setText("Espessura: "+item.getThickness());
@@ -170,6 +178,9 @@ public class ItemController implements Initializable {
                 InnerCircumference.setText("Circunferência interna: "+item.getInnerCircumference());
                 OuterCircumference.setText("Circunferência externa: "+item.getOuterCircumference());
                 Depth.setText("Profundidade: "+ item.getDepth());
+                ConservationStateItem.setText("Estado de Conservação: " + item.getConservationState());
+                HistoricalContextItem.setText("Contexto Histórico: " + item.getHistoricalContext());
+                LenghtItem.setText("Comprimento: "+item.getLenght());
 
                 
             }

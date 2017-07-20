@@ -36,7 +36,7 @@ import model.DatabaseHelper;
 public class EditItemController implements Initializable {
         
     model.Item item;
-    
+
     @FXML
     private  TextField ItemName;
     @FXML
@@ -44,7 +44,7 @@ public class EditItemController implements Initializable {
     @FXML
     private  TextField ItemYear;
     @FXML
-    private  TextField ItemStatus;
+    private  TextField ItemLenght;
     @FXML
     private  TextField ItemHeight;
     @FXML
@@ -56,21 +56,29 @@ public class EditItemController implements Initializable {
     @FXML
     private  TextField ItemAuthor;
     @FXML
-    private  TextField ItemDate;
-    @FXML
     private  TextField ItemDescription;
     @FXML
     private  TextField ItemInnerCircumference;
     @FXML
     private  TextField ItemOutnerCircumference;
     @FXML
-    private TextField Deph;
-    @FXML
     private Button SaveItem;
     @FXML
-    private AnchorPane EditItemPane;
+    private AnchorPane AddItemPane;
     @FXML
     private ChoiceBox Collections;
+    @FXML
+    private TextField ItemOrigin;
+    @FXML
+    private TextField Destination;
+    @FXML
+    public TextField ItemConservationState;
+    @FXML
+    public TextField ItemBiography;
+    @FXML
+    public TextField ItemAquisitionDate;
+    @FXML
+    public TextField ItemHistoricalContext;
 
     /**
      * Initializes the controller class.
@@ -93,67 +101,29 @@ public class EditItemController implements Initializable {
         SaveItem.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-               System.out.println("hello there,  you clicked me");
-               if(!ItemName.getText().equals("")){
-                   item.setName(ItemName.getText());
-               }
-               
-               if(!ItemYear.getText().equals("")){
-                   item.setYear(Integer.parseInt(ItemYear.getText()));
-               }
-               
-               
-               
-               if(!ItemHeight.getText().equals("")){
-                   item.setHeight(Float.parseFloat(ItemHeight.getText()));
-               }
-               
-               if(!ItemWidth.getText().equals("")){
-                   item.setWidth(Float.parseFloat(ItemWidth.getText()));
-               }
-               
-               if(!Itemthickness.getText().equals("")){
-                   item.setThickness(Float.parseFloat(Itemthickness.getText()));
-               }
-               
-               if(!ItemAuthor.getText().equals("")){
-                   item.setAuthor(ItemAuthor.getText());
-               }
-               
-               if(!ItemDate.getText().equals("")){
-                   SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-                    
-                   try {
-                       item.setAquisitionDate((Date) formato.parse(ItemDate.getText()));
-                   } catch (ParseException ex) {
-                       Logger.getLogger(EditItemController.class.getName()).log(Level.SEVERE, null, ex);
-                   }
-               }
-               
-               if(!ItemDescription.getText().equals("")){
-                   item.setDescription(ItemDescription.getText());
-               }
-               
-               if(!ItemInnerCircumference.getText().equals("")){
-                   item.setInnerCircumference(Float.parseFloat(ItemInnerCircumference.getText()));
-               }
-               
-               if(!ItemOutnerCircumference.getText().equals("")){
-                   item.setOuterCircumference(Float.parseFloat(ItemOutnerCircumference.getText()));
-               }
-               
-               if(!Deph.getText().equals("")){
-                   item.setDepth(Float.parseFloat(Deph.getText()));
-               }
-               
-               if(Collections.getValue()!=null){
-                   //ArrayList<model.Collection> collectionsName = new ArrayList<>(model.DatabaseHelper.searchCollectionByName(Collections.getValue()).values());
-                   System.out.println("COLEÇÃO ESCOLHIDA: " + Collections.getValue());
+                DatabaseHelper.addItem(
+                        ItemID.getText(),
+                        (String) Collections.getValue(),
+                        ItemName.getText(),
+                        ItemYear.getText(),
+                        ItemLenght.getText(),
+                        ItemHeight.getText(),
+                        ItemWidth.getText(),
+                        Itemthickness.getText(),
+                        ItemOutnerCircumference.getText(),
+                        ItemInnerCircumference.getText(),
+                        ItemWeight.getText(),
+                        ItemAuthor.getText(),
+                        ItemConservationState.getText(),
+                        ItemBiography.getText(),
+                        ItemDescription.getText(),
+                        ItemHistoricalContext.getText(),
+                        ItemAquisitionDate.getText(),
+                        ItemOrigin.getText(),
+                        Destination.getText()
+                );
 
-                   //item.setCollection(Collections.getValue());
-               }
-               
-               Stage stage = (Stage) SaveItem.getScene().getWindow();
+                Stage stage = (Stage) SaveItem.getScene().getWindow();
                 stage.close();
             }
         }
