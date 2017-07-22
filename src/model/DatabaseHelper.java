@@ -604,7 +604,6 @@ public final class DatabaseHelper {
                         "password = EXCLUDED.password," +
                         "email = EXCLUDED.email," +
                         "matricula = EXCLUDED.matricula";
-            //TODO: REDIRECT UI'S EDIT PERSON TO HERE
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
@@ -644,7 +643,6 @@ public final class DatabaseHelper {
                         "name = EXCLUDED.name," +
                         "password = EXCLUDED.password," +
                         "email = EXCLUDED.email";
-            //TODO: REDIRECT UI'S EDIT PERSON TO HERE
             stm.executeUpdate(sql);
             stm.close();
         } catch (SQLException e){
@@ -685,7 +683,6 @@ public final class DatabaseHelper {
                     "name = EXCLUDED.name," +
                     "password = EXCLUDED.password," +
                     "email = EXCLUDED.email";
-            //TODO: REDIRECT UI'S EDIT PERSON TO HERE
             statement.executeUpdate(sql);
 
             //Add Director's CPF to MUSEUM
@@ -796,7 +793,6 @@ public final class DatabaseHelper {
                         //Parametros que faltam
                         "weight = EXCLUDED.weight";
                         //Mais parâmetros que faltam
-            //TODO: REDIRECT UI'S EDIT ITEM TO HERE
             //Execute Statement
             statement.executeUpdate(sql);
             statement.close();
@@ -933,12 +929,11 @@ public final class DatabaseHelper {
 
     /**
      * Função para dar baixa em um item
-     * @param collectionName - Nome da coleção do Item
      * @param itemID - ID do item
      * @param timestamp - Timestamp da Movimentação de Baixa
      * @return - inteiro representando status (definidos em Utils)
      */
-    public static int dischargeItem(String collectionName, String itemID, Timestamp timestamp){
+    public static int dischargeItem(String itemID, Timestamp timestamp){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -982,14 +977,13 @@ public final class DatabaseHelper {
 
     /**
      * Função para realizar empréstimo de item
-     * @param collectionName - Nome da coleção do Item
      * @param itemID - ID do item
      * @param timestamp - Timestamp da Movimentação de Empréstimo
      * @param dateOfReturn - Data esperada de retorno
      * @param destination - Destino do Empréstimo
      * @return - inteiro representando status (definidos em Utils)
      */
-    public static int loanItem(String collectionName, String itemID, Timestamp timestamp, Timestamp dateOfReturn, String destination){
+    public static int loanItem(String itemID, Timestamp timestamp, String dateOfReturn, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -1020,7 +1014,6 @@ public final class DatabaseHelper {
             statement.executeUpdate(sql);
             statement.close();
 
-            //TODO: ADD LOAM DATE OF RETURN TO UI
             statement = databaseConnection.createStatement();
             sql = "INSERT INTO LOAN(TIMESTAMP, ITEMID, DATEOFRETURN) " +
                     " VALUES(" +
@@ -1043,13 +1036,12 @@ public final class DatabaseHelper {
 
     /**
      * Função para realizar envio de item à restauração
-     * @param collectionName - Nome da coleção do Item
      * @param itemID - ID do item
      * @param timestamp - Timestamp da Movimentação de Empréstimo
      * @param destination - Destino do Empréstimo
      * @return - inteiro representando status (definidos em Utils)
      */
-    public static int restoreItem(String collectionName, String itemID, Timestamp timestamp, String destination){
+    public static int restoreItem(String itemID, Timestamp timestamp, String destination, String dateOfReturn, String damage, String restorer, String repair){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -1086,14 +1078,13 @@ public final class DatabaseHelper {
                             "VALUES (" +
                             "'" + timestamp + "'," +
                             "'" + itemID + "'," +
-                            "'" + timestamp + "'," +
-                            "'" + "damage" + "'," +
-                            "'" + "restorer" + "'," +
-                            "'" + "repair" + "'" +
+                            "'" + dateOfReturn + "'," +
+                            "'" + damage + "'," +
+                            "'" + restorer + "'," +
+                            "'" + repair + "'" +
                             ") ON CONFLICT (timestamp) DO NOTHING ";
             statement.executeUpdate(sql);
             statement.close();
-            //TODO: ADD RESTORATION DETAILS ON UI, CURRENT VALUES ARE PLACEHOLDERS
 
         }
         catch(SQLException e){
@@ -1105,7 +1096,7 @@ public final class DatabaseHelper {
         return Utils.REQUEST_OK;
     }
 
-    public static int storeItem(String collectionName, String itemID, Timestamp timestamp, String destination){
+    public static int storeItem(String itemID, Timestamp timestamp, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -1145,7 +1136,7 @@ public final class DatabaseHelper {
         return Utils.REQUEST_OK;
     }
 
-    public static int exposeItem(String collectionName, String itemID, Timestamp timestamp, String destination) {
+    public static int exposeItem(String itemID, Timestamp timestamp, String destination) {
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -1184,7 +1175,7 @@ public final class DatabaseHelper {
         return Utils.REQUEST_OK;
     }
 
-    public static int returnFromLoan(String collectionName, String itemID, Timestamp timestamp, String destination){
+    public static int returnFromLoan(String itemID, Timestamp timestamp, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -1224,7 +1215,7 @@ public final class DatabaseHelper {
         return Utils.REQUEST_OK;
     }
 
-    public static int returnFromRestoration(String collectionName, String itemID, Timestamp timestamp, String destination){
+    public static int returnFromRestoration(String itemID, Timestamp timestamp, String destination){
         //Testa permissão
         if (!(DatabaseHelper.getActiveUser() instanceof Technician || DatabaseHelper.getActiveUser() instanceof Director || DatabaseHelper.getActiveUser() instanceof Coordinator))
             return Utils.PERMISSION_ERROR;
@@ -1697,7 +1688,7 @@ public final class DatabaseHelper {
                         if(resultSet2.next()) {
                             resultDateOfReturn = resultSet2.getTimestamp("dateOfReturn");
                             movimentation = new SendToRestorationMovimentation(
-                                    resultTimestamp, resultDateOfReturn, origin, destination, cpfAutor
+                                    resultTimestamp, resultDateOfReturn, origin, destination, cpfAutor, resultSet2.getString("damage"), resultSet2.getString("restorer"), resultSet2.getString("repair")
                             );
                         }
                         break;

@@ -26,6 +26,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.DatabaseHelper;
 import model.PutToExpositionMovimentation;
+import model.SendToLoanMovimentation;
+import model.SendToRestorationMovimentation;
 
 /**
  * FXML Controller class
@@ -107,13 +109,13 @@ public class MovimentationController implements Initializable {
             }
             if(movimentation instanceof model.SendToLoanMovimentation){
                 AnchorPane newPanelContent = new AnchorPane();
-                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + "\n" + "Destino: "+((model.SendToLoanMovimentation) movimentation).getDestination() + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor()));
+                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + "\n" + "Destino: "+((model.SendToLoanMovimentation) movimentation).getDestination() + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor() + "\n" + "Data de retorno: " + ((SendToLoanMovimentation) movimentation).getDateOfReturn()));
                 TitledPane pane = new TitledPane(utils.Utils.AT_LOAN+" - " + movimentation.getTimestamp(), newPanelContent);
                 Accordion.getPanes().add(pane);
             }
             if(movimentation instanceof model.SendToRestorationMovimentation){
                 AnchorPane newPanelContent = new AnchorPane();
-                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + "\n" + "Destino: "+((model.SendToRestorationMovimentation) movimentation).getDestination() + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor()));
+                newPanelContent.getChildren().add(new Label("Origem: "+movimentation.getOrigin() + "\n" + "Destino: "+((model.SendToRestorationMovimentation) movimentation).getDestination() + "\n" + "Movimentação registrada por: "+movimentation.getCpfAutor() + "\n" + "Data de retorno: " + ((SendToRestorationMovimentation) movimentation).getDateOfReturn() + "\n" + "Dano: " + ((SendToRestorationMovimentation) movimentation).getDamage() + "\n" + "Restaurador: " + ((SendToRestorationMovimentation) movimentation).getRestorer() + "\n" + "Reparo: " + ((SendToRestorationMovimentation) movimentation).getRepair()));
                 TitledPane pane = new TitledPane(utils.Utils.AT_RESTAURATION+" - " + movimentation.getTimestamp(), newPanelContent);
                 Accordion.getPanes().add(pane);
             }
