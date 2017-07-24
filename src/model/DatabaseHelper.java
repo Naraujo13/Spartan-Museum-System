@@ -3,7 +3,6 @@ package model;
 
 import utils.Utils;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.*;
 
@@ -21,8 +20,8 @@ public final class DatabaseHelper {
      /* -- DB INFO -- */
     /* -- DB INFO -- */
     private static String DBNAME = "MuseumSystemDB"; //SUBSTITUAM PELO NOME DO BANCO
-    private static String USER = "postgres";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
-    private static String PASS = "admin";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
+    private static String USER = "naraujo";     //SUBSTITUAM AQUI PELO NOME DO USUÁRIO NO BANCO
+    private static String PASS = "noaicolas";   //SUBSTITUAM AQUI PELA SENHA NO BANCO
 
     private static Connection databaseConnection;
     private static Statement statement = null;
@@ -1363,6 +1362,7 @@ public final class DatabaseHelper {
                 //Gets info
                 //Basic info
                 String resultsID = resultSet.getString(("itemid"));
+                String resultsCollectionID = resultSet.getString("collectionid");
                 String resultsName = resultSet.getString(("name"));
                 int resultsYear = resultSet.getInt(("year"));
                 String resultsStatus = resultSet.getString(("status"));
@@ -1416,6 +1416,28 @@ public final class DatabaseHelper {
                 item.setConservationState(resultsConservationState);
                 item.setHistoricalContext(resultsHistoricalContext);
                 item.setBiography(resultsBiography);
+
+                try {
+
+                    //Make query
+                    Statement statement2 = databaseConnection.createStatement();
+                    sql = "SELECT * FROM collection WHERE UPPER(collectionid) = UPPER('" + resultsCollectionID + "')";
+                    ResultSet resultSetNames = statement2.executeQuery(sql);
+                    if (resultSetNames.next()){
+                        String colName = resultSetNames.getString("name");
+                        if (colName != null)
+                            item.setCollectionName(colName);
+                    }
+
+                    //Closes statement
+                    statement2.close();
+                }
+                catch(SQLException e){
+                    e.printStackTrace();
+                    System.out.println(e.getSQLState());
+                }
+
+                item.setCollectionName(resultsCollectionID);
 
                 //Add object to array
                 objectsArray.add(item);

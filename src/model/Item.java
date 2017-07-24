@@ -4,9 +4,7 @@ package model;
 import utils.Utils;
 
 import java.lang.*;
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.TreeMap;
 
 /**
  * Created by naraujo on 29/05/17.
@@ -14,6 +12,7 @@ import java.util.TreeMap;
 public class Item implements Comparable<Item>{
 
     private String ID;
+    private String collectionName;
     private String name;
     private int year;
     private String status;
@@ -284,4 +283,11 @@ public class Item implements Comparable<Item>{
         this.aquisitionDate = aquisitionDate;
     }
 
+    public String getCollectionName() {
+        return collectionName;
+    }
+
+    public void setCollectionName(String collectionName) {
+        this.collectionName = collectionName;
+    }
 }

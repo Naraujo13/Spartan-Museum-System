@@ -35,7 +35,7 @@ import model.DatabaseHelper;
  */
 public class EditItemController implements Initializable {
         
-    model.Item item;
+    private model.Item item;
 
     @FXML
     private  TextField ItemName;
@@ -90,10 +90,6 @@ public class EditItemController implements Initializable {
         if (collectionNames.isEmpty())
             System.out.println("Array de nomes vazio");
 
-//        collectionNames = new ArrayList<>(DatabaseHelper.searchCollectionByName("").stream()
-//                .map(obj -> obj.getName())
-//                .collect(Collectors.toList()));
-
         ObservableList<String> list = FXCollections.observableArrayList(collectionNames);
         Collections.setItems(list);
         
@@ -133,5 +129,26 @@ public class EditItemController implements Initializable {
     @FXML
     public void setItem(model.Item item){
         this.item=item;
+
+        if (item != null) {
+            ItemID.setText(item.getID());
+            ItemName.setText(item.getName());
+            ItemYear.setText(Integer.toString(item.getYear()));
+            ItemLenght.setText(Float.toString(item.getLenght()));
+            ItemHeight.setText(Float.toString(item.getHeight()));
+            ItemWidth.setText(Float.toString(item.getWidth()));
+            ItemWeight.setText(Float.toString(item.getWeight()));
+            ItemWidth.setText(Float.toString(item.getWidth()));
+            Itemthickness.setText(Float.toString(item.getThickness()));
+            ItemOutnerCircumference.setText(Float.toString(item.getOuterCircumference()));
+            ItemInnerCircumference.setText(Float.toString(item.getInnerCircumference()));
+            ItemAuthor.setText(item.getAuthor());
+            ItemConservationState.setText(item.getConservationState());
+            ItemBiography.setText(item.getBiography());
+            ItemDescription.setText(item.getDescription());
+            ItemHistoricalContext.setText(item.getHistoricalContext());
+            ItemAquisitionDate.setText(item.getAquisitionDate());
+        }
+
     }
 }
