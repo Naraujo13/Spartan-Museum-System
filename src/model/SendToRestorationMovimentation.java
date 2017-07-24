@@ -9,10 +9,16 @@ public class SendToRestorationMovimentation extends MovimentationTo {
 
     private Timestamp dateOfReturn;
     private RestorationReport report;
+    private String damage;
+    private String restorer;
+    private String repair;
 
-     SendToRestorationMovimentation(Timestamp timestamp, Timestamp dateOfReturn, String origin, String destination, String cpfAutor) {
+     SendToRestorationMovimentation(Timestamp timestamp, Timestamp dateOfReturn, String origin, String destination, String cpfAutor, String damage, String restorer, String repair) {
         super(timestamp, cpfAutor, origin, destination);
         this.dateOfReturn = dateOfReturn;
+        this.damage = damage;
+        this.restorer = restorer;
+        this.repair = repair;
     }
 
     public RestorationReport getReport() {
@@ -29,5 +35,17 @@ public class SendToRestorationMovimentation extends MovimentationTo {
 
     public void setDateOfReturn(Timestamp dateOfReturn) {
         this.dateOfReturn = dateOfReturn;
+    }
+
+    public String getRepair() {
+        return repair;
+    }
+
+    public String getDamage() {
+        return damage;
+    }
+
+    public String getRestorer() {
+        return restorer;
     }
 }

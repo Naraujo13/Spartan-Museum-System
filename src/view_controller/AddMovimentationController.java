@@ -39,13 +39,19 @@ public class AddMovimentationController implements Initializable {
     private Button AddMovimentationButton;
     
     @FXML
-    private TextField Origin;
-    
-    @FXML
     private TextField Destination;
-    
+
     @FXML
-    private TextField AuthorCPF;
+    private TextField dateOfReturn;
+
+    @FXML
+    private TextField Damage;
+
+    @FXML
+    private TextField Restorer;
+
+    @FXML
+    private TextField Repair;
     
     /**
      * Initializes the controller class.
@@ -84,29 +90,28 @@ public class AddMovimentationController implements Initializable {
                 @Override
                 public void handle(ActionEvent event) {
                     if(MovimentationTypeChoiceBox.getValue().equals("Expor")){                      
-                        DatabaseHelper.exposeItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.exposeItem(item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Emprestar")){                      
-                        DatabaseHelper.loanItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
-                       
+                        DatabaseHelper.loanItem(item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), dateOfReturn.getText(), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Restaurar")){                                        
-                        DatabaseHelper.restoreItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.restoreItem(item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText(), dateOfReturn.getText(), Damage.getText(), Restorer.getText(), Repair.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Armazenar")){                                        
-                        DatabaseHelper.storeItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.storeItem(item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Remover")){                                        
-                        DatabaseHelper.dischargeItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()));
+                        DatabaseHelper.dischargeItem(item.getID(), new Timestamp(java.lang.System.currentTimeMillis()));
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Retornar da Restauração")){                                                               
-                        DatabaseHelper.returnFromRestoration("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.returnFromRestoration(item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Retornar de Empréstimo")){                                                               
-                        DatabaseHelper.returnFromLoan("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.returnFromLoan(item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     if(MovimentationTypeChoiceBox.getValue().equals("Retornar de Exposição")){                                                               
-                        DatabaseHelper.storeItem("Picasso", item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
+                        DatabaseHelper.storeItem(item.getID(), new Timestamp(java.lang.System.currentTimeMillis()), Destination.getText());
                     }
                     Stage stage = (Stage) AddMovimentationButton.getScene().getWindow();
                     stage.close();
