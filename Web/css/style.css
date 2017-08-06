@@ -43,3 +43,14 @@
   margin-left: 0;
   width: 100%;
 }
+
+.logo {
+    display: inline-block;
+    height: 100%;
+    padding-right: 1%;
+}
+
+.logo>img {
+    vertical-align: middle;
+    transform: scale(0.8);
+}
