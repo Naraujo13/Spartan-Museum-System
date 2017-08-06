@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AddMovimentationPane" prefHeight="348.0" prefWidth="368.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label id="AddMovimentationLabel" layoutX="21.0" layoutY="14.0" prefHeight="45.0" prefWidth="331.0" text="Adicionar Movimentação">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Separator id="separator" layoutX="14.0" layoutY="57.0" prefHeight="4.0" prefWidth="344.0" />
+      <ChoiceBox fx:id="MovimentationTypeChoiceBox" layoutX="15.0" layoutY="108.0" prefHeight="25.0" prefWidth="344.0" />
+      <Label id="MovimentationType" layoutX="14.0" layoutY="71.0" text="Tipo:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Destination" layoutX="14.0" layoutY="139.0" prefHeight="25.0" prefWidth="344.0" promptText="Destino" />
+      <Button fx:id="AddMovimentationButton" layoutX="14.0" layoutY="309.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="344.0" text="Adicionar" />
+      <TextField  fx:id="dateOfReturn" layoutX="15.0" layoutY="172.0" prefHeight="25.0" prefWidth="344.0" promptText="Data de retorno" />
+      <TextField fx:id="Damage" layoutX="15.0" layoutY="206.0" prefHeight="25.0" prefWidth="344.0" promptText="Dano" />
+      <TextField fx:id="Restorer" layoutX="15.0" layoutY="239.0" prefHeight="25.0" prefWidth="344.0" promptText="Restaurador" />
+      <TextField fx:id="Repair" layoutX="15.0" layoutY="274.0" prefHeight="25.0" prefWidth="344.0" promptText="Reparo" />
+   </children>
+</AnchorPane>

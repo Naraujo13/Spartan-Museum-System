@@ -1,0 +1,6 @@
+#SearchButton {
+	-fx-background-image: url('./images/ic_search.png');
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center;  
+}

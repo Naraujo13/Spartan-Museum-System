@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="ItemPane" prefHeight="627.0" prefWidth="523.0" stylesheets="@background.css" xmlns="http://javafx.com/javafx/8.0.102">
+   <children>
+      <Label fx:id="ItemName" layoutX="14.0" layoutY="5.0" prefHeight="64.0" prefWidth="309.0" text="Nome do item" wrapText="true">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="ItemID" layoutX="24.0" layoutY="152.0" text="Código do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ItemYear" layoutX="24.0" layoutY="191.0" text="Ano do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ItemStatus" layoutX="24.0" layoutY="225.0" text="Status do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="EditItem" layoutX="348.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" text="Editar obra" />
+      <Button fx:id="ViewMovimentation" layoutX="348.0" layoutY="213.0" mnemonicParsing="false" text="Visualizar movimentações" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="349.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/vasoAzul.jpg" />
+         </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
+      <Separator layoutX="14.0" layoutY="69.0" prefHeight="3.0" prefWidth="309.0" />
+      <Label fx:id="BiographyItem" layoutX="24.0" layoutY="117.0" text="Biografia do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="HeightItem" layoutX="24.0" layoutY="266.0" text="Altura do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="WidthItem" layoutX="24.0" layoutY="303.0" text="Largura do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="WeightItem" layoutX="24.0" layoutY="339.0" text="Peso do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ThicknessItem" layoutX="24.0" layoutY="373.0" text="Espessura do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="AuthorItem" layoutX="24.0" layoutY="409.0" text="Autor do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="DateItem" layoutX="24.0" layoutY="447.0" text="Data de aquisição do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ItemDescription" layoutX="24.0" layoutY="482.0" text="Descrição do item">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="InnerCircumference" layoutX="24.0" layoutY="516.0" text="Cirunferencia interna">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="OuterCircumference" layoutX="24.0" layoutY="550.0" text="Circunferencia externa">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="Depth" layoutX="24.0" layoutY="587.0" text="Profundidade">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+      <Label fx:id="ConservationStateItem" layoutX="24.0" layoutY="620.0" text="Estado de Conservação">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+      <Label fx:id="HistoricalContextItem" layoutX="24.0" layoutY="655.0" text="Contexto Histórico">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+      <Label fx:id="LenghtItem" layoutX="24.0" layoutY="700.0" text="Comprimento">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+   </children>
+</AnchorPane>
