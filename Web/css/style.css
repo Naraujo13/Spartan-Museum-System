@@ -106,10 +106,13 @@
 #Main-Usuarios .login-table {
   width: 40%;
 }
-#Main-Usuarios th {
-  background-color: #009688;
-  color: #fff;
-}
 #Main-Usuarios .table-icon {
   width: 0.5%;
+}
+#Main-Usuarios .usersHeader {
+  width: 82%;
+}
+
+#Main-Usuarios .mdl-layout__header-row {
+  padding-left: 3%;
 }
