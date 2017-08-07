@@ -60,23 +60,56 @@
   padding-left: 20%;
 }
 
-.page-content-int {
+#MainScreen-BemVindo .page-content-int {
   height: 100%;
   width: 65%;
   margin: auto;
 }
 
-.title {
+#MainScreen-BemVindo .title {
   margin-top: 12%;
   display: flex;
 }
 
-.title h1 {
+#MainScreen-BemVindo .title h1 {
   margin-top: 10%;
   font-size: 29px;
 }
 
-.text p{
+#MainScreen-BemVindo .text p{
   margin-top: 5%;
   font-size: 20px;
+}
+
+/*-------------Usuários------------*/
+#Main-Usuarios {
+  display: none;
+}
+#Main-Usuarios .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10%;
+  justify-content: center;
+}
+#Main-Usuarios .page-content {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+}
+#Main-Usuarios .fullwidth {
+  width: 82%;
+}
+#Main-Usuarios .login-table {
+  width: 40%;
+}
+#Main-Usuarios th {
+  background-color: #009688;
+  color: #fff;
+}
+#Main-Usuarios .table-icon {
+  width: 0.5%;
 }
