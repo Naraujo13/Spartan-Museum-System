@@ -54,3 +54,29 @@
     vertical-align: middle;
     transform: scale(0.8);
 }
+
+.itens {
+  display: inline;
+  padding-left: 20%;
+}
+
+.page-content-int {
+  height: 100%;
+  width: 65%;
+  margin: auto;
+}
+
+.title {
+  margin-top: 12%;
+  display: flex;
+}
+
+.title h1 {
+  margin-top: 10%;
+  font-size: 29px;
+}
+
+.text p{
+  margin-top: 5%;
+  font-size: 20px;
+}
