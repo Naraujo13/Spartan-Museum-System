@@ -189,7 +189,7 @@
   padding-left: 3%;
 }
 
-/*-------------Itens------------*/
+/*-------------MUseus------------*/
 #Main-Museus {
   display: none;
 }
@@ -223,4 +223,11 @@
 
 #Main-Museus .mdl-layout__header-row {
   padding-left: 3%;
+}
+
+#fabutton {
+  color: white;
+  background-color: teal;
+  margin-left: 78%;
+  margin-top: 1%;
 }
