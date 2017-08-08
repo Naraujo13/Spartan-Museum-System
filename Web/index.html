@@ -31,7 +31,7 @@
        </header>
        <div class="mdl-layout__drawer">
          <nav class="mdl-navigation">
-           <a class="mdl-navigation__link" href="#"><img src="icons/museu.svg"><p class="itens">Museus</p></a>
+           <a class="mdl-navigation__link" href="#" id="museumLink"><img src="icons/museu.svg"><p class="itens">Museus</p></a>
            <a class="mdl-navigation__link" href="#" id="usersLink"><img src="icons/usuario.svg"><p class="itens">Usuários</p></a>
            <a class="mdl-navigation__link" href="#" id="collectionsLink"><img src="icons/colecao.svg"><p class="itens">Coleções</p></a>
            <a class="mdl-navigation__link" href="#" id="itensLink"><img src="icons/itens.svg"><p class="itens">Itens</p></a>
@@ -57,6 +57,59 @@
          </main>
      </div>
 
+     <!--Museus-->
+     <div id="Main-Museus" >
+       <main class="mdl-layout__content">
+         <div class="page-content">
+           <header class="mdl-layout__header collectionsHeader">
+             <div class="mdl-layout__header-row">
+               <!-- Title -->
+               <span class="mdl-layout-title">Museus</span>
+               <!-- Add spacer, to align navigation to the right -->
+               <div class="mdl-layout-spacer"></div>
+               <!-- Navigation. We hide it in small screens. -->
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                           mdl-textfield--floating-label mdl-textfield--align-right">
+                 <label class="mdl-button mdl-js-button mdl-button--icon"
+                        for="fixed-header-drawer-exp">
+                   <i class="material-icons">search</i>
+                 </label>
+                 <div class="mdl-textfield__expandable-holder">
+                   <input class="mdl-textfield__input" type="text" name="sample"
+                          id="fixed-header-drawer-exp">
+                 </div>
+               </div>
+             </div>
+           </header>
+              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp fullwidth">
+              <thead>
+               <tr>
+                 <th class="mdl-data-table__cell--non-numeric table-icon"></th>
+                 <th class="mdl-data-table__cell--non-numeric login-table">Nome</th>
+                 <th class="mdl-data-table__cell--non-numeric">Endereço</th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                 <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/museu.svg"></td>
+                 <td class="mdl-data-table__cell--non-numeric ">Museu Normal</td>
+                 <td class="mdl-data-table__cell--non-numeric">Rua Fulano de Tal, 123 - Pelotas/RS</td>
+               </tr>
+               <tr>
+                 <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/museu.svg"></td>
+                 <td class="mdl-data-table__cell--non-numeric ">Museu do Doce</td>
+                 <td class="mdl-data-table__cell--non-numeric">Rua Quindim, 321 - Pelotas/RS</td>
+               </tr>
+               <tr>
+                 <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/museu.svg"></td>
+                 <td class="mdl-data-table__cell--non-numeric ">Museu das Cópias</td>
+                 <td class="mdl-data-table__cell--non-numeric">Rua Xerox, 666 - Pelotas/RS</td>
+               </tr>
+              </tbody>
+              </table>
+          </div>
+        </main>
+      </div>
 
      <!--Usuários-->
      <div id="Main-Usuarios" >

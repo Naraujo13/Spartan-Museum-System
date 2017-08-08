@@ -188,3 +188,39 @@
 #Main-Itens .mdl-layout__header-row {
   padding-left: 3%;
 }
+
+/*-------------Itens------------*/
+#Main-Museus {
+  display: none;
+}
+#Main-Museus .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10%;
+  justify-content: center;
+}
+#Main-Museus .page-content {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+}
+#Main-Museus .fullwidth {
+  width: 82%;
+}
+#Main-Museus .login-table {
+  width: 70%;
+}
+#Main-Museus .table-icon {
+  width: 0.5%;
+}
+#Main-Museus .collectionsHeader {
+  width: 82%;
+}
+
+#Main-Museus .mdl-layout__header-row {
+  padding-left: 3%;
+}
