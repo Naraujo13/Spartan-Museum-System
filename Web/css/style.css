@@ -116,3 +116,39 @@
 #Main-Usuarios .mdl-layout__header-row {
   padding-left: 3%;
 }
+
+/*-------------Coleções------------*/
+#Main-Colecoes {
+  display: none;
+}
+#Main-Colecoes .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10%;
+  justify-content: center;
+}
+#Main-Colecoes .page-content {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+}
+#Main-Colecoes .fullwidth {
+  width: 82%;
+}
+#Main-Colecoes .login-table {
+  width: 40%;
+}
+#Main-Colecoes .table-icon {
+  width: 0.5%;
+}
+#Main-Colecoes .collectionsHeader {
+  width: 82%;
+}
+
+#Main-Colecoes .mdl-layout__header-row {
+  padding-left: 3%;
+}
