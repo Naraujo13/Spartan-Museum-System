@@ -152,3 +152,39 @@
 #Main-Colecoes .mdl-layout__header-row {
   padding-left: 3%;
 }
+
+/*-------------Itens------------*/
+#Main-Itens {
+  display: none;
+}
+#Main-Itens .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10%;
+  justify-content: center;
+}
+#Main-Itens .page-content {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+}
+#Main-Itens .fullwidth {
+  width: 82%;
+}
+#Main-Itens .login-table {
+  width: 20%;
+}
+#Main-Itens .table-icon {
+  width: 0.5%;
+}
+#Main-Itens .collectionsHeader {
+  width: 82%;
+}
+
+#Main-Itens .mdl-layout__header-row {
+  padding-left: 3%;
+}

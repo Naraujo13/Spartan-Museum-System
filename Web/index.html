@@ -34,7 +34,7 @@
            <a class="mdl-navigation__link" href="#"><img src="icons/museu.svg"><p class="itens">Museus</p></a>
            <a class="mdl-navigation__link" href="#" id="usersLink"><img src="icons/usuario.svg"><p class="itens">Usuários</p></a>
            <a class="mdl-navigation__link" href="#" id="collectionsLink"><img src="icons/colecao.svg"><p class="itens">Coleções</p></a>
-           <a class="mdl-navigation__link" href=""><img src="icons/itens.svg"><p class="itens">Itens</p></a>
+           <a class="mdl-navigation__link" href="#" id="itensLink"><img src="icons/itens.svg"><p class="itens">Itens</p></a>
          </nav>
        </div>
 
@@ -128,14 +128,14 @@
                 <div class="mdl-layout-spacer"></div>
                 <!-- Navigation. We hide it in small screens. -->
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
-                            mdl-textfield--floating-label mdl-textfield--align-right" id="collectionsSearch">
+                            mdl-textfield--floating-label mdl-textfield--align-right">
                   <label class="mdl-button mdl-js-button mdl-button--icon"
                          for="fixed-header-drawer-exp">
                     <i class="material-icons">search</i>
                   </label>
                   <div class="mdl-textfield__expandable-holder">
-                    <input class="mdl-textfield__input" type="text" name="collections"
-                           id="fixed-header-drawer-exp-collections">
+                    <input class="mdl-textfield__input" type="text" name="sample"
+                           id="fixed-header-drawer-exp">
                   </div>
                 </div>
               </div>
@@ -173,6 +173,80 @@
            </div>
          </main>
        </div>
+
+       <!--Itens-->
+       <div id="Main-Itens" >
+         <main class="mdl-layout__content">
+           <div class="page-content">
+             <header class="mdl-layout__header collectionsHeader">
+               <div class="mdl-layout__header-row">
+                 <!-- Title -->
+                 <span class="mdl-layout-title">Itens</span>
+                 <!-- Add spacer, to align navigation to the right -->
+                 <div class="mdl-layout-spacer"></div>
+                 <!-- Navigation. We hide it in small screens. -->
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                             mdl-textfield--floating-label mdl-textfield--align-right">
+                   <label class="mdl-button mdl-js-button mdl-button--icon"
+                          for="fixed-header-drawer-exp">
+                     <i class="material-icons">search</i>
+                   </label>
+                   <div class="mdl-textfield__expandable-holder">
+                     <input class="mdl-textfield__input" type="text" name="sample"
+                            id="fixed-header-drawer-exp">
+                   </div>
+                 </div>
+               </div>
+             </header>
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp fullwidth">
+                <thead>
+                 <tr>
+                   <th class="mdl-data-table__cell--non-numeric table-icon"></th>
+                   <th class="mdl-data-table__cell--non-numeric login-table">Nome</th>
+                   <th class="mdl-data-table__cell--non-numeric">ID</th>
+                   <th class="mdl-data-table__cell--non-numeric">Coleção</th>
+                   <th class="mdl-data-table__cell--non-numeric">Museu</th>
+                   <th class="mdl-data-table__cell--non-numeric">Status</th>
+                 </tr>
+                </thead>
+                <tbody>
+                 <tr>
+                   <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/usuario.svg"></td>
+                   <td class="mdl-data-table__cell--non-numeric ">Vaso Azul</td>
+                   <td class="mdl-data-table__cell--non-numeric">VZA01</td>
+                   <td class="mdl-data-table__cell--non-numeric">Vasos</td>
+                   <td class="mdl-data-table__cell--non-numeric">Museu Normal</td>
+                   <td class="mdl-data-table__cell--non-numeric">Em Estoque</td>
+                 </tr>
+                 <tr>
+                   <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/usuario.svg"></td>
+                   <td class="mdl-data-table__cell--non-numeric ">Mona Lisa</td>
+                   <td class="mdl-data-table__cell--non-numeric">MLA01</td>
+                   <td class="mdl-data-table__cell--non-numeric">Picasso Copycat</td>
+                   <td class="mdl-data-table__cell--non-numeric">Museu das Cópias</td>
+                   <td class="mdl-data-table__cell--non-numeric">Emprestada</td>
+                 </tr>
+                 <tr>
+                   <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/usuario.svg"></td>
+                   <td class="mdl-data-table__cell--non-numeric ">Escultura de Pedra</td>
+                   <td class="mdl-data-table__cell--non-numeric">ESP01</td>
+                   <td class="mdl-data-table__cell--non-numeric">Esculturas</td>
+                   <td class="mdl-data-table__cell--non-numeric">Museu Normal</td>
+                   <td class="mdl-data-table__cell--non-numeric">Em Estoque</td>
+                 </tr>
+                 <tr>
+                   <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/usuario.svg"></td>
+                   <td class="mdl-data-table__cell--non-numeric ">Mona Crespa</td>
+                   <td class="mdl-data-table__cell--non-numeric">MCA01</td>
+                   <td class="mdl-data-table__cell--non-numeric">Picasso Copycat</td>
+                   <td class="mdl-data-table__cell--non-numeric">Museu das Cópias</td>
+                   <td class="mdl-data-table__cell--non-numeric">Em Exposição</td>
+                 </tr>
+                </tbody>
+                </table>
+            </div>
+          </main>
+        </div>
   </div>
   </body>
 
