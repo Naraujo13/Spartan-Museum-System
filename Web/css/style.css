@@ -210,7 +210,7 @@
 }
 
 /*-------------Movimentacoes------------*/
-#Main-Museus {
+#Movimentacoes {
   display: none;
 }
 #Movimentacoes .mdl-layout__content {
@@ -323,4 +323,84 @@
   float: right;
   width: 5%;
   padding-top: 3%;
+}
+
+/*-------------Item Expandido------------*/
+#Item-Expandido {
+  height: 100%;
+  width: 100%;
+  overflow:scroll;
+  justify-content: center;
+  display: none;
+}
+#Item-Expandido .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+#Item-Expandido .page-content {
+  height: 80%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+#Item-Expandido .collectionCard {
+  width: 80%;
+}
+#Item-Expandido .mdl-card__title {
+  background-color: #009688;
+}
+#Item-Expandido .title {
+  color: #fff;
+}
+#Item-Expandido .back {
+    display: inline-block;
+    height: 100%;
+    padding-right: 1%;
+}
+#Item-Expandido .edit {
+    display: inline-block;
+    height: 100%;
+}
+
+#Item-Expandido .back>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+#Item-Expandido .informacoesGerais {
+  padding-bottom: 0%;
+}
+#Item-Expandido .Informacao {
+  margin-top: 1%;
+}
+#Item-Expandido .borda {
+  margin-top: 1%;
+}
+#Item-Expandido .tituloInformacao {
+  display: inline-block;
+  width: 15%;
+  font-weight: bold;
+}
+#Item-Expandido .Dimensões {
+  padding-top: 0%;
+}
+#Item-Expandido .Dimensão {
+  display: inline-block;
+  width: 30%;
+}
+#Item-Expandido .OutrasInformacoes {
+  padding-top: 0%;
+}
+#Item-Expandido .Descrição {
+  padding-top: 1%;
+}
+#Item-Expandido .fotoItem {
+  float: right;
+  width: 15%;
+  padding-top: 0%;
+  padding-right: 2%;
+}
+#Item-Expandido .BotaoMovimentações {
+  float: right;
+  background-color: #009688;
 }
