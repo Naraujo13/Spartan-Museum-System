@@ -62,8 +62,8 @@
 
 #MainScreen-BemVindo .page-content-int {
   height: 100%;
-  width: 65%;
-  margin: auto;
+  width: 70%;
+  margin-left: 25%;
 }
 
 #MainScreen-BemVindo .title {
@@ -88,16 +88,12 @@
 #Main-Usuarios .mdl-layout__content {
   height: 100%;
   width: 100%;
-  margin-top: 2%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 10%;
   justify-content: center;
 }
 #Main-Usuarios .page-content {
   height: 100%;
-  width: 100%;
-  margin: auto;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
   justify-content: center;
 }
 #Main-Usuarios .fullwidth {
@@ -124,16 +120,12 @@
 #Main-Colecoes .mdl-layout__content {
   height: 100%;
   width: 100%;
-  margin-top: 2%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 10%;
   justify-content: center;
 }
 #Main-Colecoes .page-content {
   height: 100%;
-  width: 100%;
-  margin: auto;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
   justify-content: center;
 }
 #Main-Colecoes .fullwidth {
@@ -160,16 +152,12 @@
 #Main-Itens .mdl-layout__content {
   height: 100%;
   width: 100%;
-  margin-top: 2%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 10%;
   justify-content: center;
 }
 #Main-Itens .page-content {
   height: 100%;
-  width: 100%;
-  margin: auto;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
   justify-content: center;
 }
 #Main-Itens .fullwidth {
@@ -196,16 +184,12 @@
 #Main-Museus .mdl-layout__content {
   height: 100%;
   width: 100%;
-  margin-top: 2%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 10%;
   justify-content: center;
 }
 #Main-Museus .page-content {
   height: 100%;
-  width: 100%;
-  margin: auto;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
   justify-content: center;
 }
 #Main-Museus .fullwidth {
@@ -232,16 +216,12 @@
 #Movimentacoes .mdl-layout__content {
   height: 100%;
   width: 100%;
-  margin-top: 2%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 10%;
   justify-content: center;
 }
 #Movimentacoes .page-content {
   height: 100%;
-  width: 100%;
-  margin: auto;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
   justify-content: center;
 }
 #Movimentacoes .fullwidth {
@@ -275,6 +255,7 @@
 #fabutton {
   color: white;
   background-color: teal;
-  margin-left: 78%;
+  margin-left: 92%;
   margin-top: 1%;
+  margin-bottom: 5%;
 }
