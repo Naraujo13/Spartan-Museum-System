@@ -1,82 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d823bca7-c734-49c5-b63d-137ca2e41162" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DS.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/AdmissionMovimentation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/Collection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/Coordinator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/DatabaseHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/Director.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/DischargeMovimentation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/Item.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/Movimentation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/MovimentationTo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/Museum.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/Person.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/PutToExpositionMovimentation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/PutToStorageMovimentation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/Researcher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/RestorationReport.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/ReturnFromLoan.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/ReturnFromRestauration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/SendToLoanMovimentation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/SendToRestorationMovimentation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/model/Technician.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DS/utils/Utils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/AdmissionMovimentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/Collection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/Coordinator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/DatabaseHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/Director.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/DischargeMovimentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/Item.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/Movimentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/MovimentationTo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/Museum.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/Person.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/PutToExpositionMovimentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/PutToStorageMovimentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/Researcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/RestorationReport.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/ReturnFromLoan.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/ReturnFromRestauration.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/SendToLoanMovimentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/SendToRestorationMovimentation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/Technician.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/utils/Utils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/AddCollection.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/AddCollectionController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/AddItem.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/AddItemController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/AddMovimentation.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/AddMovimentationController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/CreateUser.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/CreateUserController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/EditItem.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/EditItemController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/EditUser.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/EditUserController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/Item.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/ItemController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/Login.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/LoginController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/MainScreen.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/MainScreenController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/Movimentation.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/MovimentationController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/MuseumPane.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/MuseumPaneController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/SearchResultsPane.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/SearchResultsPaneController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/background.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/images/MALG.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/images/ic_search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/images/vasoAzul.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/lupa.CSS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/view_controller/main.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="d823bca7-c734-49c5-b63d-137ca2e41162" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -253,12 +178,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1502041945890</updated>
-      <workItem from="1502041947611" duration="13000" />
+      <workItem from="1502041947611" duration="513000" />
     </task>
+    <task id="LOCAL-00001" summary="Removendo arquivos duplicados">
+      <created>1502041975537</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1502041975537</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13000" />
+    <option name="totallyTimeSpent" value="513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="29" width="1920" height="1051" extended-state="6" />
@@ -299,6 +232,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removendo arquivos duplicados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removendo arquivos duplicados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

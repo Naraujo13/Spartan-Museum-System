@@ -1,0 +1,262 @@
+/*---------------------------Main Screan----------------------*/
+.mdl-layout__header {
+  background-color: #009688;
+}
+/* Position the drawer below the header */
+.mdl-layout--fixed-drawer .mdl-layout__drawer {
+  margin-top: 64px;
+  height: calc(100% - 64px);
+}
+
+.mdl-layout--fixed-drawer.is-small-screen .mdl-layout__drawer { /* On smaller screens where the header is smaller */
+  margin-top: 56px;
+  height: calc(100% - 56px);
+}
+
+/* Position the obfuscator below the header */
+.mdl-layout--fixed-drawer .mdl-layout__obfuscator {
+  margin-top: 64px;
+  height: calc(100% - 64px);
+}
+
+.mdl-layout--fixed-drawer.is-small-screen .mdl-layout__obfuscator {
+  margin-top: 56px;
+  height: calc(100% - 56px);
+}
+
+/*
+ * Fixed draw layout
+ */
+
+/* Expand the header over the space reserved for the full-height navigation draw */
+.mdl-layout--fixed-drawer.mdl-layout--fixed-drawer>header.mdl-layout__header {
+  margin-left: 0;
+  width: 100%;
+}
+
+/* Hide the hamburger icon when the drawer is showing */
+.mdl-layout--fixed-drawer.mdl-layout--fixed-drawer:not(.is-small-screen) .mdl-layout__drawer-button {
+  display: none;
+}
+
+.mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen)>.mdl-layout__header{
+  margin-left: 0;
+  width: 100%;
+}
+
+.logo {
+    display: inline-block;
+    height: 100%;
+    padding-right: 1%;
+}
+
+.logo>img {
+    vertical-align: middle;
+    transform: scale(0.8);
+}
+
+.itens {
+  display: inline;
+  padding-left: 20%;
+}
+
+#MainScreen-BemVindo .page-content-int {
+  height: 100%;
+  width: 70%;
+  margin-left: 25%;
+}
+
+#MainScreen-BemVindo .title {
+  margin-top: 12%;
+  display: flex;
+}
+
+#MainScreen-BemVindo .title h1 {
+  margin-top: 10%;
+  font-size: 29px;
+}
+
+#MainScreen-BemVindo .text p{
+  margin-top: 5%;
+  font-size: 20px;
+}
+
+/*-------------Usuários------------*/
+#Main-Usuarios {
+  display: none;
+}
+#Main-Usuarios .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+#Main-Usuarios .page-content {
+  height: 100%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+#Main-Usuarios .fullwidth {
+  width: 82%;
+}
+#Main-Usuarios .login-table {
+  width: 40%;
+}
+#Main-Usuarios .table-icon {
+  width: 0.5%;
+}
+#Main-Usuarios .usersHeader {
+  width: 82%;
+}
+
+#Main-Usuarios .mdl-layout__header-row {
+  padding-left: 3%;
+}
+
+/*-------------Coleções------------*/
+#Main-Colecoes {
+  display: none;
+}
+#Main-Colecoes .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+#Main-Colecoes .page-content {
+  height: 100%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+#Main-Colecoes .fullwidth {
+  width: 82%;
+}
+#Main-Colecoes .login-table {
+  width: 40%;
+}
+#Main-Colecoes .table-icon {
+  width: 0.5%;
+}
+#Main-Colecoes .collectionsHeader {
+  width: 82%;
+}
+
+#Main-Colecoes .mdl-layout__header-row {
+  padding-left: 3%;
+}
+
+/*-------------Itens------------*/
+#Main-Itens {
+  display: none;
+}
+#Main-Itens .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+#Main-Itens .page-content {
+  height: 100%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+#Main-Itens .fullwidth {
+  width: 82%;
+}
+#Main-Itens .login-table {
+  width: 20%;
+}
+#Main-Itens .table-icon {
+  width: 0.5%;
+}
+#Main-Itens .collectionsHeader {
+  width: 82%;
+}
+
+#Main-Itens .mdl-layout__header-row {
+  padding-left: 3%;
+}
+
+/*-------------MUseus------------*/
+#Main-Museus {
+  display: none;
+}
+#Main-Museus .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+#Main-Museus .page-content {
+  height: 100%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+#Main-Museus .fullwidth {
+  width: 82%;
+}
+#Main-Museus .login-table {
+  width: 70%;
+}
+#Main-Museus .table-icon {
+  width: 0.5%;
+}
+#Main-Museus .collectionsHeader {
+  width: 82%;
+}
+
+#Main-Museus .mdl-layout__header-row {
+  padding-left: 3%;
+}
+
+/*-------------Movimentacoes------------*/
+#Main-Museus {
+  display: none;
+}
+#Movimentacoes .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+#Movimentacoes .page-content {
+  height: 100%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+#Movimentacoes .fullwidth {
+  width: 82%;
+}
+#Movimentacoes .login-table {
+  width: 70%;
+}
+#Movimentacoes .table-icon {
+  width: 0.5%;
+}
+#Movimentacoes .collectionsHeader {
+  width: 82%;
+}
+
+#Movimentacoes .mdl-layout__header-row {
+  padding-left: 1%;
+}
+
+.back {
+    display: inline-block;
+    height: 100%;
+    padding-right: 1%;
+}
+
+.back>img {
+    vertical-align: middle;
+    transform: scale(0.8);
+}
+
+/* FAB */
+#fabutton {
+  color: white;
+  background-color: teal;
+  margin-left: 92%;
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
