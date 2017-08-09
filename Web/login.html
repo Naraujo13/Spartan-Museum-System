@@ -22,12 +22,17 @@
                 flex: none;
             }
 
-            /* gambiarra logo */
             #logo {
-                width: 20px;
-                height: 45px;
-                margin-right: 20px;
+                display: inline-block;
+                height: 100%;
+                padding-right: 1%;
             }
+
+            #logo>img {
+                vertical-align: middle;
+                transform: scale(0.8);
+            }
+
         </style>
     </head>
 
@@ -37,7 +42,7 @@
             <!-- Logo/Spartan/Header -->
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row mdl-color--teal">
-                    <img id="logo" src="_imagens/whiteSpartan.png">
+                    <img id="logo" src="icons/spartan.png">
                     <span class="mdl-layout-title">Spartan</span>
                 </div>
             </header>

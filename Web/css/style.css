@@ -225,6 +225,53 @@
   padding-left: 3%;
 }
 
+/*-------------Movimentacoes------------*/
+#Main-Museus {
+  display: none;
+}
+#Movimentacoes .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10%;
+  justify-content: center;
+}
+#Movimentacoes .page-content {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+}
+#Movimentacoes .fullwidth {
+  width: 82%;
+}
+#Movimentacoes .login-table {
+  width: 70%;
+}
+#Movimentacoes .table-icon {
+  width: 0.5%;
+}
+#Movimentacoes .collectionsHeader {
+  width: 82%;
+}
+
+#Movimentacoes .mdl-layout__header-row {
+  padding-left: 1%;
+}
+
+.back {
+    display: inline-block;
+    height: 100%;
+    padding-right: 1%;
+}
+
+.back>img {
+    vertical-align: middle;
+    transform: scale(0.8);
+}
+
 #fabutton {
   color: white;
   background-color: teal;
