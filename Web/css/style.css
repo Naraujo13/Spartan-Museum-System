@@ -241,13 +241,13 @@
   padding-left: 1%;
 }
 
-.back {
+#Movimentacoes .back {
     display: inline-block;
     height: 100%;
     padding-right: 1%;
 }
 
-.back>img {
+#Movimentacoes .back>img {
     vertical-align: middle;
     transform: scale(0.8);
 }
@@ -259,4 +259,67 @@
   margin-left: 92%;
   margin-top: 1%;
   margin-bottom: 5%;
+}
+
+/*-------------Coleção Expandida------------*/
+#Colecao-Expandida {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+}
+#Colecao-Expandida .mdl-layout__content {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+#Colecao-Expandida .page-content {
+  height: 80%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+#Colecao-Expandida .collectionCard {
+  width: 80%;
+}
+#Colecao-Expandida .mdl-card__title {
+  background-color: #009688;
+}
+#Colecao-Expandida .title {
+  color: #fff;
+}
+#Colecao-Expandida .back {
+    display: inline-block;
+    height: 100%;
+    padding-right: 1%;
+}
+#Colecao-Expandida .edit {
+    display: inline-block;
+    height: 100%;
+}
+
+#Colecao-Expandida .back>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+#Colecao-Expandida .ID {
+    margin-top: 1%;
+}
+#Colecao-Expandida .Nome {
+    margin-top: 1%;
+}
+#Colecao-Expandida .IDMuseu {
+    margin-top: 1%;
+}
+#Colecao-Expandida .tituloInformacao {
+  font-weight: bold;
+}
+#Colecao-Expandida .fullwidth {
+  width: 80%;
+  margin-top: 3%;
+}
+#Colecao-Expandida .icon {
+  float: right;
+  width: 7%;
+  padding-top: 3%;
 }
