@@ -1,4 +1,5 @@
 <?php
+use App\Museum;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +12,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () {	
     return view('loading');
 });
 
@@ -20,5 +21,9 @@ Route::get('/login', function () {
 });
 
 Route::get('/home', function () {
-    return view('main');
+
+	$museums = Museum::orderBy('created_at', 'asc')->get();
+
+    return view('main', [
+    	'museums' => $museums]);
 });

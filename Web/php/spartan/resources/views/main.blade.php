@@ -90,21 +90,13 @@
                </tr>
               </thead>
               <tbody>
-               <tr onclick="location.href='#';">
-                 <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/museu.svg"></td>
-                 <td class="mdl-data-table__cell--non-numeric ">Museu Normal</td>
-                 <td class="mdl-data-table__cell--non-numeric">Rua Fulano de Tal, 123 - Pelotas/RS</td>
-               </tr>
-               <tr onclick="location.href='#';">
-                 <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/museu.svg"></td>
-                 <td class="mdl-data-table__cell--non-numeric ">Museu do Doce</td>
-                 <td class="mdl-data-table__cell--non-numeric">Rua Quindim, 321 - Pelotas/RS</td>
-               </tr>
-               <tr onclick="location.href='#';">
-                 <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/museu.svg"></td>
-                 <td class="mdl-data-table__cell--non-numeric ">Museu das Cópias</td>
-                 <td class="mdl-data-table__cell--non-numeric">Rua Xerox, 666 - Pelotas/RS</td>
-               </tr>
+                 @foreach ($museums as $museum)
+                   <tr onclick="location.href='#';">
+                     <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/museu.svg"></td>
+                     <td class="mdl-data-table__cell--non-numeric ">{{$museum->name}}</td>
+                     <td class="mdl-data-table__cell--non-numeric">{{$museum->address}}</td>
+                   </tr>
+                 @endforeach
               </tbody>
               </table>
           </div>
