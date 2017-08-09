@@ -267,6 +267,7 @@
   width: 100%;
   overflow: hidden;
   justify-content: center;
+  display: none;
 }
 #Colecao-Expandida .mdl-layout__content {
   height: 100%;
@@ -320,6 +321,6 @@
 }
 #Colecao-Expandida .icon {
   float: right;
-  width: 7%;
+  width: 5%;
   padding-top: 3%;
 }
