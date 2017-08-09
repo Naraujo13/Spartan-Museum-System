@@ -16,6 +16,11 @@ class CreateCollectionsTable extends Migration
         Schema::create('collections', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('collectionID')->primary();
+            $table->foreign('codMuseum')
+                    ->references('codMuseum')->on('museums')
+                    ->onDelete('cascade');
+            $table->string('name');
         });
     }
 

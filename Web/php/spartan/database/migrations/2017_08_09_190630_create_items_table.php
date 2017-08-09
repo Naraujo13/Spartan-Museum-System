@@ -16,6 +16,26 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('itemid')->primary();
+            $table->string('name');
+            $table->foreign('collectionid')
+                    ->references('collectionid')->on('collections')
+                    ->onDelete('cascade');
+            $table->integer('year');
+            $table->string('status');
+            $table->float('lenght');
+            $table->float('height');
+            $table->float('width');
+            $table->float('thickness')->nullable();
+            $table->string('aquisitionDate');
+            $table->float('outerCircumference')->nullable();
+            $table->float('innerCircumference')->nullable();
+            $table->float('weight');
+            $table->string('author')->nullable();
+            $table->string('conservationState')->nullable();
+            $table->string('historicalContext')->nullable();
+            $table->string('biography')->nullable();
+            $table->string('description');
         });
     }
 
