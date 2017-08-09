@@ -14,19 +14,22 @@ class CreateMuseumsTable extends Migration
     public function up()
     {
         Schema::create('museums', function (Blueprint $table) {
-            $table->increments('id');
-
+           
             $table->timestamps();
 
-            $table->string('museumCode')->primary();
+            $table->string('codMuseum')->primary();
             $table->string('name')->unique();
-            $table->foreign('cpfdirector')->nullable()
+
+            $table->string('cpfdirector')->nullable();
+            $table->foreign('cpfdirector')
                     ->references('cpf')->on('users')
                     ->onDelete('set null');
-            $table->string('cpftechnician')->nullable()
+
+            $table->string('cpftechnician')->nullable();
+            $table->foreign('cpftechnician')
                     ->references('cpf')->on('users')
                     ->onDelete('set null');
-            $table->string('name');
+                    
             $table->string('address');
             $table->string('phone')->nullable();
             $table->string('openingHours')->nullable();

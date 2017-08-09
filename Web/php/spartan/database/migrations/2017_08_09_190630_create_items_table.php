@@ -14,13 +14,15 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->increments('id');
             $table->timestamps();
             $table->string('itemid')->primary();
             $table->string('name');
+
+            $table->string('collectionid');
             $table->foreign('collectionid')
-                    ->references('collectionid')->on('collections')
+                    ->references('collectionId')->on('collections')
                     ->onDelete('cascade');
+
             $table->integer('year');
             $table->string('status');
             $table->float('lenght');

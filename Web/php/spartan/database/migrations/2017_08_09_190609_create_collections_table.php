@@ -14,12 +14,14 @@ class CreateCollectionsTable extends Migration
     public function up()
     {
         Schema::create('collections', function (Blueprint $table) {
-            $table->increments('id');
             $table->timestamps();
-            $table->string('collectionID')->primary();
+            $table->string('collectionId')->primary();
+           
+            $table->string('codMuseum');
             $table->foreign('codMuseum')
                     ->references('codMuseum')->on('museums')
                     ->onDelete('cascade');
+
             $table->string('name');
         });
     }
