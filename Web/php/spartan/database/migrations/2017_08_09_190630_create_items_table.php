@@ -15,11 +15,11 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->timestamps();
-            $table->string('itemid')->primary();
+            $table->string('itemId')->primary();
             $table->string('name');
 
-            $table->string('collectionid');
-            $table->foreign('collectionid')
+            $table->string('collectionId');
+            $table->foreign('collectionId')
                     ->references('collectionId')->on('collections')
                     ->onDelete('cascade');
 
@@ -37,7 +37,7 @@ class CreateItemsTable extends Migration
             $table->string('conservationState')->nullable();
             $table->string('historicalContext')->nullable();
             $table->string('biography')->nullable();
-            $table->string('description');
+            $table->string('description')->nullable();
         });
     }
 

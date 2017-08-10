@@ -513,6 +513,7 @@
   width: 100%;
   overflow:scroll;
   justify-content: center;
+  display: none;
 }
 #Adicionar-editar-item .mdl-layout__content {
   height: 100%;
@@ -551,16 +552,21 @@
 }
 #Adicionar-editar-item .informacoesGerais {
   padding-bottom: 0%;
+  width: 97%;
 }
 #Adicionar-editar-item .Informacao {
-  margin-top: 1%;
+  display: inline-block;
+  padding-right: 10%;
 }
 #Adicionar-editar-item .borda {
-  margin-top: 1%;
+  margin-top: 0%;
 }
 #Adicionar-editar-item .tituloInformacao {
   display: inline-block;
-  width: 15%;
+  font-weight: bold;
+}
+#Adicionar-editar-item .tituloDescrição {
+  display: inline;
   font-weight: bold;
 }
 #Adicionar-editar-item .Dimensões {
@@ -582,9 +588,13 @@
   padding-top: 0%;
   padding-right: 2%;
 }
-#Adicionar-editar-item .BotaoMovimentações {
+#Adicionar-editar-item .BotaoImagem {
   float: right;
   background-color: #009688;
+  width: 20%;
+}
+#Adicionar-editar-item .OutrasInformacoesInput {
+  width: 500%;
 }
 
 /*------------Editar Usuário--------*/
