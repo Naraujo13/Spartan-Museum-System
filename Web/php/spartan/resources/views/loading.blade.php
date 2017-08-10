@@ -1,6 +1,6 @@
 <html>
-<link rel="stylesheet" href="css/materialDesign/material.min.css">
-<script src="css/materialDesign/material.min.js"></script>
+<link rel="stylesheet" href="/css/materialDesign/material.min.css">
+<script src="/css/materialDesign/material.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <head>
   <title>Acervos UFPel</title>
