@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
         	'name' => 'Paulo',
         	'cpf' => '000',
         	'email' => "paulo@inf.ufpel.edu.br",
-        	
+        	'matricula' => null,
         	'password' => '000',
         	'function' => '2',
 

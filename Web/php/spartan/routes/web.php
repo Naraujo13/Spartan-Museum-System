@@ -3,6 +3,7 @@ use App\Museum;
 use App\Collection;
 use App\Item;
 use App\User;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,10 +60,24 @@ Route::get('/museums', function () {
     return view('museums', ['museums' => $museums]);
 });
 
-Route::get('/addMuseum', function () {
+Route::post('/users', function (Request $request) {
 
-    return view('addMuseum');
+
+
+   DB::table('users')->insert([
+            'name' => $request->name,
+            'cpf' => $request->cpf,
+            'email' => $request->email,
+            
+            'password' => $request->password,
+            'function' => $request->function,
+
+        ]);
+
+
+    return redirect('/users');
 });
+
 Route::get('/collections', function () {
 
     $collections = Collection::orderBy('created_at', 'asc')->get();
