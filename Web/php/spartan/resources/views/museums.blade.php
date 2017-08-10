@@ -35,7 +35,7 @@
               </thead>
               <tbody>
                  @foreach ($museums as $museum)
-                   <tr onclick="location.href='#';">
+                   <tr onclick="window.location='{{ url("expandedMuseum/".$museum->codMuseum) }}'">
                      <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/museu.svg"></td>
                      <td class="mdl-data-table__cell--non-numeric ">{{$museum->name}}</td>
                      <td class="mdl-data-table__cell--non-numeric">{{$museum->address}}</td>

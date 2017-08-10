@@ -68,8 +68,15 @@ Route::get('/addItem', function () {
     return view('addItem', ['museums' => $museums, 'collections' => $collections]);
 });
 
+Route::get('/expandedMuseum/{id}', function ($id) {
+    
+    $museum = DB::table('museums')->where('codMuseum', $id)->first();
+    return view('expandedMuseum', 
+        ['museum' => $museum]);
+});
+
 Route::get('/expandedCollection/{id}', function ($id) {
-    //Collection::findOrFail($id)->delete();
+    
     $collection = DB::table('collections')->where('collectionId', $id)->first();
     
 
