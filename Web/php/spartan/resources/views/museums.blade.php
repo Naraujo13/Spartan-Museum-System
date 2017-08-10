@@ -45,7 +45,7 @@
               </table>
           </div>
            <!-- Colored FAB button with ripple -->
-           <button onclick="location.href='#';" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp" id="fabutton">
+           <button onclick="window.location='{{ url("addMuseum") }}'" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp" id="fabutton">
                <i class="material-icons">add</i>
            </button>
         </main>

@@ -12,8 +12,8 @@
                               <h2 class="mdl-card__title-text title"> Museu Normal </h2>
                               <!-- Add spacer, to align navigation to the right -->
                               <div class="mdl-layout-spacer">
-                                <a href="#Editar-Museu" class="edit" id="editarMuseu"><img src="/icons/editar.svg" class="logo"></a>
-                              </div>
+                                <a href="{{ URL::to('/editMuseum/' . $museum->codMuseum) }}" class="edit" id="editarMuseu"><img src="/icons/editar.svg" class="logo"></a>
+                              </div> 
                           </div>
 
                           <div class="mdl-card__supporting-text">

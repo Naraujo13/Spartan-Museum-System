@@ -40,6 +40,11 @@ Route::get('/addUser', function () {
     return view('addUser');
 });
 
+Route::get('/editMuseum', function () {
+
+    return view('editMuseum');
+});
+
 Route::get('/museums', function () {
 
     $museums = Museum::orderBy('created_at', 'asc')->get();
@@ -47,6 +52,10 @@ Route::get('/museums', function () {
     return view('museums', ['museums' => $museums]);
 });
 
+Route::get('/addMuseum', function () {
+
+    return view('addMuseum');
+});
 Route::get('/collections', function () {
 
     $collections = Collection::orderBy('created_at', 'asc')->get();
@@ -72,6 +81,13 @@ Route::get('/expandedMuseum/{id}', function ($id) {
     
     $museum = DB::table('museums')->where('codMuseum', $id)->first();
     return view('expandedMuseum', 
+        ['museum' => $museum]);
+});
+
+Route::get('/editMuseum/{id}', function ($id) {
+    
+    $museum = DB::table('museums')->where('codMuseum', $id)->first();
+    return view('editMuseum', 
         ['museum' => $museum]);
 });
 
