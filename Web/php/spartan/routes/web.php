@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {	
-    return view('loading');
+    return view('login');
 });
 
 Route::get('/login', function () {
@@ -61,10 +61,37 @@ Route::post('/users', function (Request $request) {
             'name' => $request->name,
             'cpf' => $request->cpf,
             'email' => $request->email,
-            
+            'matricula' => $request->matricula,
             'password' => $request->password,
             'function' => $request->function,
 
+        ]);
+
+
+    return redirect('/users');
+});
+
+Route::post('/items', function (Request $request) {
+
+   DB::table('items')->insert([
+            'itemId' => $request->itemId,
+            'name' => $request->name,
+            'collectionId' => $request->collectionId,
+            'year' => $request->year,
+            'status' => $request->status,
+            'lenght' => $request->lenght,
+            'height' => $request->height,
+            'width' => $request->width,
+            'thickness' => $request->thickness,
+            'aquisitionDate' => $request->aquisitionDate,
+            'outerCircumference' => $request->outerCircumference,
+            'innerCircumference' => $request->innerCircumference,
+            'weight' => $request->weight,
+            'author' => $request->author,
+            'conservationState' => $request->conservationState,
+            'historicalContext' => $request->historicalContext,
+            'biography' => $request->biography,
+            'description' => $request->description,
         ]);
 
 
@@ -149,7 +176,4 @@ Route::get('/expandedItem', function() {
     return view('expandedItem');
 });
 
-// Authentication 
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Auth::routes();
