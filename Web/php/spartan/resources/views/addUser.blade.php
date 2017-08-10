@@ -9,7 +9,7 @@
           <div class="mdl-card__title">
             <a href="#Usuario-Expandido" class="back" id="BackEditUsers"><img src="/icons/voltar.svg" class="logo"></a>
             <!-- Title -->
-            <h2 class="mdl-card__title-text title">Editar Usuário</h2>
+            <h2 class="mdl-card__title-text title">Adicionar Usuário</h2>
             <div class="mdl-layout-spacer"></div>
             <a href="#Usuario-Expandido" class="confirm" id="ConfirmEdit"><img src="/icons/confirmar.svg" class="logo"></a>
           </div>
