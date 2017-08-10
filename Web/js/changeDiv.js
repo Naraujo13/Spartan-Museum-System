@@ -9,6 +9,7 @@ $( "#Home" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#MainScreen-BemVindo").show("liniear");
 });
 
@@ -23,6 +24,7 @@ $( "#museumLink" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Main-Museus").show("liniear");
 });
 
@@ -37,6 +39,7 @@ $( "#usersLink" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Main-Usuarios").show("liniear");
 });
 
@@ -51,6 +54,7 @@ $( "#collectionsLink" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Main-Colecoes").show("liniear")
 });
 
@@ -65,6 +69,7 @@ $( "#itensLink" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Main-Itens").show("liniear");
 });
 
@@ -79,6 +84,7 @@ $( ".collectionRow" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Colecao-Expandida").show("liniear");
 });
 
@@ -93,6 +99,7 @@ $( "#BackColecoes" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Main-Colecoes").show("liniear");
 });
 
@@ -107,6 +114,7 @@ $( ".itensRow" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Item-Expandido").show("liniear");
 });
 
@@ -121,6 +129,7 @@ $( "#BackItem" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Main-Itens").show("liniear");
 });
 
@@ -134,6 +143,7 @@ $( "#MovimentationButton" ).click(function() {
   $("#Main-Colecoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Movimentacoes").show("liniear");
 });
 
@@ -147,6 +157,7 @@ $( "#Back" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Item-Expandido").show("liniear");
 });
 
@@ -161,6 +172,7 @@ $( ".usersRow" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Usuario-Expandido").show("liniear");
 });
 
@@ -174,6 +186,7 @@ $( "#BackUsers" ).click(function() {
   $("#Main-Colecoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Main-Usuarios").show("liniear");
   $("#Editar-Usuario").hide("liniear");
 
@@ -190,6 +203,7 @@ $( "#ConfirmEdit" ).click(function() {
   $("#Usuario-Expandido").show("liniear");
   $("#Main-Usuarios").hide("liniear");
   $("#Editar-Usuario").hide("liniear");
+  $("#Adicionar-editar-movimentação").hide("linear");
 });
 
 $( "#BackEditUsers" ).click(function() {
@@ -203,6 +217,7 @@ $( "#BackEditUsers" ).click(function() {
   $("#Usuario-Expandido").show("liniear");
   $("#Editar-Usuario").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
+  $("#Adicionar-editar-movimentação").hide("linear");
 });
 
 $( "#EditUsers" ).click(function() {
@@ -215,6 +230,7 @@ $( "#EditUsers" ).click(function() {
   $("#Main-Colecoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Editar-Usuario").show("liniear");
 });
 
@@ -228,7 +244,22 @@ $( ".addItem" ).click(function() {
   $("#Main-Colecoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Adicionar-editar-item").show("linear");
+});
+
+$( ".addMovimentation" ).click(function() {
+  $("#MainScreen-BemVindo").hide("liniear");
+  $("#Main-Museus").hide("liniear");
+  $("#Main-Itens").hide("liniear");
+  $("#Colecao-Expandida").hide("liniear");
+  $("#Item-Expandido").hide("liniear");
+  $("#Movimentacoes").hide("liniear");
+  $("#Main-Colecoes").hide("liniear");
+  $("#Usuario-Expandido").hide("liniear");
+  $("#Main-Usuarios").hide("liniear");
+  $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").show("linear");
 });
 
 $( "#EditItem" ).click(function() {
@@ -241,6 +272,7 @@ $( "#EditItem" ).click(function() {
   $("#Main-Colecoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Adicionar-editar-item").show("linear");
 });
 
@@ -254,6 +286,7 @@ $( "#BackAddItem" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Main-Itens").show("liniear");
 });
 
@@ -267,5 +300,6 @@ $( "#ConfirmAddItem" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Adicionar-editar-movimentação").hide("linear");
   $("#Main-Itens").show("liniear");
 });
