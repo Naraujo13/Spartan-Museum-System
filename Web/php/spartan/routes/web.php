@@ -1,6 +1,8 @@
 <?php
 use App\Museum;
 use App\Collection;
+use App\Item;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +27,12 @@ Route::get('/home', function () {
 
 	$museums = Museum::orderBy('created_at', 'asc')->get();
     $collections = Collection::orderBy('created_at', 'asc')->get();
+    $items = Item::orderBy('created_at', 'asc')->get();
+    $users = User::orderBy('created_at', 'asc')->get();
 
     return view('main', [
-    	'museums' => $museums], [
-    	'collections' => $collections]);
+    	'museums' => $museums, 
+    	'collections' => $collections, 
+        'items' => $items,
+        'users' => $users]);
 });

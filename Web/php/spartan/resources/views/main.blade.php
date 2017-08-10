@@ -133,14 +133,23 @@
            </header>
               <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp fullwidth">
               <thead>
+              
                <tr>
                  <th class="mdl-data-table__cell--non-numeric table-icon"></th>
-                 <th class="mdl-data-table__cell--non-numeric login-table">Login</th>
+                 <th class="mdl-data-table__cell--non-numeric login-table">Nome</th>
                  <th class="mdl-data-table__cell--non-numeric">CPF</th>
                  <th class="mdl-data-table__cell--non-numeric">Função</th>
                </tr>
               </thead>
               <tbody>
+              @foreach ($users as $user)
+                   <tr onclick="location.href='#';">
+                   <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/usuario.svg"></td>
+                   <td class="mdl-data-table__cell--non-numeric ">{{$user->name}}</td>
+                   <td class="mdl-data-table__cell--non-numeric">{{$user->cpf}}</td>
+                   <td class="mdl-data-table__cell--non-numeric">{{$user->fuction}}</td>
+                   </tr>
+                 @endforeach
                <tr onclick="location.href='#';">
                  <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/usuario.svg"></td>
                  <td class="mdl-data-table__cell--non-numeric ">Admin</td>
@@ -261,38 +270,19 @@
                  </tr>
                 </thead>
                 <tbody>
-                 <tr onclick="location.href='#';">
-                   <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/itens.svg"></td>
-                   <td class="mdl-data-table__cell--non-numeric ">Vaso Azul</td>
-                   <td class="mdl-data-table__cell--non-numeric">VZA01</td>
-                   <td class="mdl-data-table__cell--non-numeric">Vasos</td>
-                   <td class="mdl-data-table__cell--non-numeric">Museu Normal</td>
-                   <td class="mdl-data-table__cell--non-numeric">Em Estoque</td>
-                 </tr>
-                 <tr onclick="location.href='#';">
-                   <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/itens.svg"></td>
-                   <td class="mdl-data-table__cell--non-numeric ">Mona Lisa</td>
-                   <td class="mdl-data-table__cell--non-numeric">MLA01</td>
-                   <td class="mdl-data-table__cell--non-numeric">Picasso Copycat</td>
-                   <td class="mdl-data-table__cell--non-numeric">Museu das Cópias</td>
-                   <td class="mdl-data-table__cell--non-numeric">Emprestada</td>
-                 </tr>
-                 <tr onclick="location.href='#';">
-                   <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/itens.svg"></td>
-                   <td class="mdl-data-table__cell--non-numeric ">Escultura de Pedra</td>
-                   <td class="mdl-data-table__cell--non-numeric">ESP01</td>
-                   <td class="mdl-data-table__cell--non-numeric">Esculturas</td>
-                   <td class="mdl-data-table__cell--non-numeric">Museu Normal</td>
-                   <td class="mdl-data-table__cell--non-numeric">Em Estoque</td>
-                 </tr>
-                 <tr onclick="location.href='#';">
-                   <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/itens.svg"></td>
-                   <td class="mdl-data-table__cell--non-numeric ">Mona Crespa</td>
-                   <td class="mdl-data-table__cell--non-numeric">MCA01</td>
-                   <td class="mdl-data-table__cell--non-numeric">Picasso Copycat</td>
-                   <td class="mdl-data-table__cell--non-numeric">Museu das Cópias</td>
-                   <td class="mdl-data-table__cell--non-numeric">Em Exposição</td>
-                 </tr>
+
+                @foreach ($items as $item)
+                   <tr onclick="location.href='#';">
+                      <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/itens.svg"></td>
+                      <td class="mdl-data-table__cell--non-numeric ">{{$item->name}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{$item->itemId}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{$item->collection->name}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{$item->collection->museum->name}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{$item->status}}</td>
+
+                   </tr>
+                 @endforeach
+                
                 </tbody>
                 </table>
             </div>
