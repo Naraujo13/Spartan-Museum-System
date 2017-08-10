@@ -906,3 +906,286 @@
   height: 100%;
   padding-right: 3%;
 }
+
+/* Restauração Expandida */
+#Restauro-Expandido {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    display: none;
+}
+
+#Restauro-Expandido .mdl-layout__content{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+#Restauro-Expandido .page-content {
+    height: 80%;
+    width: 95%;
+    margin: 74px 0px 0px 20%;
+    justify-content: center;
+}
+
+#Restauro-Expandido .museuCard{
+    width: 80%;
+}
+
+#Restauro-Expandido .mdl-card__title{
+    background-color: #009688;
+}
+
+#Restauro-Expandido .title{
+    color: #fff;
+    font-size: 200%;
+}
+
+#Restauro-Expandido .mdl-layout__header-row{
+    padding-left: 1%;
+}
+
+#Restauro-Expandido .icon{
+    float: right;
+    width: 12%;
+    height: 12%;
+}
+
+#Restauro-Expandido .tituloInformacao {
+    display: inline-block;
+    width: 15%;
+    font-weight: bold;
+}
+
+#Restauro-Expandido .IDitem {
+    margin-top: 1%;
+}
+
+#Restauro-Expandido .DataHora {
+    margin-top: 1%;
+}
+
+#Restauro-Expandido .RealizadaPor {
+    margin-top: 1%;
+}
+
+#Restauro-Expandido .Origem {
+    margin-top: 1%;
+}
+
+#Restauro-Expandido .Destino {
+    margin-top: 1%;
+}
+
+#Restauro-Expandido .DataRetorno {
+    margin-top: 1%;
+}
+
+#Restauro-Expandido .Restaurador {
+    margin-top: 1%;
+}
+
+#Restauro-Expandido .Dano {
+    margin-top: 1%;
+}
+
+#Restauro-Expandido .Reparo {
+    margin-top: 1%;
+}
+
+#Restauro-Expandido .backspace{
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+#Restauro-Expandido .backspace>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+
+#Restauro-Expandido .edit {
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+
+/* Emprestimo Expandido */
+#Emprestimo-Expandido {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    display: none;
+}
+
+#Emprestimo-Expandido .mdl-layout__content{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+#Emprestimo-Expandido .page-content {
+    height: 80%;
+    width: 95%;
+    margin: 74px 0px 0px 20%;
+    justify-content: center;
+}
+
+#Emprestimo-Expandido .museuCard{
+    width: 80%;
+}
+
+#Emprestimo-Expandido .mdl-card__title{
+    background-color: #009688;
+}
+
+#Emprestimo-Expandido .title{
+    color: #fff;
+    font-size: 200%;
+}
+
+#Emprestimo-Expandido .mdl-layout__header-row{
+    padding-left: 1%;
+}
+
+#Emprestimo-Expandido .icon{
+    float: right;
+    width: 12%;
+    height: 12%;
+}
+
+#Emprestimo-Expandido .tituloInformacao {
+    display: inline-block;
+    width: 15%;
+    font-weight: bold;
+}
+
+#Emprestimo-Expandido .IDitem {
+    margin-top: 1%;
+}
+
+#Emprestimo-Expandido .DataHora {
+    margin-top: 1%;
+}
+
+#Emprestimo-Expandido .RealizadaPor {
+    margin-top: 1%;
+}
+
+#Emprestimo-Expandido .Origem {
+    margin-top: 1%;
+}
+
+#Emprestimo-Expandido .Destino {
+    margin-top: 1%;
+}
+
+#Emprestimo-Expandido .DataRetorno {
+    margin-top: 1%;
+}
+
+#Emprestimo-Expandido .backspace{
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+
+#Emprestimo-Expandido .backspace>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+
+#Emprestimo-Expandido .edit {
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+
+/* Entrada Expandido */
+#Entrada-Expandido {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    display: none;
+}
+
+#Entrada-Expandido .mdl-layout__content{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+#Entrada-Expandido .page-content {
+    height: 80%;
+    width: 95%;
+    margin: 74px 0px 0px 20%;
+    justify-content: center;
+}
+
+#Entrada-Expandido .museuCard{
+    width: 80%;
+}
+
+#Entrada-Expandido .mdl-card__title{
+    background-color: #009688;
+}
+
+#Entrada-Expandido .title{
+    color: #fff;
+    font-size: 200%;
+}
+
+#Entrada-Expandido .mdl-layout__header-row{
+    padding-left: 1%;
+}
+
+#Entrada-Expandido .icon{
+    float: right;
+    width: 12%;
+    height: 12%;
+}
+
+#Entrada-Expandido .tituloInformacao {
+    display: inline-block;
+    width: 15%;
+    font-weight: bold;
+}
+
+#Entrada-Expandido .IDitem {
+    margin-top: 1%;
+}
+
+#Entrada-Expandido .DataHora {
+    margin-top: 1%;
+}
+
+#Entrada-Expandido .RealizadaPor {
+    margin-top: 1%;
+}
+
+#Entrada-Expandido .Origem {
+    margin-top: 1%;
+}
+
+#Entrada-Expandido .Destino {
+    margin-top: 1%;
+}
+
+#Entrada-Expandido .backspace{
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+
+#Entrada-Expandido .backspace>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+
+#Entrada-Expandido .edit {
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
