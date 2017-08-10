@@ -203,24 +203,21 @@
                 </tr>
                </thead>
                <tbody>
-                <tr onclick="location.href='#';">
-                  <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/colecao.svg"></td>
-                  <td class="mdl-data-table__cell--non-numeric ">Vasos</td>
-                  <td class="mdl-data-table__cell--non-numeric">Museu Normal</td>
-                  <td class="mdl-data-table__cell--non-numeric">4 unidades</td>
-                </tr>
-                <tr onclick="location.href='#';">
-                  <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/colecao.svg"></td>
-                  <td class="mdl-data-table__cell--non-numeric ">Esculturas</td>
-                  <td class="mdl-data-table__cell--non-numeric">Museu de Cópias</td>
-                  <td class="mdl-data-table__cell--non-numeric">3 unidades</td>
-                </tr>
-                <tr onclick="location.href='#';">
-                  <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/colecao.svg"></td>
-                  <td class="mdl-data-table__cell--non-numeric ">Picasso Copycat</td>
-                  <td class="mdl-data-table__cell--non-numeric">Museu Normal</td>
-                  <td class="mdl-data-table__cell--non-numeric">3 unidades</td>
-                </tr>
+                @foreach ($collections as $collection)
+                   <tr onclick="location.href='#';">
+                     <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/colecao.svg"></td>
+                     <td class="mdl-data-table__cell--non-numeric ">{{$collection->name}}</td>
+                    
+                     @foreach ($museums as $museum)
+                          @if($museum->codmuseum===$collection->codmuseum)
+                             <td class="mdl-data-table__cell--non-numeric">{{$museum->name}}</td>
+                             @endif
+                     @endforeach
+                     
+                     <td class="mdl-data-table__cell--non-numeric">{{$user = DB::table('items')->where('collectionid', $collection->collectionid)->count()}}</td>
+                   </tr>
+                 @endforeach
+                
                </tbody>
                </table>
            </div>
