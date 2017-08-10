@@ -83,7 +83,6 @@
 
 /*-------------Usuários------------*/
 #Main-Usuarios {
-  display: none;
 }
 #Main-Usuarios .mdl-layout__content {
   height: 100%;
@@ -115,7 +114,6 @@
 
 /*-------------Coleções------------*/
 #Main-Colecoes {
-  display: none;
 }
 #Main-Colecoes .mdl-layout__content {
   height: 100%;
@@ -147,7 +145,6 @@
 
 /*-------------Itens------------*/
 #Main-Itens {
-  display: none;
 }
 #Main-Itens .mdl-layout__content {
   height: 100%;
@@ -179,7 +176,6 @@
 
 /*-------------MUseus------------*/
 #Main-Museus {
-  display: none;
 }
 #Main-Museus .mdl-layout__content {
   height: 100%;
@@ -211,7 +207,6 @@
 
 /*-------------Movimentacoes------------*/
 #Movimentacoes {
-  display: none;
 }
 #Movimentacoes .mdl-layout__content {
   height: 100%;
@@ -267,7 +262,6 @@
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  display: none;
 }
 #Colecao-Expandida .mdl-layout__content {
   height: 100%;
@@ -331,7 +325,6 @@
   width: 100%;
   overflow:scroll;
   justify-content: center;
-  display: none;
 }
 #Item-Expandido .mdl-layout__content {
   height: 100%;
@@ -412,7 +405,6 @@
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  display: none;
 }
 
 #Usuario-Expandido .mdl-layout__content{
@@ -513,7 +505,6 @@
   width: 100%;
   overflow:scroll;
   justify-content: center;
-  display: none;
 }
 #Adicionar-editar-item .mdl-layout__content {
   height: 100%;
@@ -604,7 +595,6 @@
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  display: none;
 }
 
 #Editar-Usuario .mdl-layout__content{
