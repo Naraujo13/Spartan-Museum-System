@@ -404,3 +404,106 @@
   float: right;
   background-color: #009688;
 }
+
+/*------------Usuário Expandido--------*/
+
+#Usuario-Expandido {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  display: none;
+}
+
+#Usuario-Expandido .mdl-layout__content{
+  margin-top: 5%;
+  margin-left: 20%;
+  width: 100%;
+  height: 120%;
+  justify-content: center;
+}
+
+#Usuario-Expandido .page-content {
+  height: 80%;
+  width: 95%;
+  margin: 74px 0px 0px 20%
+  justify-content: center;
+}
+
+#Usuario-Expandido .usercard{
+  width: 80%;
+  height: 65%;
+}
+
+#Usuario-Expandido .mdl-card__title{
+  background-color: #009688;
+}
+
+#Usuario-Expandido .title{
+  color: #fff;
+  font-size: 200%;
+}
+
+#Usuario-Expandido .mdl-layout__header-row{
+  padding-left: 1%;
+}
+
+#Usuario-Expandido .icon{
+  float: right;
+  width: 55%;
+  height: 55%;
+}
+
+#Colecao-Expandida .tituloInformacao {
+  font-weight: bold;
+}
+
+#Usuario-Expandido .Cpf {
+    margin-top: 1%;
+}
+
+#Usuario-Expandido .Email {
+    margin-top: 1%;
+}
+
+#Usuario-Expandido .Funcao {
+    margin-top: 1%;
+}
+
+#Usuario-Expandido .Matricula {
+    margin-top: 1%;
+}
+
+#Usuario-Expandido .back{
+  display: inline-block;
+  height: 100%;
+  padding-right: 3%;
+}
+#Usuario-Expandido .back>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+
+#Usuario-Expandido .edit {
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+
+/*------------Página de Carregamento---------*/
+#loadingPage {
+  position:absolute;
+  margin: 10% 30% 10% 30%;
+}
+#loadingPage .nomeMuseu{
+  color: white;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-size: 300%;
+	margin-left: 3%;
+}
+#loadingPage .logo{
+  margin-bottom: 3%;
+  margin-left: 20%;
+  width:300;
+  height:250;
+}
