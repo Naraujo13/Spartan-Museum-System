@@ -56,11 +56,20 @@ Route::get('/items', function () {
     return view('items', ['items' => $items]);
 });
 
+Route::get('/expandedCollection/{id}', function ($id) {
+    //Collection::findOrFail($id)->delete();
+    $collection = DB::table('collections')->where('collectionId', $id)->first();
+
+    return view('expandedCollection', ['collection' => $collection]);
+});
+
+
+Route::get('/expandedCollection', function() {
+    return view('expandedCollection');
+});
+
+
 // Authentication 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
-
-// Registration
-Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');

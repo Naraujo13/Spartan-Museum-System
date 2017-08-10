@@ -36,8 +36,8 @@
                </thead>
                <tbody>
                 @foreach ($collections as $collection)
-                   <tr onclick="location.href='#';">
-                     <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/colecao.svg"></td>
+                   <tr onclick="window.location='{{ url("expandedCollection/".$collection->collectionId) }}'">
+                     <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/colecao.svg"></td>
                      <td class="mdl-data-table__cell--non-numeric ">{{$collection->name}}</td>
 
                      <td class="mdl-data-table__cell--non-numeric">{{$collection->museum->name}}</td>
