@@ -102,7 +102,8 @@ $( "#BackItem" ).click(function() {
   $("#Item-Expandido").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Movimentacoes").hide("liniear");
-  $("#Main-Colecoes").show("liniear");
+  $("#Main-Colecoes").hide("liniear");
+  $("#Main-Itens").show("liniear");
 });
 
 $( "#MovimentationButton" ).click(function() {
