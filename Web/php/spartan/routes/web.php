@@ -60,6 +60,28 @@ Route::get('/museums', function () {
     return view('museums', ['museums' => $museums]);
 });
 
+Route::post('/museums', function (Request $request) {
+
+    DB::table('museums')->insert([
+            'codMuseum' => "novoMuseu",
+            'name' => $request->name,
+            'cpfdirector' => $request->cpfdirector,
+            'cpftechnician' => $request->cpftechnician,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'openingHours' => $request->openingHours,
+            'description' => $request->description,
+        ]);
+
+
+    return redirect('/museums');
+});
+
+Route::get('/addMuseum', function () {
+
+    return view('addMuseum');
+});
+
 Route::post('/users', function (Request $request) {
 
 
@@ -85,15 +107,15 @@ Route::post('/items', function (Request $request) {
             'name' => $request->name,
             'collectionId' => $request->collectionId,
             'year' => $request->year,
-            'status' => $request->status,
+            'status' => "Em Armazenamento",
             'lenght' => $request->lenght,
             'height' => $request->height,
             'width' => $request->width,
             'thickness' => $request->thickness,
-            'aquisitionDate' => $request->aquisitionDate,
+            'aquisitionDate' => date(DATE_RFC2822),
             'outerCircumference' => $request->outerCircumference,
             'innerCircumference' => $request->innerCircumference,
-            'weight' => $request->weight,
+            'weight' => 2.5,
             'author' => $request->author,
             'conservationState' => $request->conservationState,
             'historicalContext' => $request->historicalContext,
@@ -102,7 +124,7 @@ Route::post('/items', function (Request $request) {
         ]);
 
 
-    return redirect('/users');
+    return redirect('/items');
 });
 
 Route::get('/collections', function () {

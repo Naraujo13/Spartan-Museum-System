@@ -62,10 +62,10 @@
     <div class="Informacao">
      <span class="tituloInformacao"> Coleção: </span>
      <div class="mdl-textfield mdl-js-textfield">
-       <select class="mdl-textfield__input" id="collection" name="coleção">
+       <select name="collectionId" class="mdl-textfield__input" id="collection" name="coleção">
          <option></option>
          @foreach ($collections as $collection)
-         <option name="collection" value="85">{{$collection->name}}</option>
+         <option  value="{{$collection->collectionId}}">{{$collection->name}}</option>
          @endforeach
        </select>
        <label class="mdl-textfield__label" for="coleção">Coleção</label>

@@ -18,60 +18,61 @@
           <img src="/icons/museu.svg" class="icon">
 
           <h3>Adicionar Informações:</h3>
+          <form action="/museums" method="POST">
+            {{ csrf_field() }}
+            <div class="COD">
+              <span class="tituloInformacao"> Nome: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input name ="name" class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">Nome</label>
+              </div>
+            </div>
+            <div class="COD">
+              <span class="tituloInformacao"> Endereço: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input name ="address" class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">Endereço</label>
+              </div>
+            </div>
+            <div class="COD">
+              <span class="tituloInformacao"> Telefone: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input name ="phone" class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">Telefone</label>
+              </div>
+            </div>
+            <div class="COD">
+              <span class="tituloInformacao"> Horário de Funcionamento: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input name ="openingHours" class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">Horário de Funcionamento</label>
+              </div>
+            </div>
 
-          
-          <div class="COD">
-            <span class="tituloInformacao"> Nome: </span>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="fname">
-              <label class="mdl-textfield__label" for="fname">Nome</label>
+            <div class="COD">
+              <span class="tituloInformacao"> Descrição: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input name ="description" class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">Descrição</label>
+              </div>
             </div>
-          </div>
-          <div class="COD">
-            <span class="tituloInformacao"> Endereço: </span>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="fname">
-              <label class="mdl-textfield__label" for="fname">Endereço</label>
+            <div class="COD">
+              <span class="tituloInformacao"> Diretor: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input name ="cpfdirector" class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">CPF do Diretor</label>
+              </div>
             </div>
-          </div>
-          <div class="COD">
-            <span class="tituloInformacao"> Telefone: </span>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="fname">
-              <label class="mdl-textfield__label" for="fname">Telefone</label>
+            <div class="COD">
+              <span class="tituloInformacao"> Técnico: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input name= "cpftechnician" class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">CPF do Técnico</label>
+              </div>
             </div>
-          </div>
-          <div class="COD">
-            <span class="tituloInformacao"> Horário de Funcionamento: </span>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="fname">
-              <label class="mdl-textfield__label" for="fname">Horário de Funcionamento</label>
-            </div>
-          </div>
-
-          <div class="COD">
-            <span class="tituloInformacao"> Descrição: </span>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="fname">
-              <label class="mdl-textfield__label" for="fname">Descrição</label>
-            </div>
-          </div>
-          <div class="COD">
-            <span class="tituloInformacao"> Diretor: </span>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="fname">
-              <label class="mdl-textfield__label" for="fname">CPF do Diretor</label>
-            </div>
-          </div>
-          <div class="COD">
-            <span class="tituloInformacao"> Técnico: </span>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="fname">
-              <label class="mdl-textfield__label" for="fname">CPF do Técnico</label>
-            </div>
-          </div>
+          </form>
           <div class="mdl-card__menu">
-           <a href="#Main-Colecoes" class="confirmar" id="ConfirmAddItem"><img src="/icons/confirmar.svg" class="confirmar"></a>
+           <a onclick="$('form').submit()" class="confirmar" id="ConfirmAddItem"><img src="/icons/confirmar.svg" class="confirmar"></a>
          </div>
        </div>
      </div>
