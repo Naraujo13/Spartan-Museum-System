@@ -25,51 +25,51 @@
                               <div class="COD">
                                   <span class="tituloInformacao"> Nome: </span>
                                   <div class="mdl-textfield mdl-js-textfield">
-                                  <input class="mdl-textfield__input" type="text" id="fname">
-                                  <label class="mdl-textfield__label" for="fname">{{$museum->codMuseum}}</label>
+                                  <input class="mdl-textfield__input" type="text" id="fname" value="{{$museum->name}}">
+                                  <label class="mdl-textfield__label" for="fname">Nome</label>
                                 </div>
                               </div>
                               <div class="COD">
                                   <span class="tituloInformacao"> Endereço: </span>
                                   <div class="mdl-textfield mdl-js-textfield">
-                                  <input class="mdl-textfield__input" type="text" id="fname">
-                                  <label class="mdl-textfield__label" for="fname">{{$museum->address}}</label>
+                                  <input class="mdl-textfield__input" type="text" id="fname" value="{{$museum->address}}">
+                                  <label class="mdl-textfield__label" for="fname">Endereço</label>
                                 </div>
                               </div>
                               <div class="COD">
                                   <span class="tituloInformacao"> Telefone: </span>
                                   <div class="mdl-textfield mdl-js-textfield">
-                                  <input class="mdl-textfield__input" type="text" id="fname">
-                                  <label class="mdl-textfield__label" for="fname">{{$museum->phone}}</label>
+                                  <input class="mdl-textfield__input" type="text" id="fname" value="{{$museum->phone}}">
+                                  <label class="mdl-textfield__label" for="fname">Telefone</label>
                                 </div>
                               </div>
                               <div class="COD">
                                   <span class="tituloInformacao"> Horário de Funcionamento: </span>
                                   <div class="mdl-textfield mdl-js-textfield">
-                                  <input class="mdl-textfield__input" type="text" id="fname">
-                                  <label class="mdl-textfield__label" for="fname">{{$museum->openingHours}}</label>
+                                  <input class="mdl-textfield__input" type="text" id="fname" value="{{$museum->openingHours}}">
+                                  <label class="mdl-textfield__label" for="fname">Horário de Funcionamento</label>
                                 </div>
                               </div>
 
                               <div class="COD">
                                   <span class="tituloInformacao"> Descrição: </span>
                                   <div class="mdl-textfield mdl-js-textfield">
-                                  <input class="mdl-textfield__input" type="text" id="fname">
-                                  <label class="mdl-textfield__label" for="fname">{{$museum->description}}</label>
+                                  <input class="mdl-textfield__input" type="text" id="fname" value="{{$museum->description}}">
+                                  <label class="mdl-textfield__label" for="fname">Descrição</label>
                                 </div>
                               </div>
                               <div class="COD">
                                   <span class="tituloInformacao"> Diretor: </span>
                                   <div class="mdl-textfield mdl-js-textfield">
-                                  <input class="mdl-textfield__input" type="text" id="fname">
-                                  <label class="mdl-textfield__label" for="fname">{{$museum->cpfdirector}}</label>
+                                  <input class="mdl-textfield__input" type="text" id="fname" value="{{$museum->cpfdirector}}">
+                                  <label class="mdl-textfield__label" for="fname">CPF do diretor</label>
                                 </div>
                               </div>
                               <div class="COD">
                                   <span class="tituloInformacao"> Técnico: </span>
                                   <div class="mdl-textfield mdl-js-textfield">
-                                  <input class="mdl-textfield__input" type="text" id="fname">
-                                  <label class="mdl-textfield__label" for="fname">{{$museum->cpftechnician}}</label>
+                                  <input class="mdl-textfield__input" type="text" id="fname" value="{{$museum->cpftechnician}}">
+                                  <label class="mdl-textfield__label" for="fname">CPF do Técnico</label>
                                 </div>
                               </div>
                                <div class="mdl-card__menu">
