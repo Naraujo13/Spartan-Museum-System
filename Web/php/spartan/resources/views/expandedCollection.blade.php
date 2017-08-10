@@ -42,38 +42,17 @@
                 </tr>
                </thead>
                <tbody>
-                <tr class="itensRow">
-                  <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/itens.svg"></td>
-                  <td class="mdl-data-table__cell--non-numeric ">Vaso Azul</td>
-                  <td class="mdl-data-table__cell--non-numeric">VZA01</td>
-                  <td class="mdl-data-table__cell--non-numeric">Vasos</td>
-                  <td class="mdl-data-table__cell--non-numeric">Museu Normal</td>
-                  <td class="mdl-data-table__cell--non-numeric">Em Estoque</td>
-                </tr>
-                <tr class="itensRow">
-                  <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/itens.svg"></td>
-                  <td class="mdl-data-table__cell--non-numeric ">Mona Lisa</td>
-                  <td class="mdl-data-table__cell--non-numeric">MLA01</td>
-                  <td class="mdl-data-table__cell--non-numeric">Picasso Copycat</td>
-                  <td class="mdl-data-table__cell--non-numeric">Museu das Cópias</td>
-                  <td class="mdl-data-table__cell--non-numeric">Emprestada</td>
-                </tr>
-                <tr class="itensRow">
-                  <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/itens.svg"></td>
-                  <td class="mdl-data-table__cell--non-numeric ">Escultura de Pedra</td>
-                  <td class="mdl-data-table__cell--non-numeric">ESP01</td>
-                  <td class="mdl-data-table__cell--non-numeric">Esculturas</td>
-                  <td class="mdl-data-table__cell--non-numeric">Museu Normal</td>
-                  <td class="mdl-data-table__cell--non-numeric">Em Estoque</td>
-                </tr>
-                <tr class="itensRow">
-                  <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/itens.svg"></td>
-                  <td class="mdl-data-table__cell--non-numeric ">Mona Crespa</td>
-                  <td class="mdl-data-table__cell--non-numeric">MCA01</td>
-                  <td class="mdl-data-table__cell--non-numeric">Picasso Copycat</td>
-                  <td class="mdl-data-table__cell--non-numeric">Museu das Cópias</td>
-                  <td class="mdl-data-table__cell--non-numeric">Em Exposição</td>
-                </tr>
+               @foreach ($items as $item)
+                    <tr class="itensRow">
+                      <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/itens.svg"></td>
+                      <td class="mdl-data-table__cell--non-numeric ">{{$collection->name}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{$item->itemId}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{$item->collection->name}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{$item->collection->museum->name}}</td>
+                      <td class="mdl-data-table__cell--non-numeric">{{$item->status}}</td>
+                    </tr>
+                @endforeach
+          
                </tbody>
                </table>
              </div>

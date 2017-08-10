@@ -42,7 +42,6 @@
 
                      <td class="mdl-data-table__cell--non-numeric">{{$collection->museum->name}}</td>
 
-
                      <td class="mdl-data-table__cell--non-numeric">{{$collection->items()->count()}}</td>
                    </tr>
                  @endforeach
