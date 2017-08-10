@@ -1189,3 +1189,73 @@
     height: 100%;
     padding-right: 3%;
 }
+
+/* Editar Museu */
+#Editar-Museu {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    display: none;
+}
+
+#Editar-museu .mdl-layout__content{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+
+#Editar-Museu .page-content {
+    height: 80%;
+    width: 95%;
+    margin: 74px 0px 0px 20%;
+    justify-content: center;
+}
+#Editar-Museu .editarMuseuCard{
+    width: 80%;
+}
+
+#Editar-Museu .mdl-card__title{
+    background-color: #009688;
+}
+
+#Editar-Museu .title{
+    color: #fff;
+    font-size: 200%;
+}
+
+#Editar-Museu .mdl-layout__header-row{
+    padding-left: 1%;
+}
+
+#Editar-Museu .icon{
+    float: right;
+    width: 12%;
+    height: 12%;
+}
+
+#Editar-Museu .back{
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+#Editar-Museu .back>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+
+#Editar-Museu .confirm {
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+
+#Editar-Museu .confirm>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+
+#Editar-Museu .Informacao {
+    display: inline-block;
+    padding-right: 10%;
+}
