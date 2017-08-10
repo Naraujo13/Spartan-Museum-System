@@ -12,7 +12,7 @@
               <h2 class="mdl-card__title-text title">{{$user->name}}</h2>
               <!-- Add spacer, to align navigation to the right -->
               <div class="mdl-layout-spacer"></div>
-              <a href="#Editar-Usuario" class="edit" id="EditUsers"><img src="/icons/editar.svg" class="logo"></a>
+              <a href="{{ URL::to('/editUser/' . $user->cpf) }}"  class="edit" id="EditUsers"><img src="/icons/editar.svg" class="logo"></a>
             </div>
 
           <div class="mdl-card__supporting-text">

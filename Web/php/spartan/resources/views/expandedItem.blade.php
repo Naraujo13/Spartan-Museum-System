@@ -73,7 +73,7 @@
               </div>
          </div>
              <div class="mdl-card__menu">
-                <a href="#Main-Colecoes" class="edit" id="EditItem"><img src="/icons/editar.svg" class="logo"></a>
+                <a href="{{ URL::to('/editItem/' . $item->itemId) }}"  class="edit" id="EditItem"><img src="/icons/editar.svg" class="logo"></a>
             </div>
            </div>
            </div>
