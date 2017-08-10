@@ -8,7 +8,7 @@
          <div class="page-content">
            <div class="demo-card-wide mdl-card mdl-shadow--2dp editcollectioncard">
              <div class="mdl-card__title">
-               <a href="#Colecao-Expandida" class="back" id="BackEditCollection"><img src="icons/voltar.svg" class="logo"></a>
+               <a href="/collections" class="back" id="BackEditCollection"><img src="icons/voltar.svg" class="logo"></a>
                <!-- Title -->
                <h2 class="mdl-card__title-text title">Editar Coleção</h2>
                <div class="mdl-layout-spacer"></div>
