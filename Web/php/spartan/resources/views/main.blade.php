@@ -208,11 +208,8 @@
                      <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/colecao.svg"></td>
                      <td class="mdl-data-table__cell--non-numeric ">{{$collection->name}}</td>
                     
-                     @foreach ($museums as $museum)
-                          @if($museum->codmuseum===$collection->codmuseum)
-                             <td class="mdl-data-table__cell--non-numeric">{{$museum->name}}</td>
-                             @endif
-                     @endforeach
+                     <td class="mdl-data-table__cell--non-numeric">{{$collection->museum->name}}</td>
+                      
                      
                      <td class="mdl-data-table__cell--non-numeric">{{$user = DB::table('items')->where('collectionid', $collection->collectionid)->count()}}</td>
                    </tr>

@@ -8,7 +8,7 @@ class Museum extends Model
 {
     //
 
-	Colecoes(){
-		return $this->hasMany(Colecao::class);
+	public function collections(){
+		return $this->hasMany(Collection::class, 'codMuseum', 'codMuseum');
 	}
 }
