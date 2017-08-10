@@ -211,7 +211,7 @@
                      <td class="mdl-data-table__cell--non-numeric">{{$collection->museum->name}}</td>
                       
                      
-                     <td class="mdl-data-table__cell--non-numeric">{{$user = DB::table('items')->where('collectionid', $collection->collectionid)->count()}}</td>
+                     <td class="mdl-data-table__cell--non-numeric">{{$collection->items()->count()}}</td>
                    </tr>
                  @endforeach
                 

@@ -37,7 +37,7 @@ class CreateItemsTable extends Migration
             $table->string('conservationState')->nullable();
             $table->string('historicalContext')->nullable();
             $table->string('biography')->nullable();
-            $table->string('description');
+            $table->string('description')->nullable();
         });
     }
 
