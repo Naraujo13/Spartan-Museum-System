@@ -190,4 +190,4 @@ Route::get('/expandedItem', function() {
     return view('expandedItem');
 });
 
-Auth::routes();
+//Auth::routes();
