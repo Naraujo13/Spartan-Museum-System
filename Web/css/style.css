@@ -406,7 +406,6 @@
 }
 
 /*------------Usuário Expandido--------*/
-
 #Usuario-Expandido {
   height: 100%;
   width: 100%;
@@ -815,4 +814,95 @@
 #Editar-Colecao .Informacao {
   display: inline-block;
   padding-right: 10%;
+}
+
+/* Museu Expandido */
+#Museu-Expandido {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  display: none;
+}
+
+#Museu-Expandido .mdl-layout__content{
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+#Museu-Expandido .page-content {
+  height: 80%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+
+#Museu-Expandido .museuCard{
+  width: 80%;
+}
+
+#Museu-Expandido .mdl-card__title{
+  background-color: #009688;
+}
+
+#Museu-Expandido .title{
+  color: #fff;
+  font-size: 200%;
+}
+
+#Museu-Expandido .mdl-layout__header-row{
+  padding-left: 1%;
+}
+
+#Museu-Expandido .icon{
+  float: right;
+  width: 12%;
+  height: 12%;
+}
+
+#Museu-Expandido .tituloInformacao {
+  display: inline-block;
+  width: 15%;
+  font-weight: bold;
+}
+
+#Museu-Expandido .COD {
+  margin-top: 1%;
+}
+
+#Museu-Expandido .Diretor {
+  margin-top: 1%;
+}
+
+#Museu-Expandido .Tecnico {
+  margin-top: 1%;
+}
+
+#Museu-Expandido .Endereco {
+  margin-top: 1%;
+}
+
+#Museu-Expandido .Funcionamento {
+  margin-top: 1%;
+}
+
+#Museu-Expandido .Description {
+  margin-top: 1%;
+}
+
+#Museu-Expandido .backspace{
+  display: inline-block;
+  height: 100%;
+  padding-right: 3%;
+}
+#Museu-Expandido .backspace>img {
+  vertical-align: middle;
+  transform: scale(1.1);
+}
+
+#Museu-Expandido .edit {
+  display: inline-block;
+  height: 100%;
+  padding-right: 3%;
 }
