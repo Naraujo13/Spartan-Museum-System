@@ -45,24 +45,6 @@
                    <td class="mdl-data-table__cell--non-numeric">{{$user->fuction}}</td>
                    </tr>
                 @endforeach
-               <tr onclick="location.href='#';">
-                 <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/usuario.svg"></td>
-                 <td class="mdl-data-table__cell--non-numeric ">Admin</td>
-                 <td class="mdl-data-table__cell--non-numeric">000.000.000-00</td>
-                 <td class="mdl-data-table__cell--non-numeric">Coordenador</td>
-               </tr>
-               <tr onclick="location.href='#';">
-                 <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/usuario.svg"></td>
-                 <td class="mdl-data-table__cell--non-numeric ">Paulo</td>
-                 <td class="mdl-data-table__cell--non-numeric">111.111.111-11</td>
-                 <td class="mdl-data-table__cell--non-numeric">Diretor</td>
-               </tr>
-               <tr onclick="location.href='#';">
-                 <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/usuario.svg"></td>
-                 <td class="mdl-data-table__cell--non-numeric ">Nícolas</td>
-                 <td class="mdl-data-table__cell--non-numeric">033.690.375-71</td>
-                 <td class="mdl-data-table__cell--non-numeric">Técnico</td>
-               </tr>
               </tbody>
               </table>
           </div>
