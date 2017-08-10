@@ -25,14 +25,37 @@ Route::get('/login', function () {
 
 Route::get('/home', function () {
 
-	$museums = Museum::orderBy('created_at', 'asc')->get();
-    $collections = Collection::orderBy('created_at', 'asc')->get();
-    $items = Item::orderBy('created_at', 'asc')->get();
+    return view('home');
+});
+
+Route::get('/users', function () {
+
     $users = User::orderBy('created_at', 'asc')->get();
 
-    return view('main', [
-    	'museums' => $museums, 
-    	'collections' => $collections, 
-        'items' => $items,
-        'users' => $users]);
+    return view('users', ['users' => $users]);
+});
+
+Route::post('/museums', function () {
+    return redirect('museums');
+});
+
+Route::get('/museums', function () {
+
+    $museums = Museum::orderBy('created_at', 'asc')->get();
+
+    return view('museums', ['museums' => $museums]);
+});
+
+Route::get('/collections', function () {
+
+    $collections = Collection::orderBy('created_at', 'asc')->get();
+
+    return view('collections', ['collections' => $collections]);
+});
+
+Route::get('/items', function () {
+
+    $items = Item::orderBy('created_at', 'asc')->get();
+
+    return view('items', ['items' => $items]);
 });
