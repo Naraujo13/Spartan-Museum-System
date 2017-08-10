@@ -53,12 +53,6 @@ Route::get('/museums', function () {
     return view('museums', ['museums' => $museums]);
 });
 
-<<<<<<< Updated upstream
-Route::get('/addMuseum', function () {
-
-    return view('addMuseum');
-});
-=======
 Route::post('/users', function (Request $request) {
 
 
@@ -77,7 +71,6 @@ Route::post('/users', function (Request $request) {
     return redirect('/users');
 });
 
->>>>>>> Stashed changes
 Route::get('/collections', function () {
 
     $collections = Collection::orderBy('created_at', 'asc')->get();
