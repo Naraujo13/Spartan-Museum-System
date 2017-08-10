@@ -18,7 +18,7 @@
        <header class="mdl-layout__header">
          <div class="mdl-layout__header-row">
            <!-- Title -->
-           <a href="#MainScreen-BemVindo" class="logo" id="Home"><img src="icons/spartan.png" class="logo"></a>
+           <a href="#MainScreen-BemVindo" class="logo" id="Home"><img src="/icons/spartan.png" class="logo"></a>
            <span class="mdl-layout-title">Spartan</span>
            <!-- Add spacer, to align navigation to the right -->
            <div class="mdl-layout-spacer"></div>
@@ -31,12 +31,12 @@
        </header>
        <div class="mdl-layout__drawer">
          <nav class="mdl-navigation">
-           <a class="mdl-navigation__link" href="#" id="museumLink"><img src="icons/museu.svg"><p class="itens">Museus</p></a>
-           <a class="mdl-navigation__link" href="#" id="usersLink"><img src="icons/usuario.svg"><p class="itens">Usuários</p></a>
-           <a class="mdl-navigation__link" href="#" id="collectionsLink"><img src="icons/colecao.svg"><p class="itens">Coleções</p></a>
-           <a class="mdl-navigation__link" href="#" id="itensLink"><img src="icons/itens.svg"><p class="itens">Itens</p></a>
+           <a class="mdl-navigation__link" href="#" id="museumLink"><img src="/icons/museu.svg"><p class="itens">Museus</p></a>
+           <a class="mdl-navigation__link" href="#" id="usersLink"><img src="/icons/usuario.svg"><p class="itens">Usuários</p></a>
+           <a class="mdl-navigation__link" href="#" id="collectionsLink"><img src="/icons/colecao.svg"><p class="itens">Coleções</p></a>
+           <a class="mdl-navigation__link" href="#" id="itensLink"><img src="/icons/itens.svg"><p class="itens">Itens</p></a>
          </nav>
-       </div>  
+       </div>
     </div>
   </body>
   </div>

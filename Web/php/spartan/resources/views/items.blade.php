@@ -41,7 +41,7 @@
 
                 @foreach ($items as $item)
                    <tr onclick="location.href='#';">
-                      <td class="mdl-data-table__cell--non-numeric table-icon"><img src="icons/itens.svg"></td>
+                      <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/itens.svg"></td>
                       <td class="mdl-data-table__cell--non-numeric ">{{$item->name}}</td>
                       <td class="mdl-data-table__cell--non-numeric">{{$item->itemId}}</td>
                       <td class="mdl-data-table__cell--non-numeric">{{$item->collection->name}}</td>
@@ -50,7 +50,7 @@
 
                    </tr>
                  @endforeach
-                
+
                 </tbody>
                 </table>
             </div>

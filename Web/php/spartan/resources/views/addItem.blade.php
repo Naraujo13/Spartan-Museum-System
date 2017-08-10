@@ -7,7 +7,7 @@
          <div class="page-content">
            <div class="demo-card-wide mdl-card mdl-shadow--2dp collectionCard">
              <div class="mdl-card__title">
-               <a href="#Main-Colecoes" class="back" id="BackAddItem"><img src="icons/voltar.svg" class="logo"></a>
+               <a href="#Main-Colecoes" class="back" id="BackAddItem"><img src="/icons/voltar.svg" class="logo"></a>
                <h2 class="mdl-card__title-text title">Adicionar Item</h2>
              </div>
              <form action="#">
@@ -162,7 +162,7 @@
       </form>
 
            <div class="mdl-card__menu">
-              <a href="#Main-Colecoes" class="confirmar" id="ConfirmAddItem"><img src="icons/confirmar.svg" class="confirmar"></a>
+              <a href="#Main-Colecoes" class="confirmar" id="ConfirmAddItem"><img src="/icons/confirmar.svg" class="confirmar"></a>
           </div>
          </div>
          </div>

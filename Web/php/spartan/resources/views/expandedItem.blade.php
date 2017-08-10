@@ -7,11 +7,11 @@
            <div class="page-content">
              <div class="demo-card-wide mdl-card mdl-shadow--2dp collectionCard">
                <div class="mdl-card__title">
-                 <a href="#Main-Colecoes" class="back" id="BackItem"><img src="icons/voltar.svg" class="logo"></a>
+                 <a href="#Main-Colecoes" class="back" id="BackItem"><img src="/icons/voltar.svg" class="logo"></a>
                  <h2 class="mdl-card__title-text title">[Nome do Item]</h2>
                </div>
                <div class="mdl-card__supporting-text informacoesGerais">
-                 <img src="icons/vasoAzul.jpg" class="fotoItem">
+                 <img src="/icons/vasoAzul.jpg" class="fotoItem">
                  <h2 class="mdl-card__title-text">Informações Principais:</h2>
                    <div class="Informacao">
                     <span class="tituloInformacao"> ID: </span> <span> [ID da obra] </span>
@@ -73,7 +73,7 @@
               </div>
          </div>
              <div class="mdl-card__menu">
-                <a href="#Main-Colecoes" class="edit" id="EditItem"><img src="icons/editar.svg" class="logo"></a>
+                <a href="#Main-Colecoes" class="edit" id="EditItem"><img src="/icons/editar.svg" class="logo"></a>
             </div>
            </div>
            </div>

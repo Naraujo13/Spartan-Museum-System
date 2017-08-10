@@ -42,7 +42,7 @@
             <!-- Logo/Spartan/Header -->
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row mdl-color--teal">
-                    <img id="logo" src="icons/spartan.png">
+                    <img id="logo" src="/icons/spartan.png">
                     <span class="mdl-layout-title">Spartan</span>
                 </div>
             </header>

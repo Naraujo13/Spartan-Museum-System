@@ -7,15 +7,15 @@
       <div class="page-content">
         <div class="demo-card-wide mdl-card mdl-shadow--2dp editusercard">
           <div class="mdl-card__title">
-            <a href="#Usuario-Expandido" class="back" id="BackEditUsers"><img src="icons/voltar.svg" class="logo"></a>
+            <a href="#Usuario-Expandido" class="back" id="BackEditUsers"><img src="/icons/voltar.svg" class="logo"></a>
             <!-- Title -->
             <h2 class="mdl-card__title-text title">Editar Usuário</h2>
             <div class="mdl-layout-spacer"></div>
-            <a href="#Usuario-Expandido" class="confirm" id="ConfirmEdit"><img src="icons/confirmar.svg" class="logo"></a>
+            <a href="#Usuario-Expandido" class="confirm" id="ConfirmEdit"><img src="/icons/confirmar.svg" class="logo"></a>
           </div>
 
         <div class="mdl-card__supporting-text">
-          <img src="icons/usuario.svg" class="icon">
+          <img src="/icons/usuario.svg" class="icon">
           <div class="mdl-card__actions mdl-card--border">
 
             <div class="Funcao">
