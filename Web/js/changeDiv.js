@@ -9,6 +9,7 @@ $( "#Home" ).click(function() {
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
+  $("#Editar-Colecao").hide("linear");
   $("#MainScreen-BemVindo").show("liniear");
 });
 
@@ -19,6 +20,7 @@ $( "#museumLink" ).click(function() {
   $("#Main-Itens").hide("liniear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Editar-Usuario").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Item-Expandido").hide("liniear");
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
@@ -36,6 +38,7 @@ $( "#usersLink" ).click(function() {
   $("#Item-Expandido").hide("liniear");
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Adicionar-editar-item").hide("linear");
   $("#Main-Usuarios").show("liniear");
 });
@@ -46,6 +49,7 @@ $( "#collectionsLink" ).click(function() {
   $("#Main-Usuarios").hide("liniear");
   $("#Editar-Usuario").hide("liniear");
   $("#Main-Itens").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
   $("#Movimentacoes").hide("liniear");
@@ -59,6 +63,7 @@ $( "#itensLink" ).click(function() {
   $("#Main-Museus").hide("liniear");
   $("#Editar-Usuario").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Main-Colecoes").hide("liniear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
@@ -73,6 +78,7 @@ $( ".collectionRow" ).click(function() {
   $("#Main-Museus").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Editar-Usuario").hide("liniear");
   $("#Main-Itens").hide("liniear");
   $("#Item-Expandido").hide("liniear");
@@ -86,6 +92,7 @@ $( "#BackColecoes" ).click(function() {
   $("#MainScreen-BemVindo").hide("liniear");
   $("#Main-Museus").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Main-Itens").hide("liniear");
   $("#Editar-Usuario").hide("liniear");
   $("#Colecao-Expandida").hide("liniear");
@@ -106,6 +113,7 @@ $( ".itensRow" ).click(function() {
   $("#Colecao-Expandida").hide("liniear");
   $("#Movimentacoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Adicionar-editar-item").hide("linear");
   $("#Item-Expandido").show("liniear");
 });
@@ -118,6 +126,7 @@ $( "#BackItem" ).click(function() {
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Movimentacoes").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
@@ -129,6 +138,7 @@ $( "#MovimentationButton" ).click(function() {
   $("#Main-Museus").hide("liniear");
   $("#Editar-Usuario").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
@@ -142,6 +152,7 @@ $( "#Back" ).click(function() {
   $("#Main-Museus").hide("liniear");
   $("#Editar-Usuario").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
   $("#Movimentacoes").hide("liniear");
@@ -157,6 +168,7 @@ $( ".usersRow" ).click(function() {
   $("#Main-Colecoes").hide("liniear");
   $("#Main-Itens").hide("liniear");
   $("#Item-Expandido").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Editar-Usuario").hide("liniear");
   $("#Movimentacoes").hide("liniear");
   $("#Colecao-Expandida").hide("liniear");
@@ -170,6 +182,7 @@ $( "#BackUsers" ).click(function() {
   $("#Main-Itens").hide("liniear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Movimentacoes").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
@@ -182,6 +195,7 @@ $( "#BackUsers" ).click(function() {
 $( "#ConfirmEdit" ).click(function() {
   $("#MainScreen-BemVindo").hide("liniear");
   $("#Main-Museus").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Main-Itens").hide("liniear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
@@ -196,6 +210,7 @@ $( "#BackEditUsers" ).click(function() {
   $("#MainScreen-BemVindo").hide("liniear");
   $("#Main-Museus").hide("liniear");
   $("#Main-Itens").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
   $("#Movimentacoes").hide("liniear");
@@ -209,6 +224,7 @@ $( "#EditUsers" ).click(function() {
   $("#MainScreen-BemVindo").hide("liniear");
   $("#Main-Museus").hide("liniear");
   $("#Main-Itens").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
   $("#Movimentacoes").hide("liniear");
@@ -222,7 +238,9 @@ $( ".addItem" ).click(function() {
   $("#MainScreen-BemVindo").hide("liniear");
   $("#Main-Museus").hide("liniear");
   $("#Main-Itens").hide("liniear");
+  $("#Editar-Usuario").hide("liniear");
   $("#Colecao-Expandida").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Item-Expandido").hide("liniear");
   $("#Movimentacoes").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
@@ -238,7 +256,9 @@ $( "#EditItem" ).click(function() {
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
   $("#Movimentacoes").hide("liniear");
+  $("#Editar-Usuario").hide("liniear");
   $("#Main-Colecoes").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
   $("#Adicionar-editar-item").show("linear");
@@ -251,13 +271,16 @@ $( "#BackAddItem" ).click(function() {
   $("#Colecao-Expandida").hide("liniear");
   $("#Item-Expandido").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
+  $("#Editar-Usuario").hide("liniear");
   $("#Movimentacoes").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Main-Colecoes").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
   $("#Main-Itens").show("liniear");
 });
 
 $( "#ConfirmAddItem" ).click(function() {
+  $("#Editar-Usuario").hide("liniear");
   $("#MainScreen-BemVindo").hide("liniear");
   $("#Main-Museus").hide("liniear");
   $("#Main-Usuarios").hide("liniear");
@@ -265,7 +288,82 @@ $( "#ConfirmAddItem" ).click(function() {
   $("#Item-Expandido").hide("liniear");
   $("#Usuario-Expandido").hide("liniear");
   $("#Movimentacoes").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
   $("#Main-Colecoes").hide("liniear");
   $("#Adicionar-editar-item").hide("linear");
   $("#Main-Itens").show("liniear");
+});
+
+$( "#EditCollection" ).click(function() {
+  $("#MainScreen-BemVindo").hide("liniear");
+  $("#Main-Museus").hide("liniear");
+  $("#Main-Itens").hide("liniear");
+  $("#Colecao-Expandida").hide("liniear");
+  $("#Editar-Usuario").hide("liniear");
+  $("#Item-Expandido").hide("liniear");
+  $("#Movimentacoes").hide("liniear");
+  $("#Main-Colecoes").hide("liniear");
+  $("#Usuario-Expandido").hide("liniear");
+  $("#Main-Usuarios").hide("liniear");
+  $("#Adicionar-editar-item").hide("linear");
+  $("#Editar-Colecao").show("linear");
+});
+
+$( "#BackEditCollection" ).click(function() {
+  $("#MainScreen-BemVindo").hide("liniear");
+  $("#Main-Museus").hide("liniear");
+  $("#Main-Usuarios").hide("liniear");
+  $("#Colecao-Expandida").show("liniear");
+  $("#Editar-Usuario").hide("liniear");
+  $("#Movimentacoes").hide("liniear");
+  $("#Item-Expandido").hide("liniear");
+  $("#Usuario-Expandido").hide("liniear");
+  $("#Main-Colecoes").hide("liniear");
+  $("#Adicionar-editar-item").hide("linear");
+  $("#Main-Itens").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
+});
+$( "#ConfirmCollection" ).click(function() {
+  $("#MainScreen-BemVindo").hide("liniear");
+  $("#Main-Museus").hide("liniear");
+  $("#Editar-Usuario").hide("liniear");
+  $("#Main-Usuarios").hide("liniear");
+  $("#Colecao-Expandida").show("liniear");
+  $("#Item-Expandido").hide("liniear");
+  $("#Usuario-Expandido").hide("liniear");
+  $("#Movimentacoes").hide("liniear");
+  $("#Main-Colecoes").hide("liniear");
+  $("#Adicionar-editar-item").hide("linear");
+  $("#Main-Itens").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
+});
+
+$( ".addCollection" ).click(function() {
+  $("#MainScreen-BemVindo").hide("liniear");
+  $("#Main-Museus").hide("liniear");
+  $("#Main-Itens").hide("liniear");
+  $("#Colecao-Expandida").hide("liniear");
+  $("#Editar-Colecao").show("linear");
+  $("#Item-Expandido").hide("liniear");
+  $("#Editar-Usuario").hide("liniear");
+  $("#Movimentacoes").hide("liniear");
+  $("#Main-Colecoes").hide("liniear");
+  $("#Usuario-Expandido").hide("liniear");
+  $("#Main-Usuarios").hide("liniear");
+  $("#Adicionar-editar-item").hide("linear");
+});
+
+$( ".addUser" ).click(function() {
+  $("#MainScreen-BemVindo").hide("liniear");
+  $("#Main-Museus").hide("liniear");
+  $("#Main-Itens").hide("liniear");
+  $("#Colecao-Expandida").hide("liniear");
+  $("#Editar-Colecao").hide("linear");
+  $("#Item-Expandido").hide("liniear");
+  $("#Movimentacoes").hide("liniear");
+  $("#Main-Colecoes").hide("liniear");
+  $("#Usuario-Expandido").hide("liniear");
+  $("#Editar-Usuario").show("liniear");
+  $("#Main-Usuarios").hide("liniear");
+  $("#Adicionar-editar-item").hide("linear");
 });
