@@ -733,3 +733,73 @@
   width: 15%;
   padding-top: 5%;
 }
+
+/*------------Editar Coleção--------*/
+
+#Editar-Colecao {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+}
+
+#Editar-Colecao .mdl-layout__content{
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+#Editar-Colecao .page-content {
+  height: 80%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+#Editar-Colecao .editcollectioncard{
+  width: 80%;
+}
+
+#Editar-Colecao .mdl-card__title{
+  background-color: #009688;
+}
+
+#Editar-Colecao .title{
+  color: #fff;
+  font-size: 200%;
+}
+
+#Editar-Colecao .mdl-layout__header-row{
+  padding-left: 1%;
+}
+
+#Editar-Colecao .icon{
+  float: right;
+  width: 12%;
+  height: 12%;
+}
+
+#Editar-Colecao .back{
+  display: inline-block;
+  height: 100%;
+  padding-right: 3%;
+}
+#Editar-Colecao .back>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+
+#Editar-Colecao .confirm {
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+
+#Editar-Colecao .confirm>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+
+#Editar-Colecao .Informacao {
+  display: inline-block;
+  padding-right: 10%;
+}

@@ -49,6 +49,11 @@ Route::get('/collections', function () {
     return view('collections', ['collections' => $collections]);
 });
 
+Route::get('/addCollection', function () {
+    $museums = Museum::orderBy('created_at', 'asc')->get();
+    return view('addCollection', ['museums' => $museums]);
+});
+
 Route::get('/items', function () {
 
     $items = Item::orderBy('created_at', 'asc')->get();
