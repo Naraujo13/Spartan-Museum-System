@@ -659,10 +659,92 @@
     padding-right: 3%;
 }
 
-#Editar-Usuario .back>img {
+#Editar-Usuario .confirm>img {
     vertical-align: middle;
     transform: scale(1.1);
 }
+
+  /*-------------Adicionar/editar movimentação------------*/
+  #Adicionar-editar-movimentação {
+    height: 100%;
+    width: 100%;
+    overflow:scroll;
+    justify-content: center;
+    display: none;
+  }
+  #Adicionar-editar-movimentação .mdl-layout__content {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+  #Adicionar-editar-item .page-content {
+    height: 80%;
+    width: 95%;
+    margin: 74px 0px 0px 20%;
+    justify-content: center;
+  }
+#Adicionar-editar-movimentação .collectionCard {
+  width: 80%;
+}
+#Adicionar-editar-movimentação .mdl-card__title {
+  background-color: #009688;
+}
+#Adicionar-editar-movimentação .title  {
+  color: #fff;
+}
+#Adicionar-editar-movimentação .back {
+    display: inline-block;
+    height: 100%;
+    padding-right: 1%;
+}
+#Adicionar-editar-movimentação .confirmar {
+    display: inline-block;
+    height: 100%;
+    transform: scale(1.4);
+}
+
+#Adicionar-editar-movimentação .back>img {
+    vertical-align: middle;
+    transform: scale(1.4);
+}
+#Adicionar-editar-movimentação .Informacao {
+  padding-right: 10%;
+  padding-left: 2%;
+}
+#Adicionar-editar-movimentação .tituloInformacao {
+  font-weight: bold;
+}
+#Adicionar-editar-movimentação .tituloDescrição {
+  display: inline;
+  font-weight: bold;
+}
+
+#Adicionar-editar-movimentação .fotoItem {
+  float: right;
+  width: 15%;
+  padding-top: 0%;
+  padding-right: 2%;
+}
+
+#Adicionar-editar-movimentação .OutrasInformacoesInput {
+  width: 100%;
+}
+
+#Adicionar-editar-movimentação .BotaoRelatório {
+  float: right;
+  background-color: #009688;
+  width: 95%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+}
+
+#Adicionar-editar-movimentação .IconeMovimentação {
+  float: right;
+  width: 15%;
+  padding-top: 5%;
+}
+
 
 /*------------Editar Coleção--------*/
 
@@ -686,7 +768,6 @@
   margin: 74px 0px 0px 20%;
   justify-content: center;
 }
-
 #Editar-Colecao .editcollectioncard{
   width: 80%;
 }

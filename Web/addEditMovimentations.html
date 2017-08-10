@@ -1,0 +1,122 @@
+@extends('layouts.app')
+
+@section('content')
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+      <!-- Always shows a header, even in smaller screens. -->
+    <!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
+       <header class="mdl-layout__header">
+         <div class="mdl-layout__header-row">
+           <!-- Title -->
+           <a href="#MainScreen-BemVindo" class="logo" id="Home"><img src="icons/spartan.png" class="logo"></a>
+           <span class="mdl-layout-title">Spartan</span>
+           <!-- Add spacer, to align navigation to the right -->
+           <div class="mdl-layout-spacer"></div>
+           <!-- Navigation. We hide it in small screens. -->
+           <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="">MINHA CONTA</a>
+            <a class="mdl-navigation__link" href="">SAIR</a>
+          </nav>
+         </div>
+       </header>
+       <div class="mdl-layout__drawer">
+         <nav class="mdl-navigation">
+           <a class="mdl-navigation__link" href="#" id="museumLink"><img src="icons/museu.svg"><p class="itens">Museus</p></a>
+           <a class="mdl-navigation__link" href="#" id="usersLink"><img src="icons/usuario.svg"><p class="itens">Usuários</p></a>
+           <a class="mdl-navigation__link" href="#" id="collectionsLink"><img src="icons/colecao.svg"><p class="itens">Coleções</p></a>
+           <a class="mdl-navigation__link" href="#" id="itensLink"><img src="icons/itens.svg"><p class="itens">Itens</p></a>
+         </nav>
+       </div>
+
+      <!--Adicionar/Editar Movimentasções-->
+      <div id="Adicionar-editar-movimentação" >
+        <main class="mdl-layout__content">
+          <div class="page-content">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp collectionCard">
+              <div class="mdl-card__title">
+                <a href="#Main-Colecoes" class="back" id="BackAddItem"><img src="icons/voltar.svg" class="logo"></a>
+                <h2 class="mdl-card__title-text title">Nova movimentação de [Nome do Item]</h2>
+              </div>
+              <form action="#">
+                <div class="Informacao">
+                  <img src="icons/emprestimo.svg" class="IconeMovimentação">
+                 <span class="tituloInformacao"> Destino: </span>
+                 <div class="mdl-textfield mdl-js-textfield">
+                   <input class="mdl-textfield__input" type="text" id="fname">
+                   <label class="mdl-textfield__label" for="fname">Destino</label>
+                 </div>
+               </div>
+               <div class="Informacao">
+                <span class="tituloInformacao"> Tipo: </span>
+                <div class="mdl-textfield mdl-js-textfield">
+                  <select class="mdl-textfield__input" id="type" name="tipo">
+                    <option></option>
+                    <option>Empréstimo</option>
+                    <option>Armazenamento</option>
+                    <option>Expor</option>
+                    <option>Restauração</option>
+                    <option>Baixa</option>
+                  </select>
+                  <label class="mdl-textfield__label" for="museu">Tipo</label>
+                </div>
+              </div>
+              <div class="Informacao">
+               <span class="tituloInformacao"> Data de retorno: </span>
+               <div class="mdl-textfield mdl-js-textfield">
+                 <input class="mdl-textfield__input" type="text" id="fname">
+                 <label class="mdl-textfield__label" for="fname">Data de retorno (DD/MM/YYYY)</label>
+               </div>
+             </div>
+             <div class="Informacao">
+              <span class="tituloInformacao"> Restaurador: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="fname">
+                <label class="mdl-textfield__label" for="fname">Restaurador</label>
+              </div>
+            </div>
+            <div class="Informacao">
+             <span class="tituloDescrição"> Dano: </span>
+             <br>
+             <div class="mdl-textfield mdl-js-textfield OutrasInformacoesInput">
+               <textarea class="mdl-textfield__input OutrasInformacoesInput" type="text" rows= "3" id="sample5" ></textarea>
+               <label class="mdl-textfield__label" for="sample5">Dano</label>
+             </div>
+           </div>
+           <div class="Informacao">
+            <span class="tituloDescrição"> Reparo: </span>
+            <br>
+            <div class="mdl-textfield mdl-js-textfield OutrasInformacoesInput">
+              <textarea class="mdl-textfield__input OutrasInformacoesInput" type="text" rows= "3" id="sample5" ></textarea>
+              <label class="mdl-textfield__label" for="sample5">Reparo</label>
+            </div>
+          </div>
+              </form>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored BotaoRelatório">
+                Adicionar Relatório (PDF)
+              </button>
+              <div class="mdl-card__menu">
+                <a href="#Main-Colecoes" class="confirmar" id="ConfirmAddItem"><img src="icons/confirmar.svg" class="confirmar"></a>
+              </div>
+            </div>
+            </div>
+        </main>
+      </div>
+    </div>
+    </body>
+
+  <script src="js/changeDiv.js"></script>
+  </html>
+@endsection
