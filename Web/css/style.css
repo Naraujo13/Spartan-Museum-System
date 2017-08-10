@@ -586,3 +586,70 @@
   float: right;
   background-color: #009688;
 }
+
+/*------------Editar Usuário--------*/
+
+#Editar-Usuario {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  display: none;
+}
+
+#Editar-Usuario .mdl-layout__content{
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+#Editar-Usuario .page-content {
+  height: 80%;
+  width: 95%;
+  margin: 74px 0px 0px 20%;
+  justify-content: center;
+}
+
+#Editar-Usuario .editusercard{
+  width: 80%;
+}
+
+#Editar-Usuario .mdl-card__title{
+  background-color: #009688;
+}
+
+#Editar-Usuario .title{
+  color: #fff;
+  font-size: 200%;
+}
+
+#Editar-Usuario .mdl-layout__header-row{
+  padding-left: 1%;
+}
+
+#Editar-Usuario .icon{
+  float: right;
+  width: 12%;
+  height: 12%;
+}
+
+#Editar-Usuario .back{
+  display: inline-block;
+  height: 100%;
+  padding-right: 3%;
+}
+#Editar-Usuario .back>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
+
+#Editar-Usuario .confirm {
+    display: inline-block;
+    height: 100%;
+    padding-right: 3%;
+}
+
+#Editar-Usuario .back>img {
+    vertical-align: middle;
+    transform: scale(1.1);
+}
