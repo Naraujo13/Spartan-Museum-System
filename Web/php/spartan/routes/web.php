@@ -56,9 +56,11 @@ Route::get('/items', function () {
     return view('items', ['items' => $items]);
 });
 
-Route::get('/expandedCollection/{id}', function () {
+Route::get('/expandedCollection/{id}', function ($id) {
     //Collection::findOrFail($id)->delete();
-    return view('expandedCollection');
+    $collection = DB::table('collections')->where('collectionId', $id)->first();
+
+    return view('expandedCollection', ['collection' => $collection]);
 });
 
 

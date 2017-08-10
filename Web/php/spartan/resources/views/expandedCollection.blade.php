@@ -8,21 +8,21 @@
              <div class="page-content">
                <div class="demo-card-wide mdl-card mdl-shadow--2dp collectionCard">
                  <div class="mdl-card__title">
-                   <a href="#Main-Colecoes" class="back" id="BackColecoes"><img src="icons/voltar.svg" class="logo"></a>
-                   <h2 class="mdl-card__title-text title">[Nome da Coleção]</h2>
+                   <a href="#Main-Colecoes" class="back" id="BackColecoes"><img src="/icons/voltar.svg" class="logo"></a>
+                   <h2 class="mdl-card__title-text title">{{$collection->name}}</h2>
                  </div>
                  <div class="mdl-card__supporting-text">
                    <img src="icons/colecao.svg" class="icon">
                    <h2 class="mdl-card__title-text">Informações Gerais:</h2>
                    <div class="mdl-card__actions mdl-card--border">
                      <div class="ID">
-                      <span class="tituloInformacao"> ID: </span> <span> [ID da obra] </span>
+                      <span class="tituloInformacao"> ID: </span> <span> {{$collection->collectionId}} </span>
                     </div>
                     <div class="Nome">
-                     <span class="tituloInformacao"> Nome: </span> <span> [Nome da obra] </span>
+                     <span class="tituloInformacao"> Nome: </span> <span> {{$collection->name}} </span>
                     </div>
                     <div class="IDMuseu">
-                      <span class="tituloInformacao"> ID do Museu: </span> <span> [ID do Museu] </span>
+                      <span class="tituloInformacao"> ID do Museu: </span> <span> {{$collection->codMuseum}} </span>
                     </div>
                   </div>
                </div>
