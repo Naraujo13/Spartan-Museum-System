@@ -49,16 +49,16 @@ Route::get('/collections', function () {
     return view('collections', ['collections' => $collections]);
 });
 
-Route::get('/addCollection', function () {
-    $museums = Museum::orderBy('created_at', 'asc')->get();
-    return view('addCollection', ['museums' => $museums]);
-});
-
 Route::get('/items', function () {
 
     $items = Item::orderBy('created_at', 'asc')->get();
 
     return view('items', ['items' => $items]);
+});
+
+Route::get('/addItem', function () {
+
+    return view('addItem');
 });
 
 Route::get('/expandedCollection/{id}', function ($id) {
@@ -75,6 +75,34 @@ Route::get('/expandedCollection', function() {
     return view('expandedCollection');
 });
 
+
+Route::get('/expandedUser/{id}', function ($id) {
+    //Collection::findOrFail($id)->delete();
+    $user = DB::table('users')->where('cpf', $id)->first();
+    
+
+    return view('expandedUser', 
+        ['user' => $user]);
+});
+
+
+Route::get('/expandedUser', function() {
+    return view('expandedUser');
+});
+
+Route::get('/expandedItem/{id}', function ($id) {
+    //Collection::findOrFail($id)->delete();
+    $item = DB::table('items')->where('itemId', $id)->first();
+    
+
+    return view('expandedItem', 
+        ['item' => $item]);
+});
+
+
+Route::get('/expandedItem', function() {
+    return view('expandedItem');
+});
 
 // Authentication 
 Route::get('auth/login', 'Auth\AuthController@getLogin');

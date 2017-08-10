@@ -11,6 +11,16 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 50)->create();
+        //factory(App\User::class, 50)->create();
+
+         DB::table('users')->insert([
+        	'name' => 'Paulo',
+        	'cpf' => '000',
+        	'email' => "paulo@inf.ufpel.edu.br",
+        	
+        	'password' => '000',
+        	'function' => '2',
+
+        ]);
     }
 }

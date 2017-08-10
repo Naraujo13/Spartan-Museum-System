@@ -40,7 +40,7 @@
                 <tbody>
 
                 @foreach ($items as $item)
-                   <tr onclick="location.href='#';">
+                   <tr onclick="window.location='{{ url("expandedItem/".$item->itemId) }}'">
                       <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/itens.svg"></td>
                       <td class="mdl-data-table__cell--non-numeric ">{{$item->name}}</td>
                       <td class="mdl-data-table__cell--non-numeric">{{$item->itemId}}</td>
@@ -55,7 +55,7 @@
                 </table>
             </div>
              <!-- Colored FAB button with ripple -->
-             <button onclick="location.href='#';" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp" id="fabutton">
+             <button onclick="window.location='{{ url("addItem/") }}'" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp" id="fabutton">
                  <i class="material-icons">add</i>
              </button>
           </main>

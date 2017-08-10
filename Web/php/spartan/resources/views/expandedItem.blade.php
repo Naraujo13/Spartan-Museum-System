@@ -7,26 +7,27 @@
            <div class="page-content">
              <div class="demo-card-wide mdl-card mdl-shadow--2dp collectionCard">
                <div class="mdl-card__title">
-                 <a href="#Main-Colecoes" class="back" id="BackItem"><img src="/icons/voltar.svg" class="logo"></a>
-                 <h2 class="mdl-card__title-text title">[Nome do Item]</h2>
+
+                 <h2 class="mdl-card__title-text title">{{$item->name}}</h2>
                </div>
                <div class="mdl-card__supporting-text informacoesGerais">
                  <img src="/icons/vasoAzul.jpg" class="fotoItem">
                  <h2 class="mdl-card__title-text">Informações Principais:</h2>
                    <div class="Informacao">
-                    <span class="tituloInformacao"> ID: </span> <span> [ID da obra] </span>
+                    <span class="tituloInformacao"> ID: </span> <span> {{$item->itemId}} </span>
                   </div>
                   <div class="Informacao">
-                   <span class="tituloInformacao"> Coleção: </span> <span> [Coleção da obra] </span>
+                  
+                   <span class="tituloInformacao"> Coleção: </span> <span>{{$item->collectionId}}</span>
                   </div>
                   <div class="Informacao">
-                    <span class="tituloInformacao"> Museu: </span> <span> [Nome do Museu] </span>
+                    <span class="tituloInformacao"> Museu: </span> <span> Museu 1</span>
                   </div>
                   <div class="Informacao">
-                    <span class="tituloInformacao"> Ano: </span> <span> [Ano da obra] </span>
+                    <span class="tituloInformacao"> Ano: </span> <span> {{$item->year}} </span>
                   </div>
                   <div class="Informacao">
-                    <span class="tituloInformacao"> Status: </span> <span> [Status da Obra] </span>
+                    <span class="tituloInformacao"> Status: </span> <span> {{$item->year}} </span>
                   </div>
                   <div class="mdl-card__actions mdl-card--border borda">
                 </div>
@@ -38,16 +39,16 @@
                 </button>
                <h2 class="mdl-card__title-text">Dimensões:</h2>
                  <div class="Informacao">
-                  <span class="tituloInformacao"> Altura: </span> <span class="Dimensão"> [Altura da obra] </span>
-                  <span class="tituloInformacao"> Espessura: </span> <span> [Espessura da obra] </span>
+                  <span class="tituloInformacao"> Altura: </span> <span class="Dimensão">  {{$item->height}} </span>
+                  <span class="tituloInformacao"> Espessura: </span> <span>  {{$item->thickness}} </span>
                 </div>
                 <div class="Informacao">
-                 <span class="tituloInformacao"> Largura: </span> <span class="Dimensão"> [Largura da obra] </span>
-                 <span class="tituloInformacao"> Circunferência Interna: </span> <span> [Circunferência interna da obra] </span>
+                 <span class="tituloInformacao"> Largura: </span> <span class="Dimensão">  {{$item->width}} </span>
+                 <span class="tituloInformacao"> Circunferência Interna: </span> <span>  {{$item->innerCircumference}} </span>
                </div>
                <div class="Informacao">
-                <span class="tituloInformacao"> Comprimento: </span> <span class="Dimensão"> [Comprimento da obra] </span>
-                <span class="tituloInformacao"> Circunferência Externa: </span> <span> [Circunferência externa da obra] </span>
+                <span class="tituloInformacao"> Comprimento: </span> <span class="Dimensão">  {{$item->lenght}} </span>
+                <span class="tituloInformacao"> Circunferência Externa: </span> <span>  {{$item->outerCircumference}} </span>
               </div>
                 <div class="mdl-card__actions mdl-card--border borda">
               </div>
@@ -55,21 +56,20 @@
            <div class="mdl-card__supporting-text OutrasInformacoes">
              <h2 class="mdl-card__title-text">Outras Informações:</h2>
                <div class="Informacao">
-                <span class="tituloInformacao"> Data de aquisição: </span> <span> [Data de aquisição da obra] </span>
+                <span class="tituloInformacao"> Data de aquisição: </span> <span> {{$item->aquisitionDate}} </span>
               </div>
               <div class="Informacao">
-               <span class="tituloInformacao"> Bibliografia: </span> <span> [Bibliografia da obra] </span>
+               <span class="tituloInformacao"> Bibliografia: </span> <span>  {{$item->biography}} </span>
               </div>
               <div class="Informacao">
-                <span class="tituloInformacao"> Estado de conservação: </span> <span> [Estado de conservação da obra] </span>
+                <span class="tituloInformacao"> Estado de conservação: </span> <span>  {{$item->conservationState}} </span>
               </div>
               <div class="Informacao">
-                <span class="tituloInformacao"> Contexto Histórico: </span> <span> [Contexto histórico da obra] </span>
+                <span class="tituloInformacao"> Contexto Histórico: </span> <span>  {{$item->historicalContext}} </span>
               </div>
               <div class="Informacao">
                 <span class="tituloInformacao"> Descrição: </span>
-                <p class="Descrição">  Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                </p>
+                <p class="Descrição">   {{$item->description}}</p>
               </div>
          </div>
              <div class="mdl-card__menu">

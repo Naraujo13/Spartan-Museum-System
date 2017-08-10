@@ -38,7 +38,7 @@
               </thead>
               <tbody>
               @foreach ($users as $user)
-                   <tr onclick="location.href='#';">
+                   <tr onclick="window.location='{{ url("expandedUser/".$user->cpf) }}'">
                    <td class="mdl-data-table__cell--non-numeric table-icon"><img src="/icons/usuario.svg"></td>
                    <td class="mdl-data-table__cell--non-numeric ">{{$user->name}}</td>
                    <td class="mdl-data-table__cell--non-numeric">{{$user->cpf}}</td>
